@@ -8,6 +8,7 @@
 		<th>Carrera</th>
 		<th>Impartida por</th>
 		<th>Acciones</th>
+		<th>Modulos</th>
 	</tr>
 
 	<?php foreach($materias as $k => $materia): ?>
@@ -28,9 +29,22 @@
 				<?php echo $this->Form->postlink('Eliminar',array('action'=>'delete',$materia['Course']['id']),array('confirm'=>'deceas eliminar esta materia?')); ?>
 			 &nbsp
 
-			 <?php echo $this->Html->link('Agregar Modulos',array('action'=>'addModule',$materia['Course']['id'],$materia['Course']['career_id'])); ?>
+			
 
 
+			 </td>
+			 <td> 
+
+			 <?php 
+			 $idmat1= $materia['Course']['id'];
+
+			 echo $this->Html->link('Agregar Horario',array('action'=>'addModule',$materia['Course']['id'],$materia['Course']['career_id'])); 
+			 ?>
+			 &nbsp
+
+			 <?php
+			 echo $this->element('tienemod',array('idmat'=>$idmat1));
+			 ?>
 			 </td>
 		</tr>
 

@@ -4,12 +4,15 @@ class CoursesController extends AppController {
 
 	public $helpers=array('Form','Html');
 	public $components=array('Session');
+	public $uses=array('Course','CourseModule');
 
 
 	public function index(){
+		
+		$materias=$this->Course->find('all');
 
-		$this->set('materias',$this->Course->find('all'));
-
+		$this->set('materias',$materias);
+		
 	}
 
 
@@ -72,10 +75,31 @@ class CoursesController extends AppController {
 				$this->redirect(array('action'=>'index'));
 			endif;
 		endif;
+
+
 		$careers=$this->Course->Career->find('list',array('conditions'=>array('Career.id'=>$career_id)));
 		$courses=$this->Course->find('list',array('conditions'=>array('Course.id'=>$id)));
 
-		$this->set(compact('careers','courses'));
 
+
+		$this->set(compact('careers','courses'));
 	}
+
+
+ 	public function tienemod($course_id){
+ 		$this->Course->CourseModule->course_id=$course_id;
+ 		$existe= $this->Course->CourseModule->find('count',array('conditions'=>array('CourseModule.course_id'=>$course_id)));
+
+ 		if($existe > 0){
+ 			$tiene='*';
+ 			echo '<span>'.$tiene.'</span>';
+ 			
+ 		}else {
+ 			$tiene='no';
+ 			echo '<span>'.$tiene.'</span>';
+ 			
+ 		}
+
+ 	}
+
 }
