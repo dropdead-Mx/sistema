@@ -92,7 +92,60 @@
 
 // }
 
+function gruposXcarrera() {
+		var ubicacion = location.pathname;
+		var link=" ";
+		if(ubicacion == '/sistema/users/'){
+			link='../careers/getGroupsByCareerId/';
+		}else{
+			link='../../careers/getGroupsByCareerId/'
+		}
+
+		$('#career_id').on('change', function(){
+			$.ajax({
+			  type: "GET",
+			  url: link + $(this).val(),
+			  success : function(response){
+			  	// Aqui construyes tu select jajajaj
+			  	console.info(response.length );
+			  	if(typeof response !==  'undefined' && response.length > 0) {
+			  		var items = [];
+			  		for(var i=0, numOptions = response.length; i<numOptions;  i++){
+						items.push('<option value="'+response[i].Grupo.id+'">'+response[i].Grupo.name+'</option>');
+			  		}
+			  		$('#grupo_id').html(items.join(''));
+			  	} else {
+			  		$('#grupo_id').html('');
+			  	}
+			  	console.log(response);
+			  }
+			});
+
+		});
+}
+
+function getSemester() {
+	$('#grupo_id').on('click',function(){
+		var semestre = $('#grupo_id option:selected').text().substr(0,1);
+		var existe =$('input#StudentProfileSemester').length;
+		var inputS='<input type="hidden" name="data[StudentProfile][semester]" label="cuatrimestre" id="StudentProfileSemester" value="'+semestre+'"  >';
+		if (existe > 0 ){
+			$('input#StudentProfileSemester').remove();
+			$('form#formulario').append(inputS);
+
+
+		}else {
+			$('form#formulario').append(inputS);
+		}
+
+		
+	});
+}
+
+
 $(function(){
 	clona();
 	elimina();
+	gruposXcarrera();
+	getSemester();
 });

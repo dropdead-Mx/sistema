@@ -16,7 +16,7 @@
 		echo $this->Form->input('StudentProfile.grupo_id',array('label'=>'Grupo',
 			'id'=>'grupo_id'));
 		echo $this->Form->input ('StudentProfile.matricula',array('label'=>'Matricula'));
-		echo $this->Form->input ('StudentProfile.semester',array('label'=>'cuatrimestre'));
+
 
 		echo $this->Form->hidden ('grupo_id',array('value'=> '8'));
 				echo $this->Form->input('id',array('type'=>'hidden'));
@@ -30,31 +30,4 @@
 
 </div>
 
-<script>
-(function ($){
-	$(document).on('ready', function(){
-		$('#career_id').on('change', function(){
-			$.ajax({
-			  type: "GET",
-			  url: "<?php echo Router::url('/', true)?>" + "careers/getGroupsByCareerId/"  + $(this).val(),
-			  success : function(response){
-			  	// Aqui construyes tu select jajajaj
-			  	console.info(response.length );
-			  	if(typeof response !==  'undefined' && response.length > 0) {
-			  		var items = [];
-			  		for(var i=0, numOptions = response.length; i<numOptions;  i++){
-						items.push('<option value="'+response[i].Grupo.id+'">'+response[i].Grupo.name+'</option>');
-			  		}
-			  		$('#grupo_id').html(items.join(''));
-			  	} else {
-			  		$('#grupo_id').html('');
-			  	}
-			  	console.log(response);
-			  }
-			});
-
-		});
-		
-	});
-})(jQuery);
-</script>
+<?php echo  $this->Html->script('scripts');?>
