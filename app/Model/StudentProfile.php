@@ -12,7 +12,21 @@ class StudentProfile extends AppModel {
 			'className'=>'Grupo')
 		);
 
-	
+	public $validate= array(
+
+		'matricula'=>array(
+			'alphanumeric'=>array(
+				'rule'=>'alphanumeric',
+				'required'=>true),
+			'between'=>array(
+				'rule'=>array('lengthBetween',10,10),
+				'message'=>'La matricula debe de tener 10 caracteres')
+			)
+
+		);
+
 }
 
 ?>
+
+
