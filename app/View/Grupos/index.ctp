@@ -28,4 +28,4 @@
 
 
 </table>
-
+<?php echo $this->Html->link('Agregar Grupo',array('action'=>'add')); ?>

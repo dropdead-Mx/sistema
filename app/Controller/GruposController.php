@@ -48,7 +48,7 @@ public function delete($id) {
 		throw new MethodNotAllowedException();
 	else:
 		if($this->Grupo->delete($id)):
-			$this->setFlash('Grupo Eliminado');
+			$this->Session->setFlash('Grupo Eliminado');
 			$this->redirect(array('action'=>'index'));
 		endif;
 	endif;

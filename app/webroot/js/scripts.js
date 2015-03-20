@@ -142,10 +142,34 @@ function getSemester() {
 	});
 }
 
+function materiasXmaestro(){
+			$('#user_id').on('change', function(){
+			$.ajax({
+			  type: "GET",
+			  url: '../courses/getCoursesByUserId/' + $(this).val(),
+			  success : function(response){
+
+			  	console.info(response.length );
+			  	if(typeof response !==  'undefined' && response.length > 0) {
+			  		var items = [];
+			  		for(var i=0, numOptions = response.length; i<numOptions;  i++){
+						items.push('<option value="'+response[i].Course.id+'">'+response[i].Course.name+'</option>');
+			  		}
+			  		$('#course_id').html(items.join(''));
+			  	} else {
+			  		$('#course_id').html('');
+			  	}
+			  	console.log(response);
+			  }
+			});
+
+		});
+}
 
 $(function(){
 	clona();
 	elimina();
 	gruposXcarrera();
 	getSemester();
+	materiasXmaestro();
 });

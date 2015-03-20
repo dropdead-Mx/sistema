@@ -11,12 +11,14 @@ class Course extends AppModel {
 		'User'=>array(
 			'className'=>'User',
 			
-			'conditions'=>array('User.group_id'=>'7'))
+			'conditions'=>array('User.group_id'=>'7')),
+		// 'Goal'=>array(
+		// 	'className'=>'Goal')
 			);
 	
 	public $hasMany= array(
-		'Goal'=>array(
-			'className'=>'Goal'),
+		// 'Goal'=>array(
+		// 	'className'=>'Goal'),
 		'CourseModule'=>array(
 			'className'=>'CourseModule')
 		);

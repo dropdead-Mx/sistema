@@ -2,9 +2,10 @@
 
 class CoursesController extends AppController {
 
-	public $helpers=array('Form','Html');
-	public $components=array('Session');
-	public $uses=array('Course','CourseModule');
+	public $helpers=array('Form','Html','Js');
+	public $components=array('Session','RequestHandler');
+	public $uses=array('Course','CourseModule','User');
+
 
 
 	public function index(){
@@ -99,6 +100,19 @@ class CoursesController extends AppController {
  			echo '<span>'.$tiene.'</span>';
  			
  		}
+
+ 	}
+
+ 	function getCoursesByUserId($user_id) {
+ 		// $this->User->id=$id;
+ 		$this->RequestHandler->respondAs('json');
+
+ 		$courses=$this->Course->find('all',
+ 			array('conditions'=>array('Course.user_id'=>$user_id),
+ 			'recursive'=>-1));
+
+ 		$this->set('courses',$courses);
+ 		$this->layout='ajax';
 
  	}
 

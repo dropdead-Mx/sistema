@@ -5,7 +5,9 @@ class User extends AppModel {
 
 public $belongsTo=array(
 	'Group'=>array(
-		'className'=>'Group')
+		'className'=>'Group'),
+	'Goal'=>array(
+		'className'=>'Goal')
 	
 	);
 public $hasOne= array(
@@ -19,10 +21,10 @@ public $hasOne= array(
 
 	);
 
-public $hasMany=array(
-	'Goal'=>array(
-		'className'=>'Goal')
-	);
+// public $hasMany=array(
+// 	'Goal'=>array(
+// 		'className'=>'Goal')
+// 	);
 
 
 	public $virtualFields=array(
