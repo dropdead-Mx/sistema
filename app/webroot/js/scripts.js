@@ -166,10 +166,51 @@ function materiasXmaestro(){
 		});
 }
 
+function incGoal() {
+	var z=1;
+	$('button#aumenta').on('click',function() {
+		var totalF=$("#criterios #tb tr.contenido").length;
+		if(totalF >=5){
+			alert('no se permite agregar mas campos');
+		}else {
+
+		var fila=$("#criterios #tb tr.contenido:last").clone(true);
+		$("#criterios #tb").append(fila);
+		
+		$("#criterios #tb tr.contenido:last").find('select').each(function(){
+	    	$(this).attr("name",$(this).attr("name").replace(/(\d+)/,''+z));
+	    	$(this).attr("id",$(this).attr("id").replace(/(\d+)/,''+z));
+	 });
+
+	   $("#criterios #tb tr.contenido:last div.input").children('input').each(function(){
+
+	    	$(this).attr("name",$(this).attr("name").replace(/(\d+)/,''+z));
+	    	$(this).attr("id",$(this).attr("id").replace(/(\d+)/,''+z));
+
+	    });
+		z++;
+	}
+});
+
+
+	$('#tb tr.contenido input.elimina').on('click',function(){
+		var totalF=$("#criterios #tb tr.contenido").length;
+		
+		if(totalF <=1){
+			console.log('no se puede eliminar');
+		}else {
+			$(this).parent('td').parent('tr').remove();
+		}
+	} );
+
+
+}
 $(function(){
 	clona();
 	elimina();
 	gruposXcarrera();
 	getSemester();
 	materiasXmaestro();
+	incGoal();
 });
+
