@@ -19,25 +19,17 @@
 </tr>
 
 
-<?php
- $z=0;
 
-for( $x=0; $x <=$z ;$x++) {
-// echo $x;
-?>
 		<tr class="contenido">
-		<td><?php echo $this->Form->input('Goal.'.$x.'.user_id',array('label'=>false,'class'=>'user_id',
+		<td><?php echo $this->Form->input('Goal.0.user_id',array('label'=>false,'class'=>'user_id',
 		'empty'=>'--Seleccione un profesor--')); ?></td>
 		<td><?php 	echo $this->Form->input('Goal.0.course_id',
 		array('empty'=>'--Seleccione una materia--',
 			'class'=>'course_id',
 			'label'=>false)); ?></td>
-		<td><?php echo $this->Form->input('Goal.'.$x.'.description',array('label'=>false)); ?></td>
+		<td><?php echo $this->Form->input('Goal.0.description',array('label'=>false)); ?></td>
 		
-
-
-	
-		<td><?php echo $this->Form->input('Goal.'.$x.'.parcial',array('label'=>false,
+		<td><?php echo $this->Form->input('Goal.0.parcial',array('label'=>false,
 		'type'=>'select',
 		'empty'=>'--Selecciona el periodo--',
 		'options'=>array(
@@ -45,11 +37,10 @@ for( $x=0; $x <=$z ;$x++) {
 		'2'=>'2do Parcial',
 		'3'=>'3er Parcial',
 		'4'=>'Cuatrimestral'))); ?></td>
-		<td><?php echo $this->Form->input('Goal.'.$x.'.percentage',array('label'=>false)); ?></td>
+		<td><?php echo $this->Form->input('Goal.0.percentage',array('label'=>false)); ?></td>
 		<td> <input type="button" class="elimina" value="Eliminar"> </td>
 	</tr>
-<?php 	
-}?>
+
 
 
 	</tbody>

@@ -143,7 +143,7 @@ function getSemester() {
 }
 
 function materiasXmaestro(){
-			$('#user_id').on('change', function(){
+			$('.user_id').on('change', function(){
 			$.ajax({
 			  type: "GET",
 			  url: '../courses/getCoursesByUserId/' + $(this).val(),
@@ -155,9 +155,9 @@ function materiasXmaestro(){
 			  		for(var i=0, numOptions = response.length; i<numOptions;  i++){
 						items.push('<option value="'+response[i].Course.id+'">'+response[i].Course.name+'</option>');
 			  		}
-			  		$('#course_id').html(items.join(''));
+			  		$('.course_id').html(items.join(''));
 			  	} else {
-			  		$('#course_id').html('');
+			  		$('.course_id').html('');
 			  	}
 			  	console.log(response);
 			  }

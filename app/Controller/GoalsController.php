@@ -13,7 +13,7 @@ public function index() {
 
 public function add() {
 	if ($this->request->is('post')):
-		if($this->Goal->save($this->request->data)):
+		if($this->Goal->saveAll($this->request->data['Goal'])):
 			$this->Session->setFlash('Criterio Guardado con exito!!');
 			$this->redirect(array('action'=>'index'));
 		endif;
