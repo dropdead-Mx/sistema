@@ -3,12 +3,13 @@
 <!-- meter en una tabla  -->
 <!-- Cuando se agregue el login se remueve la columna usuario y se deja como variable default -->
 <?php 
-	echo $this->Form->create('Goal');
+	echo $this->Form->create('Goal',array('id'=>"GoalForm"));
 ?>
 
 
 <table id="criterios">
 	<tbody id="tb">
+
 <tr>
 	<th>Maestro</th>
 	<th>Materia</th>
@@ -27,9 +28,9 @@
 		array('empty'=>'--Seleccione una materia--',
 			'class'=>'course_id',
 			'label'=>false)); ?></td>
-		<td><?php echo $this->Form->input('Goal.0.description',array('label'=>false)); ?></td>
+		<td><?php echo $this->Form->input('Goal.0.description',array('label'=>false,'class'=>'required')); ?></td>
 		
-		<td><?php echo $this->Form->input('Goal.0.parcial',array('label'=>false,
+		<td><?php echo $this->Form->input('Goal.0.parcial',array('label'=>false,'class'=>'required',
 		'type'=>'select',
 		'empty'=>'--Selecciona el periodo--',
 		'options'=>array(
@@ -37,7 +38,7 @@
 		'2'=>'2do Parcial',
 		'3'=>'3er Parcial',
 		'4'=>'Cuatrimestral'))); ?></td>
-		<td><?php echo $this->Form->input('Goal.0.percentage',array('label'=>false)); ?></td>
+		<td><?php echo $this->Form->input('Goal.0.percentage',array('label'=>false,'id'=>'por','class'=>'required number')); ?></td>
 		<td> <input type="button" class="elimina" value="Eliminar"> </td>
 	</tr>
 
@@ -51,10 +52,11 @@
 <?php echo $this->Form->end('Guardar');?>
 
 
-<?php  echo $this->Html->script('scripts');?>
+<?php  echo $this->Html->script(array('scripts','jquery.validate.min','additional-methods.min','messages_es.min')); ?>
+
+<?php echo $this->Html->scriptBlock('$("#GoalForm").validate({focusInvalid: false,onkeyup:true });', array('inline'=>true));?>
+
+
 
 <button id="aumenta">+</button>
 
-<script>
-	
-</script>

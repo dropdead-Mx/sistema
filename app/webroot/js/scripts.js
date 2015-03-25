@@ -165,16 +165,46 @@ function materiasXmaestro(){
 
 		});
 }
+//agregar fucion onclic y detro poner each para hacer la suma
+// function sumaPorcentaje(){
+
+// $('input.num:last').on('click',function(){
+// 	var total=$("#criterios #tb tr.contenido").length;
+//  console.log(total);
+
+// 		w=0;
+// 	for(x=1; x <= total ; x++){
+
+// 		var z =parseFloat($("div.input.number").children('input.num').eq(x).val());
+// 		console.log(z);
+// 		// if($.type(z) === 'undefined'){
+
+// 		// 	console.log('no tiene numero');
+// 		// }else {
+// 		// 	w=w+parseFloat(z);
+// 		// 	console.log(w);
+// 		// }
+// 	}
+
+//  });
+
+
+// }
 
 function incGoal() {
 	var z=1;
+
 	$('button#aumenta').on('click',function() {
+
 		var totalF=$("#criterios #tb tr.contenido").length;
 		if(totalF >=5){
 			alert('no se permite agregar mas campos');
 		}else {
 
 		var fila=$("#criterios #tb tr.contenido:last").clone(true);
+		fila.find('input:text').val('');
+		fila.find('input[type="number"]').val('');
+
 		$("#criterios #tb").append(fila);
 		
 		$("#criterios #tb tr.contenido:last").find('select').each(function(){
@@ -193,18 +223,30 @@ function incGoal() {
 });
 
 
-	$('#tb tr.contenido input.elimina').on('click',function(){
-		var totalF=$("#criterios #tb tr.contenido").length;
+	// $('#tb tr.contenido input.elimina').on('click',function(){
+	// 	var totalF=$("#criterios #tb tr.contenido").length;
 		
-		if(totalF <=1){
-			console.log('no se puede eliminar');
-		}else {
-			$(this).parent('td').parent('tr').remove();
-		}
-	} );
+	// 	if(totalF <=1){
+	// 		console.log('no se puede eliminar');
+	// 	}else if(totalF >= 2){
+	// 		$(this).parent('td').parent('tr').remove();
+	// 	}
+	// } );
 
+	 	$('#tb tr.contenido input.elimina').on('click',function(){
+	 var totalF=$("#criterios #tb tr.contenido").length;
+	 	console.log(totalF);
+	 	if(totalF <=1){
+			console.log('no se puede eliminar');
+		}else if(totalF >= 2){
+			// $(this).parent('td').parent('tr').remove();
+			$('tr.contenido:last').remove();
+
+		}
+	 	});
 
 }
+
 $(function(){
 	clona();
 	elimina();
@@ -212,5 +254,9 @@ $(function(){
 	getSemester();
 	materiasXmaestro();
 	incGoal();
+	// sumaPorcentaje();
+
+
+
 });
 

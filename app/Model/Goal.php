@@ -23,8 +23,8 @@ class Goal extends AppModel {
 
 
 
-
 }
+
 
 
  ?>

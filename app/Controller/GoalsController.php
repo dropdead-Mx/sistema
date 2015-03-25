@@ -12,11 +12,17 @@ public function index() {
 }
 
 public function add() {
+
 	if ($this->request->is('post')):
+		$this->Goal->create();
+
 		if($this->Goal->saveAll($this->request->data['Goal'])):
+			
+			// debug($this->request->data);
 			$this->Session->setFlash('Criterio Guardado con exito!!');
 			$this->redirect(array('action'=>'index'));
 		endif;
+
 	endif;
 
 
@@ -26,7 +32,7 @@ public function add() {
 	$this->set(compact('users','grupos'));
 }
 	
-}
 
+}
 
 ?>
