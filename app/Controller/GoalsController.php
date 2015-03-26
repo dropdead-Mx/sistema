@@ -20,7 +20,7 @@ public function add() {
 			
 			// debug($this->request->data);
 			$this->Session->setFlash('Criterio Guardado con exito!!');
-			$this->redirect(array('action'=>'index'));
+			// $this->redirect(array('action'=>'index'));
 		endif;
 
 	endif;

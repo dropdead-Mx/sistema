@@ -1,4 +1,5 @@
-
+	var valores=[];
+	var porcentajeFinal=0;
 	function modificaIDSC() {
 
 			$("#myTbody > tr.campoModulo").each(
@@ -207,6 +208,7 @@ function incGoal() {
 
 		$("#criterios #tb").append(fila);
 		
+		
 		$("#criterios #tb tr.contenido:last").find('select').each(function(){
 	    	$(this).attr("name",$(this).attr("name").replace(/(\d+)/,''+z));
 	    	$(this).attr("id",$(this).attr("id").replace(/(\d+)/,''+z));
@@ -223,16 +225,6 @@ function incGoal() {
 });
 
 
-	// $('#tb tr.contenido input.elimina').on('click',function(){
-	// 	var totalF=$("#criterios #tb tr.contenido").length;
-		
-	// 	if(totalF <=1){
-	// 		console.log('no se puede eliminar');
-	// 	}else if(totalF >= 2){
-	// 		$(this).parent('td').parent('tr').remove();
-	// 	}
-	// } );
-
 	 	$('#tb tr.contenido input.elimina').on('click',function(){
 	 var totalF=$("#criterios #tb tr.contenido").length;
 	 	console.log(totalF);
@@ -246,6 +238,20 @@ function incGoal() {
 	 	});
 
 }
+function checkPorcentaje(){
+		valores.length=0;
+		porcentajeFinal=0;
+		$('input.required.number').each(function(){
+		var tp = parseFloat($(this).val());
+		valores.push(tp);	
+	});
+	for(x=0; x <= valores.length-1; x++ ){
+		porcentajeFinal=porcentajeFinal+valores[x];
+
+	}
+	return porcentajeFinal;
+}
+
 
 $(function(){
 	clona();
@@ -254,8 +260,19 @@ $(function(){
 	getSemester();
 	materiasXmaestro();
 	incGoal();
+	// checkPorcentaje();
 	// sumaPorcentaje();
-
+	$("#GoalForm").on('submit',function(){
+		checkPorcentaje();
+		
+		if(porcentajeFinal===100){
+			return true;
+		}else  {
+			
+			alert('tus porcentajes son erroneos deben ser = a 100');
+			return false;
+		}
+	});
 
 
 });

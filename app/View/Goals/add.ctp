@@ -42,8 +42,6 @@
 		<td> <input type="button" class="elimina" value="Eliminar"> </td>
 	</tr>
 
-
-
 	</tbody>
 </table>
 
@@ -54,9 +52,11 @@
 
 <?php  echo $this->Html->script(array('scripts','jquery.validate.min','additional-methods.min','messages_es.min')); ?>
 
-<?php echo $this->Html->scriptBlock('$("#GoalForm").validate({focusInvalid: false,onkeyup:true });', array('inline'=>true));?>
+<?php echo $this->Html->scriptBlock('$("#GoalForm").validate({focusInvalid: false });', array('inline'=>true));?>
 
 
 
 <button id="aumenta">+</button>
+<button id="ver">??</button>
+
 
