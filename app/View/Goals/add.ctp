@@ -1,4 +1,4 @@
-<h3>Agregar Criterios de evaluación</h3>
+<h3>Agregar Criterios de evaluación para la materia: <?php echo implode($materia) ?></h3>
 
 <!-- meter en una tabla  -->
 <!-- Cuando se agregue el login se remueve la columna usuario y se deja como variable default -->
@@ -19,8 +19,7 @@
 	<tbody id="tb">
 
 <tr>
-	<!-- <th>Maestro</th> -->
-	<!-- <th>Materia</th> -->
+
 	<th>Descripcion</th>
 	<th>Parcial</th>
 	<th>Porcentaje</th>
@@ -60,6 +59,6 @@
 
 
 <button id="aumenta">+</button>
-<button id="ver">??</button>
+
 
 

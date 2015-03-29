@@ -26,16 +26,16 @@ public function add($user_id=null,$course_id=null) {
 			
 			// debug($this->request->data);
 			$this->Session->setFlash('Criterio Guardado con exito!!');
-			// $this->redirect(array('action'=>'index'));
+			$this->redirect(array('controller'=>'users','action'=>'viewmycourses',$user_id));
 		endif;
 
 	endif;
 
 
-	// $users=$this->User->find('list',array('conditions'=>array('User.group_id'=>7)));
+	$materia=$this->Course->find('list',array('conditions'=>array('Course.id'=>$course_id)));
 	// $grupos=$this->Grupo->find('list');
 
-	$this->set(compact('user_id','course_id'));
+	$this->set(compact('user_id','course_id','materia'));
 }
 	
 
