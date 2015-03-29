@@ -5,14 +5,22 @@
 <?php 
 	echo $this->Form->create('Goal',array('id'=>"GoalForm"));
 ?>
+<div class='inputsEscondidos'>
+		<?php echo $this->Form->hidden('Goal.0.user_id',array('label'=>false,'value'=>$user_id,'class'=>'escondido1')); ?>
+		<?php 	echo $this->Form->hidden('Goal.0.course_id',
+		array('value'=>$course_id,
+			'class'=>'escondido2',
+			'label'=>false,
+			'type'=>'text')); ?>
+		</div>
 
 
 <table id="criterios">
 	<tbody id="tb">
 
 <tr>
-	<th>Maestro</th>
-	<th>Materia</th>
+	<!-- <th>Maestro</th> -->
+	<!-- <th>Materia</th> -->
 	<th>Descripcion</th>
 	<th>Parcial</th>
 	<th>Porcentaje</th>
@@ -22,12 +30,7 @@
 
 
 		<tr class="contenido">
-		<td><?php echo $this->Form->input('Goal.0.user_id',array('label'=>false,'class'=>'user_id',
-		'empty'=>'--Seleccione un profesor--')); ?></td>
-		<td><?php 	echo $this->Form->input('Goal.0.course_id',
-		array('empty'=>'--Seleccione una materia--',
-			'class'=>'course_id',
-			'label'=>false)); ?></td>
+
 		<td><?php echo $this->Form->input('Goal.0.description',array('label'=>false,'class'=>'required')); ?></td>
 		
 		<td><?php echo $this->Form->input('Goal.0.parcial',array('label'=>false,'class'=>'required',

@@ -17,8 +17,8 @@ class Course extends AppModel {
 			);
 	
 	public $hasMany= array(
-		// 'Goal'=>array(
-		// 	'className'=>'Goal'),
+		'Goal'=>array(
+			'className'=>'Goal'),
 		'CourseModule'=>array(
 			'className'=>'CourseModule')
 		);

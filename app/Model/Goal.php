@@ -11,15 +11,15 @@ class Goal extends AppModel {
 	// 	'Grupo'=>array('className'=>'Grupo'),
 	// 	'User'=>array('className'=>'User',
 	// 		'conditions'=>array('User.group_id'=>'7')));
-
-	public $hasOne =array(
-		'Course'=>array(
-			'className'=>'Course'),
-		'Grupo'=>array(
-			'className'=>'Grupo'),
-		'User'=>array(
-			'className'=>'User',
-			'conditions'=>array('User.group_id'=>'7')));
+	public $belongsTo='Course';
+	// public $hasOne =array(
+	// 	// 'Course'=>array(
+	// 	// 	'className'=>'Course'),
+	// 	'Grupo'=>array(
+	// 		'className'=>'Grupo'),
+	// 	'User'=>array(
+	// 		'className'=>'User',
+	// 		'conditions'=>array('User.group_id'=>'7')));
 
 
 

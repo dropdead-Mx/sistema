@@ -4,7 +4,7 @@ class CoursesController extends AppController {
 
 	public $helpers=array('Form','Html','Js');
 	public $components=array('Session','RequestHandler');
-	public $uses=array('Course','CourseModule','User');
+	public $uses=array('Course','CourseModule','User','Goal');
 
 
 
@@ -102,6 +102,25 @@ class CoursesController extends AppController {
  		}
 
  	}
+
+ 	public function tienecrit($course_id){
+ 		$this->Course->Goal->course_id=$course_id;
+ 		$existe=$this->Course->Goal->find('count',array('conditions'=>array('Goal.course_id'=>$course_id)));
+ 		$tiene='';
+ 		// $this->set('existe',$existe);
+ 	
+ 		if($existe > 0 ){
+ 			// $tiene='Criterios de evaluacion registrados';
+ 			// echo '<span>'.$tiene.'</span>';
+ 			echo 'si';
+
+ 		}else {
+ 			
+ 			echo 'no';
+
+ 		}
+ 	}
+
 
  	function getCoursesByUserId($user_id) {
  		// $this->User->id=$id;

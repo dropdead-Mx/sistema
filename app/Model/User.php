@@ -21,10 +21,10 @@ public $hasOne= array(
 
 	);
 
-// public $hasMany=array(
-// 	'Goal'=>array(
-// 		'className'=>'Goal')
-// 	);
+public $hasMany=array(
+	'Course'=>array(
+		'className'=>'Course')
+	);
 
 
 	public $virtualFields=array(

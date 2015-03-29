@@ -4,7 +4,7 @@ class UsersController extends AppController {
 
 public $helpers=array('Html','Form','Js');
 public $components=array('Session');
-var $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group');
+var $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group','Course');
 
 
 public function index() {
@@ -87,13 +87,8 @@ public function editTeacher($id= null){
 
 			$this->User->id=$id;
 
-
-
 	if($this->request->is('get')):
 		$this->request->data=$this->User->read();
-
-
-
 
 	else:
 		if($this->User->saveAssociated($this->request->data)):
@@ -120,6 +115,12 @@ public function deleteTeacher($id){
 public function indexTeacher() {
 	$this->set('maestros',$this->User->EmployeeProfile->find('all',array('conditions'=>array('User.group_id'=>'7'))));
 
+}
+
+public function viewmycourses($id){
+$this->User->id=$id;
+$courses=$this->User->Course->find('all',array('conditions'=>array('Course.user_id'=>$id)));
+$this->set('courses',$courses);
 }
 
 

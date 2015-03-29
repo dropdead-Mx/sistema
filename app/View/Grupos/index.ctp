@@ -14,7 +14,7 @@
 
 	<tr>
 		<td><?php echo $grupo['Grupo']['id']?></td>
-		<td><?php echo $grupo['Grupo']['period'].' '.$grupo['Grupo']['name']?></td>
+		<td><?php echo $grupo['Grupo']['name']?></td>
 		<td><?php echo $grupo['Grupo']['period']?></td>
 		<td><?php echo $grupo['Career']['abrev']?></td>
 		<td>

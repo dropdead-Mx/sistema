@@ -7,6 +7,7 @@ class GruposController extends AppController {
 	public $uses=array('Grupo','Career');
 
 
+
 public function index() {
 
 	$this->set('grupos',$this->Grupo->find('all'));
@@ -29,6 +30,7 @@ public function add() {
 public function edit($id=null){
 	$this->Grupo->id=$id;
 
+	$this->Grupo->virtualFields['name']='Grupo.name';
 	if($this->request->is('get')):
 		$this->request->data=$this->Grupo->read();
 	else:

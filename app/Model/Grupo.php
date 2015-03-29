@@ -2,8 +2,8 @@
 
 class Grupo extends AppModel {
 
-	// public $virtualFields= array(
-		// 'name'=> 'CONCAT(Grupo.period," ",Grupo.name)');
+	public $virtualFields= array(
+		'name'=> 'CONCAT(Grupo.period," ",Grupo.name)');
 	public $displayField='name';
 
 	public $belongsTo=array(

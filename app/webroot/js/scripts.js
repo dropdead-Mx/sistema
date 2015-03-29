@@ -202,6 +202,15 @@ function incGoal() {
 			alert('no se permite agregar mas campos');
 		}else {
 
+		var inputsH=$('#GoalForm input[type="hidden"].escondido1:last,#GoalForm input[type="hidden"].escondido2:last').clone(true);
+		// alert(inputsH);
+		inputsH.each(function(){
+			$(this).attr("name",$(this).attr("name").replace(/(\d+)/,''+z));
+	    	$(this).attr("id",$(this).attr("id").replace(/(\d+)/,''+z));
+		});
+
+		$('#GoalForm div.inputsEscondidos').append(inputsH);
+
 		var fila=$("#criterios #tb tr.contenido:last").clone(true);
 		fila.find('input:text').val('');
 		fila.find('input[type="number"]').val('');
