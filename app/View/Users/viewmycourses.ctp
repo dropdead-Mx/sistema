@@ -7,6 +7,7 @@
 		<th>Cuatrimestre</th>
 		<th>Carrera</th>
 		<th>Criterios de evaluacion</th>
+		<th>Evaluar</th>
 	
 	</tr>
 
@@ -33,6 +34,7 @@
 
 			 ?>
 			</td>
+			<td><?php echo $this->Form->postlink('Evaluar',array('controller'=>'users','action'=>'calificar',$course['Course']['id'],$course['Course']['semester'],$course['Career']['id']));?></td>
 		</tr>
 	<?php endforeach;?>
 </table>

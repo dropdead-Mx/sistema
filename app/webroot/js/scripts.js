@@ -99,7 +99,7 @@ function gruposXcarrera() {
 		if(ubicacion == '/sistema/users/'){
 			link='../careers/getGroupsByCareerId/';
 		}else{
-			link='../../careers/getGroupsByCareerId/'
+			link='../careers/getGroupsByCareerId/'
 		}
 
 		$('#career_id').on('change', function(){
@@ -111,6 +111,7 @@ function gruposXcarrera() {
 			  	console.info(response.length );
 			  	if(typeof response !==  'undefined' && response.length > 0) {
 			  		var items = [];
+			  		items.push('<option value="">Grupos disponibles </option>');
 			  		for(var i=0, numOptions = response.length; i<numOptions;  i++){
 						items.push('<option value="'+response[i].Grupo.id+'">'+response[i].Grupo.name+'</option>');
 			  		}
@@ -126,8 +127,9 @@ function gruposXcarrera() {
 }
 
 function getSemester() {
-	$('#grupo_id').on('click',function(){
+	$('#grupo_id').on('change',function(){
 		var semestre = $('#grupo_id option:selected').text().substr(0,1);
+		console.log('elsemestre es'+semestre);
 		var existe =$('input#StudentProfileSemester').length;
 		var inputS='<input type="hidden" name="data[StudentProfile][semester]" label="cuatrimestre" id="StudentProfileSemester" value="'+semestre+'"  >';
 		if (existe > 0 ){

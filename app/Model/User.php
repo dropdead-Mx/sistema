@@ -16,6 +16,9 @@ public $hasOne= array(
 		'dependent'=> true),
 	'EmployeeProfile'=>array(
 		'className'=>'EmployeeProfile',
+		'dependent'=>true),
+	'Obtainedgoal'=>array(
+		'className'=>'Obtainedgoal',
 		'dependent'=>true)
 
 

@@ -4,7 +4,7 @@ class UsersController extends AppController {
 
 public $helpers=array('Html','Form','Js');
 public $components=array('Session');
-var $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group','Course');
+var $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group','Course','Goal','Obtainedgoal');
 
 
 public function index() {
@@ -121,6 +121,30 @@ public function viewmycourses($id){
 $this->User->id=$id;
 $courses=$this->User->Course->find('all',array('conditions'=>array('Course.user_id'=>$id)));
 $this->set('courses',$courses);
+}
+
+public function calificar($course_id=null , $semester=null, $career_id=null){
+
+	$this->Course->id=$course_id;
+	$this->Course->semester=$semester;
+	$this->Career->id=$career_id;
+
+	if($this->request->is('post')):
+		if($this->User->Obtainedgoal->saveAll($this->request->data['Obtainedgoal'])):
+			$this->Session->setFlash('Calificaciones Asignadas correctamente');
+			$this->redirect(array('controller'=>'users','action'=>'index'));
+			endif;
+		endif;
+
+	$estudiantes=$this->User->StudentProfile->find('all',array('conditions'=>array('StudentProfile.career_id'=>$career_id,
+		'StudentProfile.semester '=>$semester)
+		));
+	// Agregar funcion ajax para criterios de evaluacion por parcial
+	$critdevaluacion=$this->Goal->find('all',array('conditions'=>array(
+		'Goal.course_id'=>$course_id)));
+
+	$this->set(compact('estudiantes','critdevaluacion','course_id'));
+
 }
 
 

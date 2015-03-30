@@ -54,5 +54,5 @@
 
 </table>
 <?php echo $this->Html->script('scripts');?>
-<?php echo $this->Form->end('guardar');
+<?php echo $this->Form->end('guardar');?>
 
