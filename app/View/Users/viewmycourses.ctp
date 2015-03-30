@@ -34,7 +34,7 @@
 
 			 ?>
 			</td>
-			<td><?php echo $this->Form->postlink('Evaluar',array('controller'=>'users','action'=>'calificar',$course['Course']['id'],$course['Course']['semester'],$course['Career']['id']));?></td>
+			<td><?php echo $this->Html->link('Evaluar',array('controller'=>'users','action'=>'calificar',$course['Course']['id'],$course['Course']['semester'],$course['Career']['id']));?></td>
 		</tr>
 	<?php endforeach;?>
 </table>

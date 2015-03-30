@@ -123,7 +123,7 @@ $courses=$this->User->Course->find('all',array('conditions'=>array('Course.user_
 $this->set('courses',$courses);
 }
 
-public function calificar($course_id=null , $semester=null, $career_id=null){
+public function calificar($course_id=null,$semester=null,$career_id=null){
 
 	$this->Course->id=$course_id;
 	$this->Course->semester=$semester;
@@ -143,7 +143,7 @@ public function calificar($course_id=null , $semester=null, $career_id=null){
 	$critdevaluacion=$this->Goal->find('all',array('conditions'=>array(
 		'Goal.course_id'=>$course_id)));
 
-	$this->set(compact('estudiantes','critdevaluacion','course_id'));
+	$this->set(compact('estudiantes','critdevaluacion'));
 
 }
 

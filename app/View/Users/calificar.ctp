@@ -1,42 +1,50 @@
 <h3>Evaluacion para la materia :</h3>
 
-<?php echo $this->Form->create('User',array('action'=>'calificar'));?>
+<?php echo $this->Form->create('User',array('action'=>'calificar','id'=>'calificacionesPar'));?>
+
+
 <table>
+<?php foreach($estudiantes as $k => $estudiante): ?>
+	<?php $student=$estudiante['User']['id']; ?>
 	<tr>
-	<th>Alumno</th>
-	</tr>
+
+	<th>
+	<?php echo $estudiante['User']['name']?>
+	</th>
 
 
-	<?php foreach($estudiantes as $k => $estudiante): ?>
-		<tr>
-			<td>
-			<?php 
+	<?php foreach($critdevaluacion as $X => $crtev):?>
 
-			$student=$estudiante['User']['id'];
-			
-			echo $estudiante['User']['name'].'<br>'?>
-
-			&nbsp
-
-			<?php foreach($critdevaluacion as $X => $crtev):?>
-
-				<?php 
-				$criterio=$crtev['Goal']['description'];
-				$id=$crtev['Goal']['id'];
-
-
-				 
-				
-				echo $this->Form->hidden('Obtainedgoal.'.$k.'.goal_id',array('label'=>false,'value'=>$id));
-				echo $this->Form->hidden('Obtainedgoal.'.$k.'.user_id',array('label'=>false,'value'=>$student));
-				echo $this->Form->input('Obtainedgoal.'.$k.'.percentage_obtained',array('label'=>false));?>
-
-
-			<?php endforeach;?>
-			</td>
-		</tr>
+	<th>
+	<?php echo $crtev['Goal']['description'] ?>
+	</th>
 
 	<?php endforeach;?>
+</tr>
+
+<tr>
+	<td>1er Parcial</td>
+	<?php foreach($critdevaluacion as $X => $crtev):?>
+	<td>
+		<?php 
+
+			$id=$crtev['Goal']['id'];
+
+			echo $this->Form->hidden('Obtainedgoal.'.($k.$X).'.goal_id',array('label'=>false,'value'=>$id,'class'=>'calf'));
+			echo $this->Form->hidden('Obtainedgoal.'.($k.$X).'.user_id',array('label'=>false,'value'=>$student,'class'=>'calf'));
+			echo $this->Form->input('Obtainedgoal.'.($k.$X).'.percentage_obtained',array('label'=>false,'class'=>'calf'));
+		?>
+	</td>
+	<?php endforeach;?>
+</tr>
+
+<?php endforeach;?>
+
+
 
 </table>
+
+
 <?php echo $this->Form->end('Guardar Calificaciones'); ?>
+<?php echo $this->Html->script('scripts');?>
+<button class="xdd">XDDD</button>

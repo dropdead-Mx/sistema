@@ -263,6 +263,17 @@ function checkPorcentaje(){
 	return porcentajeFinal;
 }
 
+// function changecounter(){
+// 	$('button.xdd').on('click',function(){
+		
+
+
+// 	});
+
+	
+
+// }
+
 
 $(function(){
 	clona();
@@ -271,6 +282,7 @@ $(function(){
 	getSemester();
 	materiasXmaestro();
 	incGoal();
+	// changecounter();
 	// checkPorcentaje();
 	// sumaPorcentaje();
 	$("#GoalForm").on('submit',function(){
