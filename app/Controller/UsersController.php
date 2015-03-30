@@ -123,11 +123,12 @@ $courses=$this->User->Course->find('all',array('conditions'=>array('Course.user_
 $this->set('courses',$courses);
 }
 
-public function calificar($course_id=null,$semester=null,$career_id=null){
+public function calificar($course_id=null,$semester=null,$career_id=null,$parcial){
 
 	$this->Course->id=$course_id;
 	$this->Course->semester=$semester;
 	$this->Career->id=$career_id;
+	$partial=$parcial;
 
 	if($this->request->is('post')):
 		if($this->User->Obtainedgoal->saveAll($this->request->data['Obtainedgoal'])):
@@ -141,9 +142,10 @@ public function calificar($course_id=null,$semester=null,$career_id=null){
 		));
 	// Agregar funcion ajax para criterios de evaluacion por parcial
 	$critdevaluacion=$this->Goal->find('all',array('conditions'=>array(
-		'Goal.course_id'=>$course_id)));
+		'Goal.course_id'=>$course_id,'Goal.parcial'=>$partial)));
+	$materia = $this->Course->find('list',array('conditions'=>array('Course.id'=>$course_id)));
 
-	$this->set(compact('estudiantes','critdevaluacion'));
+	$this->set(compact('estudiantes','critdevaluacion','materia','partial'));
 
 }
 

@@ -1,4 +1,6 @@
-<h3>Evaluacion para la materia :</h3>
+<h3>Evaluacion para la materia : <?php echo implode($materia);?></h3>
+
+
 
 <?php echo $this->Form->create('User',array('action'=>'calificar','id'=>'calificacionesPar'));?>
 
@@ -9,7 +11,7 @@
 	<tr>
 
 	<th>
-	<?php echo $estudiante['User']['name']?>
+	<?php echo $estudiante['User']['name'];?>
 	</th>
 
 

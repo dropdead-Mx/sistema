@@ -105,20 +105,22 @@ class CoursesController extends AppController {
 
  	public function tienecrit($course_id){
  		$this->Course->Goal->course_id=$course_id;
- 		$existe=$this->Course->Goal->find('count',array('conditions'=>array('Goal.course_id'=>$course_id)));
+ 		$itera=3;
  		$tiene='';
- 		// $this->set('existe',$existe);
- 	
- 		if($existe > 0 ){
- 			// $tiene='Criterios de evaluacion registrados';
- 			// echo '<span>'.$tiene.'</span>';
- 			echo 'si';
 
+ 		for ($x=1;$x<=$itera;$x++){
+ 		$existe=$this->Course->Goal->find('count',array('conditions'=>array('Goal.course_id'=>$course_id,'Goal.parcial'=>$x)));
+ 		
+ 		if($existe > 0){
+ 			echo '1';
  		}else {
- 			
- 			echo 'no';
+ 			echo '0';
+ 		}
 
  		}
+ 		// $this->set('existe',$existe);
+ 	
+
  	}
 
 

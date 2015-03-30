@@ -1,5 +1,5 @@
 
-<h3>Agregar modulos por semana para la materia:  <?php echo implode($courses) ?></h3>
+<h3>Agregar modulos por semana para la materia:  <?php echo implode($courses); ?> </h3>
 
 
 
