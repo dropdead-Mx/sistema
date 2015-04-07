@@ -54,7 +54,7 @@
 
 
 
-				<?php echo $this->Html->link('Asignar fechas',array('action'=>'add',$careers[$x],1));
+				<?php echo $this->Html->link('Asignar fechas',array('action'=>'add',$careers[$x],1,$id));
 				?>
 
 			</td>

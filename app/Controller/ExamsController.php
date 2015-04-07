@@ -9,26 +9,27 @@ class ExamsController extends AppController {
 
 
 	public function index($id=null){
-
+	$this->User->id=$id;
 	$careers = $this->Usrcareer->find('list',array('conditions'=>array('Usrcareer.user_id'=>$id),'fields'=>'career_id'));
 	$careers2=$this->Career->find('list',array('conditions'=>array('Career.id'=>$careers)));
-	$this->set(compact('careers','careers2'));
+	$this->set(compact('careers','careers2','id'));
 
 
 
 
 	}
 
-	public function add($career=null,$cuatri=null){
+	public function add($career=null,$cuatri=null,$id=null){
 		$this->Career->career_id=$career;
 		$this->Career->semester=$cuatri;
-
+		$this->User->id=$id;
+		debug($id);
 		if($this->request->is('post')):
 
 				// debug($this->request->data);
 			if($this->Exam->saveAll($this->request->data['Exam'] )):
 				// $this->Session->setFlash('Fechas de examenes asignadas');
-				$this->redirect(array('action'=>'index'));
+				$this->redirect(array('action'=>'index',$id));
 			endif;
 		endif;
 
