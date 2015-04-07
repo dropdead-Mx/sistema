@@ -4,7 +4,7 @@ class UsersController extends AppController {
 
 public $helpers=array('Html','Form','Js');
 public $components=array('Session');
-var $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group','Course','Goal','Obtainedgoal');
+var $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group','Course','Goal','Obtainedgoal','Usrcareer');
 
 
 public function index() {
@@ -128,12 +128,12 @@ public function calificar($course_id=null,$semester=null,$career_id=null,$parcia
 	$this->Course->id=$course_id;
 	$this->Course->semester=$semester;
 	$this->Career->id=$career_id;
-	$partial=$parcial;
+
 
 	if($this->request->is('post')):
 		if($this->User->Obtainedgoal->saveAll($this->request->data['Obtainedgoal'])):
 			$this->Session->setFlash('Calificaciones Asignadas correctamente');
-			$this->redirect(array('controller'=>'users','action'=>'index'));
+			$this->redirect(array('action'=>'index'));
 			endif;
 		endif;
 
@@ -142,10 +142,62 @@ public function calificar($course_id=null,$semester=null,$career_id=null,$parcia
 		));
 	// Agregar funcion ajax para criterios de evaluacion por parcial
 	$critdevaluacion=$this->Goal->find('all',array('conditions'=>array(
-		'Goal.course_id'=>$course_id,'Goal.parcial'=>$partial)));
+		'Goal.course_id'=>$course_id,'Goal.parcial'=>$parcial)));
 	$materia = $this->Course->find('list',array('conditions'=>array('Course.id'=>$course_id)));
 
 	$this->set(compact('estudiantes','critdevaluacion','materia','partial'));
+
+}
+
+
+
+public function addcoordi(){
+	// $this->Career->virtualFields['name']='Career.name';
+	if($this->request->is('post')):
+		$this->User->create();
+		if($this->User->saveAssociated($this->request->data)):
+			$this->Session->setFlash('Coordinador registrado con exito');
+			$this->redirect(array('action'=>'index'));
+			
+		endif;
+	endif;
+
+
+}
+
+public function indexcoordinator(){
+	$coordinators = $this->User->find('all',array('conditions'=>array('User.group_id'=>6)));
+	$this->set('coordinators',$coordinators);
+
+}
+
+public function assigncareers($id=null){
+	$this->User->id= $id;
+
+	if($this->request->is('post')):
+
+		$count= sizeof($this->request->data['Usrcareer']);
+
+		//for para guardar unicamente los seleccionados
+		for($x=1; $x <= $count; $x++){
+
+			if(sizeof($this->request->data['Usrcareer'][$x])== 2){
+
+				$this->Usrcareer->saveAll($this->request->data['Usrcareer'][$x]);
+			
+			
+
+			}
+		}
+		// if($this->Usrcareer->saveAll($this->request->data['Usrcareer'])):
+		// 	$this->Session->setFlash('Carreras a coordinar asignadas');
+		// endif;
+	endif;
+
+	$careers=$this->Career->find('list');
+	$teacher=$this->User->find('list',array('conditions'=>array('User.id'=>$id)));
+
+	$this->set(compact('id','careers','teacher'));
 
 }
 

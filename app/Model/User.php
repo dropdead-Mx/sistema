@@ -6,8 +6,10 @@ class User extends AppModel {
 public $belongsTo=array(
 	'Group'=>array(
 		'className'=>'Group'),
-	'Goal'=>array(
-		'className'=>'Goal')
+	// 'Usrcareer'=>array(
+	// 	'className'=>'Usrcareer'),
+	// 'Goal'=>array(
+	// 	'className'=>'Goal')
 	
 	);
 public $hasOne= array(
