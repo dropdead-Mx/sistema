@@ -1,6 +1,8 @@
 <h3>Asignar Fechas de examenes</h3>
 
-<?php $contador=count($careers);?>
+<?php $contador=count($careers);
+
+?>
 
 				<?php echo $this->Html->script('jquery');?>
 
@@ -21,9 +23,12 @@
 
 					});',array('inline'=>false));
 
-					echo $link; ?>
+					// echo $link; ?>
 
- <?php  for($x=1; $x<= $contador ; $x++){ ?>
+ <?php  
+ // for($x=1; $x<= $contador ; $x++){ 
+ 	foreach($careers2 as $key => $carrera):
+ 	?>
 	<table>
 		<tr>
 			<th>Carrera</th>
@@ -33,7 +38,7 @@
 		</tr>
 
 		<tr>
-			<td><?php echo $careers2[$x+10]; ?></td>
+			<td><?php echo $carrera['Career']['name']; ?></td>
 			<td>
 				<select name="cuatimestres" class="selectCuatri">
 					<option value>--Selecciona el Cuatrimestre</option>
@@ -54,7 +59,7 @@
 
 
 
-				<?php echo $this->Html->link('Asignar fechas',array('action'=>'add',$careers[$x],1,$id));
+				<?php echo $this->Html->link('Asignar fechas',array('action'=>'add',$carrera['Career']['id'],$id,1));
 				?>
 
 			</td>
@@ -65,5 +70,5 @@
 	</table>
 
 	<br>
-<?php } ?>
+<?php endforeach; ?>
 	
