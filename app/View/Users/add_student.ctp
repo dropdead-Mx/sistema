@@ -6,7 +6,7 @@
 
 
 	<?php 
-		echo $this->Form->create('User',array('id'=>'formulario'));
+		echo $this->Form->create('User',array('id'=>'formulario','class'=>'addForm'));
 		echo $this->Form->input ('name',array('label'=>'Nombre','id'=>'nombre'));
 		echo $this->Form->input ('apat',array('label'=>'Apellido Paterno','id'=>'apater'));
 		echo $this->Form->input ('amat',array('label'=>'Apellido Materno','id'=>'amater'));

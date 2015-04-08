@@ -4,7 +4,7 @@
 
 
 	<?php 
-		echo $this->Form->create('User');
+		echo $this->Form->create('User',array('class'=>'addForm'));
 		echo $this->Form->hidden('id');
 		echo $this->Form->input ('name',array('label'=>'Nombre'));
 		echo $this->Form->input ('apat',array('label'=>'Apellido Paterno'));
@@ -24,3 +24,4 @@
 </fieldset>
 
 </div>
+<?php echo  $this->Html->script('scripts');?>

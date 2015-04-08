@@ -275,12 +275,29 @@ function checkPorcentaje(){
 // }
 
 
+function toUppercase() {
+
+	$('form.addForm input[type="text"]').keyup(function(){
+		$(this).val($(this).val().toUpperCase());
+	});
+
+
+	$('form.addForm input[type="text"]').focusout(function(){
+		$(this).val($(this).val().toUpperCase());
+
+
+	});
+
+}
+
+
 $(function(){
 	clona();
 	elimina();
 	gruposXcarrera();
 	getSemester();
 	materiasXmaestro();
+	toUppercase();
 	incGoal();
 	// changecounter();
 	// checkPorcentaje();
