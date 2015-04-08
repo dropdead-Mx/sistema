@@ -15,17 +15,40 @@ $this->layout='coordinador';
 
 
 public function addStudent(){
+	$this->User->virtualFields['name']='User.name';
 
+	
 	if($this->request->is('post')):
 		$this->User->create();
 
-		if($this->User->saveAssociated($this->request->data)):
+	$nombre=$this->request->data['User']['name'];
+	$ap=$this->request->data['User']['apat'];
+	$am=$this->request->data['User']['amat'];
+	$correo=$this->request->data['User']['email'];
+
+	$existe =$this->User->find('count',array('conditions'=>array(
+		'User.name'=>$nombre,
+		'User.apat'=>$ap,
+		'User.amat'=>$am,
+		'User.email'=>$correo
+		)));
+
+	if($existe >0 ){
+		$this->Session->setFlash('Este usuario ya existe registra uno nuevo porfavor');
+		$this->request->data=' ';
+	}else {
+
+			if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Estudiante agregado');
-			$this->redirect(array('action'=>'indexStudent'));
-			endif;
+			// debug($existe);
+			// $this->redirect(array('action'=>'indexStudent'));
+			endif;}
+
+
 	endif;
 
 		$careers = $this->User->StudentProfile->Career->find('list');
+		// pr($careers);
 		$this->set(compact('careers'));
 }
 
@@ -74,6 +97,7 @@ public function indexStudent() {
 public function addTeacher(){
 
 	if($this->request->is('post')):
+
 		$this->User->create();
 		if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Maestro agregado');
@@ -89,7 +113,7 @@ public function editTeacher($id= null){
 
 			$this->User->id=$id;
 
-	
+
 	$this->User->virtualFields['name']='User.name';
 
 	if($this->request->is('get')):
