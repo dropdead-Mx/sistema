@@ -25,6 +25,10 @@ public function addStudent(){
 	$ap=$this->request->data['User']['apat'];
 	$am=$this->request->data['User']['amat'];
 	$correo=$this->request->data['User']['email'];
+	$matricula=$this->request->data['StudentProfile']['matricula'];
+
+	$existeperfil=$this->StudentProfile->find('count',array('conditions'=>array(
+		'StudentProfile.matricula'=>$matricula)));
 
 	$existe =$this->User->find('count',array('conditions'=>array(
 		'User.name'=>$nombre,
@@ -33,7 +37,7 @@ public function addStudent(){
 		'User.email'=>$correo
 		)));
 
-	if($existe >0 ){
+	if($existe >0  && $existeperfil > 0 ){
 		$this->Session->setFlash('Este usuario ya existe registra uno nuevo porfavor');
 		$this->request->data=' ';
 	}else {
@@ -41,7 +45,7 @@ public function addStudent(){
 			if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Estudiante agregado');
 			// debug($existe);
-			// $this->redirect(array('action'=>'indexStudent'));
+			$this->redirect(array('action'=>'indexStudent'));
 			endif;}
 
 
@@ -95,14 +99,38 @@ public function indexStudent() {
 
 
 public function addTeacher(){
+	$this->User->virtualFields['name']='User.name';
+
 
 	if($this->request->is('post')):
+	$this->User->create();
 
-		$this->User->create();
+	$nombre=$this->request->data['User']['name'];
+	$ap=$this->request->data['User']['apat'];
+	$am=$this->request->data['User']['amat'];
+	$correo=$this->request->data['User']['email'];
+	$matricula=$this->request->data['StudentProfile']['matricula'];
+
+
+	$existe =$this->User->find('count',array('conditions'=>array(
+		'User.name'=>$nombre,
+		'User.apat'=>$ap,
+		'User.amat'=>$am,
+		'User.email'=>$correo
+		)));
+
+	if($existe > 0 ){
+
+		$this->Session->setFlash('El usuario que intentas registrar ya existe ingresa uno nuevo');
+		$this->request->data=' ';
+
+	}else {
+
 		if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Maestro agregado');
 			$this->redirect(array('action'=>'indexTeacher'));
 			endif;
+		}
 	endif;
 
 
@@ -182,13 +210,39 @@ public function calificar($course_id=null,$semester=null,$career_id=null,$parcia
 
 public function addcoordi(){
 	// $this->Career->virtualFields['name']='Career.name';
+	$this->User->virtualFields['name']='User.name';
+
 	if($this->request->is('post')):
 		$this->User->create();
+
+	$nombre=$this->request->data['User']['name'];
+	$ap=$this->request->data['User']['apat'];
+	$am=$this->request->data['User']['amat'];
+	$correo=$this->request->data['User']['email'];
+	$matricula=$this->request->data['StudentProfile']['matricula'];
+
+
+	$existe =$this->User->find('count',array('conditions'=>array(
+		'User.name'=>$nombre,
+		'User.apat'=>$ap,
+		'User.amat'=>$am,
+		'User.email'=>$correo
+		)));
+
+	if($existe > 0 ){
+
+		$this->Session->setFlash('El usuario que intentas registrar ya existe ingresa uno nuevo');
+		$this->request->data=' ';
+
+	}else {
+
+
 		if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Coordinador registrado con exito');
 			$this->redirect(array('action'=>'index'));
 			
 		endif;
+	}
 	endif;
 
 
