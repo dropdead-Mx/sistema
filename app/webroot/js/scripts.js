@@ -277,16 +277,23 @@ function checkPorcentaje(){
 
 function toUppercase() {
 
-	$('form.addForm input[type="text"]').keyup(function(){
+	$('form.addForm input[type="text"],form.editForm input[type="text"]').keyup(function(){
 		$(this).val($(this).val().toUpperCase());
 	});
 
 
-	$('form.addForm input[type="text"]').focusout(function(){
+	$('form.addForm input[type="text"],form.editForm input[type="text"]').focusout(function(){
 		$(this).val($(this).val().toUpperCase());
 
 
 	});
+		$('form.addForm input[type="text"],form.editForm input[type="text"]').focus(function(){
+		$(this).val($(this).val().toUpperCase());
+
+
+	});
+
+
 
 }
 

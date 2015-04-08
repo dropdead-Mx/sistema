@@ -4,7 +4,7 @@
 
 
 	<?php 
-		echo $this->Form->create('User');
+		echo $this->Form->create('User',array('class'=>'editForm'));
 		echo $this->Form->input ('name',array('label'=>'Nombre'));
 		echo $this->Form->input ('apat',array('label'=>'Apellido Paterno'));
 		echo $this->Form->input ('amat',array('label'=>'Apellido Materno'));

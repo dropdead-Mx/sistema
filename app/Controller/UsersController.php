@@ -18,6 +18,7 @@ public function addStudent(){
 
 	if($this->request->is('post')):
 		$this->User->create();
+
 		if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Estudiante agregado');
 			$this->redirect(array('action'=>'indexStudent'));
@@ -30,6 +31,7 @@ public function addStudent(){
 
 public function editStudent($id=null) {
 		$this->User->id=$id;
+	$this->User->virtualFields['name']='User.name';
 
 	if($this->request->is('get')):
 		$this->request->data=$this->User->read();
@@ -86,6 +88,9 @@ public function addTeacher(){
 public function editTeacher($id= null){
 
 			$this->User->id=$id;
+
+	
+	$this->User->virtualFields['name']='User.name';
 
 	if($this->request->is('get')):
 		$this->request->data=$this->User->read();
