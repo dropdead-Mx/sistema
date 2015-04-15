@@ -259,22 +259,22 @@ public function assigncareers($id=null){
 
 	if($this->request->is('post')):
 
-		$count= sizeof($this->request->data['Usrcareer']);
+		// $count= sizeof($this->request->data['Usrcareer']);
 
 		//for para guardar unicamente los seleccionados
-		for($x=1; $x <= $count; $x++){
+		// for($x=1; $x <= $count; $x++){
 
-			if(sizeof($this->request->data['Usrcareer'][$x])== 2){
+		// 	if(sizeof($this->request->data['Usrcareer'][$x])== 2){
 
-				$this->Usrcareer->saveAll($this->request->data['Usrcareer'][$x]);
+				// $this->Usrcareer->saveAll($this->request->data['Usrcareer']);
 			
 			
 
-			}
-		}
-		// if($this->Usrcareer->saveAll($this->request->data['Usrcareer'])):
-		// 	$this->Session->setFlash('Carreras a coordinar asignadas');
-		// endif;
+			// }
+		// }
+		if($this->Usrcareer->saveAll($this->request->data['Usrcareer'])):
+			$this->Session->setFlash('Carreras a coordinar asignadas');
+		endif;
 	endif;
 
 	$selected=$this->Usrcareer->find('list',array('fields'=>'career_id'));
