@@ -42,7 +42,7 @@
 
 </table>
 
-<p class="agrega">Agregar materia</p>
+<p class="agrega">Agregar Modulo</p>
 
 <!-- segundo registro -->
 <!-- agregar id y curso como input hiden -->

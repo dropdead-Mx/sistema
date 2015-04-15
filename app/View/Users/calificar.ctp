@@ -49,4 +49,3 @@
 
 <?php echo $this->Form->end('Guardar Calificaciones'); ?>
 <?php echo $this->Html->script('scripts');?>
-<button class="xdd">XDDD</button>

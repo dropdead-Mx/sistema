@@ -23,7 +23,7 @@ class ExamsController extends AppController {
 		$this->Career->career_id=$career;
 		$this->Career->semester=$cuatri;
 		// $this->User->id=$id;
-		debug($id);
+		// debug($id);
 		if($this->request->is('post')):
 
 				// debug($this->request->data);

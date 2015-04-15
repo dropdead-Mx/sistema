@@ -1,5 +1,5 @@
 <?php 
-// pr($careers);
+
 echo $this->Form->create();
 ?>
 <table>
@@ -8,23 +8,25 @@ echo $this->Form->create();
 	<th>Carrera</th>
 </tr>
 <?php
-		$contador = count($careers);
-		// echo $contador;
-		for ($x=1; $x <= $contador ; $x++){
-			$value =$careers[$x+10];?>
+
+		foreach($careers as $K =>$carreras):
+
+			?>
 			
 			<tr>
 			
 			<td><?php  echo implode($teacher) ?></td>
 			<td>
-			<?php echo $this->Form->input('Usrcareer.'.$x.'.career_id',array('value'=>$x+10,'hiddenField' => false,'label'=>$value,'div'=>false,'multiple'=>true,'type'=>'checkbox'));?>
+			<?php echo $this->Form->input('Usrcareer.'.$K.'.career_id',array('value'=>$carreras['Career']['id'],'hiddenField' => false,'label'=>$carreras['Career']['name'],'div'=>false,'multiple'=>true,'type'=>'checkbox'));?>
 			</td>
 
 			</tr>
 
-			<?php echo $this->Form->hidden('Usrcareer.'.$x.'.user_id',array('value'=>$id,'div'=>false));?>
+			<?php echo $this->Form->hidden('Usrcareer.'.$K.'.user_id',array('value'=>$id,'div'=>false));?>
 		
-		<?php }?>
+		<?php 
+		endforeach;
+		?>
 
 			</table>
 <?php

@@ -219,7 +219,7 @@ public function addcoordi(){
 	$ap=$this->request->data['User']['apat'];
 	$am=$this->request->data['User']['amat'];
 	$correo=$this->request->data['User']['email'];
-	$matricula=$this->request->data['StudentProfile']['matricula'];
+	
 
 
 	$existe =$this->User->find('count',array('conditions'=>array(
@@ -277,10 +277,12 @@ public function assigncareers($id=null){
 		// endif;
 	endif;
 
-	$careers=$this->Career->find('list');
+	$selected=$this->Usrcareer->find('list',array('fields'=>'career_id'));
+	// debug($selected);
+	$careers=$this->Career->find('all',array('fields'=>array('Career.id','Career.name'),'conditions'=>array('Career.id !='=>$selected)));
 	$teacher=$this->User->find('list',array('conditions'=>array('User.id'=>$id)));
 
-	$this->set(compact('id','careers','teacher'));
+	$this->set(compact('id','careers','teacher','selected'));
 
 }
 

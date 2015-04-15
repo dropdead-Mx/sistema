@@ -53,7 +53,7 @@
 
 
 
-<button id="aumenta">+</button>
+<button id="aumenta">Agregar criterio </button>
 
 
 

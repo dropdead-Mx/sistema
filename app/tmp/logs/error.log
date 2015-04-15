@@ -7903,3 +7903,47 @@ Stack Trace:
 #10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
 #11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+2015-04-13 22:56:42 Error: [CakeException] You cannot use "" as a domain.
+Request URL: /sistema/users/addcoordi
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/basics.php(636): I18n::translate('Plataforma Univ...', NULL, '')
+#1 /var/www/sistema/app/View/Layouts/default.ctp(17): __d('', 'Plataforma Univ...')
+#2 /var/www/sistema/lib/Cake/View/View.php(961): include('/var/www/sistem...')
+#3 /var/www/sistema/lib/Cake/View/View.php(923): View->_evaluate('/var/www/sistem...', Array)
+#4 /var/www/sistema/lib/Cake/View/View.php(546): View->_render('/var/www/sistem...')
+#5 /var/www/sistema/lib/Cake/View/View.php(481): View->renderLayout('', 'default')
+#6 /var/www/sistema/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#7 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2015-04-15 17:31:12 Error: Fatal Error (1): Undefined constant 'n' in [/var/www/sistema/app/View/Users/assigncareers.ctp, line 6]
+2015-04-15 17:31:12 Error: [FatalErrorException] Undefined constant 'n'
+Request URL: /sistema/users/assigncareers/63
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Undefined const...', '/var/www/sistem...', 6)
+#1 [internal function]: ErrorHandler::handleError(1, 'Undefined const...', '/var/www/sistem...', 6, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Undefined const...', '/var/www/sistem...', 6, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 17:31:51 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/sistema/app/View/Users/assigncareers.ctp, line 6]
+2015-04-15 17:31:51 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /sistema/users/assigncareers/63
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 6)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 6, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 6, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 17:42:57 Error: Fatal Error (4): syntax error, unexpected 'endforeach' (T_ENDFOREACH) in [/var/www/sistema/app/View/Users/assigncareers.ctp, line 38]
+2015-04-15 17:42:57 Error: [FatalErrorException] syntax error, unexpected 'endforeach' (T_ENDFOREACH)
+Request URL: /sistema/users/assigncareers/63
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 38)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 38, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 38, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
