@@ -7967,3 +7967,493 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-04-15 18:07:52 Error: Fatal Error (4): syntax error, unexpected 'if' (T_IF), expecting function (T_FUNCTION) in [/var/www/sistema/app/Controller/UsersController.php, line 257]
+2015-04-15 18:07:52 Error: [FatalErrorException] syntax error, unexpected 'if' (T_IF), expecting function (T_FUNCTION)
+Request URL: /sistema/users/indexcoordinator
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 257)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 257, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 257, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:19:56 Error: Fatal Error (4): syntax error, unexpected 'endif' (T_ENDIF) in [/var/www/sistema/app/Controller/UsersController.php, line 284]
+2015-04-15 18:19:56 Error: [FatalErrorException] syntax error, unexpected 'endif' (T_ENDIF)
+Request URL: /sistema/users/indexcoordinator
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 284)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 284, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 284, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:37:30 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:37:30 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/indexcoordinator
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:37:30 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:37:30 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/indexcoordinator
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:37:34 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:37:34 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/indexcoordinator
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:37:42 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:37:42 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/assigncareers/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:37:42 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:37:42 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/assigncareers/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:37:51 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:37:51 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/indexcoordinator
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:37:51 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:37:51 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/indexcoordinator
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:37:56 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:37:56 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/indexcoordinator
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:38:06 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:38:06 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/indexcoordinators
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:38:11 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:38:11 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/indexcoordinator/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:38:16 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:38:16 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:38:19 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:38:19 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:38:29 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:38:29 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addcoordi
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:38:29 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:38:29 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addcoordi
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:38:43 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:38:43 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addcoordi
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:38:44 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:38:44 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addcoordi
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:38:45 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:38:45 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addcoordi
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:38:45 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:38:45 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addcoordi
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:39:25 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:39:25 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addcoordi
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:39:25 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:39:25 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addcoordi
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:39:30 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:39:30 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addcoordi
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:40:33 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:40:33 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addTeacher
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:40:34 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:40:34 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addTeacher
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:40:36 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:40:36 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addTeacher
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:40:37 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:40:37 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addTeacher
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:40:37 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:40:37 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addTeacher
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:40:37 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:40:37 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addTeacher
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:40:37 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:40:37 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addTeacher
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:40:37 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:40:37 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addTeacher
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:40:43 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:40:43 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/addTeacher
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:41:02 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:41:02 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:41:02 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:41:02 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:41:07 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:41:07 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:41:52 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:41:52 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:41:53 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:41:53 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:41:58 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:41:58 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:42:09 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:42:09 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:42:10 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:42:10 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:42:11 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:42:11 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:42:23 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:42:23 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:42:24 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:42:24 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:42:25 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:42:25 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:42:25 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:42:25 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:42:25 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:42:25 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:42:38 Error: Fatal Error (64): Can't use function return value in write context in [/var/www/sistema/app/Controller/UsersController.php, line 272]
+2015-04-15 18:42:38 Error: [FatalErrorException] Can't use function return value in write context
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use funct...', '/var/www/sistem...', 272)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Can't use funct...', '/var/www/sistem...', 272, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:58:06 Error: Fatal Error (4): syntax error, unexpected ':' in [/var/www/sistema/app/Controller/UsersController.php, line 282]
+2015-04-15 18:58:06 Error: [FatalErrorException] syntax error, unexpected ':'
+Request URL: /sistema/users/indexcoordinator
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 282)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 282, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 282, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-15 18:58:58 Error: Fatal Error (4): syntax error, unexpected ':' in [/var/www/sistema/app/Controller/UsersController.php, line 283]
+2015-04-15 18:58:58 Error: [FatalErrorException] syntax error, unexpected ':'
+Request URL: /sistema/users/indexcoordinator
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 283)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 283, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 283, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

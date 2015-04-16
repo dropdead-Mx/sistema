@@ -255,29 +255,39 @@ public function indexcoordinator(){
 }
 
 public function assigncareers($id=null){
+	$guardar=[];
 	$this->User->id= $id;
+	$selected=$this->Usrcareer->find('list',array('fields'=>'career_id'));
+	// echo sizeof($selected);
+	// debug($selected);
+if(count($selected) ===10){
+
+	$this->Session->setFlash('Por el momento no hay carreras para asignar disponibles elimina carreras a los cordinadores e intenta de nuevo');
+	$this->redirect(array('action'=>'indexcoordinator'));
+
+	} else { 
 
 	if($this->request->is('post')):
 
-		// $count= sizeof($this->request->data['Usrcareer']);
+		$contador = count($this->request->data['Usrcareer']);
 
-		//for para guardar unicamente los seleccionados
-		// for($x=1; $x <= $count; $x++){
+		//elimina del requestdata todos los elementos no seleccionados
+		for($z=0 ; $z< $contador ; $z++ ){
+			if(count($this->request->data['Usrcareer'][$z]) == 2 ){
+				array_push($guardar,$this->request->data['Usrcareer'][$z]);
 
-		// 	if(sizeof($this->request->data['Usrcareer'][$x])== 2){
-
-				// $this->Usrcareer->saveAll($this->request->data['Usrcareer']);
-			
-			
-
-			// }
-		// }
-		if($this->Usrcareer->saveAll($this->request->data['Usrcareer'])):
+			}
+		}
+		//guarda los elementos que fueron seleccionados y guardados en el nuevo arreglo 
+		if($this->Usrcareer->saveAll($guardar)):
 			$this->Session->setFlash('Carreras a coordinar asignadas');
+			$this->redirect(array('action'=>'indexcoordinator'));
+
 		endif;
 	endif;
+}
 
-	$selected=$this->Usrcareer->find('list',array('fields'=>'career_id'));
+
 	// debug($selected);
 	$careers=$this->Career->find('all',array('fields'=>array('Career.id','Career.name'),'conditions'=>array('Career.id !='=>$selected)));
 	$teacher=$this->User->find('list',array('conditions'=>array('User.id'=>$id)));
