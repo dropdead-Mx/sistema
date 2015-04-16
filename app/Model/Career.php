@@ -12,6 +12,7 @@ class Career extends AppModel {
 			)
 
 		);
+// public $belongsTo='Usrcareer';
 
 	public $displayField='abrev';
 	// public $hasMany = 'Course';
@@ -25,7 +26,8 @@ class Career extends AppModel {
 
 			'className'=>'Grupo'),
 		'Course'=> array('className'=>'Course'),
-		'CourseModule'=>array('className'=>'CourseModule')
+		'CourseModule'=>array('className'=>'CourseModule'),
+		// 'Usrcareer'=>array('className'=>'Usrcareer')
 
 
 		);

@@ -297,6 +297,36 @@ if(count($selected) ===10){
 }
 
 
+public function vercarreras($id){
+	$this->User->id =$id;
+
+	$carreras=$this->Usrcareer->find('list',array('conditions'=>array('Usrcareer.user_id'=>$id),'fields'=>array('Usrcareer.career_id')));
+	
+	// $idreg=$this->Usrcareer->find('all',array('conditions'=>array('Usrcareer.user_id'=>$id)));
+	$todo = $this->Usrcareer->find('all',array('conditions'=>array('Usrcareer.user_id'=>$id)));
+	
+	$nombre =$this->User->find('list',array('conditions'=>array('User.id'=>$id),'fields'=>'User.name'));
+	$career=$this->Career->find('all',array('fields'=>array('Career.id','Career.name'),'conditions'=>array('Career.id'=>$carreras)));
+	$this->set(compact('career','id','nombre','todo'));
+	// pr($todo);
+
+
+
+}
+
+public function eliminacc($id,$user_id){
+	if($this->request->is('get')):
+		throw new MethodNotAllowedException();
+	else:
+		if($this->Usrcareer->delete($id)):
+			$this->Session->setFlash('Carrera liberada');
+			$this->redirect(array('action'=>'vercarreras',$user_id));
+			endif;
+		endif;
+
+}
+
+
 }
 
 

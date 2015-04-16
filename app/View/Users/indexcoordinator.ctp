@@ -14,7 +14,7 @@
 	<td><?php echo $coordi['EmployeeProfile']['lv_education'].' '.$coordi['User']['name'] ?></td>
 	
 	<td><?php echo $this->Html->link('Asignar carreras',array('action'=>'assigncareers',$coordi['User']['id'])); ?></td>
-	<td><?php ?></td>
+	<td><?php echo $this->Html->link('Ver carreras',array('action'=>'vercarreras',$coordi['User']['id']))?></td>
 		
 	</tr>
 
