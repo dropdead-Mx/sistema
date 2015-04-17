@@ -28,8 +28,8 @@ $cakeVersion = __d('universidad_dorados', 'CakePHP %s', Configure::version())
 	<?php
 		// echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
-		echo $this->Html->script('jquery');
+		echo $this->Html->css(array('cake.generic','jquery-ui.min'));
+		echo $this->Html->script(array('jquery','jquery-ui.min'));
 		
 
 		echo $this->fetch('meta');

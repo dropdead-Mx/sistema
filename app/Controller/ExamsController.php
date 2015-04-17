@@ -26,9 +26,8 @@ class ExamsController extends AppController {
 		// debug($id);
 		if($this->request->is('post')):
 
-				// debug($this->request->data);
 			if($this->Exam->saveAll($this->request->data['Exam'] )):
-				// $this->Session->setFlash('Fechas de examenes asignadas');
+				$this->Session->setFlash('Fechas de examenes asignadas');
 				$this->redirect(array('action'=>'index',$id));
 			endif;
 		endif;
