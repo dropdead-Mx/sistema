@@ -9927,3 +9927,14 @@ Request URL: /sistema/css/images/ui-bg_highlight-soft_25_0073ea_1x100.png
 Stack Trace:
 #0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-04-16 20:29:35 Error: [MissingActionException] Action ExamsController::19() could not be found.
+Exception Attributes: array (
+  'controller' => 'ExamsController',
+  'action' => '19',
+)
+Request URL: /sistema/exams/19/63/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(ExamsController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

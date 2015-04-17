@@ -38,6 +38,12 @@ class ExamsController extends AppController {
 		$this->set(compact('materias'));
 
 	}
+
+
+public function verify(){
+	
+
+}
 }
 
 
