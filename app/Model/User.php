@@ -28,7 +28,9 @@ public $hasOne= array(
 
 public $hasMany=array(
 	'Course'=>array(
-		'className'=>'Course')
+		'className'=>'Course'),
+	'Assist'=>array(
+		'className'=>'Assist')
 	);
 
 
@@ -43,19 +45,19 @@ public $hasMany=array(
 public $validate= array(
 
 		'name'=>array(
-			'rule'=>'/^[a-zA-Z]{3,}$/i',
+			'rule'=>'/^[a-zA-Z\s+]{3,}$/i',
 			'message'=>'Solo se permiten letras en este campo',
 			'required'=>true),
 		'apat'=>array(
-			'rule'=>'/^[a-zA-Z]{5,}$/i',
+			'rule'=>'/^[a-zA-Z]{3,}$/i',
 			'message'=>'Solo se permiten letras en este campo',
 			'required'=>true),
 		'amat'=>array(
-			'rule'=>'/^[a-zA-Z]{5,}$/i',
+			'rule'=>'/^[a-zA-Z]{3,}$/i',
 			'message'=>'Solo se permiten letras en este campo',
 			'required'=>true),
 		'email'=>array(
-			'rule'=>array('email',true),
+			'rule'=>array('email'),
 			'message'=>'Inserta un email valido',
 			'required'=>true),
 		'password'=>array(

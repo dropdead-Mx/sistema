@@ -58,7 +58,7 @@ $cakeVersion = __d('universidad_dorados', 'CakePHP %s', Configure::version())
 		</div>
 	</div>
 	<?php 
-	// echo $this->element('sql_dump'); 
+	echo $this->element('sql_dump'); 
 	?>
 	<?php echo $this->Js->writeBuffer();?>
 </body>

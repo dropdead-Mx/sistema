@@ -18,7 +18,9 @@ public function index() {
 public function add($user_id=null,$course_id=null,$partial=null) {
 	$this->Course->id=$course_id;
 	$this->User->id=$user_id;
-	$parcial=$partial;
+	$partial;
+
+	
 
 	if ($this->request->is('post')):
 		$this->Goal->create();
@@ -36,7 +38,7 @@ public function add($user_id=null,$course_id=null,$partial=null) {
 	$materia=$this->Course->find('list',array('conditions'=>array('Course.id'=>$course_id)));
 	// $grupos=$this->Grupo->find('list');
 
-	$this->set(compact('user_id','course_id','materia','parcial'));
+	$this->set(compact('user_id','course_id','materia','partial'));
 }
 	
 

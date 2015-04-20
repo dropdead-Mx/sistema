@@ -12,7 +12,7 @@
 			'class'=>'escondido2',
 			'label'=>false,
 			'type'=>'text')); ?>
-			<?php echo $this->Form->hidden('Goal.0.parcial',array('label'=>false,'value'=>$parcial,'class'=>'escondido3'));?>
+			<?php echo $this->Form->hidden('Goal.0.parcial',array('label'=>false,'value'=>$partial,'class'=>'escondido3'));?>
 		</div>
 
 
@@ -34,7 +34,7 @@
 		<td><?php echo $this->Form->input('Goal.0.description',array('label'=>false,'class'=>'required')); ?></td>
 		
 
-		<td> <?php echo $parcial ?></td>
+		<td> <?php echo $partial; ?></td>
 		<td><?php echo $this->Form->input('Goal.0.percentage',array('label'=>false,'id'=>'por','class'=>'required number')); ?></td>
 		<td> <input type="button" class="elimina" value="Eliminar"> </td>
 	</tr>

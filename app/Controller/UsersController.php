@@ -4,7 +4,7 @@ class UsersController extends AppController {
 
 public $helpers=array('Html','Form','Js');
 public $components=array('Session');
-var $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group','Course','Goal','Obtainedgoal','Usrcareer');
+var $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group','Course','Goal','Obtainedgoal','Usrcareer','CourseModule','Assist');
 
 
 public function index() {
@@ -326,6 +326,41 @@ public function eliminacc($id,$user_id){
 
 }
 
+
+public function asistencia($career_id=null,$semester=null,$id_materia=null){
+	$this->Career->id=$career_id;
+	$this->Course->id=$id_materia;
+	$this->Course->semester=$semester;
+
+$semana=array(
+	0=>'domingo',
+	1=>'lunes',
+	2=>'martes',
+	3=>'miercoles',
+	4=>'jueves',
+	5=>'viernes',
+	6=>'sabado');
+$day = date("w");
+$dia=$semana[$day];
+
+
+if($this->request->is('post')):
+	$this->Assist->create();
+
+	debug($this->request->data['Assist']);
+if($this->Assist->saveAll($this->request->data['Assist'])):
+	$this->Session->setFlash("asistencia guardada");
+	endif;
+endif;
+
+	$modulos=$this->CourseModule->find('all',array('conditions'=>array('CourseModule.course_id'=>$id_materia,'CourseModule.day'=>$dia)));
+// debug($modulos);
+	$estudiantes=$this->User->StudentProfile->find('all',array('conditions'=>array('StudentProfile.career_id'=>$career_id,
+		'StudentProfile.semester '=>$semester)
+		));
+	$this->set(compact('estudiantes','modulos'));
+
+}
 
 }
 

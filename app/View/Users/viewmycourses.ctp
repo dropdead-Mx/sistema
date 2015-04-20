@@ -8,6 +8,7 @@
 		<th>Carrera</th>
 		<th>Criterios de evaluacion Por parcial</th>
 		<th>Evaluar</th>
+		<th>Asistencias</th>
 	
 	</tr>
 
@@ -123,6 +124,8 @@
 
 
 			</td>
+
+			<td><?php echo $this->Html->link('Asistencia',array('controller'=>'users','action'=>'asistencia',$course['Career']['id'],$course['Course']['semester'],$course['Course']['id'])); ?></td>
 		</tr>
 	<?php endforeach;?>
 </table>
