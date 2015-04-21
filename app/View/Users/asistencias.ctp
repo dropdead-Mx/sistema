@@ -1,29 +1,11 @@
-<h3>Asistencia</h3>
+<h3><?php echo $modulos[0]['Course']['name'].':  '.date('d-M-Y'); ?></h3>
 <?php
-// pr($modulos);
-// pr($estudiantes);
-
 $modulo=$modulos[0]['CourseModule']['id'];
-// $hrmodulo=$modulos[0]['CourseModule']['start_time'];
-// echo $hrmodulo;
+// pr($modulos);
 $hr=date("H:i:s");
 $fecha=date("Y-m-d");
-// echo $fecha;
-// echo sizeof($modulos);
-// $semana=array(
-// 	0=>'domingo',
-// 	1=>'lunes',
-// 	2=>'martes',
-// 	3=>'miercoles',
-// 	4=>'jueves',
-// 	5=>'viernes',
-// 	6=>'sabado');
-// $dia = date("w");
-
-// echo "hoy es : ".$semana[$dia];
-
-
 ?>
+
 <?php echo $this->Form->create('User');
 
 ?>
@@ -56,8 +38,6 @@ $fecha=date("Y-m-d");
 		<?php 
 
 			echo $this->Form->hidden('Assist.'.$k.'.date_assist',array('value'=>$fecha));
-			// $options=array('1'=>'Asistencia','2'=>'Retardo','3'=>'Falta');
-			// $attributes=array('legend'=>false);
 			echo $this->Form->input('Assist.'.$k.'.status',array('type'=>'radio',
 				'options'=>array('1'=>'Asistencia','2'=>'Retardo','3'=>'Falta'),
 				'legend'=>false,

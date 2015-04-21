@@ -344,6 +344,18 @@ $semana=array(
 $day = date("w");
 $dia=$semana[$day];
 
+
+$imparte=$this->CourseModule->find('count',array('conditions'=>array(
+	'CourseModule.course_id'=>$id_materia,
+	'CourseModule.day'=>$dia
+	)));
+
+if ($imparte === 0){
+	$this->Session->setFlash('Hoy no impartes esta materia');
+	$this->redirect(array('action'=>'viewmycourses',$id));
+}else if ($imparte > 0){
+
+
 if($this->request->is('post')):
 	$this->Assist->create();
 	
@@ -371,7 +383,7 @@ if($this->request->is('post')):
 }
 
 endif;
-
+}
 	$modulos=$this->CourseModule->find('all',array('conditions'=>array('CourseModule.course_id'=>$id_materia,'CourseModule.day'=>$dia)));
 	// pr($modulos);
 	$estudiantes=$this->User->StudentProfile->find('all',array('conditions'=>array('StudentProfile.career_id'=>$career_id,

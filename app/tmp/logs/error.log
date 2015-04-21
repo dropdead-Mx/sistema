@@ -10236,3 +10236,43 @@ Stack Trace:
 #1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
 #2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2015-04-21 10:01:18 Error: Fatal Error (4): syntax error, unexpected '[' in [/var/www/sistema/app/View/Users/asistencias.ctp, line 1]
+2015-04-21 10:01:18 Error: [FatalErrorException] syntax error, unexpected '['
+Request URL: /sistema/users/asistencias/19/1/11/2
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 1)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 1, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 1, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-21 10:01:46 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/sistema/app/View/Users/asistencias.ctp, line 1]
+2015-04-21 10:01:46 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /sistema/users/asistencias/19/1/11/2
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 1)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 1, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 1, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-21 10:02:04 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/sistema/app/View/Users/asistencias.ctp, line 1]
+2015-04-21 10:02:04 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /sistema/users/asistencias/19/1/11/2
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 1)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 1, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 1, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-21 10:02:26 Error: Fatal Error (4): syntax error, unexpected '[', expecting ',' or ';' in [/var/www/sistema/app/View/Users/asistencias.ctp, line 1]
+2015-04-21 10:02:26 Error: [FatalErrorException] syntax error, unexpected '[', expecting ',' or ';'
+Request URL: /sistema/users/asistencias/19/1/11/2
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 1)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 1, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 1, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

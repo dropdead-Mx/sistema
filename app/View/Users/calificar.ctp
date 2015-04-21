@@ -18,14 +18,14 @@
 	<?php foreach($critdevaluacion as $X => $crtev):?>
 
 	<th>
-	<?php echo $crtev['Goal']['description'] ?>
+	<?php echo $crtev['Goal']['description'].' '.$crtev['Goal']['percentage'].'%'; ?>
 	</th>
 
 	<?php endforeach;?>
 </tr>
 
 <tr>
-	<td>1er Parcial</td>
+	<td><?php echo 'Parcial #'.$crtev['Goal']['parcial']; ?></td>
 	<?php foreach($critdevaluacion as $X => $crtev):?>
 	<td>
 		<?php 
