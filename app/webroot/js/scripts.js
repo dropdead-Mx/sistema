@@ -297,6 +297,41 @@ function toUppercase() {
 
 }
 
+function calificParcial(){
+	i=0;
+		// $('button.xd3').on('click',function(){
+	$('#calificacionesPar').on('submit',function() {
+	i=0;
+
+	$('#calificacionesPar  input.calf[type="number"]').each(function(){
+		$(this).css('background','#fff');
+
+
+		actual=parseFloat($(this).val());
+		maximo=parseFloat($(this).parent('td.porcentaje').attr('data-porcentaje'));
+
+		if(actual > maximo ){
+		$(this).css('background','red');
+		return i+=1;
+
+		}
+		else if (actual <= maximo) {
+		// $(this).css('border','2px solid green');
+		}
+
+	});
+
+	if(i > 0){
+		alert('Corrige los campos marcados en rojo, no deben ser mayores al porcentaje asignado');
+		return false;
+	}else {
+		return true;
+	}
+
+// alert(i);
+		});
+
+}
 
 $(function(){
 	clona();
@@ -306,6 +341,7 @@ $(function(){
 	materiasXmaestro();
 	toUppercase();
 	incGoal();
+	calificParcial();
 	// changecounter();
 	// checkPorcentaje();
 	// sumaPorcentaje();

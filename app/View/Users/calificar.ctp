@@ -25,16 +25,20 @@
 </tr>
 
 <tr>
-	<td><?php echo 'Parcial #'.$crtev['Goal']['parcial']; ?></td>
-	<?php foreach($critdevaluacion as $X => $crtev):?>
 	<td>
+	<?php echo 'Parcial #'.$crtev['Goal']['parcial']; ?>
+	</td>
+	<?php foreach($critdevaluacion as $X => $crtev):?>
+	<td   class='porcentaje' data-porcentaje="<?php echo $crtev['Goal']['percentage'];?>"  >
 		<?php 
 
 			$id=$crtev['Goal']['id'];
 
 			echo $this->Form->hidden('Obtainedgoal.'.($k.$X).'.goal_id',array('label'=>false,'value'=>$id,'class'=>'calf'));
 			echo $this->Form->hidden('Obtainedgoal.'.($k.$X).'.user_id',array('label'=>false,'value'=>$student,'class'=>'calf'));
-			echo $this->Form->input('Obtainedgoal.'.($k.$X).'.percentage_obtained',array('label'=>false,'class'=>'calf'));
+			echo $this->Form->input('Obtainedgoal.'.($k.$X).'.percentage_obtained',array('label'=>false,'div'=>false,'class'=>'calf'
+			
+				));
 		?>
 	</td>
 	<?php endforeach;?>
@@ -49,3 +53,4 @@
 
 <?php echo $this->Form->end('Guardar Calificaciones'); ?>
 <?php echo $this->Html->script('scripts');?>
+<button class='xd3'>XDDD</button>
