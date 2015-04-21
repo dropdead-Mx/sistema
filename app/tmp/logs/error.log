@@ -10050,3 +10050,189 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-04-20 22:59:08 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 373]
+2015-04-20 22:59:08 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /sistema/users/asistencia/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 373)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 373, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 373, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-20 23:00:00 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 373]
+2015-04-20 23:00:00 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /sistema/users/asistencia/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 373)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 373, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 373, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-20 23:00:07 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 373]
+2015-04-20 23:00:07 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /sistema/users/asistencia/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 373)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 373, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 373, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-20 23:00:08 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 373]
+2015-04-20 23:00:08 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /sistema/users/asistencia/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 373)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 373, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 373, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-20 23:00:09 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 373]
+2015-04-20 23:00:09 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /sistema/users/asistencia/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 373)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 373, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 373, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-20 23:00:10 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 373]
+2015-04-20 23:00:10 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /sistema/users/asistencia/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 373)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 373, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 373, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-20 23:00:11 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 373]
+2015-04-20 23:00:11 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /sistema/users/asistencia/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 373)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 373, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 373, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-20 23:00:12 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 373]
+2015-04-20 23:00:12 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /sistema/users/asistencia/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 373)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 373, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 373, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-20 23:17:35 Error: Fatal Error (4): syntax error, unexpected '$id' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 330]
+2015-04-20 23:17:35 Error: [FatalErrorException] syntax error, unexpected '$id' (T_VARIABLE)
+Request URL: /sistema/users/asistencia/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 330)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 330, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 330, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-20 23:17:55 Error: Fatal Error (4): syntax error, unexpected '$id_b' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 330]
+2015-04-20 23:17:55 Error: [FatalErrorException] syntax error, unexpected '$id_b' (T_VARIABLE)
+Request URL: /sistema/users/asistencia/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 330)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 330, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 330, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-20 23:52:47 Error: Fatal Error (4): syntax error, unexpected 'endif' (T_ENDIF) in [/var/www/sistema/app/Controller/UsersController.php, line 355]
+2015-04-20 23:52:47 Error: [FatalErrorException] syntax error, unexpected 'endif' (T_ENDIF)
+Request URL: /sistema/users/asistencia
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 355)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 355, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 355, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-20 23:52:50 Error: Fatal Error (4): syntax error, unexpected 'endif' (T_ENDIF) in [/var/www/sistema/app/Controller/UsersController.php, line 355]
+2015-04-20 23:52:50 Error: [FatalErrorException] syntax error, unexpected 'endif' (T_ENDIF)
+Request URL: /sistema/users/asistencia/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 355)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 355, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 355, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-04-21 00:31:22 Error: [MissingActionException] Action UsersController::viewmycourse() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'viewmycourse',
+)
+Request URL: /sistema/users/viewmycourse
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-04-21 00:33:57 Error: [MissingActionException] Action UsersController::asistencia() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'asistencia',
+)
+Request URL: /sistema/users/asistencia
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-04-21 00:34:45 Error: [MissingActionException] Action UsersController::asistencia() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'asistencia',
+)
+Request URL: /sistema/users/asistencia
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-04-21 00:35:27 Error: [MissingActionException] Action UsersController::asistencia() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'asistencia',
+)
+Request URL: /sistema/users/asistencia
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-04-21 00:36:44 Error: [MissingActionException] Action UsersController::asistencia() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'asistencia',
+)
+Request URL: /sistema/users/asistencia
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-04-21 00:37:21 Error: [MissingActionException] Action UsersController::asistencia() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'asistencia',
+)
+Request URL: /sistema/users/asistencia
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

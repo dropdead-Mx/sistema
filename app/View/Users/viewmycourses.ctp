@@ -125,7 +125,7 @@
 
 			</td>
 
-			<td><?php echo $this->Html->link('Asistencia',array('controller'=>'users','action'=>'asistencia',$course['Career']['id'],$course['Course']['semester'],$course['Course']['id'])); ?></td>
+			<td><?php echo $this->Html->link('Asistencia',array('controller'=>'users','action'=>'asistencias',$course['Career']['id'],$course['Course']['semester'],$course['Course']['id'],$course['User']['id'])); ?></td>
 		</tr>
 	<?php endforeach;?>
 </table>

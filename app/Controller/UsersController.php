@@ -239,7 +239,7 @@ public function addcoordi(){
 
 		if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Coordinador registrado con exito');
-			$this->redirect(array('action'=>'index'));
+			$this->redirec(array('action'=>'index'));
 			
 		endif;
 	}
@@ -327,11 +327,11 @@ public function eliminacc($id,$user_id){
 }
 
 
-public function asistencia($career_id=null,$semester=null,$id_materia=null){
-	$this->Career->id=$career_id;
-	$this->Course->id=$id_materia;
-	$this->Course->semester=$semester;
+public function asistencias($career_id, $semester, $id_materia, $id){
 
+
+ // $id=$this->User->id;
+// array_push($arreglo,$id);
 $semana=array(
 	0=>'domingo',
 	1=>'lunes',
@@ -340,27 +340,48 @@ $semana=array(
 	4=>'jueves',
 	5=>'viernes',
 	6=>'sabado');
+
 $day = date("w");
 $dia=$semana[$day];
 
-
 if($this->request->is('post')):
 	$this->Assist->create();
+	
+	$fecha=$this->request->data['Assist'][0]['date_assist'];
+	$modulo=$this->request->data['Assist'][0]['module_course_id'];
+	$grupo=$this->request->data['Assist'][0]['grupo_id'];
 
-	debug($this->request->data['Assist']);
-if($this->Assist->saveAll($this->request->data['Assist'])):
-	$this->Session->setFlash("asistencia guardada");
+	$existe=$this->Assist->find('count',array('conditions'=>array(
+		'Assist.date_assist'=>$fecha,
+		'Assist.grupo_id'=>$grupo,
+		'Assist.module_course_id'=>$modulo)));
+
+	if($existe > 0 ){
+		$this->Session->setFlash('Ya pasaste asistencia de esta materia solo se permite 1 vez');
+		$this->redirect(array('controller'=>'users','action'=>'viewmycourses',$id));
+
+	}else {
+
+	
+	if($this->Assist->saveAll($this->request->data['Assist'])):
+		$this->Session->setFlash("asistencia guardada");
+		$this->redirect(array('controller'=>'users','action'=>'viewmycourses',$id));
 	endif;
+
+}
+
 endif;
 
 	$modulos=$this->CourseModule->find('all',array('conditions'=>array('CourseModule.course_id'=>$id_materia,'CourseModule.day'=>$dia)));
-// debug($modulos);
+	// pr($modulos);
 	$estudiantes=$this->User->StudentProfile->find('all',array('conditions'=>array('StudentProfile.career_id'=>$career_id,
 		'StudentProfile.semester '=>$semester)
 		));
 	$this->set(compact('estudiantes','modulos'));
 
 }
+
+
 
 }
 

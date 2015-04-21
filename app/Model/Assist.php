@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Assist extends AppModel {
 	public $belongsTo=array('User'=>array('
