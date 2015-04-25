@@ -21,7 +21,10 @@
 	<?php echo $crtev['Goal']['description'].' '.$crtev['Goal']['percentage'].'%'; ?>
 	</th>
 
+
+
 	<?php endforeach;?>
+
 </tr>
 
 <tr>
@@ -42,6 +45,7 @@
 		?>
 	</td>
 	<?php endforeach;?>
+
 </tr>
 
 <?php endforeach;?>
@@ -53,4 +57,4 @@
 
 <?php echo $this->Form->end('Guardar Calificaciones'); ?>
 <?php echo $this->Html->script('scripts');?>
-<button class='xd3'>XDDD</button>
+<!-- <button class='xd3'>XDDD</button> -->

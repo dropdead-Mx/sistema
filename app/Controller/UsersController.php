@@ -306,7 +306,7 @@ public function vercarreras($id){
 	$todo = $this->Usrcareer->find('all',array('conditions'=>array('Usrcareer.user_id'=>$id)));
 	
 	$nombre =$this->User->find('list',array('conditions'=>array('User.id'=>$id),'fields'=>'User.name'));
-	$career=$this->Career->find('all',array('fields'=>array('Career.id','Career.name'),'conditions'=>array('Career.id'=>$carreras)));
+	$career=$this->Career->find('list',array('fields'=>'Career.name','conditions'=>array('Career.id'=>$carreras)));
 	$this->set(compact('career','id','nombre','todo'));
 	// pr($todo);
 
@@ -315,6 +315,7 @@ public function vercarreras($id){
 }
 
 public function eliminacc($id,$user_id){
+	$this->Usrcareer->id=$id;
 	if($this->request->is('get')):
 		throw new MethodNotAllowedException();
 	else:
@@ -390,6 +391,22 @@ endif;
 		'StudentProfile.semester '=>$semester)
 		));
 	$this->set(compact('estudiantes','modulos'));
+
+}
+
+
+
+//funcion para vista de estudiantes falta ver que elementos tendra el layout dl alumnno
+
+public function alumno($user_id){
+
+	$cuatrimestre=$this->StudentProfile->find('all',array('conditions'=>array(
+		'StudentProfile.user_id'=>$user_id
+		),'fields'=>array('StudentProfile.semester','StudentProfile.career_id','StudentProfile.user_id')));
+	$materia=$this->Course->find('all',array('conditions'=>array(
+		'Course.semester'=>$cuatrimestre[0]['StudentProfile']['semester'],'Course.career_id'=>$cuatrimestre[0]['StudentProfile']['career_id'])));
+	$nombre=$this->User->find('list',array('conditions'=>array('User.id'=>$cuatrimestre[0]['StudentProfile']['user_id']),'fields'=>'User.name'));
+	$this->set(compact('cuatrimestre','materia','nombre'));
 
 }
 

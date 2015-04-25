@@ -316,7 +316,7 @@ function calificParcial(){
 
 		}
 		else if (actual <= maximo) {
-		// $(this).css('border','2px solid green');
+		// $(this).css('border','2px solid green');x
 		}
 
 	});

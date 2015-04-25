@@ -1,5 +1,8 @@
 <h2>Carreras Administradas por el cordinador :<?php echo implode($nombre);?></h2>
 
+<?php 
+//pr($career); ?>
+
 <table>
 	<tr>
 		<th>id</th>
@@ -9,15 +12,15 @@
 	</tr>
 
 
-	<?php foreach($career as $k => $administra): 
+	<?php foreach($todo as $k => $administra): 
 	// echo $k;
 
 	?>
 		
 		<tr>
-			<td><?php echo $todo[$k]['Usrcareer']['id'];?></td>
-			<td> <?php echo $administra['Career']['name'];?> </td>
-			<td> <?php echo $this->Form->postlink('Quitar carrera',array('action'=>'eliminacc',$todo[$k]['Usrcareer']['id'],$todo[$k]['Usrcareer']['user_id']),array('confirm'=>'Deceas dar de baja el control de la carrera: '.$administra['Career']['name'].' para este usuario'));?></td>
+			<td><?php echo $administra['Usrcareer']['id'];?></td>
+			<td> <?php echo $career[$administra['Usrcareer']['career_id']];?> </td>
+			<td> <?php echo $this->Form->postlink('Quitar carrera',array('action'=>'eliminacc',$administra['Usrcareer']['id'],$administra['Usrcareer']['user_id']),array('confirm'=>'Deceas dar de baja el control de la carrera: '.$career[$administra['Usrcareer']['career_id']].' para este usuario'));?></td>
 		</tr>
 
 <?php endforeach;?>
