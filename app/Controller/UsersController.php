@@ -4,7 +4,7 @@ class UsersController extends AppController {
 
 public $helpers=array('Html','Form','Js');
 public $components=array('Session');
-var $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group','Course','Goal','Obtainedgoal','Usrcareer','CourseModule','Assist');
+var $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group','Course','Goal','Obtainedgoal','Usrcareer','CourseModule','Assist','Exam');
 
 
 public function index() {
@@ -400,6 +400,7 @@ endif;
 
 public function alumno($user_id){
 	$goals=[];
+	$examenes=[];
 	$cuatrimestre=$this->StudentProfile->find('all',array('conditions'=>array(
 		'StudentProfile.user_id'=>$user_id
 		),'fields'=>array('StudentProfile.semester','StudentProfile.career_id','StudentProfile.user_id')));
@@ -422,10 +423,13 @@ public function alumno($user_id){
 		array_push($goals,$this->Goal->find('list',array('conditions'=>array(
 			'Goal.course_id'=>$materia[$x]['Course']['id']),'fields'=>array('Goal.id','Goal.description','Goal.parcial',))));
 
+		array_push($examenes,$this->Exam->find('all',array('conditions'=>array(
+			'Exam.course_id'=>$materia[$x]['Course']['id']))));
+
 	}
 
 	// $goals=$this->Goal->find('all',array('conditions'=>array('Goal.course_id'=>$materia)));
-	$this->set(compact('cuatrimestre','materia','nombre','goals','calif'));
+	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','examenes'));
 
 
 

@@ -5,6 +5,7 @@
 // pr($materia);
 // pr($goals);
 // pr($calif);
+// pr($examenes);
 
 
 foreach ($materia as $k =>$materias): ?>
@@ -37,6 +38,23 @@ foreach ($materia as $k =>$materias): ?>
 		echo "<br>";
 		echo "<p>No hay criterios de evaluacion registrados para esta materia<p>";
 	}
+
+
+
+	// echo sizeof($examenes[$k]);
+
+	echo '<div class="fechasExamen">';
+	echo '<h3>Fechas de examenes</h3>';
+	foreach($examenes[$k] as $w => $fechas):
+	
+
+		echo '<p> Fecha de examen Parcial  #'.$fechas['Exam']['partial'].' :'.$fechas['Exam']['fecha'].' <strong>Hora  de inicio: </strong>'.$fechas['Exam']['start_time'].'</p>';
+
+		endforeach;
+	echo '</div>';
+
+	
+
 	?>
 
 
