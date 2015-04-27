@@ -399,14 +399,36 @@ endif;
 //funcion para vista de estudiantes falta ver que elementos tendra el layout dl alumnno
 
 public function alumno($user_id){
-
+	$goals=[];
 	$cuatrimestre=$this->StudentProfile->find('all',array('conditions'=>array(
 		'StudentProfile.user_id'=>$user_id
 		),'fields'=>array('StudentProfile.semester','StudentProfile.career_id','StudentProfile.user_id')));
+
 	$materia=$this->Course->find('all',array('conditions'=>array(
 		'Course.semester'=>$cuatrimestre[0]['StudentProfile']['semester'],'Course.career_id'=>$cuatrimestre[0]['StudentProfile']['career_id'])));
+
 	$nombre=$this->User->find('list',array('conditions'=>array('User.id'=>$cuatrimestre[0]['StudentProfile']['user_id']),'fields'=>'User.name'));
-	$this->set(compact('cuatrimestre','materia','nombre'));
+
+	$calif=$this->Obtainedgoal->find('list',array('conditions'=>array('Obtainedgoal.user_id'=>$user_id),'fields'=>array(
+		'Obtainedgoal.goal_id','Obtainedgoal.percentage_obtained')));
+
+
+	$contador= sizeof($materia);
+
+	// echo $materia[0]['Course']['name'];
+
+	for($x=0;$x<$contador; $x++){
+
+		array_push($goals,$this->Goal->find('list',array('conditions'=>array(
+			'Goal.course_id'=>$materia[$x]['Course']['id']),'fields'=>array('Goal.id','Goal.description','Goal.parcial',))));
+
+	}
+
+	// $goals=$this->Goal->find('all',array('conditions'=>array('Goal.course_id'=>$materia)));
+	$this->set(compact('cuatrimestre','materia','nombre','goals','calif'));
+
+
+
 
 }
 

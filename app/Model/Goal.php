@@ -3,6 +3,9 @@
 
 class Goal extends AppModel {
 
+	public $virtualFields=array(
+		'description'=>'CONCAT(Goal.description," ",Goal.percentage," %")');
+
 	public $displayField='description';
 
 	// public $belongsTo=array(

@@ -1,8 +1,5 @@
 <h2>Carreras Administradas por el cordinador :<?php echo implode($nombre);?></h2>
 
-<?php 
-//pr($career); ?>
-
 <table>
 	<tr>
 		<th>id</th>
@@ -12,10 +9,7 @@
 	</tr>
 
 
-	<?php foreach($todo as $k => $administra): 
-	// echo $k;
-
-	?>
+	<?php foreach($todo as $k => $administra): ?>
 		
 		<tr>
 			<td><?php echo $administra['Usrcareer']['id'];?></td>
