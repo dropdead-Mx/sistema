@@ -457,7 +457,9 @@ public function examenes($id){
 
 	$this->set(compact('examenes','materia','id'));
 
-}
+} 
+
+
 
 
 
