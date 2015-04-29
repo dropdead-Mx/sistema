@@ -1,4 +1,4 @@
-<h3>Bienvenido <?php echo implode($nombre); ?></h3>
+<h2>Bienvenido <?php echo implode($nombre); ?></h2>
 <?php 
 
 // pr($cuatrimestre);
@@ -6,12 +6,14 @@
 // pr($goals);
 // pr($calif);
 // pr($examenes);
+echo '<p>'.$this->Html->link('Ver fechas de examen',array('action'=>'examenes',$cuatrimestre[0]['StudentProfile']['user_id'])) .'</p> ';
 
 
 foreach ($materia as $k =>$materias): ?>
 
+
 <div>
-	<strong><?php echo $materias['Course']['name']; ?></strong>
+	<h3><?php echo $materias['Course']['name']; ?></h3>
 	<p>Impartida por : <?php echo $materias['User']['name']; ?></p>
 	
 	<?php 
@@ -43,15 +45,22 @@ foreach ($materia as $k =>$materias): ?>
 
 	// echo sizeof($examenes[$k]);
 
-	echo '<div class="fechasExamen">';
-	echo '<h3>Fechas de examenes</h3>';
-	foreach($examenes[$k] as $w => $fechas):
+	// echo '<div class="fechasExamen">';
+	// echo '<h4>Fechas de examenes</h4>';
+	// foreach($examenes[$k] as $w => $fechas):
 	
+	// 	if($fechas['Exam']['partial']<=3){
 
-		echo '<p> Fecha de examen Parcial  #'.$fechas['Exam']['partial'].' :'.$fechas['Exam']['fecha'].' <strong>Hora  de inicio: </strong>'.$fechas['Exam']['start_time'].'</p>';
+	// 	echo '<p> Fecha de examen Parcial  #'.$fechas['Exam']['partial'].' :'.$fechas['Exam']['fecha'].' <strong>Hora  de inicio: </strong>'.$fechas['Exam']['start_time'].'</p>';
+	// 	}else if ($fechas['Exam']['partial'] == 4){
+	// 		echo '<p> Fecha de examen Cuatrimestral :'.$fechas['Exam']['fecha'].' <strong>Hora  de inicio: </strong>'.$fechas['Exam']['start_time'].'</p>';
+	// 	}else if($fechas['Exam']['partial'] == 5){
+	// 		echo '<p> Fecha de examen Extraordinario :'.$fechas['Exam']['fecha'].'</p>';
 
-		endforeach;
-	echo '</div>';
+	// 	}
+
+	// 	endforeach;
+	// echo '</div>';
 
 	
 
@@ -63,3 +72,4 @@ foreach ($materia as $k =>$materias): ?>
 </div>
 
 <?php endforeach;?>
+

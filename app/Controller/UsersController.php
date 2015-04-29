@@ -436,6 +436,30 @@ public function alumno($user_id){
 
 }
 
+public function examenes($id){
+		$examenes=[];
+		$cuatrimestre=$this->StudentProfile->find('all',array('conditions'=>array(
+		'StudentProfile.user_id'=>$id
+		),'fields'=>array('StudentProfile.semester','StudentProfile.career_id','StudentProfile.user_id')));
+
+		$materia=$this->Course->find('all',array('conditions'=>array(
+		'Course.semester'=>$cuatrimestre[0]['StudentProfile']['semester'],'Course.career_id'=>$cuatrimestre[0]['StudentProfile']['career_id'])));
+
+	$contador= sizeof($materia);
+
+		for($x=0;$x<$contador; $x++){
+
+
+		array_push($examenes,$this->Exam->find('all',array('conditions'=>array(
+			'Exam.course_id'=>$materia[$x]['Course']['id']))));
+
+	}
+
+	$this->set(compact('examenes','materia','id'));
+
+}
+
+
 
 
 }
