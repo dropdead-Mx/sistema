@@ -459,6 +459,35 @@ public function examenes($id){
 
 } 
 
+public function horario($id){
+
+		$modulos=[];
+		$dias=['lunes','martes','miercoles','jueves','viernes'];
+		$cuatrimestre=$this->StudentProfile->find('all',array('conditions'=>array(
+		'StudentProfile.user_id'=>$id
+		),'fields'=>array('StudentProfile.semester','StudentProfile.career_id','StudentProfile.user_id')));
+
+		$materia=$this->Course->find('list',array('conditions'=>array(
+		'Course.semester'=>$cuatrimestre[0]['StudentProfile']['semester'],'Course.career_id'=>$cuatrimestre[0]['StudentProfile']['career_id'])));
+
+			$contador= sizeof($materia);
+
+		// for($x=0;$x<$contador; $x++){
+		foreach ($materia as $k =>$materias):
+		// echo $k;
+
+		array_push($modulos,$this->CourseModule->find('all',array('conditions'=>array(
+			'CourseModule.course_id'=>$k),
+		'fields'=>array(
+			'CourseModule.course_id','CourseModule.day','.CourseModule.start_time','CourseModule.end_time'))));
+
+	// }
+	endforeach;
+
+	$this->set(compact('modulos','materia','dias'));
+
+}
+
 
 
 
