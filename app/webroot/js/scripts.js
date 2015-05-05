@@ -1,3 +1,23 @@
+ $.datepicker.regional['es'] = {
+ closeText: 'Cerrar',
+ prevText: '<Ant',
+ nextText: 'Sig>',
+ currentText: 'Hoy',
+ monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+ monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+ dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+ dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+ dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+ weekHeader: 'Sm',
+ dateFormat: 'yy-mm-dd',
+ firstDay: 1,
+ isRTL: false,
+ showMonthAfterYear: false,
+ yearSuffix: ''
+ };
+ $.datepicker.setDefaults($.datepicker.regional['es']);
+
+
 	var valores=[];
 	var porcentajeFinal=0;
 	function modificaIDSC() {
@@ -333,6 +353,40 @@ function calificParcial(){
 
 }
 
+function misAsistencias(){
+
+	$('button.buscarAsistencia').on('click', function() {
+		fecha1=$('input#inicio').val();
+		fecha2=$('input#fin').val();
+		usuario=$('input#userid').attr('data-id');
+
+		$.ajax({
+			type:"GET",
+			url:'../getassists/'+fecha1+'/'+fecha2+'/'+usuario,
+			success: function(response){
+				// console.info(response.length);
+				// console.log(response);
+					var asistencias=[];
+				if(typeof response !== 'undefined' && response.length >0 ){
+					for (var i=0, num=response.length; i< num; i++){
+
+						
+						asistencias.push('<p> Usuario :'+response[i].Assist.user_id+' Fecha:  '+response[i].Assist.date_assist+', Status : '+response[i].Assist.status+'</p>');
+					}
+					$('.AsistenciasTotales').html(asistencias.join(''));
+				}else {
+					$('.AsistenciasTotales').html('No se encontraron asistencias en ese rango de fechas');
+				}
+
+			}
+		});
+
+		
+
+	});
+
+}
+
 $(function(){
 	clona();
 	elimina();
@@ -342,6 +396,8 @@ $(function(){
 	toUppercase();
 	incGoal();
 	calificParcial();
+	$(".datepicker").datepicker();
+	misAsistencias();
 	// changecounter();
 	// checkPorcentaje();
 	// sumaPorcentaje();

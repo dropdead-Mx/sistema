@@ -3,7 +3,7 @@
 class UsersController extends AppController {
 
 public $helpers=array('Html','Form','Js');
-public $components=array('Session');
+public $components=array('Session','RequestHandler');
 var $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group','Course','Goal','Obtainedgoal','Usrcareer','CourseModule','Assist','Exam');
 
 
@@ -429,7 +429,7 @@ public function alumno($user_id){
 	}
 
 	// $goals=$this->Goal->find('all',array('conditions'=>array('Goal.course_id'=>$materia)));
-	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','examenes'));
+	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','examenes','user_id'));
 
 
 
@@ -486,6 +486,24 @@ public function horario($id){
 
 	$this->set(compact('modulos','materia','dias'));
 
+
+}
+
+
+public function getassists($inicio,$fin,$user){
+
+$this->RequestHandler->respondAs('json');
+
+
+$fechas=$this->Assist->find('all',array('conditions'=>array(
+	'Assist.date_assist BETWEEN ? AND ? '=>array($inicio,$fin),
+	'Assist.user_id'=>$user),
+	'fields'=>array(
+		'Assist.user_id','Assist.date_assist','Assist.status')
+	));
+
+$this->set('fechas',$fechas);
+$this->layout='ajax';
 }
 
 

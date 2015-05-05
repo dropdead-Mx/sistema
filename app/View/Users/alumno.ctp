@@ -9,9 +9,23 @@
 echo '<p>'.$this->Html->link('Ver fechas de examen',array('action'=>'examenes',$cuatrimestre[0]['StudentProfile']['user_id'])) .'</p> ';
 echo '<p>'.$this->Html->link('Ver Horario',array('action'=>'horario',$cuatrimestre[0]['StudentProfile']['user_id'])) .'</p> ';
 
+?>
 
 
-foreach ($materia as $k =>$materias): ?>
+<div class="asistencias">
+	<p>Buscar asistencias: </p>
+
+	<div><label for="inicio">Fecha inicio : </label> <input type="text" class="datepicker" id="inicio" ></div>
+	<div><label for="fin">Fecha final: </label><input type="text" class="datepicker" id="fin"></div>
+	<input type="hidden" data-id="<?php echo $user_id ;?>" id="userid" >
+	<button class="buscarAsistencia">Buscar</button>
+</div>
+
+<div class="AsistenciasTotales">
+	*
+</div>
+
+<?php foreach ($materia as $k =>$materias): ?>
 
 
 <div>
@@ -75,3 +89,4 @@ foreach ($materia as $k =>$materias): ?>
 
 <?php endforeach;?>
 
+<?php  echo $this->Html->script(array('scripts')); ?>
