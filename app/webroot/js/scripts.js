@@ -367,9 +367,16 @@ function misAsistencias(){
 		fecha2=$('input#fin').val();
 		usuario=$('input#userid').attr('data-id');
 		materia=$('select#materia').val();
-		
 
-		$.ajax({
+		// if(fecha1 > fecha2){
+		// 	alert('la fecha 1 es mayor');
+		// }else if(fecha2 > fecha1){
+		// 	alert('la fecha 2 es mayor');
+		// }
+
+		if(fecha1 < fecha2 && materia != ' '){
+			// inicio ajax
+			$.ajax({
 			type:"GET",
 			url:'../getassists/'+fecha1+'/'+fecha2+'/'+usuario+'/'+materia,
 			success: function(response){
@@ -402,6 +409,25 @@ function misAsistencias(){
 
 			}
 		});
+
+ 	// fin ajax
+
+		}else if(fecha2 < fecha1 && materia != ' '){
+			alert('La fecha final debe ser mayor a la inicial');
+			$('input#inicio').val(' ');
+			$('input#fin').val(' ');
+
+			
+
+
+		}else if(fecha1 == fecha2 && materia !=' '){
+			alert('Escoje un rango mayor de fechas');
+			$('input#inicio').val(' ');
+			$('input#fin').val(' ');
+		}
+
+
+		
 
 		
 
