@@ -361,13 +361,13 @@ if($this->request->is('post')):
 	$this->Assist->create();
 	
 	$fecha=$this->request->data['Assist'][0]['date_assist'];
-	$modulo=$this->request->data['Assist'][0]['module_course_id'];
+	$modulo=$this->request->data['Assist'][0]['course_id'];
 	$grupo=$this->request->data['Assist'][0]['grupo_id'];
 
 	$existe=$this->Assist->find('count',array('conditions'=>array(
 		'Assist.date_assist'=>$fecha,
 		'Assist.grupo_id'=>$grupo,
-		'Assist.module_course_id'=>$modulo)));
+		'Assist.course_id'=>$modulo)));
 
 	if($existe > 0 ){
 		$this->Session->setFlash('Ya pasaste asistencia de esta materia solo se permite 1 vez');
@@ -390,7 +390,7 @@ endif;
 	$estudiantes=$this->User->StudentProfile->find('all',array('conditions'=>array('StudentProfile.career_id'=>$career_id,
 		'StudentProfile.semester '=>$semester)
 		));
-	$this->set(compact('estudiantes','modulos'));
+	$this->set(compact('estudiantes','modulos','id_materia'));
 
 }
 
@@ -490,16 +490,17 @@ public function horario($id){
 }
 
 
-public function getassists($inicio,$fin,$user){
+public function getassists($inicio,$fin,$user,$materia){
 
 $this->RequestHandler->respondAs('json');
 
 
 $fechas=$this->Assist->find('all',array('conditions'=>array(
 	'Assist.date_assist BETWEEN ? AND ? '=>array($inicio,$fin),
-	'Assist.user_id'=>$user),
+	'Assist.user_id'=>$user,
+	'Assist.course_id'=>$materia),
 	'fields'=>array(
-		'Assist.user_id','Assist.date_assist','Assist.status')
+		'Assist.user_id','Assist.date_assist','Assist.status','Assist.note')
 	));
 
 $this->set('fechas',$fechas);

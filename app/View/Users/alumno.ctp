@@ -17,12 +17,23 @@ echo '<p>'.$this->Html->link('Ver Horario',array('action'=>'horario',$cuatrimest
 
 	<div><label for="inicio">Fecha inicio : </label> <input type="text" class="datepicker" id="inicio" ></div>
 	<div><label for="fin">Fecha final: </label><input type="text" class="datepicker" id="fin"></div>
+	<div>
+	<p>seleccione una materia : </p>
+		<select  id="materia">
+		<option value="">--- Materias ---</option>
+			<?php  foreach ($materia as $x => $materias ):
+
+				echo '<option value= '.$materias['Course']['id'].'>'.$materias['Course']['name'].'</option>';
+			
+			endforeach;?>
+		</select>
+	</div>
 	<input type="hidden" data-id="<?php echo $user_id ;?>" id="userid" >
 	<button class="buscarAsistencia">Buscar</button>
 </div>
 
 <div class="AsistenciasTotales">
-	*
+	
 </div>
 
 <?php foreach ($materia as $k =>$materias): ?>

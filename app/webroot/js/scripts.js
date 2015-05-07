@@ -355,27 +355,49 @@ function calificParcial(){
 
 function misAsistencias(){
 
+
+
 	$('button.buscarAsistencia').on('click', function() {
+		asistencia=0;
+		retardos=0;
+		faltas=0;
+		var asistencias=[];
+		$('p.asist,strong.noAssist').remove();
 		fecha1=$('input#inicio').val();
 		fecha2=$('input#fin').val();
 		usuario=$('input#userid').attr('data-id');
+		materia=$('select#materia').val();
+		
 
 		$.ajax({
 			type:"GET",
-			url:'../getassists/'+fecha1+'/'+fecha2+'/'+usuario,
+			url:'../getassists/'+fecha1+'/'+fecha2+'/'+usuario+'/'+materia,
 			success: function(response){
 				// console.info(response.length);
 				// console.log(response);
-					var asistencias=[];
 				if(typeof response !== 'undefined' && response.length >0 ){
 					for (var i=0, num=response.length; i< num; i++){
 
-						
-						asistencias.push('<p> Usuario :'+response[i].Assist.user_id+' Fecha:  '+response[i].Assist.date_assist+', Status : '+response[i].Assist.status+'</p>');
+
+						asistencias.push('<p class="asist">  Fecha:  '+response[i].Assist.date_assist+', Status : '+response[i].Assist.status+' Nota : '+response[i].Assist.note+'</p>');
+						var estatus=response[i].Assist.status;
+
+						if (estatus == 1 ){
+							asistencia=asistencia+1;
+						}
+						else if( estatus ==2 ){
+							retardos=retardos+1;
+						}else if( estatus == 3 ){
+							faltas=faltas+1;
+						}
+
 					}
-					$('.AsistenciasTotales').html(asistencias.join(''));
+					$('.AsistenciasTotales').append(asistencias);
+					$('.AsistenciasTotales').append('<p class="asist"> Asistencias: '+asistencia+' Retardos: '+retardos+'  Faltas: '+faltas+'</p>');
+
+
 				}else {
-					$('.AsistenciasTotales').html('No se encontraron asistencias en ese rango de fechas');
+					$('.AsistenciasTotales').html('<strong class="noAssist">No se encontraron asistencias en ese rango de fechas</strong>');
 				}
 
 			}
