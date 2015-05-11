@@ -427,6 +427,7 @@ public function alumno($user_id){
 			'Exam.course_id'=>$materia[$x]['Course']['id']))));
 
 	}
+		
 
 	// $goals=$this->Goal->find('all',array('conditions'=>array('Goal.course_id'=>$materia)));
 	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','examenes','user_id'));
@@ -483,6 +484,7 @@ public function horario($id){
 
 	// }
 	endforeach;
+
 
 	$this->set(compact('modulos','materia','dias'));
 

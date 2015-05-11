@@ -137,4 +137,37 @@ class CoursesController extends AppController {
 
  	}
 
+ 	public function vermodulos($course_id) {
+
+
+
+ 		if($this->request->is('post')):
+ 			// debug($this->request->data);
+ 			if($this->Course->CourseModule->saveAll($this->request->data['CourseModule'])):
+ 				$this->Session->setFlash('modulos actualizados');
+				$this->redirect(array('action'=>'index'));
+				endif;
+			endif;
+
+			$modulos= $this->CourseModule->find('all',array('conditions'=>array(
+				'course_id'=> $course_id)));
+			$this->set(compact('modulos'));
+ 	}
+
+ 	public function eliminamodulos($id,$id_course) {
+
+ 			if($this->request->is('get')):
+			throw new MethodNotAllowedException();
+			$this->redirect(array('action'=>'index'));
+
+		else:
+			if($this->CourseModule->delete($id)):
+				$this->Session->setFlash('Modulo Eliminado');
+				$this->redirect(array('action'=>'vermodulos',$id_course));
+
+			endif;
+		endif;
+
+ 	}
+
 }

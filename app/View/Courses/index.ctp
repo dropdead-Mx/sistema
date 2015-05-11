@@ -45,6 +45,7 @@
 
 			 <?php
 			 echo $this->element('tienemod',array('idmat'=>$idmat1));
+			 echo $this->Html->link('Ver modulos',array('action'=>'vermodulos',$materia['Course']['id']));
 			 ?>
 			 </td>
 		</tr>
