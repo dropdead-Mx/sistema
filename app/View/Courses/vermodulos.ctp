@@ -1,4 +1,4 @@
-<h3>Modulos de la materia :</h3>
+<h3>Modulos de la materia : <?php echo $modulos[0]['Course']['name']; ?></h3>
 
 <?php 
 

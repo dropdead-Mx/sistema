@@ -139,9 +139,11 @@ class CoursesController extends AppController {
 
  	public function vermodulos($course_id) {
 
-
-
- 		if($this->request->is('post')):
+ 		$existe=$this->CourseModule->find('count',array(
+ 			'conditions'=>array(
+ 				'CourseModule.course_id'=>$course_id)));
+ 		if($existe > 0 ){
+ 				if($this->request->is('post')):
  			// debug($this->request->data);
  			if($this->Course->CourseModule->saveAll($this->request->data['CourseModule'])):
  				$this->Session->setFlash('modulos actualizados');
@@ -152,6 +154,14 @@ class CoursesController extends AppController {
 			$modulos= $this->CourseModule->find('all',array('conditions'=>array(
 				'course_id'=> $course_id)));
 			$this->set(compact('modulos'));
+
+ 		}else {
+ 			$this->Session->setFlash('No existen modulos registrados para este curso ');
+ 			$this->redirect(array('action'=>'index'));
+ 		}
+
+
+ 	
  	}
 
  	public function eliminamodulos($id,$id_course) {

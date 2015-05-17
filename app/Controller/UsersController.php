@@ -486,7 +486,7 @@ public function horario($id){
 	endforeach;
 
 
-	$this->set(compact('modulos','materia','dias'));
+	$this->set(compact('modulos','materia','dias','cuatrimestre'));
 
 
 }
