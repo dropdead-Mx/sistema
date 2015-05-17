@@ -436,6 +436,25 @@ function misAsistencias(){
 
 }
 
+function delimitaHrs(){
+	filtro=$('select.inputHoras').filter(function(){
+	return(this.id.match(/CourseModule\d+(StartTimeHour||EndTimeHour)/));
+
+	});
+	
+	$(filtro).children('option').each(function(){
+		if($(this).text() <= 6 ) {
+			$(this).remove();
+		} else if($(this).text() > 18){
+			$(this).remove();
+
+
+		}
+		// console.log($(this).val() );
+	});
+
+}
+
 $(function(){
 	clona();
 	elimina();
@@ -445,6 +464,7 @@ $(function(){
 	toUppercase();
 	incGoal();
 	calificParcial();
+	delimitaHrs();
 	$(".datepicker").datepicker();
 	misAsistencias();
 	// changecounter();

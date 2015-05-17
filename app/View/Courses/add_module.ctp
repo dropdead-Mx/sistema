@@ -13,8 +13,8 @@
 		<th>Materia</th>
 		<th>Carrera</th>
 		<th>Dia de la semana</th>
-		<th>Hora Inicio HH:MM AM/PM</th>
-		<th>Hora Fin HH:MM AM/PM</th>
+		<th>Hora Inicio </th>
+		<th>Hora Fin </th>
 		<th>Acciones</th>
 	</tr>
 
@@ -29,8 +29,8 @@
 		'jueves'=>'jueves',
 		'viernes'=>'viernes',),
 	'empty'=>'Seleccione dia de la semana')); ?></td>
-		<td class='tInicio'><?php echo $this->Form->input('CourseModule.0.start_time',array('label'=>false,'empty'=>' ')); ?></td>
-		<td class='tFin'><?php echo $this->Form->input('CourseModule.0.end_time',array('label'=>false,'empty'=>' ')); ?></th>
+		<td class='tInicio'><?php echo $this->Form->input('CourseModule.0.start_time',array('label'=>false,'empty'=>'--','timeFormat'=>'24','class'=>'inputHoras')); ?></td>
+		<td class='tFin'><?php echo $this->Form->input('CourseModule.0.end_time',array('label'=>false,'empty'=>'--','timeFormat'=>'24','class'=>'inputHoras')); ?></th>
 		<td><input type="button" value='X' class='elimina'></td>
 
 	</tr>
