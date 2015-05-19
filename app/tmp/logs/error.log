@@ -11335,3 +11335,12 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-05-19 10:34:56 Error: [MissingControllerException] Controller class CursesController could not be found.
+Exception Attributes: array (
+  'class' => 'CursesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/curses/
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

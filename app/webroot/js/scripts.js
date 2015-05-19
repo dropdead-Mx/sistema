@@ -438,10 +438,15 @@ function misAsistencias(){
 
 function delimitaHrs(){
 	filtro=$('select.inputHoras').filter(function(){
-	return(this.id.match(/CourseModule\d+(StartTimeHour||EndTimeHour)/));
+	return(this.id.match(/\d+StartTimeHour|EndTimeHour/));
 
 	});
-	
+
+	filtroMinutos=$('select.inputHoras').filter(function(){
+	return(this.id.match(/\d+StartTimeMin|EndTimeMin/));
+
+	});
+	// filtro.css('background','blue')
 	$(filtro).children('option').each(function(){
 		if($(this).text() <= 6 ) {
 			$(this).remove();
@@ -450,7 +455,21 @@ function delimitaHrs(){
 
 
 		}
-		// console.log($(this).val() );
+		
+	});
+
+	filtroMinutos.children('option').each(function(){
+
+
+		enteros = $(this).text().match(/\d0/);
+		console.log(enteros);
+		if(enteros == null && $(this).text() != '--'){
+			
+			$(this).remove();
+		}
+		
+
+
 	});
 
 }
