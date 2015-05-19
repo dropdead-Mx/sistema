@@ -11344,3 +11344,94 @@ Request URL: /sistema/curses/
 Stack Trace:
 #0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-05-19 12:28:44 Error: [MissingActionException] Action UsersController::students() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'students',
+)
+Request URL: /sistema/users/students
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-05-19 12:54:16 Error: Fatal Error (4): syntax error, unexpected '$dia' (T_VARIABLE), expecting ',' or ';' in [/var/www/sistema/app/View/Users/horario.ctp, line 166]
+2015-05-19 12:54:16 Error: [FatalErrorException] syntax error, unexpected '$dia' (T_VARIABLE), expecting ',' or ';'
+Request URL: /sistema/users/horario/66
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 166)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 166, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 166, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-19 12:54:39 Error: Fatal Error (4): syntax error, unexpected '$hrsTarde' (T_VARIABLE), expecting ',' or ';' in [/var/www/sistema/app/View/Users/horario.ctp, line 166]
+2015-05-19 12:54:39 Error: [FatalErrorException] syntax error, unexpected '$hrsTarde' (T_VARIABLE), expecting ',' or ';'
+Request URL: /sistema/users/horario/66
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 166)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 166, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 166, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-19 12:54:58 Error: Fatal Error (4): syntax error, unexpected ''</td>'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in [/var/www/sistema/app/View/Users/horario.ctp, line 166]
+2015-05-19 12:54:58 Error: [FatalErrorException] syntax error, unexpected ''</td>'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';'
+Request URL: /sistema/users/horario/66
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 166)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 166, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 166, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-19 12:55:45 Error: Fatal Error (4): syntax error, unexpected ''</td>'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in [/var/www/sistema/app/View/Users/horario.ctp, line 166]
+2015-05-19 12:55:45 Error: [FatalErrorException] syntax error, unexpected ''</td>'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';'
+Request URL: /sistema/users/horario/66
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 166)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 166, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 166, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-19 13:00:32 Error: Fatal Error (1): Maximum execution time of 30 seconds exceeded in [/var/www/sistema/app/View/Users/horario.ctp, line 180]
+2015-05-19 13:00:32 Error: [FatalErrorException] Maximum execution time of 30 seconds exceeded
+Request URL: /sistema/users/horario/66
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Maximum executi...', '/var/www/sistem...', 180)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum executi...', '/var/www/sistem...', 180, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Maximum executi...', '/var/www/sistem...', 180, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-19 13:00:56 Error: Fatal Error (1): Maximum execution time of 30 seconds exceeded in [/var/www/sistema/app/View/Users/horario.ctp, line 174]
+2015-05-19 13:00:56 Error: [FatalErrorException] Maximum execution time of 30 seconds exceeded
+Request URL: /sistema/users/horario/66
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Maximum executi...', '/var/www/sistem...', 174)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum executi...', '/var/www/sistem...', 174, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Maximum executi...', '/var/www/sistem...', 174, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-19 13:01:46 Error: Fatal Error (1): Maximum execution time of 30 seconds exceeded in [/var/www/sistema/app/View/Users/horario.ctp, line 176]
+2015-05-19 13:01:46 Error: [FatalErrorException] Maximum execution time of 30 seconds exceeded
+Request URL: /sistema/users/horario/66
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Maximum executi...', '/var/www/sistem...', 176)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum executi...', '/var/www/sistem...', 176, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Maximum executi...', '/var/www/sistem...', 176, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-19 13:16:35 Error: Fatal Error (4): syntax error, unexpected 'endforeach' (T_ENDFOREACH) in [/var/www/sistema/app/View/Users/horario.ctp, line 239]
+2015-05-19 13:16:35 Error: [FatalErrorException] syntax error, unexpected 'endforeach' (T_ENDFOREACH)
+Request URL: /sistema/users/horario/66
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 239)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 239, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 239, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

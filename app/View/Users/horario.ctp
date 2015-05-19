@@ -5,8 +5,11 @@
 // pr($cuatrimestre);
 $cuatri=$cuatrimestre[0]['StudentProfile']['semester'];
 // echo $cuatri;
+$HrsVespertinas=['10:10','11:00','11:50','12:40','13:30','14:20','15:10','16:00','16:50','17:10','18:00','18:50'];
 $contador=sizeof($materia);
-// pr($modulos);
+pr($modulos);
+// echo sizeof($modulos);
+pr($HrsVespertinas);
 $hrsinicio=[];
 $hrsfin=[];
 // pr($materia);
@@ -159,7 +162,91 @@ if($cuatri <=6 ){
 	// echo 'Vespertino '.$hrsContador;
 	$hrinicio=10;
 	// poner funciones aqui
-	
+
+	// foreach($HrsVespertinas as $V => $hrsTarde):
+	for($d=0;$d < sizeof($HrsVespertinas)-1;$d++){
+		echo '<tr>';
+		// echo gettype($HrsVespertinas[$d]);
+
+		if($HrsVespertinas[$d]  == '16:50'){
+
+		echo '<td> '.$HrsVespertinas[$d].' - '.$HrsVespertinas[$d+1].'<span class ="letras"> R </span> </td>';
+		$horainicio=$HrsVespertinas[$d];
+
+		}else{
+		echo '<td> '.$HrsVespertinas[$d].' - '.$HrsVespertinas[$d+1].' </td>';
+		$horainicio=$HrsVespertinas[$d];
+
+
+		}
+
+
+
+
+		foreach($dias as $k => $dia):
+		echo '<td>';
+
+		if($HrsVespertinas[$d]  == '16:50' && $dia == 'lunes'){
+			// echo '<p> </p>';
+			echo "<span class ='letras'> E </span>";
+		}elseif ($HrsVespertinas[$d] == '16:50' && $dia == 'martes') {
+			echo "<span class ='letras'> C </span>";
+			
+		}elseif ($HrsVespertinas[$d] == '16:50' && $dia == 'miercoles') {
+			echo "<span class ='letras'> E </span>";
+			
+		}elseif ($HrsVespertinas[$d] == '16:50' && $dia == 'jueves') {
+			echo "<span class ='letras'> S </span>";
+			
+		}elseif ($HrsVespertinas[$d]  == '16:50' && $dia == 'viernes') {
+			echo "<span class ='letras'> O </span>";
+			
+		}
+
+		//IMPRIMIR MODULOS EN DIA Y HR
+
+
+		foreach($modulos as $P => $modulo):
+			for($w=0;$w<=$contador;$w++){
+				// echo $modulos[$w][$P]['CourseModule']['day'];
+
+			if(isset($modulos[$w][$P]['CourseModule']['day']) && $modulos[$w][$P]['CourseModule']['day'] === $dia ){
+
+		// echo $modulos[$w][$k]['CourseModule']['start_time'].'<td>';
+			$hora = date("H:m",strtotime($modulos[$w][$P]['CourseModule']['start_time']));
+			$hr=date("H:m",strtotime($HrsVespertinas[$d]));
+			$hora2=date("H:m",strtotime($modulos[$w][$P]['CourseModule']['end_time']));
+			$hr2=date("H:m",strtotime($HrsVespertinas[$d+1]));
+// $hrfin=date("H",strtotime($fin));
+
+			// echo gettype($hora);
+			// echo $hora;
+
+
+			$materia_id =$modulos[$w][$P]['CourseModule']['course_id'];
+
+				if($hr=== $hora){
+
+					echo $materia[$materia_id];
+					// echo $materia_id;
+
+					// echo $modulos[$w][$P]['CourseModule']['course_id'];
+					echo '<br>';
+					// echo $hora;
+					echo $modulos[$w][$P]['CourseModule']['start_time'].'-'.$modulos[$w][$P]['CourseModule']['end_time'];
+					echo '</td>';
+			} 
+
+			}
+		}
+
+			endforeach;
+
+
+			endforeach;
+
+
+		}
 
 }
 
