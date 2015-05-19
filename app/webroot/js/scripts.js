@@ -474,6 +474,67 @@ function delimitaHrs(){
 
 }
 
+function matxCuatyCarr(){
+
+	$('select#cuatrimestre,select#infocalif').on('change',function(){
+	$('select#materiasporcarrera').children('option.opcion').remove();
+
+	carrera = $('select#infocalif').val();
+	cuatri= $('select#cuatrimestre option:selected').val();
+	materias=[];
+
+	if(carrera != 0 && cuatri != 0){
+		// alert('ok');
+		// console.log(cuatri);
+
+		$.ajax({
+			type:'GET',
+			url:'../materiasporgerarquia/'+carrera+'/'+cuatri,
+			success:function(response){
+			
+
+				console.info(response);
+
+				if(typeof response !== 'undefined' && response.length >0 ){
+
+				$('select#materiasporcarrera option[class="noMaterias"]').text('--Materias Disponibles--');
+
+					for (var i=0, num=response.length; i< num; i++){
+
+						materias.push('<option value="'+response[i].Course.id+'"class="opcion">'+response[i].Course.name+'</option>');
+
+
+
+
+				// alert('No se encontraron materias para esta carrera y semestre');
+
+
+				}
+					$('#materiasporcarrera').append(materias);
+
+
+			}else {
+				// alert('No se encontraron materias para esta carrera y semestre');
+				$('select#materiasporcarrera option[class="noMaterias"]').text('--Sin materias--');
+
+			}
+		}
+
+		});
+
+
+
+	}else {
+		alert('Porfavor selecciona una carrera y cuatrimestre para realizar la busqueda');
+		$('select#materiasporcarrera option[class="noMaterias"]').text('--Sin materias--');
+
+	}
+
+		
+	});
+
+}
+
 $(function(){
 	clona();
 	elimina();
@@ -484,6 +545,7 @@ $(function(){
 	incGoal();
 	calificParcial();
 	delimitaHrs();
+	matxCuatyCarr();
 	$(".datepicker").datepicker();
 	misAsistencias();
 	// changecounter();

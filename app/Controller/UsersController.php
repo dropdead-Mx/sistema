@@ -511,6 +511,45 @@ $this->layout='ajax';
 
 
 
+public function vercalificaciones($user_id) {
+
+	$infocarreras=[];
+
+	$carreras=$this->Usrcareer->find('all',array('conditions'=>array('Usrcareer.user_id'=>$user_id),'fields'=>'Usrcareer.career_id'));
+
+	// $nombrecarrera=$this->Career->find('all',array('conditions'=>array('Career.id'=>$carreras)));
+
+	foreach($carreras as $x => $carrera):
+		// echo $carrera['Usrcareer']['career_id'];
+		array_push($infocarreras,$this->Career->find('all',array('conditions'=>array(
+			'Career.id'=>$carrera['Usrcareer']['career_id']),
+			'fields'=>array(
+				'Career.id','Career.abrev','Career.name'))));
+
+		endforeach;
+
+	$this->set(compact('infocarreras'));
+
+}
+
+public function materiasporgerarquia($career_id,$cuatrimestre){
+
+$this->RequestHandler->respondAs('json');
+$materias=$this->Course->find('all',array('conditions'=>array(
+	'Course.career_id'=>$career_id,
+	'Course.semester'=>$cuatrimestre),
+'fields'=>array(
+	'Course.id','Course.name')
+
+));
+
+$this->set(compact('materias'));
+
+$this->layout='ajax';
+
+}
+
+
 
 
 
