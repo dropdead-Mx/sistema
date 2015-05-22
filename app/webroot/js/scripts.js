@@ -524,13 +524,35 @@ function matxCuatyCarr(){
 
 
 
-	}else {
-		alert('Porfavor selecciona una carrera y cuatrimestre para realizar la busqueda');
+	}else if( (carrera == 0 && cuatri >0 ) || (cuatri == 0 && carrera > 0) ){
+		// alert('Porfavor selecciona una carrera y cuatrimestre para realizar la busqueda');
 		$('select#materiasporcarrera option[class="noMaterias"]').text('--Sin materias--');
 
 	}
 
 		
+	});
+
+
+ //aqui funcion ajax para dibujar la tabla con los alumnos y sus calificaciones
+
+}
+
+function regcuatrimestre(){
+
+	$('#registrarCuatrimestre').on('submit',function(){
+
+		fech1=$('input#inicioCuatri').val();
+		fech2=$('input#finCuatrimestre').val();
+
+		if(fech1 < fech2){
+			return true;
+		}else {
+			alert('La fecha de inicio debe de ser menor a la del cierre de cuatrimestre');
+			return false;
+		}
+
+
 	});
 
 }
@@ -546,6 +568,7 @@ $(function(){
 	calificParcial();
 	delimitaHrs();
 	matxCuatyCarr();
+	regcuatrimestre();
 	$(".datepicker").datepicker();
 	misAsistencias();
 	// changecounter();

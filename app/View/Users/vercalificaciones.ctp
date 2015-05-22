@@ -33,6 +33,17 @@ echo '</select>';
 <select  id="materiasporcarrera">
 	<option class="noMaterias">--Sin materias--</option>
 </select>
+<select  id="parciales">
+	<option value="0"> -- Seleccione el parcial -- </option>
+	<option value="1"> 1er Parcial </option>
+	<option value="2"> 2do Parcial </option>
+	<option value="3"> 3er Parcial </option>
+	<option value="4"> Cuatrimestral </option>
+	<option value="5"> Calificaciones finales</option>
+</select>
 
+<section class='pintaCalificaciones'>
+	*
+</section>
 <button id="buscarMaterias">Buscar</button>
 <?php echo $this->Html->script('scripts');?>

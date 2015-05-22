@@ -11522,3 +11522,104 @@ Stack Trace:
 #1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
 #2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2015-05-21 17:46:09 Error: [MissingActionException] Action UsersController::registrarcuatrimestre.ctp() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'registrarcuatrimestre.ctp',
+)
+Request URL: /sistema/users/registrarcuatrimestre.ctp
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-05-21 17:46:17 Error: [MissingActionException] Action UsersController::registrarcuatri.ctp() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'registrarcuatri.ctp',
+)
+Request URL: /sistema/users/registrarcuatri.ctp
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-05-21 18:01:33 Error: [MissingTableException] Table semesters for model Semester was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'semesters',
+  'class' => 'Semester',
+  'ds' => 'default',
+)
+Request URL: /sistema/users/registrarcuatri
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Model.php(3640): Model->setSource('semesters')
+#1 /var/www/sistema/lib/Cake/Model/Model.php(1744): Model->getDataSource()
+#2 /var/www/sistema/app/Controller/UsersController.php(555): Model->save(Array)
+#3 [internal function]: UsersController->registrarcuatri()
+#4 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#5 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#7 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-05-21 18:43:24 Error: [MissingControllerException] Controller class SemesterController could not be found.
+Exception Attributes: array (
+  'class' => 'SemesterController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/semester/registrarcuatrimestre
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-05-21 18:43:50 Error: [MissingViewException] View file "Semesters/registrarcuatrimestre.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Semesters/registrarcuatrimestre.ctp',
+)
+Request URL: /sistema/semesters/registrarcuatrimestre
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /var/www/sistema/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SemestersController), Object(CakeRequest))
+#4 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-21 18:44:51 Error: [MissingActionException] Action SemestersController::registrarcuatri() could not be found.
+Exception Attributes: array (
+  'controller' => 'SemestersController',
+  'action' => 'registrarcuatri',
+)
+Request URL: /sistema/semesters/registrarcuatri
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SemestersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-05-21 20:28:02 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [/var/www/sistema/app/View/Semesters/registrarcuatrimestre.ctp, line 7]
+2015-05-21 20:28:02 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /sistema/semesters/registrarcuatrimestre
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 7)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 7, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 7, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-21 20:28:04 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [/var/www/sistema/app/View/Semesters/registrarcuatrimestre.ctp, line 7]
+2015-05-21 20:28:04 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /sistema/semesters/registrarcuatrimestre
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 7)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 7, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 7, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-21 20:28:06 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [/var/www/sistema/app/View/Semesters/registrarcuatrimestre.ctp, line 7]
+2015-05-21 20:28:06 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /sistema/semesters/registrarcuatrimestre
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 7)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 7, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 7, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
