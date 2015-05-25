@@ -535,7 +535,94 @@ function matxCuatyCarr(){
 
 
  //aqui funcion ajax para dibujar la tabla con los alumnos y sus calificaciones
+ $('button#buscarCalificaciones').on('click',function(){
+				// setTimeout(10000);
 
+
+
+ 	
+
+
+ 	carrera = $('select#infocalif').val();
+	cuatri= $('select#cuatrimestre option:selected').val();
+	materia=$('select#materiasporcarrera').val();
+	parcial=$('select#parciales').val();
+	calificaciones=[];
+	
+
+
+	if( carrera != 0 && cuatri != 0 && materia != 0 && parcial != 0 ){
+
+
+
+
+		$.ajax({
+			type:'GET',
+			url:'../consultarcalificaciones/'+carrera+'/'+cuatri+'/'+materia+'/'+parcial,
+			success:function(response){
+				// $('p.alumno').fadeOut(300);
+
+				// console.info(response);
+				if(typeof response !== 'undefined' && response.length >0 ){
+
+					for (var i=0, num=response.length; i< num; i++){
+
+						// materias.push('<option value="'+response[i].Course.id+'"class="opcion">'+response[i].Course.name+'</option>');
+						if(response[i].calificacion != null ){
+							calificaciones.push('<p class="alumno">'+response[i].nombre+' calificacion del parcial '+parcial+': '+response[i].calificacion+'</p>');
+						}else if (response[i].calificacion == 'null' ) {
+
+						}
+
+		// alert('No se encontraron materias para esta carrera y semestre');
+						// NOTA CHECAR BIEN CUANDO ES NULL LA CALIFICACION
+							
+
+
+				}
+
+				if($('p.alumno').length > 0 ){
+				$('p.alumno').remove();
+
+					// setTimeout(3000);
+				$('section.pintaCalificaciones').append(calificaciones).hide().slideToggle(1000);
+				}
+				else {
+
+				$('section.pintaCalificaciones').append(calificaciones).hide().slideToggle(1000);
+				
+
+				}
+
+				}else {
+
+				// $('p.alumno').remove();
+
+
+
+
+							alert('El profesor no ah registrado calificaciones aun');
+							$('p.alumno').slideToggle(900,function(){
+
+							$('p.alumno').remove();
+							});
+
+
+
+
+				}
+
+
+
+			}
+		});
+
+	}else {
+		alert('Verifica bien las opciones para realizar la busqueda');
+	}
+
+
+ });
 }
 
 function regcuatrimestre(){

@@ -42,8 +42,8 @@ echo '</select>';
 	<option value="5"> Calificaciones finales</option>
 </select>
 
+<button id="buscarCalificaciones">Buscar</button>
 <section class='pintaCalificaciones'>
 	*
 </section>
-<button id="buscarMaterias">Buscar</button>
 <?php echo $this->Html->script('scripts');?>

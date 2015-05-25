@@ -11623,3 +11623,1039 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-05-21 22:05:12 Error: [MissingControllerException] Controller class AlumnoController could not be found.
+Exception Attributes: array (
+  'class' => 'AlumnoController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/alumno/65
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-05-21 23:58:37 Error: [MissingViewException] View file "Users/consultacalificaciones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Users/consultacalificaciones.ctp',
+)
+Request URL: /sistema/users/consultacalificaciones
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /var/www/sistema/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-21 23:59:09 Error: [MissingActionException] Action UsersController::consultacalificaciones() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'consultacalificaciones',
+)
+Request URL: /sistema/users/consultacalificaciones
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-05-22 00:16:42 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/sistema/app/Controller/UsersController.php, line 561]
+2015-05-22 00:16:42 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /sistema/users/consultarcalificaciones
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 561)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 561, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 561, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-22 00:30:23 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ')' in [/var/www/sistema/app/Controller/UsersController.php, line 567]
+2015-05-22 00:30:23 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ')'
+Request URL: /sistema/users/consultarcalificaciones/0/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 567)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 567, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 567, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-22 00:30:55 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Goals.course_id' in 'where clause'
+Request URL: /sistema/users/consultarcalificaciones/0/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Goal`.`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Goal`.`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Goal`.`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Goal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(569): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('0', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-22 00:38:47 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fields' in 'where clause'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Student...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Student...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Student...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(StudentProfile), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(574): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-22 00:39:06 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fields' in 'where clause'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Student...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Student...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Student...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(StudentProfile), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(574): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-22 00:51:07 Error: Fatal Error (4): syntax error, unexpected ')', expecting ';' in [/var/www/sistema/app/Controller/UsersController.php, line 582]
+2015-05-22 00:51:07 Error: [FatalErrorException] syntax error, unexpected ')', expecting ';'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 582)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 582, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 582, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-22 01:53:40 Error: Fatal Error (4): syntax error, unexpected '=' in [/var/www/sistema/app/Controller/UsersController.php, line 620]
+2015-05-22 01:53:40 Error: [FatalErrorException] syntax error, unexpected '='
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 620)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 620, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 620, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-22 01:53:50 Error: Fatal Error (4): syntax error, unexpected '=' in [/var/www/sistema/app/Controller/UsersController.php, line 620]
+2015-05-22 01:53:50 Error: [FatalErrorException] syntax error, unexpected '='
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 620)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 620, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 620, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-22 01:53:51 Error: Fatal Error (4): syntax error, unexpected '=' in [/var/www/sistema/app/Controller/UsersController.php, line 620]
+2015-05-22 01:53:51 Error: [FatalErrorException] syntax error, unexpected '='
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 620)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 620, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 620, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-22 02:05:40 Error: Fatal Error (1): Unsupported operand types in [/var/www/sistema/app/Controller/UsersController.php, line 615]
+2015-05-22 02:05:40 Error: [FatalErrorException] Unsupported operand types
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/sistem...', 615)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/sistem...', 615, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/sistem...', 615, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-22 02:06:07 Error: Fatal Error (1): Unsupported operand types in [/var/www/sistema/app/Controller/UsersController.php, line 615]
+2015-05-22 02:06:07 Error: [FatalErrorException] Unsupported operand types
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/sistem...', 615)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/sistem...', 615, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/sistem...', 615, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 22:58:52 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Obtainedgoal.total' in 'field list'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Obtaine...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Obtaine...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Obtaine...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(604): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 22:59:13 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Obtainedgoal.total' in 'field list'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Obtaine...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Obtaine...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Obtaine...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(604): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 22:59:35 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Obtainedgoal.total' in 'field list'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Obtaine...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Obtaine...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Obtaine...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(604): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:01:33 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as total), `Obtainedgoal`.`user_id` FROM `sistema`.`obtainedgoals` AS `Obtainedg' at line 1
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT sum(Obta...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT sum(Obta...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT sum(Obta...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(605): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:02:11 Error: Fatal Error (4): syntax error, unexpected end of file in [/var/www/sistema/app/Controller/UsersController.php, line 655]
+2015-05-23 23:02:11 Error: [FatalErrorException] syntax error, unexpected end of file
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 655)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 655, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 655, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:02:26 Error: Fatal Error (4): syntax error, unexpected '?>', expecting function (T_FUNCTION) in [/var/www/sistema/app/Controller/UsersController.php, line 654]
+2015-05-23 23:02:26 Error: [FatalErrorException] syntax error, unexpected '?>', expecting function (T_FUNCTION)
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 654)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 654, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 654, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:02:52 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as Obtainedgoal__total), `Obtainedgoal`.`user_id` FROM `sistema`.`obtainedgoals`' at line 1
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT sum(Obta...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT sum(Obta...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT sum(Obta...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(605): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:04:40 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as Obtainedgoal__total) FROM `sistema`.`obtainedgoals` AS `Obtainedgoal` LEFT JO' at line 1
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT sum(Obta...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT sum(Obta...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT sum(Obta...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(605): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:05:11 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') FROM `sistema`.`obtainedgoals` AS `Obtainedgoal` LEFT JOIN `sistema`.`users` A' at line 1
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT sum(`Obt...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT sum(`Obt...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT sum(`Obt...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(605): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:05:37 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.total) FROM `sistema`.`obtainedgoals` AS `Obtainedgoal` LEFT JOIN `sistema`.`us' at line 1
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT sum(`Obt...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT sum(`Obt...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT sum(`Obt...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(605): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:10:07 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ')' in [/var/www/sistema/app/Controller/UsersController.php, line 604]
+2015-05-23 23:10:07 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ')'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 604)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:29:22 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/sistema/app/Controller/UsersController.php, line 604]
+2015-05-23 23:29:22 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 604)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:30:24 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/sistema/app/Controller/UsersController.php, line 604]
+2015-05-23 23:30:24 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 604)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:30:25 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/sistema/app/Controller/UsersController.php, line 604]
+2015-05-23 23:30:25 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 604)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:30:26 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/sistema/app/Controller/UsersController.php, line 604]
+2015-05-23 23:30:26 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 604)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:30:26 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/sistema/app/Controller/UsersController.php, line 604]
+2015-05-23 23:30:26 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 604)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:30:27 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/sistema/app/Controller/UsersController.php, line 604]
+2015-05-23 23:30:27 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 604)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:30:28 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/sistema/app/Controller/UsersController.php, line 604]
+2015-05-23 23:30:28 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 604)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:31:11 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/sistema/app/Controller/UsersController.php, line 604]
+2015-05-23 23:31:11 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 604)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:31:12 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/sistema/app/Controller/UsersController.php, line 604]
+2015-05-23 23:31:12 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 604)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:31:13 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/sistema/app/Controller/UsersController.php, line 604]
+2015-05-23 23:31:13 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 604)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:31:13 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/sistema/app/Controller/UsersController.php, line 604]
+2015-05-23 23:31:13 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 604)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 604, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:31:31 Error: Fatal Error (4): syntax error, unexpected 'array_push' (T_STRING) in [/var/www/sistema/app/Controller/UsersController.php, line 603]
+2015-05-23 23:31:31 Error: [FatalErrorException] syntax error, unexpected 'array_push' (T_STRING)
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 603)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 603, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 603, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:31:58 Error: Fatal Error (1): Call to a member function field() on null in [/var/www/sistema/app/Controller/UsersController.php, line 602]
+2015-05-23 23:31:58 Error: [FatalErrorException] Call to a member function field() on null
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/sistem...', 602)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/sistem...', 602, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/sistem...', 602, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:32:00 Error: Fatal Error (1): Call to a member function field() on null in [/var/www/sistema/app/Controller/UsersController.php, line 602]
+2015-05-23 23:32:00 Error: [FatalErrorException] Call to a member function field() on null
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/sistem...', 602)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/sistem...', 602, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/sistem...', 602, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:32:20 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Obtainedgoal.277' in 'field list'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Obtaine...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Obtaine...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Obtaine...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(604): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:33:05 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'virtualFields' at line 1
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('virtualFields', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('virtualFields', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(611): DboSource->fetchAll('virtualFields', Array, Array)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(827): DboSource->query('virtualFields', Array, Object(Obtainedgoal))
+#5 /var/www/sistema/app/Controller/UsersController.php(602): Model->__call('virtualFields', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(602): Obtainedgoal->virtualFields('sum(percentage_...')
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:37:09 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `Obtainedgoal`.`user_id`="$estudiant") AS  `Obtainedgoal__total` FROM `sis' at line 1
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT (SUM(`Ob...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT (SUM(`Ob...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT (SUM(`Ob...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(605): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:37:29 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `Obtainedgoal`.`user_id`= "$estudiant") AS  `Obtainedgoal__total` FROM `si' at line 1
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT (SUM(`Ob...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT (SUM(`Ob...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT (SUM(`Ob...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(605): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:38:11 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `Obtainedgoal`.`user_id`=18) AS  `Obtainedgoal__total` FROM `sistema`.`obt' at line 1
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT (SUM(`Ob...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT (SUM(`Ob...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT (SUM(`Ob...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(605): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:38:46 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where user_id=18) AS  `Obtainedgoal__total` FROM `sistema`.`obtainedgoals` AS `O' at line 1
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT (SUM(`Ob...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT (SUM(`Ob...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT (SUM(`Ob...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(605): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:39:06 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where user_id=18) AS  `Obtainedgoal__total` FROM `sistema`.`obtainedgoals` AS `O' at line 1
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT (SUM(`Ob...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT (SUM(`Ob...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT (SUM(`Ob...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(605): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:42:06 Error: Fatal Error (4): syntax error, unexpected 'var' (T_VAR) in [/var/www/sistema/app/Controller/UsersController.php, line 602]
+2015-05-23 23:42:06 Error: [FatalErrorException] syntax error, unexpected 'var' (T_VAR)
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 602)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 602, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 602, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-23 23:42:17 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Obtainedgoal.total' in 'field list'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Obtaine...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Obtaine...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Obtaine...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(605): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:42:55 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Obtainedgoal.' in 'field list'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT DISTINCT...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT DISTINCT...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT DISTINCT...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(605): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:43:06 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Obtainedgoal.total' in 'field list'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Obtaine...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Obtaine...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Obtaine...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(605): Model->find('all', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:46:23 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'findbyId' at line 1
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('findbyId', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('findbyId', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(611): DboSource->fetchAll('findbyId', Array, Array)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(827): DboSource->query('findbyId', Array, Object(Obtainedgoal))
+#5 /var/www/sistema/app/Controller/UsersController.php(606): Model->__call('findbyId', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(606): Obtainedgoal->findbyId('18', Array)
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:48:55 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'findallByUser_idAndGoal_id' at line 1
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('findallByUser_i...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('findallByUser_i...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(611): DboSource->fetchAll('findallByUser_i...', Array, Array)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(827): DboSource->query('findallByUser_i...', Array, Object(Obtainedgoal))
+#5 /var/www/sistema/app/Controller/UsersController.php(602): Model->__call('findallByUser_i...', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(602): Obtainedgoal->findallByUser_idAndGoal_id('18', '1')
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:49:15 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'findallByuser_idAndgoal_id' at line 1
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('findallByuser_i...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('findallByuser_i...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(611): DboSource->fetchAll('findallByuser_i...', Array, Array)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(827): DboSource->query('findallByuser_i...', Array, Object(Obtainedgoal))
+#5 /var/www/sistema/app/Controller/UsersController.php(602): Model->__call('findallByuser_i...', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(602): Obtainedgoal->findallByuser_idAndgoal_id('18', '1')
+#7 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-05-23 23:50:21 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Obtainedgoal.1' in 'field list'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Obtaine...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Obtaine...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Obtaine...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(594): Model->find('all', Array)
+#7 /var/www/sistema/lib/Cake/Model/Model.php(827): DboSource->query('findAllByuser_i...', Array, Object(Obtainedgoal))
+#8 /var/www/sistema/app/Controller/UsersController.php(602): Model->__call('findAllByuser_i...', Array)
+#9 /var/www/sistema/app/Controller/UsersController.php(602): Obtainedgoal->findAllByuser_idAndgoal_id('18', '1')
+#10 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#11 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#12 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#13 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#14 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2015-05-23 23:51:45 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Obtainedgoal.user_id_a_n_d_goal_id' in 'where clause'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Obtaine...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Obtaine...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Obtaine...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(594): Model->find('all', Array)
+#7 /var/www/sistema/lib/Cake/Model/Model.php(827): DboSource->query('findAllByUser_i...', Array, Object(Obtainedgoal))
+#8 /var/www/sistema/app/Controller/UsersController.php(602): Model->__call('findAllByUser_i...', Array)
+#9 /var/www/sistema/app/Controller/UsersController.php(602): Obtainedgoal->findAllByUser_idANDGoal_id('18')
+#10 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#11 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#12 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#13 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#14 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2015-05-23 23:52:03 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Obtainedgoal.user_idand_goal_id' in 'where clause'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Obtaine...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Obtaine...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Obtaine...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(594): Model->find('all', Array)
+#7 /var/www/sistema/lib/Cake/Model/Model.php(827): DboSource->query('findAllByUser_i...', Array, Object(Obtainedgoal))
+#8 /var/www/sistema/app/Controller/UsersController.php(602): Model->__call('findAllByUser_i...', Array)
+#9 /var/www/sistema/app/Controller/UsersController.php(602): Obtainedgoal->findAllByUser_idandGoal_id('18')
+#10 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#11 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#12 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#13 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#14 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2015-05-23 23:55:13 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Obtainedgoal.' in 'field list'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT DISTINCT...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT DISTINCT...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT DISTINCT...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(594): Model->find('all', Array)
+#7 /var/www/sistema/lib/Cake/Model/Model.php(827): DboSource->query('findAllByUser_i...', Array, Object(Obtainedgoal))
+#8 /var/www/sistema/app/Controller/UsersController.php(603): Model->__call('findAllByUser_i...', Array)
+#9 /var/www/sistema/app/Controller/UsersController.php(603): Obtainedgoal->findAllByUser_idAndGoal_id('18', '1', Array)
+#10 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#11 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#12 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#13 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#14 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2015-05-23 23:55:34 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Obtainedgoal.' in 'field list'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT DISTINCT...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT DISTINCT...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT DISTINCT...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(594): Model->find('all', Array)
+#7 /var/www/sistema/lib/Cake/Model/Model.php(827): DboSource->query('findAllByUser_i...', Array, Object(Obtainedgoal))
+#8 /var/www/sistema/app/Controller/UsersController.php(603): Model->__call('findAllByUser_i...', Array)
+#9 /var/www/sistema/app/Controller/UsersController.php(603): Obtainedgoal->findAllByUser_idAndGoal_id('18', '1', Array)
+#10 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#11 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#12 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#13 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#14 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2015-05-23 23:56:23 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Obtainedgoal.' in 'field list'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT DISTINCT...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT DISTINCT...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT DISTINCT...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(594): Model->find('all', Array)
+#7 /var/www/sistema/lib/Cake/Model/Model.php(827): DboSource->query('findAllByUser_i...', Array, Object(Obtainedgoal))
+#8 /var/www/sistema/app/Controller/UsersController.php(603): Model->__call('findAllByUser_i...', Array)
+#9 /var/www/sistema/app/Controller/UsersController.php(603): Obtainedgoal->findAllByUser_idAndGoal_id('18', '1', Array)
+#10 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#11 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#12 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#13 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#14 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2015-05-23 23:58:27 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Obtainedgoal.' in 'field list'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT DISTINCT...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT DISTINCT...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT DISTINCT...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(594): Model->find('all', Array)
+#7 /var/www/sistema/lib/Cake/Model/Model.php(827): DboSource->query('findAllByUser_i...', Array, Object(Obtainedgoal))
+#8 /var/www/sistema/app/Controller/UsersController.php(603): Model->__call('findAllByUser_i...', Array)
+#9 /var/www/sistema/app/Controller/UsersController.php(603): Obtainedgoal->findAllByUser_idAndGoal_id('18', '1', Array)
+#10 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#11 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#12 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#13 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#14 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2015-05-23 23:59:00 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Obtainedgoal.' in 'field list'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT DISTINCT...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT DISTINCT...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT DISTINCT...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(594): Model->find('all', Array)
+#7 /var/www/sistema/lib/Cake/Model/Model.php(827): DboSource->query('findAllByUser_i...', Array, Object(Obtainedgoal))
+#8 /var/www/sistema/app/Controller/UsersController.php(604): Model->__call('findAllByUser_i...', Array)
+#9 /var/www/sistema/app/Controller/UsersController.php(604): Obtainedgoal->findAllByUser_idAndGoal_id('18', '1', Array)
+#10 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#11 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#12 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#13 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#14 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2015-05-24 00:01:15 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Obtainedgoal.' in 'field list'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT DISTINCT...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT DISTINCT...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT DISTINCT...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(594): Model->find('all', Array)
+#7 /var/www/sistema/lib/Cake/Model/Model.php(827): DboSource->query('findAllByUser_i...', Array, Object(Obtainedgoal))
+#8 /var/www/sistema/app/Controller/UsersController.php(606): Model->__call('findAllByUser_i...', Array)
+#9 /var/www/sistema/app/Controller/UsersController.php(606): Obtainedgoal->findAllByUser_id('18', Array)
+#10 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#11 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#12 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#13 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#14 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2015-05-24 00:01:35 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'conditions' in 'order clause'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Obtaine...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Obtaine...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Obtaine...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Obtainedgoal), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(594): Model->find('all', Array)
+#7 /var/www/sistema/lib/Cake/Model/Model.php(827): DboSource->query('findAllByUser_i...', Array, Object(Obtainedgoal))
+#8 /var/www/sistema/app/Controller/UsersController.php(606): Model->__call('findAllByUser_i...', Array)
+#9 /var/www/sistema/app/Controller/UsersController.php(606): Obtainedgoal->findAllByUser_id('18', NULL, Array)
+#10 [internal function]: UsersController->consultarcalificaciones('19', '1', '10', '1')
+#11 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#12 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#13 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#14 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2015-05-24 00:10:12 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/sistema/app/Controller/UsersController.php, line 623]
+2015-05-24 00:10:12 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/sistem...', 623)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/sistem...', 623, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/sistem...', 623, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-24 00:33:07 Error: Fatal Error (4): syntax error, unexpected '+=' (T_PLUS_EQUAL) in [/var/www/sistema/app/Controller/UsersController.php, line 650]
+2015-05-24 00:33:07 Error: [FatalErrorException] syntax error, unexpected '+=' (T_PLUS_EQUAL)
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 650)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 650, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 650, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-24 00:34:48 Error: Fatal Error (64): Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in [/var/www/sistema/app/Controller/UsersController.php, line 639]
+2015-05-24 00:34:48 Error: [FatalErrorException] Cannot use isset() on the result of an expression (you can use "null !== expression" instead)
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use isse...', '/var/www/sistem...', 639)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use isse...', '/var/www/sistem...', 639, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot use isse...', '/var/www/sistem...', 639, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-24 00:41:13 Error: Fatal Error (4): syntax error, unexpected 'if' (T_IF) in [/var/www/sistema/app/Controller/UsersController.php, line 642]
+2015-05-24 00:41:13 Error: [FatalErrorException] syntax error, unexpected 'if' (T_IF)
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 642)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 642, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 642, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-24 00:42:18 Error: Fatal Error (64): Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in [/var/www/sistema/app/Controller/UsersController.php, line 642]
+2015-05-24 00:42:18 Error: [FatalErrorException] Cannot use isset() on the result of an expression (you can use "null !== expression" instead)
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use isse...', '/var/www/sistem...', 642)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use isse...', '/var/www/sistem...', 642, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot use isse...', '/var/www/sistem...', 642, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-24 00:43:12 Error: Fatal Error (64): Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in [/var/www/sistema/app/Controller/UsersController.php, line 642]
+2015-05-24 00:43:12 Error: [FatalErrorException] Cannot use isset() on the result of an expression (you can use "null !== expression" instead)
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use isse...', '/var/www/sistem...', 642)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use isse...', '/var/www/sistem...', 642, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot use isse...', '/var/www/sistem...', 642, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-24 00:50:14 Error: Fatal Error (64): Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in [/var/www/sistema/app/Controller/UsersController.php, line 642]
+2015-05-24 00:50:14 Error: [FatalErrorException] Cannot use isset() on the result of an expression (you can use "null !== expression" instead)
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use isse...', '/var/www/sistem...', 642)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use isse...', '/var/www/sistem...', 642, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot use isse...', '/var/www/sistem...', 642, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-24 01:16:26 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/sistema/app/Controller/UsersController.php, line 642]
+2015-05-24 01:16:26 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/sistem...', 642)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/sistem...', 642, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/sistem...', 642, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-24 01:42:55 Error: Fatal Error (4): syntax error, unexpected '}' in [/var/www/sistema/app/Controller/UsersController.php, line 645]
+2015-05-24 01:42:55 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 645)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 645, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 645, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-24 23:15:03 Error: Fatal Error (4): syntax error, unexpected 'for' (T_FOR), expecting ')' in [/var/www/sistema/app/Controller/UsersController.php, line 584]
+2015-05-24 23:15:03 Error: [FatalErrorException] syntax error, unexpected 'for' (T_FOR), expecting ')'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 584)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 584, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 584, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-24 23:15:13 Error: Fatal Error (4): syntax error, unexpected 'for' (T_FOR), expecting ')' in [/var/www/sistema/app/Controller/UsersController.php, line 584]
+2015-05-24 23:15:13 Error: [FatalErrorException] syntax error, unexpected 'for' (T_FOR), expecting ')'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 584)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 584, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 584, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-24 23:24:32 Error: Fatal Error (4): syntax error, unexpected ')' in [/var/www/sistema/app/Controller/UsersController.php, line 557]
+2015-05-24 23:24:32 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 557)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 557, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 557, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-24 23:25:05 Error: Fatal Error (4): syntax error, unexpected 'endforeach' (T_ENDFOREACH) in [/var/www/sistema/app/Controller/UsersController.php, line 639]
+2015-05-24 23:25:05 Error: [FatalErrorException] syntax error, unexpected 'endforeach' (T_ENDFOREACH)
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 639)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 639, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 639, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-24 23:25:21 Error: Fatal Error (4): syntax error, unexpected '', nombre => '' (T_CONSTANT_ENCAPSED_STRING) in [/var/www/sistema/app/Controller/UsersController.php, line 644]
+2015-05-24 23:25:21 Error: [FatalErrorException] syntax error, unexpected '', nombre => '' (T_CONSTANT_ENCAPSED_STRING)
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 644)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 644, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 644, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-24 23:26:14 Error: Fatal Error (4): syntax error, unexpected '', nombre => '' (T_CONSTANT_ENCAPSED_STRING) in [/var/www/sistema/app/Controller/UsersController.php, line 644]
+2015-05-24 23:26:14 Error: [FatalErrorException] syntax error, unexpected '', nombre => '' (T_CONSTANT_ENCAPSED_STRING)
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 644)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 644, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 644, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-24 23:26:37 Error: Fatal Error (4): syntax error, unexpected '', nombre => '' (T_CONSTANT_ENCAPSED_STRING) in [/var/www/sistema/app/Controller/UsersController.php, line 644]
+2015-05-24 23:26:37 Error: [FatalErrorException] syntax error, unexpected '', nombre => '' (T_CONSTANT_ENCAPSED_STRING)
+Request URL: /sistema/users/consultarcalificaciones/19/1/10/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 644)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 644, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 644, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-25 16:24:07 Error: Fatal Error (4): syntax error, unexpected '}' in [/var/www/sistema/app/Controller/UsersController.php, line 661]
+2015-05-25 16:24:08 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /sistema/users/vercalificaciones/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 661)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 661, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 661, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
