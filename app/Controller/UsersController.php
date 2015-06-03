@@ -621,7 +621,7 @@ public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$par
 		
 				$suma[$id]=0;
 			}
-			$suma[$id]+=$value;
+			$suma[$id]+=$value/10;
 
 			endforeach;
 
