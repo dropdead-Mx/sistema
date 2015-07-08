@@ -644,6 +644,22 @@ function regcuatrimestre(){
 
 }
 
+function horarioColumnas(){
+
+	$(" span.ncolum" ).each(function(){
+		valor= parseInt($(this).text());
+
+		if(valor >=1 ){
+
+		$(this).parent(0).attr('rowspan',valor);
+		console.log($( this ).parent().get( 0 ).tagName);
+		}else {
+
+		}
+
+	});
+}
+
 $(function(){
 	clona();
 	elimina();
@@ -673,6 +689,7 @@ $(function(){
 		}
 	});
 
+	horarioColumnas();
 
 });
 

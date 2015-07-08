@@ -2,9 +2,10 @@
 
 
 <?php 
+
 // pr($cuatrimestre);
 $cuatri=$cuatrimestre[0]['StudentProfile']['semester'];
-// echo $cuatri;
+echo $cuatri;
 $HrsVespertinas=['10:10','11:00','11:50','12:40','13:30','14:20','15:10','16:00','16:50','17:10','18:00','18:50'];
 $contador=sizeof($materia);
 // pr($modulos);
@@ -31,7 +32,8 @@ $fin=max($hrsfin);
 $hrfin=date("H",strtotime($fin));
 echo '<br>';
 $hrinicio=0;
-// echo $fin;
+// $Ncolumnas='<td class="materia" rowspan="1" >';
+// echo $hrfin;
 
 
 
@@ -55,7 +57,7 @@ $hrinicio=0;
 
 ?>
 
-<table>
+<table class="horarioTabla" >
 	<tr>	
 	<th>Hr</th>
 	<th>Lunes</th>
@@ -96,7 +98,10 @@ if($cuatri <=6 ){
 
 
 		foreach($dias as $k => $dia):
-			echo '<td>';
+
+			echo '<td class="materia" rowspan="0">'; //esta debe ser la variable para alterar las columnaas
+			// echo $Ncolumnas;
+
 		if($hrsinicio == 11 && $dia == 'lunes'){
 			// echo '<p> </p>';
 			echo "<span class ='letras'> E </span>";
@@ -122,14 +127,23 @@ if($cuatri <=6 ){
 
 		// echo $modulos[$w][$k]['CourseModule']['start_time'].'<td>';
 			$hora = $modulos[$w][$P]['CourseModule']['start_time'];
+			$concluye = $modulos[$w][$P]['CourseModule']['end_time'];
 			$materia_id =$modulos[$w][$P]['CourseModule']['course_id'];
+			$findif = idate("H",strtotime($concluye)) ;
+			$inidif = idate("H",strtotime($hora)) ;
+			$diferencia = $findif - $inidif;
+			
 
 				if($hora == $hrsinicio && $hrsinicio <=10 ){
+					// echo '<td class="xsere">';
+					// echo "diferencia = ".$diferencia;
+					
 
 					echo $materia[$materia_id];
-					// echo $materia_id;
+					echo "<span  class='ncolum'>".$diferencia."</span>";
 
 					// echo $modulos[$w][$P]['CourseModule']['course_id'];
+					
 					echo '<br>';
 					echo $hora;
 					echo '-'.$modulos[$w][$P]['CourseModule']['end_time'];
@@ -137,8 +151,14 @@ if($cuatri <=6 ){
 			} elseif($hora == $hora2 && $hrsinicio >= 11){
 					// $hrsinicio=$hrsinicio-1;
 					
+					
+					// echo "diferencia = ".$diferencia;
 
 					echo $materia[$materia_id];
+					echo "<span  class='ncolum'>".$diferencia."</span>";
+
+					
+
 					// echo $materia_id;
 
 					// echo $modulos[$w][$P]['CourseModule']['course_id'];
@@ -157,34 +177,35 @@ if($cuatri <=6 ){
 	}
 
 
-}elseif($cuatri >=7){
+}
+elseif($cuatri >=7){
 	// $hrsContador=date("H",strtotime("00:00:00") +strtotime($fin)-strtotime('10:10:00'));
 	// echo 'Vespertino '.$hrsContador;
-	$hrinicio=10;
+	// $hrinicio=10;
 	// poner funciones aqui
 
 	// foreach($HrsVespertinas as $V => $hrsTarde):
 	for($d=0;$d < sizeof($HrsVespertinas)-1;$d++){
 		echo '<tr>';
-		// echo gettype($HrsVespertinas[$d]);
+		$horainicio=$HrsVespertinas[$d];
+
 
 		if($HrsVespertinas[$d]  == '16:50'){
 
 		echo '<td> '.$HrsVespertinas[$d].' - '.$HrsVespertinas[$d+1].'<span class ="letras"> R </span> </td>';
-		$horainicio=$HrsVespertinas[$d];
+		// $horainicio=$HrsVespertinas[$d];
 
 		}else{
 		echo '<td> '.$HrsVespertinas[$d].' - '.$HrsVespertinas[$d+1].' </td>';
-		$horainicio=$HrsVespertinas[$d];
-
-
-		}
+		// $horainicio=$HrsVespertinas[$d];
+}
 
 
 
 
 		foreach($dias as $k => $dia):
 		echo '<td>';
+
 
 		if($HrsVespertinas[$d]  == '16:50' && $dia == 'lunes'){
 			// echo '<p> </p>';
@@ -204,33 +225,32 @@ if($cuatri <=6 ){
 		}
 
 		//IMPRIMIR MODULOS EN DIA Y HR
-
-
 		foreach($modulos as $P => $modulo):
-			for($w=0;$w<=$contador;$w++){
+
+			for($w=0; $w <= $contador; $w++){
 				// echo $modulos[$w][$P]['CourseModule']['day'];
 
 			if(isset($modulos[$w][$P]['CourseModule']['day']) && $modulos[$w][$P]['CourseModule']['day'] === $dia ){
 
 		// echo $modulos[$w][$k]['CourseModule']['start_time'].'<td>';
-			$hora = date("H:m",strtotime($modulos[$w][$P]['CourseModule']['start_time']));
-			$hr=date("H:m",strtotime($HrsVespertinas[$d]));
-			$hora2=date("H:m",strtotime($modulos[$w][$P]['CourseModule']['end_time']));
-			$hr2=date("H:m",strtotime($HrsVespertinas[$d+1]));
-// $hrfin=date("H",strtotime($fin));
+				$hora = strtotime($modulos[$w][$P]['CourseModule']['start_time']);
+				$hora2 = strtotime($modulos[$w][$P]['CourseModule']['end_time']);
 
-			// echo gettype($hora);
-			// echo $hora;
+				$hr=strtotime($HrsVespertinas[$d]);
+			$findif = idate("H",$hora2) ;
+			$inidif = idate("H",$hora) ;
+			$diferencia = $findif - $inidif;
+			$materia_id = $modulos[$w][$P]['CourseModule']['course_id'];
 
 
-			$materia_id =$modulos[$w][$P]['CourseModule']['course_id'];
+				if( $hr === $hora ){
 
-				if($hr=== $hora){
-
+					// echo $hr ;
+					// echo $hora;
+					// echo $findif;
+					// echo $inidif;
 					echo $materia[$materia_id];
-					// echo $materia_id;
-
-					// echo $modulos[$w][$P]['CourseModule']['course_id'];
+					echo "<span  class='ncolum'>".$diferencia."</span>";
 					echo '<br>';
 					// echo $hora;
 					echo $modulos[$w][$P]['CourseModule']['start_time'].'-'.$modulos[$w][$P]['CourseModule']['end_time'];
@@ -241,9 +261,9 @@ if($cuatri <=6 ){
 		}
 
 			endforeach;
-
-
 			endforeach;
+			echo "</tr>";
+
 
 
 		}
@@ -256,3 +276,4 @@ if($cuatri <=6 ){
 
 
 </table>
+<?php echo $this->Html->script('scripts');?>
