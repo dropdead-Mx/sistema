@@ -4,15 +4,32 @@ class CoursesController extends AppController {
 
 	public $helpers=array('Form','Html','Js');
 	public $components=array('Session','RequestHandler');
-	public $uses=array('Course','CourseModule','User','Goal');
+	public $uses=array('Course','CourseModule','User','Goal','Usrcareer','Career');
 
 
 
-	public function index(){
+	public function index($user_id){
+		$carreras=[];
+		$careers= $this->Usrcareer->find('all',array('conditions'=>array(
+			'Usrcareer.user_id'=>$user_id),
+		'fields' => array('Usrcareer.career_id')
+
+		)
+		);
+
+		for($i=0;$i<= sizeof($careers)-1;$i++){
+
+			array_push($carreras,$this->Career->find('all',array('conditions'=>array(
+				'Career.id'=>$careers[$i]['Usrcareer']['career_id']),
+			'fields'=>array(
+				'Career.id','Career.name','Career.abrev'),
+			'recursive'=> -1,
+			)));
+		}
 		
-		$materias=$this->Course->find('all');
-
-		$this->set('materias',$materias);
+		// $materias=$this->Course->find('all');
+		// $this->set('materias',$materias);
+		$this->set('carreras',$carreras);
 		
 	}
 
@@ -137,6 +154,21 @@ class CoursesController extends AppController {
 
  	}
 
+ 	//funcion ajax para listar materias por carrera y cuatrimestre para cada coordinador
+ 	public function getcoursesbycoordinator($career_id,$semester) {
+ 		$this->RequestHandler->respondAs('json');
+ 		$materias= $this->Course->find('all',array('conditions'=>array(
+ 			'Course.career_id'=>$career_id,
+ 			'Course.semester'=>$semester),
+ 		'recursive'=> -1));
+ 		$this->set('materias',$materias);
+ 		$this->layout='ajax';
+
+
+
+
+ 	}
+
  	public function vermodulos($course_id) {
 
  		$existe=$this->CourseModule->find('count',array(
@@ -179,5 +211,8 @@ class CoursesController extends AppController {
 		endif;
 
  	}
+
+
+
 
 }

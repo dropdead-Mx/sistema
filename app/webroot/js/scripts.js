@@ -660,6 +660,90 @@ function horarioColumnas(){
 	});
 }
 
+function materiasPorCoordinador(){
+
+	$('button#buscarMaterias').on('click',function(){
+
+	
+		filas=[];
+		carrera = $('select#carreraCoordi option:selected').val();
+		cuatrimestre = $('select#cuatriCoordi option:selected').val();
+
+		// alert(carrera+" "+cuatrimestre);
+
+		if( carrera != 0 && cuatrimestre != 0 ){
+			// seccion ajax
+
+			$.ajax({
+
+				type:'GET',
+				url:'../getcoursesbycoordinator/'+carrera+'/'+cuatrimestre,
+				success:function(response){
+				
+				console.info(response);
+				console.log('registros previos'+filas.length)
+				
+				if(typeof response !== 'undefined' && response.length >0 ){
+				
+
+						for(var  z= 0, num = response.length ; z < num; z++ ){
+
+							fila='<tr class ="filaMateria"><td>'+response[z].Course.id+'</td>'+'<td>'+response[z].Course.name+'</td>'+'<td>'+response[z].Course.semester+'</td>'+'<td><a href="../addModule/'+response[z].Course.id+'/'+carrera+'">Agregar Horario</a></td><td><a href="../vermodulos/'+response[z].Course.id+'">Ver modulos</a></td>'+'</tr>';
+							filas.push(fila);
+						}
+
+						if ($('tr.filaMateria').length > 0 ){
+							$('tr.filaMateria').remove();
+
+						}
+
+						$('table#listadoDeMaterias').append(filas).hide().fadeOut(1000);
+						setTimeout(3000);
+
+						$('table#listadoDeMaterias').fadeIn(1000);
+					}
+					else {
+
+						alert('no se encontraron materias registradas');
+						visible = $('table#listadoDeMaterias').is(':visible');
+						
+						if (visible == true ){
+							$('table#listadoDeMaterias').fadeOut(1000);
+							$('tr.filaMateria').fadeOut(900).setTimeout(900).remove();
+							filas.length=0;
+
+						}
+
+
+					}
+
+				}
+
+
+			});
+
+
+		}
+	
+			// alert('selecciona la carrera o cuatrimestre');
+
+			// Seccion para busquedas con parametros incompletos
+			if( carrera == 0 && cuatrimestre > 0 ){
+
+				alert('seleccione una carrera de la lista');
+
+			} else if (cuatrimestre == 0 && carrera > 0){
+
+				alert('seleccione un cuatrimestre de la lista');
+
+			} else if ( carrera == 0 && cuatrimestre == 0){
+				alert('busqueda fallida ');
+			}
+		
+
+	});
+}
+
 $(function(){
 	clona();
 	elimina();
@@ -690,6 +774,7 @@ $(function(){
 	});
 
 	horarioColumnas();
+	materiasPorCoordinador();
 
 });
 

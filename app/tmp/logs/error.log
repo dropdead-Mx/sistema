@@ -12751,3 +12751,222 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-07-09 17:56:57 Error: [MissingActionException] Action UsersController::courses() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'courses',
+)
+Request URL: /sistema/users/courses
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-09 18:41:08 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'percentage_obtained' cannot be null
+Request URL: /sistema/users/calificar
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('INSERT INTO `si...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1012): DboSource->execute('INSERT INTO `si...')
+#3 /var/www/sistema/lib/Cake/Model/Model.php(1924): DboSource->create(Object(Obtainedgoal), Array, Array)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(1741): Model->_doSave(Array, Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2334): Model->save(Array, Array)
+#6 /var/www/sistema/lib/Cake/Model/Model.php(2262): Model->saveMany(Array, Array)
+#7 /var/www/sistema/app/Controller/UsersController.php(191): Model->saveAll(Array)
+#8 [internal function]: UsersController->calificar()
+#9 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#12 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2015-07-13 13:46:27 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/var/www/sistema/app/Controller/CoursesController.php, line 15]
+2015-07-13 13:46:27 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /sistema/users/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 15, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 15, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-13 13:46:59 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/var/www/sistema/app/Controller/CoursesController.php, line 15]
+2015-07-13 13:46:59 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /sistema/users/index/19
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 15, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 15, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-13 13:47:44 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/var/www/sistema/app/Controller/CoursesController.php, line 15]
+2015-07-13 13:47:44 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /sistema/courses
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 15, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 15, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-13 13:48:28 Error: Fatal Error (64): Cannot redeclare class Usrcareer in [/var/www/sistema/app/Model/UsersCareers.php, line 0]
+2015-07-13 13:48:28 Error: [FatalErrorException] Cannot redeclare class Usrcareer
+Request URL: /sistema/courses
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/var/www/sistem...', 0)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/var/www/sistem...', 0, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/var/www/sistem...', 0, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-13 13:49:57 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/sistema/app/Controller/CoursesController.php, line 13]
+2015-07-13 13:49:57 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /sistema/courses
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/sistem...', 13)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/sistem...', 13, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/sistem...', 13, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-13 13:50:11 Error: [MissingTableException] Table usr_careers for model UsrCareers was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'usr_careers',
+  'class' => 'UsrCareers',
+  'ds' => 'default',
+)
+Request URL: /sistema/courses
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Model.php(3640): Model->setSource('usr_careers')
+#1 /var/www/sistema/lib/Cake/Model/Model.php(3018): Model->getDataSource()
+#2 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#3 /var/www/sistema/app/Controller/CoursesController.php(17): Model->find('all', Array)
+#4 [internal function]: CoursesController->index()
+#5 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CoursesController), Array)
+#6 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#7 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#8 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2015-07-13 13:50:49 Error: [MissingTableException] Table usr_careers for model UsrCareer was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'usr_careers',
+  'class' => 'UsrCareer',
+  'ds' => 'default',
+)
+Request URL: /sistema/courses
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Model.php(3640): Model->setSource('usr_careers')
+#1 /var/www/sistema/lib/Cake/Model/Model.php(3018): Model->getDataSource()
+#2 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#3 /var/www/sistema/app/Controller/CoursesController.php(17): Model->find('all', Array)
+#4 [internal function]: CoursesController->index()
+#5 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CoursesController), Array)
+#6 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#7 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#8 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2015-07-13 13:51:07 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/sistema/app/Controller/CoursesController.php, line 13]
+2015-07-13 13:51:07 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /sistema/courses
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/sistem...', 13)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/sistem...', 13, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/sistem...', 13, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-13 13:51:15 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'UsersCareers.career_id' in 'field list'
+Request URL: /sistema/courses
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `UsersCa...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `UsersCa...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `UsersCa...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Usrcareer), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/CoursesController.php(17): Model->find('all', Array)
+#7 [internal function]: CoursesController->index()
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CoursesController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-07-13 13:52:27 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'UsersCareers.career_id' in 'field list'
+Request URL: /sistema/courses/index/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `UsersCa...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `UsersCa...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `UsersCa...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Usrcareer), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/CoursesController.php(17): Model->find('all', Array)
+#7 [internal function]: CoursesController->index('62')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CoursesController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-07-13 13:52:41 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Userscareers.career_id' in 'field list'
+Request URL: /sistema/courses/index/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Usersca...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Usersca...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Usersca...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Usrcareer), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/CoursesController.php(17): Model->find('all', Array)
+#7 [internal function]: CoursesController->index('62')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CoursesController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-07-13 13:52:51 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Usrcareers.career_id' in 'field list'
+Request URL: /sistema/courses/index/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Usrcare...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Usrcare...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Usrcare...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Usrcareer), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/CoursesController.php(17): Model->find('all', Array)
+#7 [internal function]: CoursesController->index('62')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CoursesController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-07-13 14:03:20 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/var/www/sistema/app/Controller/CoursesController.php, line 21]
+2015-07-13 14:03:20 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /sistema/courses/index/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 21, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 21, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-13 14:04:51 Error: [MissingActionException] Action UsersController::assigncareeras() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'assigncareeras',
+)
+Request URL: /sistema/users/assigncareeras
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-13 14:19:33 Error: Fatal Error (4): syntax error, unexpected '$carreras' (T_VARIABLE), expecting ',' or ';' in [/var/www/sistema/app/View/Courses/index.ctp, line 12]
+2015-07-13 14:19:33 Error: [FatalErrorException] syntax error, unexpected '$carreras' (T_VARIABLE), expecting ',' or ';'
+Request URL: /sistema/courses/index/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 12)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 12, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 12, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
