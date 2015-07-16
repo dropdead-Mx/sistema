@@ -36,9 +36,9 @@
 		<th>Id</th>
 		<th>Nombre</th>
 		<th>Cuatrimestre</th>
-		<th>Agregar Horario</th>
-		<th>Modulos</th> 
-		<th>Tiene modulos</th>
+		<th>opciones</th>
+		<!-- <th>Modulos</th>  -->
+		<th>Tiene modulos registrados</th>
 <!-- 		<th>Carrera</th>
 		<th>Impartida por:</th>
 		<th>Acciones</th>

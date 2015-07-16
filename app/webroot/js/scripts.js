@@ -698,8 +698,13 @@ function materiasPorCoordinador(){
 								dataType:'json',
 								async:false}).responseText);
 							
-							fila='<tr class ="filaMateria"><td>'+response[z].Course.id+'</td>'+'<td>'+response[z].Course.name+'</td>'+'<td>'+response[z].Course.semester+'</td>'+'<td><a href="../addModule/'+response[z].Course.id+'/'+carrera+'">Agregar Horario</a></td><td><a href="../vermodulos/'+response[z].Course.id+'">Ver modulos</a></td><td>'+tiene+'</td></tr>';
-							filas.push(fila);
+							fila='<tr class ="filaMateria"><td>'+response[z].Course.id+'</td>'+'<td>'+response[z].Course.name+'</td>'+'<td>'+response[z].Course.semester+'</td>';
+							if(tiene == "✓" ){
+							filaFinal= fila+'<td><a href="../vermodulos/'+response[z].Course.id+'">Ver horario</a></td>'+'<td>'+tiene+'</td></tr>';
+							}else {
+							filaFinal=	fila+'<td><a href="../addModule/'+response[z].Course.id+'/'+carrera+'">Agregar Horario</a></td>'+'<td>'+tiene+'</td></tr>';
+							}
+							filas.push(filaFinal);
 							
 						}
 
