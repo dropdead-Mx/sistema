@@ -666,6 +666,7 @@ function materiasPorCoordinador(){
 
 	
 		filas=[];
+		tienemodulos=[];
 		carrera = $('select#carreraCoordi option:selected').val();
 		cuatrimestre = $('select#cuatriCoordi option:selected').val();
 
@@ -680,16 +681,26 @@ function materiasPorCoordinador(){
 				url:'../getcoursesbycoordinator/'+carrera+'/'+cuatrimestre,
 				success:function(response){
 				
-				console.info(response);
-				console.log('registros previos'+filas.length)
+				// console.info(response);
+				// console.log('registros previos'+filas.length)
 				
 				if(typeof response !== 'undefined' && response.length >0 ){
 				
 
 						for(var  z= 0, num = response.length ; z < num; z++ ){
 
-							fila='<tr class ="filaMateria"><td>'+response[z].Course.id+'</td>'+'<td>'+response[z].Course.name+'</td>'+'<td>'+response[z].Course.semester+'</td>'+'<td><a href="../addModule/'+response[z].Course.id+'/'+carrera+'">Agregar Horario</a></td><td><a href="../vermodulos/'+response[z].Course.id+'">Ver modulos</a></td>'+'</tr>';
+							
+							//ajax anidado para ver si ya tiene modulos registrados
+
+							tiene=$.parseJSON($.ajax({
+								type:'GET',
+								url:'../tienemod/'+response[z].Course.id,
+								dataType:'json',
+								async:false}).responseText);
+							
+							fila='<tr class ="filaMateria"><td>'+response[z].Course.id+'</td>'+'<td>'+response[z].Course.name+'</td>'+'<td>'+response[z].Course.semester+'</td>'+'<td><a href="../addModule/'+response[z].Course.id+'/'+carrera+'">Agregar Horario</a></td><td><a href="../vermodulos/'+response[z].Course.id+'">Ver modulos</a></td><td>'+tiene+'</td></tr>';
 							filas.push(fila);
+							
 						}
 
 						if ($('tr.filaMateria').length > 0 ){

@@ -4,7 +4,7 @@ class CoursesController extends AppController {
 
 	public $helpers=array('Form','Html','Js');
 	public $components=array('Session','RequestHandler');
-	public $uses=array('Course','CourseModule','User','Goal','Usrcareer','Career');
+	public $uses=array('Course','CourseModule','User','Goal','Usrcareer','Career','Semester');
 
 
 
@@ -105,18 +105,35 @@ class CoursesController extends AppController {
 
 
  	public function tienemod($course_id){
+		$this->RequestHandler->respondAs('json');
+		$mensaje=' ';
  		$this->Course->CourseModule->course_id=$course_id;
+ 		//variable para opbtener el semestre mas actual
+		$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+		$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+		$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
  		$existe= $this->Course->CourseModule->find('count',array('conditions'=>array('CourseModule.course_id'=>$course_id)));
+ 		// $existe= $this->Course->CourseModule->find('count',array('conditions'=>array('CourseModule.created BETWEEN ? AND ? '=>array(
+ 		// 	$inicio,$fin),
+ 		// 'CourseModule.course_id'=>$course_id)));
 
- 		if($existe > 0){
- 			$tiene='*';
- 			echo '<span>'.$tiene.'</span>';
- 			
- 		}else {
- 			$tiene='no';
- 			echo '<span>'.$tiene.'</span>';
- 			
+ 		if($existe >= 1){
+ 			$mensaje='✓';
+ 		} else {
+ 			$mensaje= '✖';
  		}
+
+ 		$this->layout='ajax';
+ 		$this->set(compact('mensaje'));
+ 		// if($existe > 0){
+ 		// 	$tiene='*';
+ 		// 	// echo '<span>'.$tiene.'</span>';
+ 			
+ 		// }else {
+ 		// 	$tiene='no';
+ 		// 	// echo '<span>'.$tiene.'</span>';
+ 			
+ 		// }
 
  	}
 

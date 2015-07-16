@@ -38,6 +38,7 @@
 		<th>Cuatrimestre</th>
 		<th>Agregar Horario</th>
 		<th>Modulos</th> 
+		<th>Tiene modulos</th>
 <!-- 		<th>Carrera</th>
 		<th>Impartida por:</th>
 		<th>Acciones</th>
