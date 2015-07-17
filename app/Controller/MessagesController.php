@@ -56,7 +56,7 @@ public function leermensaje($fechaActual){
 public function listamensaje(){
 
 	$this->RequestHandler->respondAs('json');
-	$mensajes=$this->Message->find('all');
+	$mensajes=$this->Message->find('all',array('order'=>array('Message.id DESC')));
 	$this->layout='ajax';
 	$this->set(compact('mensajes'));
 
