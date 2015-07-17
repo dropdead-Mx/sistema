@@ -18,6 +18,7 @@
  $.datepicker.setDefaults($.datepicker.regional['es']);
 
 
+
 	var valores=[];
 	var porcentajeFinal=0;
 	function modificaIDSC() {
@@ -760,6 +761,65 @@ function materiasPorCoordinador(){
 	});
 }
 
+function mensajepush(){
+	// timestamp=Math.floor(Date.now() / 1000);
+	timestamp=null;
+	mensajesLeidos=[];
+	// $('div.mnsg').append(Math.floor(Date.now() / 1000));
+	console.log('pushejecutado');
+	$.ajax({
+		type:'GET',
+		url:$(location).attr('href')+'/leermensaje/'+timestamp,
+		async:true,
+		success:function(response){
+
+
+		console.info('primer ajax'+response);
+
+			$.ajax({
+				type:'GET',
+				url:$(location).attr('href')+'/listamensaje',
+				async:true,
+				success:function(response){
+					// alert(response);
+				// console.info(response.length);
+				if( $('div.mensajito').length > 0 ){
+					$('div.mensajito').remove();
+					mensajesLeidos.length=0;
+				}
+
+				if(typeof response !== 'undefined' && response.length >= 1  ){
+
+					for(x=0, numero = response.length; x < numero; x++){
+
+						console.log(x)
+
+					msn= '<div class="mensajito"><strong>'+response[x].Message.subject+'</strong><p>'+response[x].Message.mensaje+'</p></div>';
+					mensajesLeidos.push(msn);
+					// console.log(msn);
+
+					}
+				$('div.mnsg').append(mensajesLeidos);
+				}
+				setTimeout('mensajepush()',1000);
+
+				}
+			});
+
+		// }
+			
+
+
+		}
+		
+
+
+	});
+		// setTimeout('mensajepush()',1000);
+		// mensajepush();
+
+}
+
 $(function(){
 	clona();
 	elimina();
@@ -791,6 +851,7 @@ $(function(){
 
 	horarioColumnas();
 	materiasPorCoordinador();
+	mensajepush();
 
 });
 

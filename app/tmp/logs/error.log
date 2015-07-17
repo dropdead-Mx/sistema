@@ -13019,3 +13019,1184 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
 #4 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2015-07-16 18:17:22 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.group' in 'where clause'
+Request URL: /sistema/messages/enviarmensaje
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(User), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/MessagesController.php(16): Model->find('all', Array)
+#7 [internal function]: MessagesController->enviarmensaje()
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-07-16 18:17:42 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.group' in 'where clause'
+Request URL: /sistema/messages/enviarmensaje/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(User), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/MessagesController.php(16): Model->find('all', Array)
+#7 [internal function]: MessagesController->enviarmensaje('1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-07-16 18:18:04 Error: Fatal Error (4): syntax error, unexpected ':', expecting ',' or ';' in [/var/www/sistema/app/View/Messages/enviarmensaje.ctp, line 6]
+2015-07-16 18:18:04 Error: [FatalErrorException] syntax error, unexpected ':', expecting ',' or ';'
+Request URL: /sistema/messages/enviarmensaje/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 6)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 6, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 6, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 18:19:58 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/var/www/sistema/app/View/Messages/enviarmensaje.ctp, line 8]
+2015-07-16 18:19:58 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /sistema/messages/enviarmensaje/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 8, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 8, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 18:25:41 Error: Fatal Error (1): Call to a member function save() on null in [/var/www/sistema/app/Controller/MessagesController.php, line 20]
+2015-07-16 18:25:41 Error: [FatalErrorException] Call to a member function save() on null
+Request URL: /sistema/messages/enviarmensaje/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/sistem...', 20)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/sistem...', 20, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/sistem...', 20, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 19:05:26 Error: [MissingActionException] Action MessagesController::ultimomensaje() could not be found.
+Exception Attributes: array (
+  'controller' => 'MessagesController',
+  'action' => 'ultimomensaje',
+)
+Request URL: /sistema/messages/ultimomensaje
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-16 19:05:38 Error: Fatal Error (1): Class 'Appmodel' not found in [/var/www/sistema/app/Model/Message.php, line 3]
+2015-07-16 19:05:38 Error: [FatalErrorException] Class 'Appmodel' not found
+Request URL: /sistema/messages/leermensajes
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'Appmodel...', '/var/www/sistem...', 3)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Appmodel...', '/var/www/sistem...', 3, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'Appmodel...', '/var/www/sistem...', 3, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 19:06:09 Error: Fatal Error (1): Class 'Appmodel' not found in [/var/www/sistema/app/Model/Message.php, line 3]
+2015-07-16 19:06:09 Error: [FatalErrorException] Class 'Appmodel' not found
+Request URL: /sistema/messages/leermensaje
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'Appmodel...', '/var/www/sistem...', 3)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Appmodel...', '/var/www/sistem...', 3, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'Appmodel...', '/var/www/sistem...', 3, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 19:08:45 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'destinatario' cannot be null
+Request URL: /sistema/messages/enviarmensaje/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('INSERT INTO `si...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1012): DboSource->execute('INSERT INTO `si...')
+#3 /var/www/sistema/lib/Cake/Model/Model.php(1924): DboSource->create(Object(Message), Array, Array)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(1747): Model->_doSave(Array, Array)
+#5 /var/www/sistema/app/Controller/MessagesController.php(20): Model->save(Array)
+#6 [internal function]: MessagesController->enviarmensaje('1')
+#7 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#8 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#10 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2015-07-16 19:16:34 Error: Fatal Error (1): Maximum execution time of 30 seconds exceeded in [/var/www/sistema/lib/Cake/Utility/String.php, line 202]
+2015-07-16 19:16:34 Error: [FatalErrorException] Maximum execution time of 30 seconds exceeded
+Request URL: /sistema/messages/leermensaje
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Maximum executi...', '/var/www/sistem...', 202)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum executi...', '/var/www/sistem...', 202, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Maximum executi...', '/var/www/sistem...', 202, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:31:40 Error: [MissingControllerException] Controller class LeermensajeController could not be found.
+Exception Attributes: array (
+  'class' => 'LeermensajeController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/leermensaje/1437100300
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:31:51 Error: [MissingControllerException] Controller class LeermensajeController could not be found.
+Exception Attributes: array (
+  'class' => 'LeermensajeController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/leermensaje/1437100300
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:32:58 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437100378
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:33:41 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437100421
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:34:19 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/leermensaje/1437100459
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:34:28 Error: [MissingControllerException] Controller class LeermensajeController could not be found.
+Exception Attributes: array (
+  'class' => 'LeermensajeController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/leermensaje/1437100468
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:10 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101649
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:11 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101650
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:12 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101652
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:13 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101653
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:14 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101654
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:15 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101655
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:15 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101655
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:16 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101656
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:17 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101657
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:18 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101658
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:19 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101659
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:20 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101660
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:21 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101661
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:22 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101662
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:23 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101663
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:24 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101664
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:25 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101665
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:26 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101666
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:27 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101667
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:28 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101668
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:29 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101669
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:30 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101670
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:31 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101671
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:32 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101672
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:33 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101673
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:34 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101674
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:35 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101675
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:36 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101676
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:37 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101677
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:38 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101678
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:39 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101679
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:40 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101680
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:41 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101681
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:42 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101682
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:43 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101683
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:44 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101684
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:45 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101685
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:47 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101687
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:48 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101688
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:49 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101689
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:50 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101690
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:51 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101691
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:52 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101692
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:53 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101693
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:54 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101694
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:55 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101695
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:56 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101696
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:57 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101697
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:58 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101698
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:54:59 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101699
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:00 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101700
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:01 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101701
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:02 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101702
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:03 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101703
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:04 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101704
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:05 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101705
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:06 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101706
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:07 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101707
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:08 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101708
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:20 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101720
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:21 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101721
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:22 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101722
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:23 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101723
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:24 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101724
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:25 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101725
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:26 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101726
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:27 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101727
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:28 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101728
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:29 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101729
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:30 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101730
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:31 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101731
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:32 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101732
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:33 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101733
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:34 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101734
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:35 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101735
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:55:36 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/messages/leermensaje/1437101736
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-16 21:56:18 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:18 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101778
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:19 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:19 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101779
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:20 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:20 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101780
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:21 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:21 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101781
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:22 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:22 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101782
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:23 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:23 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101783
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:24 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:24 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101784
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:25 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:25 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101785
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:26 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:26 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101786
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:27 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:27 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101787
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:28 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:28 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101788
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:29 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:29 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101789
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:30 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:30 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101790
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:31 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:31 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101791
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:32 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:32 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101792
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:33 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:33 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101793
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:34 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:34 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101794
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:35 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:35 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101795
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:36 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:36 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101796
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:37 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:37 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101797
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:38 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:38 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101798
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:39 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:39 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101799
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:40 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:40 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101800
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:41 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:41 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101801
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:42 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:42 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101802
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:43 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:43 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101803
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:44 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:44 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/leermensaje/1437101804
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-16 21:56:44 Error: Fatal Error (4): syntax error, unexpected '>' in [/var/www/sistema/app/Controller/MessagesController.php, line 56]
+2015-07-16 21:56:44 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /sistema/messages/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 56, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-17 14:05:14 Error: [MissingControllerException] Controller class SitemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SitemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sitema/messages/leermensaje/1437159914
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-17 14:10:38 Error: [MissingActionException] Action MessagesController::leermensajenull() could not be found.
+Exception Attributes: array (
+  'controller' => 'MessagesController',
+  'action' => 'leermensajenull',
+)
+Request URL: /sistema/messages/leermensajenull
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-17 14:16:16 Error: Fatal Error (4): syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) in [/var/www/sistema/app/Controller/MessagesController.php, line 47]
+2015-07-17 14:16:16 Error: [FatalErrorException] syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION)
+Request URL: /sistema/messages
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 47)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 47, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 47, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-17 14:49:21 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'destinatario' cannot be null
+Request URL: /sistema/messages/enviarmensaje/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('INSERT INTO `si...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1012): DboSource->execute('INSERT INTO `si...')
+#3 /var/www/sistema/lib/Cake/Model/Model.php(1924): DboSource->create(Object(Message), Array, Array)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(1747): Model->_doSave(Array, Array)
+#5 /var/www/sistema/app/Controller/MessagesController.php(20): Model->save(Array)
+#6 [internal function]: MessagesController->enviarmensaje('1')
+#7 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#8 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#10 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
