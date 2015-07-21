@@ -63,6 +63,32 @@ public function listamensaje(){
 
 }
 
+public function leido($message_id){
+
+	// $this->autoRender = false;
+	$this->RequestHandler->respondAs('json');
+
+
+    if($this->RequestHandler->isAjax()) {
+	// $this->data['Message']['id']=$message_id;
+	// $this->data['Message'][]
+	$data=array('id'=>$message_id,'status'=>0);
+	debug($data);
+
+	if($this->Message->save($data,false)){
+		$mensaje='actualizado';
+		// $this->Session->setFlash('actualizado');
+	}
+
+
+	}
+		$this->layout='ajax';
+		$this->set(compact('mensaje'));
+
+
+
+}
+
 }
 
  ?>

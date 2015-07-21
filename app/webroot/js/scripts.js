@@ -20,6 +20,7 @@
 
 
 	var valores=[];
+	var ejecucion=0;
 	var porcentajeFinal=0;
 	function modificaIDSC() {
 
@@ -761,66 +762,142 @@ function materiasPorCoordinador(){
 	});
 }
 
+
+function mensajess(){
+	contador = $('p.contadorMensaje');
+
+
+
+	// $('#content > section > div.mnsgNuevo > strong').children('strong').css('color','red');
+	$('div.mnsgNuevo strong.Nuevo').css('cursor','pointer');
+	$()
+
+	$('strong.Nuevo').on('click',function(){
+		id=parseInt($(this).attr('data-id'));
+		$.ajax({
+			url:$(location).attr('href')+'leido/'+id,
+
+			
+
+		});
+
+		if(parseInt(contador.text()) >= 1  ){
+			contador.text(parseInt(contador.text())-1);
+		}
+	});
+
+
+}
+
+function verMensajesAnteriores() {
+		$('button.verMensajes').on('click',function(){
+		$(this).text('ocultar mensajes anteriores');
+		$('div.mnsgLeidos').slideToggle('slow');
+	});
+}
+
 function mensajepush(){
-	// timestamp=Math.floor(Date.now() / 1000);
-	timestamp=null;
+	timestamp=Math.floor(Date.now() / 1000);
+	// timestamp=null;
 	mensajesLeidos=[];
-	// $('div.mnsg').append(Math.floor(Date.now() / 1000));
-	console.log('pushejecutado');
+	mensajesNuevos=[];
+	indicador=0;
+	// ejecucion=[];
+	contador = $('p.contadorMensaje');
+	// $('div.mnsg').hide();
+
+	// $('p.contadorMensaje:hover').css('cursor','pointer');
+
+	// contador.on('click',function(){
+		numero=parseInt(contador.text());
+		console.log(numero);
+
+
 	$.ajax({
 		type:'GET',
-		url:$(location).attr('href')+'/leermensaje/'+timestamp,
+		url:$(location).attr('href')+'leermensaje/'+timestamp,
 		async:true,
 		success:function(response){
 
 
-		console.info('primer ajax'+response);
+		// console.info('primer ajax'+response);
+
 
 			$.ajax({
 				type:'GET',
-				url:$(location).attr('href')+'/listamensaje',
+				url:$(location).attr('href')+'listamensaje',
 				async:true,
 				success:function(response){
 					// alert(response);
 				// console.info(response.length);
 				if( $('div.mensajito').length > 0 ){
+					indicador=$('div.mensajito').length;
 					$('div.mensajito').remove();
 					mensajesLeidos.length=0;
+
 				}
 
 				if(typeof response !== 'undefined' && response.length >= 1  ){
 
+
+
+					contador.attr('data-contador',response.length);
+					// setTimeout(100);
+					// indicador=response.length;
+					if(indicador < contador.attr('data-contador') && ejecucion > 1){
+						contador.text(parseInt(contador.text())+1);
+					}else {
+						// console.log(contador.text());
+						// $('p.contadorMensaje').append('sin mensajes nuevos');
+					}
+
+
 					for(x=0, numero = response.length; x < numero; x++){
 
-						console.log(x)
+						// console.log(x)
 
-					msn= '<div class="mensajito"><strong>'+response[x].Message.subject+'</strong><p>'+response[x].Message.mensaje+'</p></div>';
-					mensajesLeidos.push(msn);
+					if(parseInt(response[x].Message.status) == 1 ){
+
+					msn= '<div class="mensajito"  > <strong class="Nuevo" data-id="'+response[x].Message.id+'">'+response[x].Message.subject+'</strong><p>'+response[x].Message.mensaje+'</p></div>';
+					mensajesNuevos.push(msn);
+					} else if(parseInt(response[x].Message.status)  == 0 ) {
+
+						msn= '<div class="mensajito"  > <strong>'+response[x].Message.subject+'</strong><p>'+response[x].Message.mensaje+'</p></div>';
+						mensajesLeidos.push(msn);
+					}
 					// console.log(msn);
 
+
 					}
-				$('div.mnsg').append(mensajesLeidos);
+				$('div.mnsgNuevo').append(mensajesNuevos);
+				$('div.mnsgLeidos').append(mensajesLeidos);
+				mensajess();
+				ejecucion++;
+
+
+				
+					
+				// alert('tiene un nuevo mensaje');
 				}
 				setTimeout('mensajepush()',1000);
 
 				}
 			});
 
-		// }
-			
-
-
 		}
 		
 
 
 	});
-		// setTimeout('mensajepush()',1000);
-		// mensajepush();
+
 
 }
 
+
+
+
 $(function(){
+	
 	clona();
 	elimina();
 	gruposXcarrera();
@@ -852,6 +929,7 @@ $(function(){
 	horarioColumnas();
 	materiasPorCoordinador();
 	mensajepush();
+	verMensajesAnteriores();
 
 });
 
