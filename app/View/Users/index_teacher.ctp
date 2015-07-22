@@ -26,7 +26,7 @@
 		<td><?php echo $maestro ['User']['password'] ?></td>
 		<td><?php echo $maestro ['EmployeeProfile']['lv_education'] ?></td>
 
-		<td><?php echo $maestro ['EmployeeProfile']['picture'] ?></td>
+		<td><?php echo $this->Html->image('../files/employee_profile/foto/'.$maestro['EmployeeProfile']['foto_dir'].'/'.'thumb_'.$maestro['EmployeeProfile']['foto']) ?></td>
 		<td><?php echo $maestro ['User']['group_id'] ?></td>
 
 		<td>

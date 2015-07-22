@@ -154,6 +154,7 @@ You can also add some CSS styles for your pages at: %s.',
 ?>
 </p>
 
+
 <h3><?php echo __d('cake_dev', 'Getting Started'); ?></h3>
 <p>
 	<?php

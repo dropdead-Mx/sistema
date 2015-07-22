@@ -239,7 +239,7 @@ public function addcoordi(){
 
 		if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Coordinador registrado con exito');
-			$this->redirec(array('action'=>'index'));
+			$this->redirect(array('action'=>'index'));
 			
 		endif;
 	}

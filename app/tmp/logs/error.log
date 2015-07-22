@@ -14288,3 +14288,308 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-07-22 12:58:12 Error: Fatal Error (4): syntax error, unexpected ''thumb'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/var/www/sistema/app/Model/EmployeeProfile.php, line 26]
+2015-07-22 12:58:12 Error: [FatalErrorException] syntax error, unexpected ''thumb'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /sistema/users/addcoordi
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 26)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 26, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 26, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-22 13:01:59 Error: [MissingActionException] Action UsersController::addcoordileermensaje() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'addcoordileermensaje',
+)
+Request URL: /sistema/users/addcoordileermensaje/1437588119
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-22 13:03:37 Error: [MissingActionException] Action UsersController::addcoordileermensaje() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'addcoordileermensaje',
+)
+Request URL: /sistema/users/addcoordileermensaje/1437588217
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-22 13:03:42 Error: Fatal Error (1): Call to undefined method UsersController::redirec() in [/var/www/sistema/app/Controller/UsersController.php, line 242]
+2015-07-22 13:03:42 Error: [FatalErrorException] Call to undefined method UsersController::redirec()
+Request URL: /sistema/users/addcoordi
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/sistem...', 242)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/sistem...', 242, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/sistem...', 242, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-22 13:03:49 Error: [MissingActionException] Action UsersController::addcoordileermensaje() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'addcoordileermensaje',
+)
+Request URL: /sistema/users/addcoordileermensaje/1437588229
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-22 13:04:06 Error: [MissingActionException] Action UsersController::addcoordileermensaje() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'addcoordileermensaje',
+)
+Request URL: /sistema/users/addcoordileermensaje/1437588246
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-22 13:05:53 Error: [MissingActionException] Action UsersController::addcoordileermensaje() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'addcoordileermensaje',
+)
+Request URL: /sistema/users/addcoordileermensaje/1437588353
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-22 13:06:50 Error: Fatal Error (1): Call to undefined method UsersController::redirec() in [/var/www/sistema/app/Controller/UsersController.php, line 242]
+2015-07-22 13:06:50 Error: [FatalErrorException] Call to undefined method UsersController::redirec()
+Request URL: /sistema/users/addcoordi
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/sistem...', 242)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/sistem...', 242, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/sistem...', 242, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-22 13:16:50 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb/img
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:16:51 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb/img
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:17:19 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb_/img
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:17:19 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb_/img
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:17:39 Error: [MissingActionException] Action UsersController::addTeacherleermensaje() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'addTeacherleermensaje',
+)
+Request URL: /sistema/users/addTeacherleermensaje/1437589059
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-22 13:18:48 Error: [MissingActionException] Action UsersController::addTeacherleermensaje() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'addTeacherleermensaje',
+)
+Request URL: /sistema/users/addTeacherleermensaje/1437589128
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-22 13:19:28 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb_/img
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:19:28 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto29/thumb_D%3A.jpg
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:19:33 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb_/img
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:19:33 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto29/thumb_D%3A.jpg
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:19:33 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb_/img
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:21:05 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto1/thumb_aver.jpg
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:21:05 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb_/img
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:21:05 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto29/thumb_D%3A.jpg
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:22:20 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto1/thumb_aver.jpg
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:22:20 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb_/img
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:22:20 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto29/thumb_D%3A.jpg
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:22:21 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto1/thumb_aver.jpg
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:25:35 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto1/thumb_aver.jpg
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:27:01 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto1/thumb_aver.jpg
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:27:01 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto29/thumb_D%3A.jpg
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:27:01 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb_/img
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:27:02 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto1/thumb_aver.jpg
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-22 13:28:48 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb_/img
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

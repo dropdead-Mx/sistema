@@ -76,6 +76,8 @@ Cache::config('default', array('engine' => 'File'));
  * Configure::write('I18n.preferApp', true);
  */
 
+
+CakePlugin::load('Upload');
 /**
  * You can attach event listeners to the request lifecycle as Dispatcher Filter. By default CakePHP bundles two filters:
  *
