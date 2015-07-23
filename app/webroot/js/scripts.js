@@ -893,7 +893,57 @@ function mensajepush(){
 
 }
 
+function carrerasxcoordi(){
 
+	$('form#formularioPlaneaciones select#selectCoordi').on('change',function(){
+
+		id=parseInt($(this).val());
+
+		// alert(typeof(id));
+		if(id !== ''){
+
+			$.ajax({
+			url:'../carrerasporcoordinador/'+id,
+			type:'GET',
+			dataType:'json',
+			success:function(response){
+
+				$('option.opcionPlaneacion').remove();
+				console.info(response);
+				opciones=[];
+				if(typeof(response) !== 'undefined' && response.length >= 1){
+
+					$('#carrerasPlaneacion').removeAttr('disabled');
+					for(x=0, num=response.length ; x < num; x++){
+
+						opt='<option class="opcionPlaneacion" value="'+response[x].Career.id+'">'+response[x].Career.name+'</option>';
+						console.log(response[x].Career.name);
+
+						opciones.push(opt);
+
+					}
+
+
+					$('#carrerasPlaneacion').children('option').eq(0).text('-- Carreras disponibles --');
+					$('#carrerasPlaneacion').append(opciones);
+				}else {
+
+					$('#carrerasPlaneacion').children('option').eq(0).text('-- deshabilitado --');
+					$('#carrerasPlaneacion').prop('disabled',true);
+
+
+				}
+			}
+		});
+
+
+		}else {
+			// alert('seleccione una opcion correcta');
+		}
+
+		
+	});
+}
 
 
 $(function(){
@@ -928,8 +978,13 @@ $(function(){
 
 	horarioColumnas();
 	materiasPorCoordinador();
+	// console.log($(location).attr('href'));
+	if($(location).attr('href') =='http://localhost/sistema/messages/'){
+
 	mensajepush();
+	}
 	verMensajesAnteriores();
+	carrerasxcoordi();
 
 });
 

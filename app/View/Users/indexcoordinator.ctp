@@ -4,6 +4,7 @@
 	<tr>
 		<th>Nombre</th>
 		<!-- <th>Apellidos</th> -->
+		<th>Foto de perfil</th>
 		<th>Asignar Carreras</th>
 		<th>Editar</th>
 	</tr>
@@ -12,6 +13,7 @@
 	<tr>
 
 	<td><?php echo $coordi['EmployeeProfile']['lv_education'].' '.$coordi['User']['name'] ?></td>
+	<td><?php echo $this->Html->image('../files/employee_profile/foto/'.$coordi['EmployeeProfile']['foto_dir'].'/'.'thumb_'.$coordi['EmployeeProfile']['foto']) ?></td>
 	
 	<td><?php echo $this->Html->link('Asignar carreras',array('action'=>'assigncareers',$coordi['User']['id'])); ?></td>
 	<td><?php echo $this->Html->link('Ver carreras',array('action'=>'vercarreras',$coordi['User']['id']))?></td>
