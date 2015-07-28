@@ -946,8 +946,9 @@ function mensajepush(){
 // }
 function getCoordi(){
 	$('select#materiaPlaneacion').on('change', function(){
-
+		// $('select#selectCoordi').addAttr('hidden');
 		idmateria=parseInt($(this).val());
+		$('.coordiOpcion').remove();
 
 		if(typeof(idmateria) !== ''){
 
@@ -961,8 +962,16 @@ function getCoordi(){
 
 						// for(x=0,numero=response.length;x<=numero;x++){
 
-							coordinador= '<option value="'+response[0].User.id+'">'+response[0].User.name+'</option>';
+							coordinador= '<option class="coordiOpcion" value="'+response[0].User.id+'">'+response[0].User.name+'</option>';
 							$('select#selectCoordi').append(coordinador);
+							visible = $('select#selectCoordi').is(':visible');
+
+							if(visible == true ){
+
+							}else {
+							$('select#selectCoordi').slideToggle('slow');
+
+							}
 							carrera=response[1].Course.career_id;
 							$('input#carreraPlaneacion').val(carrera);
 
@@ -971,6 +980,8 @@ function getCoordi(){
 					}
 				}
 			});
+		}else {
+			// alert('Seleccione una opcion correcta');
 		}
 		// alert(id);
 
