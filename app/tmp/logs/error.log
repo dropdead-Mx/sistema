@@ -14801,3 +14801,334 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-07-27 22:27:03 Error: [MissingControllerException] Controller class CarrerasporcoordinadorController could not be found.
+Exception Attributes: array (
+  'class' => 'CarrerasporcoordinadorController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/carrerasporcoordinador/62
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-27 22:27:06 Error: [MissingControllerException] Controller class CarrerasporcoordinadorController could not be found.
+Exception Attributes: array (
+  'class' => 'CarrerasporcoordinadorController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/carrerasporcoordinador/63
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-27 22:27:26 Error: [MissingControllerException] Controller class CarrerasporcoordinadorController could not be found.
+Exception Attributes: array (
+  'class' => 'CarrerasporcoordinadorController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/carrerasporcoordinador/62
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-27 22:31:35 Error: [MissingActionException] Action CoursesController::getCoursesByCareerId() could not be found.
+Exception Attributes: array (
+  'controller' => 'CoursesController',
+  'action' => 'getCoursesByCareerId',
+)
+Request URL: /sistema/courses/getCoursesByCareerId
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-27 22:32:45 Error: [MissingActionException] Action CoursesController::get_courses_by_user_id.ctp() could not be found.
+Exception Attributes: array (
+  'controller' => 'CoursesController',
+  'action' => 'get_courses_by_user_id.ctp',
+)
+Request URL: /sistema/courses/get_courses_by_user_id.ctp
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-27 22:33:02 Error: [MissingViewException] View file "Courses/getcoursesbyuserid.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Courses/getcoursesbyuserid.ctp',
+)
+Request URL: /sistema/courses/getcoursesbyuserid
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /var/www/sistema/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#4 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-07-27 22:33:07 Error: [MissingViewException] View file "Courses/getcoursesbyuserid.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Courses/getcoursesbyuserid.ctp',
+)
+Request URL: /sistema/courses/getcoursesbyuserid/2
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /var/www/sistema/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#4 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-07-27 22:33:25 Error: [MissingViewException] View file "Courses/getcoursesbyuserid.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Courses/getcoursesbyuserid.ctp',
+)
+Request URL: /sistema/courses/getcoursesbyuserid
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /var/www/sistema/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#4 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-07-27 22:34:49 Error: [MissingActionException] Action CareersController::getCoursesByCareer() could not be found.
+Exception Attributes: array (
+  'controller' => 'CareersController',
+  'action' => 'getCoursesByCareer',
+)
+Request URL: /sistema/careers/getCoursesByCareer/id
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CareersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-27 22:34:53 Error: [MissingViewException] View file "Careers/get_courses_by_careerid.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Careers/get_courses_by_careerid.ctp',
+)
+Request URL: /sistema/careers/getCoursesByCareerid
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /var/www/sistema/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CareersController), Object(CakeRequest))
+#4 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-07-27 22:35:04 Error: [MissingViewException] View file "Careers/get_courses_by_careerid.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Careers/get_courses_by_careerid.ctp',
+)
+Request URL: /sistema/careers/getCoursesByCareerid/12
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /var/www/sistema/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CareersController), Object(CakeRequest))
+#4 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-07-27 22:55:18 Error: Fatal Error (4): syntax error, unexpected '$materias' (T_VARIABLE) in [/var/www/sistema/app/Controller/PlanningsController.php, line 17]
+2015-07-27 22:55:18 Error: [FatalErrorException] syntax error, unexpected '$materias' (T_VARIABLE)
+Request URL: /sistema/plannings/subirplaneaciones/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 17)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 17, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 17, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-27 22:56:34 Error: Fatal Error (4): syntax error, unexpected '$materias' (T_VARIABLE) in [/var/www/sistema/app/Controller/PlanningsController.php, line 17]
+2015-07-27 22:56:34 Error: [FatalErrorException] syntax error, unexpected '$materias' (T_VARIABLE)
+Request URL: /sistema/plannings/subirplaneaciones/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 17)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 17, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 17, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-27 22:57:14 Error: Fatal Error (4): syntax error, unexpected '$materias' (T_VARIABLE) in [/var/www/sistema/app/Controller/PlanningsController.php, line 17]
+2015-07-27 22:57:14 Error: [FatalErrorException] syntax error, unexpected '$materias' (T_VARIABLE)
+Request URL: /sistema/plannings/subirplaneaciones/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 17)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 17, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 17, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-27 22:57:18 Error: Fatal Error (4): syntax error, unexpected '$materias' (T_VARIABLE) in [/var/www/sistema/app/Controller/PlanningsController.php, line 17]
+2015-07-27 22:57:18 Error: [FatalErrorException] syntax error, unexpected '$materias' (T_VARIABLE)
+Request URL: /sistema/plannings/subirplaneaciones/2
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 17)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 17, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 17, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-27 22:57:27 Error: Fatal Error (4): syntax error, unexpected '$materias' (T_VARIABLE) in [/var/www/sistema/app/Controller/PlanningsController.php, line 17]
+2015-07-27 22:57:27 Error: [FatalErrorException] syntax error, unexpected '$materias' (T_VARIABLE)
+Request URL: /sistema/plannings/subirplaneaciones/2
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 17)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 17, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 17, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-27 22:58:36 Error: Fatal Error (4): syntax error, unexpected '$materias' (T_VARIABLE) in [/var/www/sistema/app/Controller/PlanningsController.php, line 17]
+2015-07-27 22:58:36 Error: [FatalErrorException] syntax error, unexpected '$materias' (T_VARIABLE)
+Request URL: /sistema/plannings/subirplaneaciones/2
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 17)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 17, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 17, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-27 22:59:05 Error: Fatal Error (4): syntax error, unexpected '$coordinadores' (T_VARIABLE) in [/var/www/sistema/app/Controller/PlanningsController.php, line 19]
+2015-07-27 22:59:05 Error: [FatalErrorException] syntax error, unexpected '$coordinadores' (T_VARIABLE)
+Request URL: /sistema/plannings/subirplaneaciones/2
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 19)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 19, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 19, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-27 22:59:10 Error: Fatal Error (4): syntax error, unexpected '$coordinadores' (T_VARIABLE) in [/var/www/sistema/app/Controller/PlanningsController.php, line 19]
+2015-07-27 22:59:10 Error: [FatalErrorException] syntax error, unexpected '$coordinadores' (T_VARIABLE)
+Request URL: /sistema/plannings/subirplaneaciones/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 19)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 19, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 19, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-27 22:59:12 Error: Fatal Error (4): syntax error, unexpected '$coordinadores' (T_VARIABLE) in [/var/www/sistema/app/Controller/PlanningsController.php, line 19]
+2015-07-27 22:59:12 Error: [FatalErrorException] syntax error, unexpected '$coordinadores' (T_VARIABLE)
+Request URL: /sistema/plannings/subirplaneaciones
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 19)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 19, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 19, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-27 23:11:35 Error: Fatal Error (1): Call to a member function set() on null in [/var/www/sistema/app/Controller/PlanningsController.php, line 66]
+2015-07-27 23:11:35 Error: [FatalErrorException] Call to a member function set() on null
+Request URL: /sistema/plannings/coordinadorpormateria/13
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/sistem...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/sistem...', 66, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/sistem...', 66, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-27 23:11:37 Error: Fatal Error (1): Call to a member function set() on null in [/var/www/sistema/app/Controller/PlanningsController.php, line 66]
+2015-07-27 23:11:37 Error: [FatalErrorException] Call to a member function set() on null
+Request URL: /sistema/plannings/coordinadorpormateria/13
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/sistem...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/sistem...', 66, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/sistem...', 66, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-27 23:45:04 Error: Fatal Error (4): syntax error, unexpected '}' in [/var/www/sistema/app/View/Plannings/coordinadorpormateria.ctp, line 6]
+2015-07-27 23:45:04 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /sistema/plannings/coordinadorpormateria/13
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 6)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 6, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 6, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-27 23:51:22 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/sistema/app/View/Plannings/coordinadorpormateria.ctp, line 6]
+2015-07-27 23:51:22 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /sistema/plannings/coordinadorpormateria/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 6)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 6, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 6, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-27 23:51:32 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/sistema/app/View/Plannings/coordinadorpormateria.ctp, line 6]
+2015-07-27 23:51:32 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /sistema/plannings/coordinadorpormateria/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 6)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 6, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 6, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-27 23:51:44 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/sistema/app/View/Plannings/coordinadorpormateria.ctp, line 6]
+2015-07-27 23:51:44 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /sistema/plannings/coordinadorpormateria/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 6)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 6, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 6, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-27 23:59:17 Error: [MissingActionException] Action PlanningsController::plannings() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlanningsController',
+  'action' => 'plannings',
+)
+Request URL: /sistema/plannings/plannings/coordinadorpormateria/10
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-28 00:01:38 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [/var/www/sistema/app/View/Plannings/coordinadorpormateria.ctp, line 5]
+2015-07-28 00:01:38 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+Request URL: /sistema/plannings/coordinadorpormateria/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 5, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 5, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-28 02:06:41 Error: Fatal Error (4): syntax error, unexpected 'else' (T_ELSE) in [/var/www/sistema/app/Controller/PlanningsController.php, line 28]
+2015-07-28 02:06:41 Error: [FatalErrorException] syntax error, unexpected 'else' (T_ELSE)
+Request URL: /sistema/plannings/subirplaneaciones/2
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 28)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 28, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 28, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-28 02:06:56 Error: Fatal Error (4): syntax error, unexpected '}' in [/var/www/sistema/app/Controller/PlanningsController.php, line 31]
+2015-07-28 02:06:56 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /sistema/plannings/subirplaneaciones/2
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 31)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 31, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 31, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-28 02:07:20 Error: Fatal Error (4): syntax error, unexpected '}' in [/var/www/sistema/app/Controller/PlanningsController.php, line 31]
+2015-07-28 02:07:20 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /sistema/plannings/subirplaneaciones/2
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 31)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 31, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 31, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-28 02:07:40 Error: Fatal Error (4): syntax error, unexpected '}' in [/var/www/sistema/app/Controller/PlanningsController.php, line 31]
+2015-07-28 02:07:40 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /sistema/plannings/subirplaneaciones/2
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 31)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 31, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 31, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

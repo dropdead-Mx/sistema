@@ -81,7 +81,11 @@ class CareersController extends AppController {
 		// Esto te obtiene los grupos de la carrera, verdad
 		// $career_id = $this->request->data['Careesir']['career_id'];
 		// pr($career_id);
+
+
+
 		$this->RequestHandler->respondAs('json');
+		// $this->request->is('ajax'); ponerIf
 		$courses= $this->Career->Course->find('all', array(
 			'conditions' => array('Course.career_id' => $career_id),
 			'recursive' => -1

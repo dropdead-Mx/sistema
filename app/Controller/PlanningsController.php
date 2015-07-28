@@ -10,44 +10,66 @@ class PlanningsController extends AppController {
 
 	}
 
-	public function subirplaneaciones(){
+	public function subirplaneaciones($maestro){
+
+		// $this->User->id=$user_id
+
+		$materias=$this->Course->find('list',array('conditions'=>array('Course.user_id'=>$maestro),'recursive'=>-1,'fields'=>array('Course.id','Course.name')));
 
 		$coordinadores=$this->User->find('list',array('conditions'=>array(
 			'User.group_id'=>6),
 			'recursive'=>-1,
 			'fields'=>array('User.id','User.name')));
 
-		if($this->request->is('post')):
-			if($this->Planning->save($this->request->data)):
+		if($this->request->is('post')){
+			if($this->Planning->save($this->request->data)){
 				$this->Session->setFlash('Planeacion subida con exito');
 				$this->redirect(array('action'=>'index'));
-			endif;
-		endif;
-
-		$this->set(compact('coordinadores'));
-
-	}
-
-	public function carrerasporcoordinador($coordi_id){
-
- 		$this->RequestHandler->respondAs('json');
-		$carreras=[];
-		$careers=$this->Usrcareer->find('all',array('conditions'=>array('Usrcareer.user_id'=>$coordi_id),'fields'=>array('Usrcareer.career_id')));
-
-		for($x=0 ; $x< sizeof($careers);$x++){
-
-			array_push($carreras,$this->Career->find('all',array('conditions'=>array('Career.id'=>$careers[$x]['Usrcareer']['career_id']),
-				'fields'=>array(
-					'Career.id','Career.name'),
-				'recursive'=>-1)));
-
+			} else {
+				$this->Session->setFlash('Algo ocurrio mal intenta de nuevo');
+				$this->redirect(array('action'=>'subirplaneaciones',1));
+			}
 
 		}
 
-		$this->set(compact('carreras'));
- 		$this->layout='ajax';
+		$this->set(compact('coordinadores','materias','maestro'));
+
+	}
+
+	// public function carrerasporcoordinador($coordi_id){
+
+ // 		$this->RequestHandler->respondAs('json');
+	// 	$carreras=[];
+	// 	$careers=$this->Usrcareer->find('all',array('conditions'=>array('Usrcareer.user_id'=>$coordi_id),'fields'=>array('Usrcareer.career_id')));
+
+	// 	for($x=0 ; $x< sizeof($careers);$x++){
+
+	// 		array_push($carreras,$this->Career->find('all',array('conditions'=>array('Career.id'=>$careers[$x]['Usrcareer']['career_id']),
+	// 			'fields'=>array(
+	// 				'Career.id','Career.name'),
+	// 			'recursive'=>-1)));
 
 
+	// 	}
+
+	// 	$this->set(compact('carreras'));
+ // 		$this->layout='ajax';
+
+
+
+	// }
+
+
+	public function coordinadorpormateria($materia){
+
+		$this->RequestHandler->respondAs('json');
+		$coordinador=[];
+		$curso=$this->Course->find('all',array('conditions'=>array('Course.id'=>$materia),'recursive'=>-1));
+		$match=$curso[0]['Course']['career_id'];
+		$coordina=$this->Usrcareer->find('all',array('conditions'=>array('Usrcareer.career_id'=>$match),'fields'=>array('Usrcareer.user_id')));
+		$coordinador=$this->User->find('all',array('conditions'=>array('User.id'=>$coordina[0]['Usrcareer']['user_id']),'recursive'=>-1,'fields'=>array('User.id','User.name')));
+		$this->layout='ajax';
+		$this->set(compact('coordinador','curso'));
 
 	}
 }

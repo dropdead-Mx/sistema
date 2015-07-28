@@ -893,55 +893,89 @@ function mensajepush(){
 
 }
 
-function carrerasxcoordi(){
+// function carrerasxcoordi(){
 
-	$('form#formularioPlaneaciones select#selectCoordi').on('change',function(){
+// 	$('form#formularioPlaneaciones select#selectCoordi').on('change',function(){
 
-		id=parseInt($(this).val());
+// 		id=parseInt($(this).val());
 
-		// alert(typeof(id));
-		if(id !== ''){
+// 		// alert(typeof(id));
+// 		if(id !== ''){
 
-			$.ajax({
-			url:'../carrerasporcoordinador/'+id,
-			type:'GET',
-			dataType:'json',
-			success:function(response){
+// 			$.ajax({
+// 			url:'../plannings/carrerasporcoordinador/'+id,
+// 			type:'GET',
+// 			dataType:'json',
+// 			success:function(response){
 
-				$('option.opcionPlaneacion').remove();
-				console.info(response);
-				opciones=[];
-				if(typeof(response) !== 'undefined' && response.length >= 1){
+// 				$('option.opcionPlaneacion').remove();
+// 				console.info(response);
+// 				opciones=[];
+// 				if(typeof(response) !== 'undefined' && response.length >= 1){
 
-					$('#carrerasPlaneacion').removeAttr('disabled');
-					for(x=0, num=response.length ; x < num; x++){
+// 					$('#carrerasPlaneacion').removeAttr('disabled');
+// 					for(x=0, num=response.length ; x < num; x++){
 
-						opt='<option class="opcionPlaneacion" value="'+response[x].Career.id+'">'+response[x].Career.name+'</option>';
-						console.log(response[x].Career.name);
+// 						opt='<option class="opcionPlaneacion" value="'+response[x].Career.id+'">'+response[x].Career.name+'</option>';
+// 						console.log(response[x].Career.name);
 
-						opciones.push(opt);
+// 						opciones.push(opt);
 
-					}
-
-
-					$('#carrerasPlaneacion').children('option').eq(0).text('-- Carreras disponibles --');
-					$('#carrerasPlaneacion').append(opciones);
-				}else {
-
-					$('#carrerasPlaneacion').children('option').eq(0).text('-- deshabilitado --');
-					$('#carrerasPlaneacion').prop('disabled',true);
+// 					}
 
 
-				}
-			}
-		});
+// 					$('#carrerasPlaneacion').children('option').eq(0).text('-- Carreras disponibles --');
+// 					$('#carrerasPlaneacion').append(opciones);
+// 				}else {
+
+// 					$('#carrerasPlaneacion').children('option').eq(0).text('-- deshabilitado --');
+// 					$('#carrerasPlaneacion').prop('disabled',true);
 
 
-		}else {
-			// alert('seleccione una opcion correcta');
-		}
+// 				}
+// 			}
+// 		});
+
+
+// 		}else {
+// 			// alert('seleccione una opcion correcta');
+// 		}
 
 		
+// 	});
+// }
+function getCoordi(){
+	$('select#materiaPlaneacion').on('change', function(){
+
+		idmateria=parseInt($(this).val());
+
+		if(typeof(idmateria) !== ''){
+
+			$.ajax({
+				url:'../coordinadorpormateria/'+idmateria,
+				type:'GET',
+				success:function(response){
+					console.info(response);
+
+					if(typeof(response) !== 'undefined' && response.length >=1 ){
+
+						// for(x=0,numero=response.length;x<=numero;x++){
+
+							coordinador= '<option value="'+response[0].User.id+'">'+response[0].User.name+'</option>';
+							$('select#selectCoordi').append(coordinador);
+							carrera=response[1].Course.career_id;
+							$('input#carreraPlaneacion').val(carrera);
+
+
+						// }
+					}
+				}
+			});
+		}
+		// alert(id);
+
+
+
 	});
 }
 
@@ -984,7 +1018,8 @@ $(function(){
 	mensajepush();
 	}
 	verMensajesAnteriores();
-	carrerasxcoordi();
+	// carrerasxcoordi();
+	getCoordi();
 
 });
 
