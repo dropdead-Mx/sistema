@@ -893,57 +893,7 @@ function mensajepush(){
 
 }
 
-// function carrerasxcoordi(){
 
-// 	$('form#formularioPlaneaciones select#selectCoordi').on('change',function(){
-
-// 		id=parseInt($(this).val());
-
-// 		// alert(typeof(id));
-// 		if(id !== ''){
-
-// 			$.ajax({
-// 			url:'../plannings/carrerasporcoordinador/'+id,
-// 			type:'GET',
-// 			dataType:'json',
-// 			success:function(response){
-
-// 				$('option.opcionPlaneacion').remove();
-// 				console.info(response);
-// 				opciones=[];
-// 				if(typeof(response) !== 'undefined' && response.length >= 1){
-
-// 					$('#carrerasPlaneacion').removeAttr('disabled');
-// 					for(x=0, num=response.length ; x < num; x++){
-
-// 						opt='<option class="opcionPlaneacion" value="'+response[x].Career.id+'">'+response[x].Career.name+'</option>';
-// 						console.log(response[x].Career.name);
-
-// 						opciones.push(opt);
-
-// 					}
-
-
-// 					$('#carrerasPlaneacion').children('option').eq(0).text('-- Carreras disponibles --');
-// 					$('#carrerasPlaneacion').append(opciones);
-// 				}else {
-
-// 					$('#carrerasPlaneacion').children('option').eq(0).text('-- deshabilitado --');
-// 					$('#carrerasPlaneacion').prop('disabled',true);
-
-
-// 				}
-// 			}
-// 		});
-
-
-// 		}else {
-// 			// alert('seleccione una opcion correcta');
-// 		}
-
-		
-// 	});
-// }
 function getCoordi(){
 	$('select#materiaPlaneacion').on('change', function(){
 		// $('select#selectCoordi').addAttr('hidden');
@@ -974,9 +924,20 @@ function getCoordi(){
 							}
 							carrera=response[1].Course.career_id;
 							$('input#carreraPlaneacion').val(carrera);
-
+							$('input#planeacionPara').val(response[0].User.id);
+							$('input#planeacionDescripcion').removeAttr('disabled');
 
 						// }
+					}else if(response.length <=0) {
+
+				$('input#planeacionDescripcion').attr('disabled',true);
+				$('input#planeacionDescripcion').val('');
+				$('input#planeacionPara').val('');
+				$('#planeacionAsunto').val('');
+				$('#planeacionTextoMsn').val('')
+				
+
+
 					}
 				}
 			});
@@ -988,6 +949,40 @@ function getCoordi(){
 
 
 	});
+
+ 	// $('input#planeacionDescripcion')
+
+	$('input#planeacionDescripcion').keyup(function(){
+	materia='Planeacion de la materia: '+$('select#materiaPlaneacion option:selected').text();
+		// alert($("select#materiaPlaneacion option[value='"+idOpcion+"'']").text());
+		console.log(materia);
+		// $(this).val($(this).val().toUpperCase());
+		$('#planeacionAsunto').val(materia);
+		$('#planeacionTextoMsn').val($(this).val());
+	});
+
+
+	$('input#planeacionDescripcion').focusout(function(){
+	materia='Planeacion de la materia: '+$('select#materiaPlaneacion option:selected').text();
+
+		// $(this).val($(this).val().toUpperCase());
+	$('#planeacionAsunto').val(materia);
+		$('#planeacionTextoMsn').val($(this).val());
+
+
+
+	});
+	
+	$('input#planeacionDescripcion').focus(function(){
+	materia='Planeacion de la materia: '+$('select#materiaPlaneacion option:selected').text();
+
+	$('#planeacionAsunto').val(materia);
+		$('#planeacionTextoMsn').val($(this).val());
+
+
+	});
+
+
 }
 
 

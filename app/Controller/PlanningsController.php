@@ -3,7 +3,7 @@ class PlanningsController extends AppController {
 
 	public $helpers=array('Html','Form','Js');
 	public $components=array('Session','RequestHandler');
-	public $uses=array('User','Course','Career','Planning','Usrcareer');
+	public $uses=array('User','Course','Career','Planning','Usrcareer','Message');
 
 
 	public function index(){
@@ -22,12 +22,13 @@ class PlanningsController extends AppController {
 			'fields'=>array('User.id','User.name')));
 
 		if($this->request->is('post')){
-			if($this->Planning->save($this->request->data)){
+			if($this->Planning->save($this->request->data)&& $this->Message->save($this->request->data)){
 				$this->Session->setFlash('Planeacion subida con exito');
 				$this->redirect(array('action'=>'index'));
+				// debug($this->request->data);
 			} else {
 
-				$this->request->data='';
+				// $this->request->data='';
 			}
 
 		}
@@ -63,21 +64,22 @@ class PlanningsController extends AppController {
 	public function coordinadorpormateria($materia){
 
 		$this->RequestHandler->respondAs('json');
+		$this->layout='ajax';
 		$coordinador=[];
 
-		if($this->request->is('ajax')){
+
 
 		$curso=$this->Course->find('all',array('conditions'=>array('Course.id'=>$materia),'recursive'=>-1));
+		if( $this->request->is('ajax') && sizeof($curso)> 0 ){
+
 		$match=$curso[0]['Course']['career_id'];
+
 		$coordina=$this->Usrcareer->find('all',array('conditions'=>array('Usrcareer.career_id'=>$match),'fields'=>array('Usrcareer.user_id')));
 		$coordinador=$this->User->find('all',array('conditions'=>array('User.id'=>$coordina[0]['Usrcareer']['user_id']),'recursive'=>-1,'fields'=>array('User.id','User.name')));
-		$this->layout='ajax';
-		$this->set(compact('coordinador','curso'));
-		}else {
-		// $this->layout='ajax';
-		$this->redirect(array('controller'=>'Users','action'=>'index'));
 
+		$this->set(compact('coordinador','curso'));
 		}
+
 
 
 	}
