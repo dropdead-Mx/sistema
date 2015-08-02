@@ -29,7 +29,9 @@ public $hasMany=array(
 	'Assist'=>array(
 		'className'=>'Assist'),
 	'Planning'=>array(
-		'className'=>'Planning')
+		'className'=>'Planning'),
+	'Uploadtest'=>array(
+		'className'=>'Uploadtest')
 	);
 
 

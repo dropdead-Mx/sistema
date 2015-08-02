@@ -1,7 +1,7 @@
 <h3>Descargar Planeaciones</h3>
 
 <select id="carreraCoordi" >
-	<option value="rxt">--Selecciona una carrera--</option>
+	<option value="txt">--Selecciona una carrera--</option>
 <?php 
 	
 	foreach($carreras as $k =>$carrera):

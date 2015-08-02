@@ -15545,3 +15545,25 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-08-02 16:25:51 Error: [MissingActionException] Action UploadtestsController::verplaneaciones() could not be found.
+Exception Attributes: array (
+  'controller' => 'UploadtestsController',
+  'action' => 'verplaneaciones',
+)
+Request URL: /sistema/uploadtests/verplaneaciones/undefined/9
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UploadtestsController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-08-02 16:29:38 Error: [MissingActionException] Action UploadtestsController::verplaneaciones() could not be found.
+Exception Attributes: array (
+  'controller' => 'UploadtestsController',
+  'action' => 'verplaneaciones',
+)
+Request URL: /sistema/uploadtests/verplaneaciones/undefined/12
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UploadtestsController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

@@ -478,11 +478,11 @@ function delimitaHrs(){
 
 function matxCuatyCarr(){
 
-	$('select#cuatrimestre,select#infocalif,select#indexPlaning,select#carreraCoordi').on('change',function(){
-	$('select#materiasporcarrera,select#apendCoursePlanning').children('option.opcion').remove();
+	$('select#cuatrimestre,select#infocalif,select#indexPlaning,select#carreraCoordi,select#indexUploadExam').on('change',function(){
+	$('select#materiasporcarrera,select#apendCoursePlanning,select#apendExam ').children('option.opcion').remove();
 
 	carrera = $('select#infocalif option:selected,select#carreraCoordi option:selected').val();
-	cuatri= $('select#cuatrimestre option:selected,select#indexPlaning option:selected').val();
+	cuatri= $('select#cuatrimestre option:selected,select#indexPlaning option:selected,select#indexUploadExam option:selected').val();
 	materias=[];
 
 	if(carrera != 0 && cuatri != 0){
@@ -500,7 +500,7 @@ function matxCuatyCarr(){
 				if(typeof response !== 'undefined' && response.length >0 ){
 				
 
-				$('select#materiasporcarrera option[class="noMaterias"],select#apendCoursePlanning option[value="txt"]').text('--Materias Disponibles--');
+				$('select#materiasporcarrera option[class="noMaterias"],select#apendCoursePlanning option[value="txt"],select#apendExam option[value="txt"]').text('--Materias Disponibles--');
 
 					for (var i=0, num=response.length; i< num; i++){
 
@@ -514,16 +514,17 @@ function matxCuatyCarr(){
 
 				}
 					$('#materiasporcarrera,select#apendCoursePlanning').append(materias);
-					$('select#apendCoursePlanning').attr('disabled',false);
+					$('select#apendCoursePlanning,select#apendExam,select#parcialUploadTest').attr('disabled',false);
+					$('select#apendExam').append(materias);
 					// $('button#buscaPlaneacion').fadeIn('slow');
 
 
 
 			}else {
 				// alert('No se encontraron materias para esta carrera y semestre');
-				$('select#materiasporcarrera option[class="noMaterias"],select#apendCoursePlanning option[value="txt"]').text('--Sin materias disponibles--');
+				$('select#materiasporcarrera option[class="noMaterias"],select#apendCoursePlanning option[value="txt"],select#apendExam option[value="txt"]').text('--Sin materias disponibles--');
 
-				$('select#apendCoursePlanning').attr('disabled',true);
+				$('select#apendCoursePlanning,select#parcialUploadTest,select#apendExam ').attr('disabled',true);
 				btn=$('button#buscaPlaneacion').is(':visible');
 				// if(btn === true ){
 				// $('button#buscaPlaneacion').fadeOut('slow')	;
@@ -1098,6 +1099,55 @@ function addPlannings(){
 	});	
 
 }
+function addUploadTest(){
+
+
+
+	$('select#parcialUploadTest,select#apendExam').on('change',function(){
+		materia=$('select#apendExam option:selected').val();
+		materiaNombre=$('select#apendExam option:selected').text();
+		$('tr.filaExamen').remove();
+
+		parcial=$('select#parcialUploadTest option:selected').val();
+		examenesDescarga=[];
+		if(materia !== 'txt' && parcial !== 'txt'){
+			$('table#tablaDeExamenes').fadeOut('slow');
+
+		$.ajax({
+		type:'GET',
+		url:'/sistema/uploadtests/getexams/'+materia+'/'+parcial,
+		success:function(response){
+			// console.info(response);
+
+			if(typeof(response) !== 'undefined' && response.length >=1 ){
+
+				for(w=0,num=response.length;w<num;w++){
+
+					nombre='<tr class="filaExamen"><td>'+response[w].User.name+' '+response[w].User.apat+' '+response[w].User.amat+'</td>';
+					fecha='<td>'+response[w].Uploadtest.created+'</td><td>Examen de la materia: '+materiaNombre+'</td>';
+					descarga='<td><a href="/sistema/uploadtests/download/'+response[w].Uploadtest.id+'">'+response[w].Uploadtest.examen+'</a></tr>';
+
+					fila=nombre+fecha+descarga;
+					examenesDescarga.push(fila);
+
+				}
+
+			$('tbody#tablaBodyExamenes').append(examenesDescarga);
+			$('table#tablaDeExamenes').fadeIn('slow');
+
+			}
+			 else if(response.length <=0){
+					// alert('No se encontraron examenes para descarga');
+				}
+		}
+	});
+		}
+	})
+	
+
+
+
+}
 
 
 $(function(){
@@ -1141,6 +1191,7 @@ $(function(){
 	// carrerasxcoordi();
 	getCoordi();
 	addPlannings();
+	addUploadTest();
 
 });
 
