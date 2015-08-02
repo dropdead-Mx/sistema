@@ -52,7 +52,7 @@ public $belongsTo=array(
 			'required'=>true,
 			'message'=>'campo requerido'),
 
-		'teacher_id'=>array(
+		'user_id'=>array(
 			'rule'=>'numeric',
 			'required'=>true,
 			'message'=>'campo requerido'),

@@ -36,11 +36,13 @@ class PlanningsController extends AppController {
 			'fields'=>array('User.id','User.name')));
 
 		if($this->request->is('post')){
-			if($this->Planning->save($this->request->data)&& $this->Message->save($this->request->data)){
+			if($this->Planning->save($this->request->data) && $this->Message->save($this->request->data)){
 				$this->Session->setFlash('Planeacion subida con exito');
 				$this->redirect(array('action'=>'index'));
 				// debug($this->request->data);
 			} else {
+
+				// debug($this->request->data);
 
 				// $this->request->data='';
 			}
