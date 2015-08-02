@@ -478,11 +478,11 @@ function delimitaHrs(){
 
 function matxCuatyCarr(){
 
-	$('select#cuatrimestre,select#infocalif').on('change',function(){
-	$('select#materiasporcarrera').children('option.opcion').remove();
+	$('select#cuatrimestre,select#infocalif,select#indexPlaning,select#carreraCoordi').on('change',function(){
+	$('select#materiasporcarrera,select#apendCoursePlanning').children('option.opcion').remove();
 
-	carrera = $('select#infocalif').val();
-	cuatri= $('select#cuatrimestre option:selected').val();
+	carrera = $('select#infocalif option:selected,select#carreraCoordi option:selected').val();
+	cuatri= $('select#cuatrimestre option:selected,select#indexPlaning option:selected').val();
 	materias=[];
 
 	if(carrera != 0 && cuatri != 0){
@@ -491,15 +491,16 @@ function matxCuatyCarr(){
 
 		$.ajax({
 			type:'GET',
-			url:'../materiasporgerarquia/'+carrera+'/'+cuatri,
+			url:'/sistema/users/materiasporgerarquia/'+carrera+'/'+cuatri,
 			success:function(response){
 			
 
 				console.info(response);
 
 				if(typeof response !== 'undefined' && response.length >0 ){
+				
 
-				$('select#materiasporcarrera option[class="noMaterias"]').text('--Materias Disponibles--');
+				$('select#materiasporcarrera option[class="noMaterias"],select#apendCoursePlanning option[value="txt"]').text('--Materias Disponibles--');
 
 					for (var i=0, num=response.length; i< num; i++){
 
@@ -512,15 +513,24 @@ function matxCuatyCarr(){
 
 
 				}
-					$('#materiasporcarrera').append(materias);
+					$('#materiasporcarrera,select#apendCoursePlanning').append(materias);
+					$('select#apendCoursePlanning').attr('disabled',false);
+					// $('button#buscaPlaneacion').fadeIn('slow');
+
 
 
 			}else {
 				// alert('No se encontraron materias para esta carrera y semestre');
-				$('select#materiasporcarrera option[class="noMaterias"]').text('--Sin materias--');
+				$('select#materiasporcarrera option[class="noMaterias"],select#apendCoursePlanning option[value="txt"]').text('--Sin materias disponibles--');
 
+				$('select#apendCoursePlanning').attr('disabled',true);
+				btn=$('button#buscaPlaneacion').is(':visible');
+				// if(btn === true ){
+				// $('button#buscaPlaneacion').fadeOut('slow')	;
+				// }
 			}
 		}
+
 
 		});
 
@@ -528,7 +538,9 @@ function matxCuatyCarr(){
 
 	}else if( (carrera == 0 && cuatri >0 ) || (cuatri == 0 && carrera > 0) ){
 		// alert('Porfavor selecciona una carrera y cuatrimestre para realizar la busqueda');
-		$('select#materiasporcarrera option[class="noMaterias"]').text('--Sin materias--');
+		$('select#materiasporcarrera option[class="noMaterias"]').text('--Sin materias disponibles--');
+				
+
 
 	}
 
@@ -985,6 +997,74 @@ function getCoordi(){
 
 }
 
+function addPlannings(){
+
+	$('select#apendCoursePlanning').on('change',function() {
+
+		
+		$('tr.filaPlaneacion').remove();
+
+		carrera=$('select#carreraCoordi option:selected').val();
+		cuatri=$('select#indexPlaning option:selected').val();
+		materia=$('select#apendCoursePlanning option:selected').val();
+		ident=$('table#tablaDePlaneaciones').attr('data-identifier');
+
+		planeaciones=[];
+
+		if(carrera !== 'txt' && cuatri !== 'txt' && materia !== 'txt' ){
+			$('table#tablaDePlaneaciones').fadeOut('slow');
+		
+
+			$.ajax({
+
+				type:'get',
+				url:'../verplaneaciones/'+ident+'/'+materia,
+				success:function(response){
+
+
+
+					console.info(response);
+					if(typeof(response) !== 'undefined' && response.length >= 1){
+
+
+						for(z=0,num=response.length;z<num;z++){
+						nombre='<tr class="filaPlaneacion"> <td>'+response[z].User.name+' '+response[z].User.apat+' '+response[z].User.amat+'</td>';
+						fechaYDescripcion='<td>'+response[z].Planning.created+' </td> <td> '+response[z].Planning.description+'</td>';
+						descarga='<td><a href="/sistema/plannings/download/'+response[z].Planning.id+'">'+response[z].Planning.planeacion+'</a></td></tr>';
+
+						fila=nombre+fechaYDescripcion+descarga;
+
+						planeaciones.push(fila);
+							
+						}
+
+
+						$('tbody#tablaBody').append(planeaciones);
+						
+							// $('table#tablaDePlaneaciones').fadeOut('slow');
+					
+							$('table#tablaDePlaneaciones').fadeIn('slow');
+						
+						// $('table#tablaDePlaneaciones').slideToggle('slow');
+					}
+
+						
+				}
+
+
+				
+			});
+
+		}else {
+
+			alert('verifica bien las opciones para realizar la busqueda');
+		}
+
+
+	});	
+
+}
+
 
 $(function(){
 	
@@ -1026,6 +1106,7 @@ $(function(){
 	verMensajesAnteriores();
 	// carrerasxcoordi();
 	getCoordi();
+	addPlannings();
 
 });
 

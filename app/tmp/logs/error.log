@@ -15178,3 +15178,360 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-07-30 18:13:13 Error: Fatal Error (4): syntax error, unexpected 'for' (T_FOR) in [/var/www/sistema/app/Controller/PlanningsController.php, line 102]
+2015-07-30 18:13:13 Error: [FatalErrorException] syntax error, unexpected 'for' (T_FOR)
+Request URL: /sistema/plannings/verplaneaciones/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 102)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 102, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 102, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-30 18:13:36 Error: [PDOException] SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+Request URL: /sistema/plannings/verplaneaciones/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Plannin...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Plannin...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Plannin...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Planning), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/PlanningsController.php(99): Model->find('all', Array)
+#7 [internal function]: PlanningsController->verplaneaciones('62')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PlanningsController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-07-30 18:14:20 Error: [PDOException] SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+Request URL: /sistema/plannings/verplaneaciones/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Plannin...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Plannin...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Plannin...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Planning), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/PlanningsController.php(99): Model->find('all', Array)
+#7 [internal function]: PlanningsController->verplaneaciones('62')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PlanningsController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-07-30 18:14:22 Error: [PDOException] SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+Request URL: /sistema/plannings/verplaneaciones/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Plannin...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Plannin...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Plannin...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Planning), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/PlanningsController.php(99): Model->find('all', Array)
+#7 [internal function]: PlanningsController->verplaneaciones('62')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PlanningsController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-07-30 18:14:35 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Planning.user_id' in 'on clause'
+Request URL: /sistema/plannings/verplaneaciones/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Plannin...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Plannin...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Plannin...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Planning), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/PlanningsController.php(99): Model->find('all', Array)
+#7 [internal function]: PlanningsController->verplaneaciones('62')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PlanningsController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-07-31 18:35:12 Error: [MissingActionException] Action PlanningsController::62() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlanningsController',
+  'action' => '62',
+)
+Request URL: /sistema/plannings/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-31 18:52:26 Error: Fatal Error (4): syntax error, unexpected 'endforeach' (T_ENDFOREACH) in [/var/www/sistema/app/View/Plannings/index.ctp, line 17]
+2015-07-31 18:52:26 Error: [FatalErrorException] syntax error, unexpected 'endforeach' (T_ENDFOREACH)
+Request URL: /sistema/plannings/index/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 17)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 17, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 17, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-31 19:04:55 Error: [MissingActionException] Action CoursesController::materiasporgerarquia() could not be found.
+Exception Attributes: array (
+  'controller' => 'CoursesController',
+  'action' => 'materiasporgerarquia',
+)
+Request URL: /sistema/courses/materiasporgerarquia
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-31 19:13:13 Error: [MissingActionException] Action PlanningsController::materiasporgerarquia() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlanningsController',
+  'action' => 'materiasporgerarquia',
+)
+Request URL: /sistema/plannings/materiasporgerarquia/13/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-07-31 19:36:52 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb_/img
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-31 19:36:52 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb_
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-31 19:36:59 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb_/img
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-31 19:36:59 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb_
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-31 19:37:06 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb_/img
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-31 19:37:06 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/thumb_
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-07-31 22:12:09 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/var/www/sistema/app/Controller/PlanningsController.php, line 110]
+2015-07-31 22:12:09 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /sistema/plannings/download/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 110)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 110, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 110, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-31 22:12:20 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/var/www/sistema/app/Controller/PlanningsController.php, line 110]
+2015-07-31 22:12:20 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /sistema/plannings/download/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 110)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 110, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 110, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-31 22:12:55 Error: [NotFoundException] The requested file /var/www/sistema/app/webroot/files/planning//planeacionesTest.rar was not found or not readable
+Request URL: /sistema/plannings/download/1
+Stack Trace:
+#0 /var/www/sistema/app/Controller/PlanningsController.php(111): CakeResponse->file('webroot/files/p...', Array)
+#1 [internal function]: PlanningsController->download('1')
+#2 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PlanningsController), Array)
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#5 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-07-31 22:13:47 Error: [NotFoundException] The requested file /var/www/sistema/app/webroot/files/planning//planeacionesTest.rar was not found or not readable
+Request URL: /sistema/plannings/download/1
+Stack Trace:
+#0 /var/www/sistema/app/Controller/PlanningsController.php(111): CakeResponse->file('webroot/files/p...', Array)
+#1 [internal function]: PlanningsController->download('1')
+#2 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PlanningsController), Array)
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#5 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-07-31 22:14:24 Error: [NotFoundException] The requested file /var/www/sistema/app/webroot/files/planning/1/planeacionesTest.rar was not found or not readable
+Request URL: /sistema/plannings/download/1
+Stack Trace:
+#0 /var/www/sistema/app/Controller/PlanningsController.php(111): CakeResponse->file('webroot/files/p...', Array)
+#1 [internal function]: PlanningsController->download('1')
+#2 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PlanningsController), Array)
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#5 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-07-31 22:20:33 Error: [NotFoundException] The requested file /var/www/sistema/app/webroot/files/planning/1/planeacionesTest.rar was not found or not readable
+Request URL: /sistema/plannings/download/1
+Stack Trace:
+#0 /var/www/sistema/app/Controller/PlanningsController.php(111): CakeResponse->file('webroot/files/p...', Array)
+#1 [internal function]: PlanningsController->download('1')
+#2 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PlanningsController), Array)
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#5 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-07-31 22:21:13 Error: [NotFoundException] The requested file /var/www/sistema/app/webroot/files/planning/planeacion1/planeacionesTest.rar was not found or not readable
+Request URL: /sistema/plannings/download/1
+Stack Trace:
+#0 /var/www/sistema/app/Controller/PlanningsController.php(111): CakeResponse->file('webroot/files/p...', Array)
+#1 [internal function]: PlanningsController->download('1')
+#2 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PlanningsController), Array)
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#5 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-07-31 22:21:33 Error: [NotFoundException] The requested file /var/www/sistema/app/webroot/files/planning/planeacion// was not found or not readable
+Request URL: /sistema/plannings/download/4
+Stack Trace:
+#0 /var/www/sistema/app/Controller/PlanningsController.php(111): CakeResponse->file('webroot/files/p...', Array)
+#1 [internal function]: PlanningsController->download('4')
+#2 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PlanningsController), Array)
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#5 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-07-31 22:25:13 Error: [NotFoundException] El archivo no existe
+Request URL: /sistema/plannings/download/5
+Stack Trace:
+#0 [internal function]: PlanningsController->download('5')
+#1 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PlanningsController), Array)
+#2 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#4 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-07-31 22:26:49 Error: [NotFoundException] El archivo no existe
+Request URL: /sistema/plannings/download/5
+Stack Trace:
+#0 [internal function]: PlanningsController->download('5')
+#1 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PlanningsController), Array)
+#2 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#4 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-07-31 22:26:52 Error: [NotFoundException] El archivo no existe
+Request URL: /sistema/plannings/download/5
+Stack Trace:
+#0 [internal function]: PlanningsController->download('5')
+#1 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PlanningsController), Array)
+#2 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#4 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-07-31 22:37:34 Error: [NotFoundException] El archivo no existe
+Request URL: /sistema/plannings/download/5
+Stack Trace:
+#0 [internal function]: PlanningsController->download('5')
+#1 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PlanningsController), Array)
+#2 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#4 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-07-31 22:38:03 Warning: Warning (2): Missing argument 1 for PlanningsController::index() in [/var/www/sistema/app/Controller/PlanningsController.php, line 9]
+Trace:
+PlanningsController::index() - APP/Controller/PlanningsController.php, line 9
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-07-31 22:38:57 Warning: Warning (2): Missing argument 1 for PlanningsController::index() in [/var/www/sistema/app/Controller/PlanningsController.php, line 9]
+Trace:
+PlanningsController::index() - APP/Controller/PlanningsController.php, line 9
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-07-31 22:39:23 Warning: Warning (2): Missing argument 1 for PlanningsController::index() in [/var/www/sistema/app/Controller/PlanningsController.php, line 9]
+Trace:
+PlanningsController::index() - APP/Controller/PlanningsController.php, line 9
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-07-31 23:59:46 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Planning.planeaciones' in 'field list'
+Request URL: /sistema/plannings/verplaneaciones/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Plannin...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Plannin...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Plannin...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Planning), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/PlanningsController.php(136): Model->find('all', Array)
+#7 [internal function]: PlanningsController->verplaneaciones('62')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PlanningsController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-07-31 23:59:57 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Planning.planiaciones' in 'field list'
+Request URL: /sistema/plannings/verplaneaciones/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Plannin...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Plannin...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Plannin...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Planning), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/PlanningsController.php(136): Model->find('all', Array)
+#7 [internal function]: PlanningsController->verplaneaciones('62')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PlanningsController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-08-01 00:52:28 Error: [MissingActionException] Action PlanningsController::plannings() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlanningsController',
+  'action' => 'plannings',
+)
+Request URL: /sistema/plannings/plannings/verplaneaciones/9
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

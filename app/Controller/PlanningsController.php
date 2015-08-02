@@ -6,7 +6,21 @@ class PlanningsController extends AppController {
 	public $uses=array('User','Course','Career','Planning','Usrcareer','Message');
 
 
-	public function index(){
+	public function index($user_id){
+
+		$carreras=[];
+
+		$carrera=$this->Usrcareer->find('all',array('conditions'=>array('Usrcareer.user_id'=>$user_id)));
+
+		for($x=0;$x<sizeof($carrera);$x++){
+
+			array_push($carreras,$this->Career->find('all',array('conditions'=>array(
+				'Career.id'=>$carrera[$x]['Usrcareer']['career_id']),
+			'fields'=>array('Career.id','Career.name'),
+			'recursive'=>-1)));
+		}
+
+		$this->set(compact('carreras','user_id'));
 
 	}
 
@@ -83,6 +97,57 @@ class PlanningsController extends AppController {
 
 
 	}
+
+	public function download($file_id){
+
+		//agregar validacion para auth user.id 
+	$dirAndName=$this->Planning->find('first',array('conditions'=>array(
+		'Planning.id'=>$file_id),
+		'fields'=>array('Planning.id','Planning.planeacion')));
+
+	// $this->set(compact('dirAndName'));
+
+	if(sizeof($dirAndName) ===1){
+	$this->response->file('webroot/files/planning/planeacion/'.$dirAndName['Planning']['id'].'/'.$dirAndName['Planning']['planeacion'],array(
+		'download'=>true,
+		'name'=>$dirAndName['Planning']['planeacion']));
+
+	return $this->response;
+
+	}else {
+		  $this->Session->setFlash('El archivo no existe');
+		  $this->redirect(array('action'=>'index'));
+	}
+
+
+
+	}
+
+	public function verplaneaciones($user_id,$course_id){
+		$this->RequestHandler->respondAs('json');
+		$this->layout='ajax';
+		$planeaciones=[];
+		$usr='';
+
+
+		// **AGREGAR CONDICION PARA QUE MUESTRE LAS PLANEACIONES DENTRO DEL CUATRIMESTRE ACTUAL
+		$planeacion=$this->Planning->find('all', array('conditions'=>array('Planning.coordi_id'=>$user_id,
+			'Planning.course_id'=>$course_id),
+			'recursive'=>1,
+			'fields'=>array(
+				'Planning.id','Planning.description','Planning.planeacion','Planning.created','User.name','User.apat','User.amat')));
+
+		if($this->request->is('ajax') && sizeof($planeacion)>=1){
+
+		$this->set(compact('planeacion'));
+		}else {
+
+		}
+ 
+
+	}
+
+
 }
 
 ?>

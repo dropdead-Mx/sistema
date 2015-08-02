@@ -28,6 +28,7 @@ class Career extends AppModel {
 		'Course'=> array('className'=>'Course'),
 		'CourseModule'=>array('className'=>'CourseModule'),
 		// 'Usrcareer'=>array('className'=>'Usrcareer')
+	
 
 
 		);

@@ -15,6 +15,11 @@ class Planning extends AppModel {
 				)
 			));
 
+public $belongsTo=array(
+	'User'=>array(
+		'className'=>'User',
+		'conditions'=>array('User.group_id'=>'7'))
+	);
 	
 	public $validate=array(
 
