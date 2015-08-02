@@ -15535,3 +15535,13 @@ Stack Trace:
 #1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PlanningsController), Object(CakeRequest))
 #2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2015-08-02 13:58:25 Error: Fatal Error (1): Call to a member function save() on null in [/var/www/sistema/app/Controller/UploadtestsController.php, line 23]
+2015-08-02 13:58:25 Error: [FatalErrorException] Call to a member function save() on null
+Request URL: /sistema/uploadtests/subirexamen/2
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/sistem...', 23)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/sistem...', 23, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/sistem...', 23, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

@@ -907,7 +907,7 @@ function mensajepush(){
 
 
 function getCoordi(){
-	$('select#materiaPlaneacion').on('change', function(){
+	$('select#materiaPlaneacion, select#materiaExamen').on('change', function(){
 		// $('select#selectCoordi').addAttr('hidden');
 		idmateria=parseInt($(this).val());
 		$('.coordiOpcion').remove();
@@ -915,7 +915,7 @@ function getCoordi(){
 		if(typeof(idmateria) !== ''){
 
 			$.ajax({
-				url:'../coordinadorpormateria/'+idmateria,
+				url:'/sistema/plannings/coordinadorpormateria/'+idmateria,
 				type:'GET',
 				success:function(response){
 					console.info(response);
@@ -993,6 +993,40 @@ function getCoordi(){
 
 
 	});
+
+
+	$('select#parcialExamen,select#materiaExamen').on('change',function(){
+		para=$('select#selectCoordi option:selected').val();
+		periodo=$('select#materiaExamen option:selected').val();
+		materia=$('select#materiaExamen option:selected').val();
+		asunto='Examen para imprimir de la materia: '+$('select#materiaExamen option:selected').text();
+		texto='Nuevo examen disponible para descarga de la materia '+$('select#materiaExamen option:selected').text()+', Periodo: '+$('select#parcialExamen option:selected').text();
+		console.log(para+' '+periodo+' '+materia+' '+texto);
+		if( para >= 0 && periodo > 0 && materia >=0 ){
+			$('#examenPara').val(para);
+			$('#examenAsunto').val(asunto);
+			$('#examenTexto').val(texto);
+
+		}else {
+
+			if(periodo = 0){
+
+						alert('verifique sus acciones seleccionadas anteriormente');
+			}else {
+
+			$('select#parcialExamen option[value="0"]').attr('selected',true);
+
+			$('#examenPara').val('');
+			$('#examenAsunto').val('');
+			$('#examenTexto').val('');
+
+			}
+	
+		}
+
+
+	});
+
 
 
 }

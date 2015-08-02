@@ -1,13 +1,12 @@
 <?php 
 
-class Planning extends AppModel {
-
+class Uploadtest extends AppModel {
 
 	public $actsAs=array(
 		'Upload.Upload'=>array(
-			'planeacion'=>array(
+			'examen'=>array(
 				'fields'=>array(
-					'dir'=>'planeacion_dir'
+					'dir'=>'examen_dir'
 					),
 				'deleteOnUpdate'=>true,
 				'deleteFolderOnDelete'=>true
@@ -15,15 +14,9 @@ class Planning extends AppModel {
 				)
 			));
 
-public $belongsTo=array(
-	'User'=>array(
-		'className'=>'User',
-		'conditions'=>array('User.group_id'=>'7'))
-	);
-	
 	public $validate=array(
 
-		'planeacion'=>array(
+		'examen'=>array(
 			'UploadError'=>array(
 				'rule'=>'uploadError',
 				'message'=>'Algo anda mal intente de nuevo',
@@ -32,14 +25,14 @@ public $belongsTo=array(
 				'rule'=>'isUnderPhpSizeLimit',
 				'message'=>'El archivo exede el tamaño en mb permitidos'),
 			'isValidMimeType'=>array(
-				'rule'=>array('isValidMimeType',array('application/vnd.openxmlformats-officedocument.wordprocessingml.document','application/msword','application/x-zip-compressed','application/zip','application/x-rar-compressed','application/rar-compressed','application/x-rar','application/pdf'),false),
-				'message'=>'no es un archivo comprimido ni de tipo documento'
+				'rule'=>array('isValidMimeType',array('application/vnd.openxmlformats-officedocument.wordprocessingml.document','application/msword','application/pdf'),false),
+				'message'=>'no es un archivo  de tipo documento'
 				),
 			'isBelowMaxSize'=>array(
-				'rule'=>array('isBelowMaxSize',5242880),
-				'message'=>'El archivo sobrepasa los 5mb'),
+				'rule'=>array('isBelowMaxSize',2621440),
+				'message'=>'El archivo sobrepasa los 2.5mb'),
 			'isValidExtension'=>array(
-				'rule'=>array('isValidExtension',array('zip','rar','docx','doc','pdf'),false),
+				'rule'=>array('isValidExtension',array('docx','doc','pdf'),false),
 				'message'=>'La extencion del archivo no es valida'),
 			'checkUniqueName'=>array(
 				'rule'=>array('checkUniqueName'),
@@ -61,17 +54,15 @@ public $belongsTo=array(
 			'rule'=>'numeric',
 			'required'=>true,
 			'message'=>'campo requerido'),
-		'description'=>array(
-			'rule'=>'/^[a-zA-Z\s+0-9\:\.\?]{3,}$/i',
+		'partial'=>array(
+			'rule'=>'/^[1-9]{1,}$/i',
 			'required'=>true,
-			'message'=>'solo se permiten letras numeros y algunos signos ')
-		);
-}
+			'message'=>'seleccione un periodo valido')
+);
 
+	function checkUniqueName($data){
 
-function checkUniqueName($data){
-
-	$isUnique=$this->find('first',array('fields'=>array('Planning.planeacion'),'conditions'=>array('Planning.planeacion'=>$data['planeacion'])));
+	$isUnique=$this->find('first',array('fields'=>array('Uploadtest.examen'),'conditions'=>array('Uploadtest.examen'=>$data['examen'])));
 	if(!empty($isUnique)){
 		return false;
 
@@ -79,4 +70,10 @@ function checkUniqueName($data){
 		return true;
 	}
 }
+
+
+
+
+}
+
 ?>

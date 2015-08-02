@@ -9,7 +9,7 @@ class Message extends AppModel {
 			'message'=>'Solo se permiten letras en este campo',
 			'required'=>true),
 		'mensaje'=>array(
-			'rule'=>'/^[A-Za-zÁ-Ÿá-ÿ0-9\s\?\¿+]{1,}$/i',
+			'rule'=>'/^[A-Za-zÁ-Ÿá-ÿ0-9\s\?\¿\,\:+]{1,}$/i',
 			'message'=>'solo se permiten letras en este campo',
 			'required'=>true),
 		'remitente'=>array(
