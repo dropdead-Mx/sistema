@@ -15671,3 +15671,238 @@ Request URL: /sistema/files/employee_profile/foto/thumb_
 Stack Trace:
 #0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-08-03 17:04:19 Error: [MissingControllerException] Controller class EmailsController could not be found.
+Exception Attributes: array (
+  'class' => 'EmailsController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/emails/
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-03 17:04:32 Error: [MissingControllerException] Controller class EmailsController could not be found.
+Exception Attributes: array (
+  'class' => 'EmailsController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/emails/text/
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-03 17:04:39 Error: [MissingControllerException] Controller class EmailsController could not be found.
+Exception Attributes: array (
+  'class' => 'EmailsController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/emails/text/default.ctp
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-03 17:25:18 Error: Fatal Error (1): Class 'CakeEmail' not found in [/var/www/sistema/app/Controller/UsersController.php, line 53]
+2015-08-03 17:25:18 Error: [FatalErrorException] Class 'CakeEmail' not found
+Request URL: /sistema/users/addStudent
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'CakeEmai...', '/var/www/sistem...', 53)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'CakeEmai...', '/var/www/sistem...', 53, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'CakeEmai...', '/var/www/sistem...', 53, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-03 17:28:21 Error: Fatal Error (4): syntax error, unexpected 'App' (T_STRING), expecting function (T_FUNCTION) in [/var/www/sistema/app/Controller/UsersController.php, line 8]
+2015-08-03 17:28:21 Error: [FatalErrorException] syntax error, unexpected 'App' (T_STRING), expecting function (T_FUNCTION)
+Request URL: /sistema/users/addStudent
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 8, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 8, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-03 17:28:52 Error: Fatal Error (4): syntax error, unexpected 'App' (T_STRING), expecting variable (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 8]
+2015-08-03 17:28:52 Error: [FatalErrorException] syntax error, unexpected 'App' (T_STRING), expecting variable (T_VARIABLE)
+Request URL: /sistema/users/addStudent
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 8, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 8, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-03 17:35:38 Error: [SocketException] SMTP server did not accept the password.
+Request URL: /sistema/users/addStudent
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Network/Email/SmtpTransport.php(96): SmtpTransport->_auth()
+#1 /var/www/sistema/lib/Cake/Network/Email/CakeEmail.php(1161): SmtpTransport->send(Object(CakeEmail))
+#2 /var/www/sistema/app/Controller/UsersController.php(57): CakeEmail->send('Tu correo de ac...')
+#3 [internal function]: UsersController->addStudent()
+#4 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#5 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#7 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-08-03 17:39:02 Error: [SocketException] SMTP server did not accept the password.
+Request URL: /sistema/users/addStudent
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Network/Email/SmtpTransport.php(96): SmtpTransport->_auth()
+#1 /var/www/sistema/lib/Cake/Network/Email/CakeEmail.php(1161): SmtpTransport->send(Object(CakeEmail))
+#2 /var/www/sistema/app/Controller/UsersController.php(57): CakeEmail->send('Tu correo de ac...')
+#3 [internal function]: UsersController->addStudent()
+#4 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#5 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#7 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-08-03 17:41:12 Error: [SocketException] SMTP Error: 503 AUTH command used when not advertised
+Request URL: /sistema/users/addStudent
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Network/Email/SmtpTransport.php(194): SmtpTransport->_smtpSend('AUTH LOGIN', '334|500|502|504')
+#1 /var/www/sistema/lib/Cake/Network/Email/SmtpTransport.php(96): SmtpTransport->_auth()
+#2 /var/www/sistema/lib/Cake/Network/Email/CakeEmail.php(1161): SmtpTransport->send(Object(CakeEmail))
+#3 /var/www/sistema/app/Controller/UsersController.php(57): CakeEmail->send('Tu correo de ac...')
+#4 [internal function]: UsersController->addStudent()
+#5 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#6 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#7 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2015-08-03 17:44:22 Error: [SocketException] SMTP Error: 503 AUTH command used when not advertised
+Request URL: /sistema/users/addStudent
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Network/Email/SmtpTransport.php(194): SmtpTransport->_smtpSend('AUTH LOGIN', '334|500|502|504')
+#1 /var/www/sistema/lib/Cake/Network/Email/SmtpTransport.php(96): SmtpTransport->_auth()
+#2 /var/www/sistema/lib/Cake/Network/Email/CakeEmail.php(1161): SmtpTransport->send(Object(CakeEmail))
+#3 /var/www/sistema/app/Controller/UsersController.php(57): CakeEmail->send('Tu correo de ac...')
+#4 [internal function]: UsersController->addStudent()
+#5 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#6 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#7 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2015-08-03 17:49:07 Error: [MissingControllerException] Controller class EmailsController could not be found.
+Exception Attributes: array (
+  'class' => 'EmailsController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/emails/text/
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-03 17:49:10 Error: [MissingControllerException] Controller class EmailsController could not be found.
+Exception Attributes: array (
+  'class' => 'EmailsController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/emails/
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-03 17:49:24 Error: [SocketException] SMTP server did not accept the password.
+Request URL: /sistema/users/addStudent
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Network/Email/SmtpTransport.php(96): SmtpTransport->_auth()
+#1 /var/www/sistema/lib/Cake/Network/Email/CakeEmail.php(1161): SmtpTransport->send(Object(CakeEmail))
+#2 /var/www/sistema/app/Controller/UsersController.php(57): CakeEmail->send('Tu correo de ac...')
+#3 [internal function]: UsersController->addStudent()
+#4 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#5 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#7 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-08-03 17:50:06 Error: [SocketException] SMTP server did not accept the password.
+Request URL: /sistema/users/addStudent
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Network/Email/SmtpTransport.php(96): SmtpTransport->_auth()
+#1 /var/www/sistema/lib/Cake/Network/Email/CakeEmail.php(1161): SmtpTransport->send(Object(CakeEmail))
+#2 /var/www/sistema/app/Controller/UsersController.php(57): CakeEmail->send('Tu correo de ac...')
+#3 [internal function]: UsersController->addStudent()
+#4 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#5 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#7 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-08-03 17:50:19 Error: [SocketException] SMTP server did not accept the password.
+Request URL: /sistema/users/addStudent
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Network/Email/SmtpTransport.php(96): SmtpTransport->_auth()
+#1 /var/www/sistema/lib/Cake/Network/Email/CakeEmail.php(1161): SmtpTransport->send(Object(CakeEmail))
+#2 /var/www/sistema/app/Controller/UsersController.php(57): CakeEmail->send('Tu correo de ac...')
+#3 [internal function]: UsersController->addStudent()
+#4 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#5 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#7 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-08-03 17:52:57 Error: [SocketException] SMTP Error: 503 AUTH command used when not advertised
+Request URL: /sistema/users/addStudent
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Network/Email/SmtpTransport.php(194): SmtpTransport->_smtpSend('AUTH LOGIN', '334|500|502|504')
+#1 /var/www/sistema/lib/Cake/Network/Email/SmtpTransport.php(96): SmtpTransport->_auth()
+#2 /var/www/sistema/lib/Cake/Network/Email/CakeEmail.php(1161): SmtpTransport->send(Object(CakeEmail))
+#3 /var/www/sistema/app/Controller/UsersController.php(57): CakeEmail->send('Tu correo de ac...')
+#4 [internal function]: UsersController->addStudent()
+#5 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#6 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#7 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2015-08-03 18:00:43 Error: [SocketException] Invalid email: "localhost"
+Request URL: /sistema/users/addStudent
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Network/Email/CakeEmail.php(580): CakeEmail->_validateEmail('localhost')
+#1 /var/www/sistema/lib/Cake/Network/Email/CakeEmail.php(630): CakeEmail->_setEmail('_from', 'localhost', NULL)
+#2 /var/www/sistema/lib/Cake/Network/Email/CakeEmail.php(375): CakeEmail->_setEmailSingle('_from', 'localhost', NULL, 'From requires o...')
+#3 /var/www/sistema/app/Controller/UsersController.php(55): CakeEmail->from('localhost')
+#4 [internal function]: UsersController->addStudent()
+#5 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#6 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#7 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2015-08-03 18:01:42 Error: [SocketException] Invalid email: "localhost"
+Request URL: /sistema/users/addStudent
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Network/Email/CakeEmail.php(580): CakeEmail->_validateEmail('localhost')
+#1 /var/www/sistema/lib/Cake/Network/Email/CakeEmail.php(630): CakeEmail->_setEmail('_from', 'localhost', NULL)
+#2 /var/www/sistema/lib/Cake/Network/Email/CakeEmail.php(375): CakeEmail->_setEmailSingle('_from', 'localhost', NULL, 'From requires o...')
+#3 /var/www/sistema/app/Controller/UsersController.php(55): CakeEmail->from('localhost')
+#4 [internal function]: UsersController->addStudent()
+#5 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#6 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#7 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2015-08-03 18:02:06 Error: [SocketException] SMTP Error: 503 AUTH command used when not advertised
+Request URL: /sistema/users/addStudent
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Network/Email/SmtpTransport.php(194): SmtpTransport->_smtpSend('AUTH LOGIN', '334|500|502|504')
+#1 /var/www/sistema/lib/Cake/Network/Email/SmtpTransport.php(96): SmtpTransport->_auth()
+#2 /var/www/sistema/lib/Cake/Network/Email/CakeEmail.php(1161): SmtpTransport->send(Object(CakeEmail))
+#3 /var/www/sistema/app/Controller/UsersController.php(57): CakeEmail->send('Tu correo de ac...')
+#4 [internal function]: UsersController->addStudent()
+#5 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#6 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#7 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#8 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2015-08-03 18:14:21 Error: [SocketException] SMTP authentication method not allowed, check if SMTP server requires TLS.
+Request URL: /sistema/users/addStudent
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Network/Email/SmtpTransport.php(96): SmtpTransport->_auth()
+#1 /var/www/sistema/lib/Cake/Network/Email/CakeEmail.php(1161): SmtpTransport->send(Object(CakeEmail))
+#2 /var/www/sistema/app/Controller/UsersController.php(57): CakeEmail->send('Tu correo de ac...')
+#3 [internal function]: UsersController->addStudent()
+#4 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#5 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#7 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-08-03 18:22:30 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/var/www/sistema/app/Controller/UsersController.php, line 55]
+2015-08-03 18:22:30 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /sistema/users/addStudent
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 55)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 55, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 55, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

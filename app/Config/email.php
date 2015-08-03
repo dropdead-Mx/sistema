@@ -41,10 +41,18 @@ class EmailConfig {
 
 	public $default = array(
 		'transport' => 'Mail',
-		'from' => 'you@localhost',
-		//'charset' => 'utf-8',
-		//'headerCharset' => 'utf-8',
+		'from' => 'site-dorados@localhost',
+		'charset' => 'utf-8',
+		'headerCharset' => 'utf-8',
 	);
+
+	public $gmail = array(
+        'host' => 'ssl://smtp.gmail.com',
+        'port' => 465,
+        'username' => 'xxxxx',
+        'password' => 'xxxx',
+        'transport' => 'Smtp'
+    );
 
 	public $smtp = array(
 		'transport' => 'Smtp',

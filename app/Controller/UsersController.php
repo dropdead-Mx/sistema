@@ -3,7 +3,7 @@
 class UsersController extends AppController {
 
 public $helpers=array('Html','Form','Js');
-public $components=array('Session','RequestHandler');
+public $components=array('Session','RequestHandler','Email');
 public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group','Course','Goal','Obtainedgoal','Usrcareer','CourseModule','Assist','Exam','Semester');
 
 
@@ -49,6 +49,13 @@ public function addStudent(){
 			$password=$simbolos[rand(0,2)].$abrev['Career']['abrev'].$nombre[0].$ap[0].$am[0].date("Y").rand(10,90);
 
 			$this->request->data['User']['password']=$password;
+
+			// $email = new CakeEmail('default');
+			// $email->to($correo);
+			// $email->from(array('unidorados@universidaddorados.com'=>'Plataforma universidad dorados'));
+			// $email->subject('Registro en la plataforma universidad dorados');
+			// $email->send('Tu correo de acceso a la plataforma es : '.$correo.' Y tu contraseña : '.$password);
+
 			
 			if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Estudiante agregado');
@@ -142,6 +149,12 @@ public function addTeacher(){
 		$password=$simbolos[rand(0,2)].$lv.$nombre[0].$ap[0].$am[0].date("Y").rand(10,90);
 
 			$this->request->data['User']['password']=$password;
+
+			// $email = new CakeEmail('default');
+			// $email->to($correo);
+			// $email->from(array('unidorados@universidaddorados.com'=>'Plataforma universidad dorados'));
+			// $email->subject('Registro en la plataforma universidad dorados');
+			// $email->send('Tu correo de acceso a la plataforma es : '.$correo.' Y tu contraseña : '.$password);
 
 		if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Maestro agregado');
@@ -257,6 +270,12 @@ public function addcoordi(){
 		$password=$simbolos[rand(0,2)].$lv.$nombre[0].$ap[0].$am[0].date("Y").rand(10,90);
 
 		$this->request->data['User']['password']=$password;
+
+		// $email = new CakeEmail('default');
+			// $email->to($correo);
+			// $email->from(array('unidorados@universidaddorados.com'=>'Plataforma universidad dorados'));
+			// $email->subject('Registro en la plataforma universidad dorados');
+			// $email->send('Tu correo de acceso a la plataforma es : '.$correo.' Y tu contraseña : '.$password);
 
 		if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Coordinador registrado con exito');
