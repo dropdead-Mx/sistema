@@ -119,7 +119,8 @@ public function addTeacher(){
 	$ap=$this->request->data['User']['apat'];
 	$am=$this->request->data['User']['amat'];
 	$correo=$this->request->data['User']['email'];
-	$matricula=$this->request->data['StudentProfile']['matricula'];
+	$lv=$this->request->data['EmployeeProfile']['lv_education'];
+	// $matricula=$this->request->data['StudentProfile']['matricula'];
 
 
 	$existe =$this->User->find('count',array('conditions'=>array(
@@ -135,6 +136,12 @@ public function addTeacher(){
 		$this->request->data=' ';
 
 	}else {
+
+		$simbolos=['@','#','$'];
+		
+		$password=$simbolos[rand(0,2)].$lv.$nombre[0].$ap[0].$am[0].date("Y").rand(10,90);
+
+			$this->request->data['User']['password']=$password;
 
 		if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Maestro agregado');
@@ -229,6 +236,7 @@ public function addcoordi(){
 	$ap=$this->request->data['User']['apat'];
 	$am=$this->request->data['User']['amat'];
 	$correo=$this->request->data['User']['email'];
+	$lv=$this->request->data['EmployeeProfile']['lv_education'];
 	
 
 
@@ -245,7 +253,10 @@ public function addcoordi(){
 		$this->request->data=' ';
 
 	}else {
+		$simbolos=['@','#','$'];
+		$password=$simbolos[rand(0,2)].$lv.$nombre[0].$ap[0].$am[0].date("Y").rand(10,90);
 
+		$this->request->data['User']['password']=$password;
 
 		if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Coordinador registrado con exito');
