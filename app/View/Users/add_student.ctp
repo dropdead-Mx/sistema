@@ -12,7 +12,7 @@
 		echo $this->Form->input ('amat',array('label'=>'Apellido Materno','id'=>'amater'));
 
 		echo $this->Form->input ('email',array('label'=>'Correo Electronico'));
-		echo $this->Form->input ('password',array('label'=>'Contraseña','id'=>'contra'));
+		echo $this->Form->hidden('password',array('label'=>'Contraseña','id'=>'contra'));
 		echo $this->Form->input('StudentProfile.career_id',array('label'=>'Carrera',
 			'id'=>'career_id',
 			'empty'=>'selecciona una carrera'));

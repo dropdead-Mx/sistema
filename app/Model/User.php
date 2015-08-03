@@ -62,8 +62,8 @@ public $validate= array(
 			'message'=>'Inserta un email valido',
 			'required'=>true),
 		'password'=>array(
-			'rule'=>array('lengthBetween',5,12),
-			'message'=>'La contraseña debe estar entre 5 y 12 caracteres',
+			'rule'=>array('lengthBetween',5,20),
+			'message'=>'La contraseña debe estar entre 5 y 20 caracteres',
 			'required'=>true)
 
 	);
