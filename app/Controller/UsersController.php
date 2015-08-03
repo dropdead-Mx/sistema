@@ -46,12 +46,9 @@ public function addStudent(){
 				'Career.id'=>$this->request->data['StudentProfile']['career_id']),
 				'fields'=>'Career.abrev','recursive'=>-1));
 		
-			$comb1=$abrev['Career']['abrev'].rand(194,999).$simbolos[rand(0,2)].strtolower(preg_replace("/([aeiouAEIOU])/",'',$nombre)).substr(preg_replace("/([aeiouAEIOU])/",'',$am),0,2);
-			$comb2=$simbolos[rand(0,2)].rand(194,999).$abrev['Career']['abrev'].preg_replace("/([^aeiouAEIOU])/",'',$nombre).substr(preg_replace("/([aeiouAEIOU])/",'',$ap),0,2);
-			$comb3=rand(194,999).$simbolos[rand(0,2)].strtolower($abrev['Career']['abrev']).preg_replace("/([^aeiouAEIOU])/",'',$ap).rand(10,99).substr(preg_replace("/([aeiouAEIOU])/",'',$nombre),0,1);
-			$contraseñas=[$comb3,$comb1,$comb2];
+			$password=$simbolos[rand(0,2)].$abrev['Career']['abrev'].$nombre[0].$ap[0].$am[0].date("Y").rand(10,90);
 
-			$this->request->data['User']['password']=$contraseñas[rand(0,2)];
+			$this->request->data['User']['password']=$password;
 			
 			if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Estudiante agregado');
