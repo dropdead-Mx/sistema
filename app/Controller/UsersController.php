@@ -484,7 +484,8 @@ public function examenes($id){
 		),'fields'=>array('StudentProfile.semester','StudentProfile.career_id','StudentProfile.user_id')));
 
 		$materia=$this->Course->find('all',array('conditions'=>array(
-		'Course.semester'=>$cuatrimestre[0]['StudentProfile']['semester'],'Course.career_id'=>$cuatrimestre[0]['StudentProfile']['career_id'])));
+		'Course.semester'=>$cuatrimestre[0]['StudentProfile']['semester'],'Course.career_id'=>$cuatrimestre[0]['StudentProfile']['career_id']),
+		'recursive'=>-1));
 
 	$contador= sizeof($materia);
 
