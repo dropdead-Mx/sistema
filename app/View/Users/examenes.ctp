@@ -2,10 +2,10 @@
 
 <?php 
 
-pr($examenes);
-pr($materia);
+// pr($examenes);
+// pr($materia);
 
-echo sizeof($examenes);
+// echo sizeof($examenes);
 $texto='No asignado aun';
 
 ?>

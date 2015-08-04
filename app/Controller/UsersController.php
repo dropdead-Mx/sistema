@@ -479,6 +479,13 @@ public function alumno($user_id){
 
 public function examenes($id){
 		$examenes=[];
+
+		//variable para opbtener el semestre mas actual
+
+		$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+		$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+		$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+
 		$cuatrimestre=$this->StudentProfile->find('all',array('conditions'=>array(
 		'StudentProfile.user_id'=>$id
 		),'fields'=>array('StudentProfile.semester','StudentProfile.career_id','StudentProfile.user_id')));
@@ -493,7 +500,7 @@ public function examenes($id){
 
 
 		array_push($examenes,$this->Exam->find('all',array('conditions'=>array(
-			'Exam.course_id'=>$materia[$x]['Course']['id']))));
+			'Exam.created BETWEEN ? AND ? '=>array($inicio,$fin),'Exam.course_id'=>$materia[$x]['Course']['id']))));
 
 	}
 
@@ -504,6 +511,7 @@ public function examenes($id){
 public function horario($id){
 
 		$modulos=[];
+
 		$dias=['lunes','martes','miercoles','jueves','viernes'];
 		$cuatrimestre=$this->StudentProfile->find('all',array('conditions'=>array(
 		'StudentProfile.user_id'=>$id
