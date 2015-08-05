@@ -1184,7 +1184,7 @@ function asignarFechDeExamen(){
 					}else if(response.length <=0 ){
 						$('select.materiasExamen').eq(numero).children('option[value="txt"]').text('--Sin materias disponibles--');
 						$('select.materiasExamen').eq(numero).attr('disabled',true);
-						$('select.selectCuatri option[value="txt"]').attr('selected',true);
+						// $('select.selectCuatri option[value="txt"]').attr('selected',true);
 
 
 					}
