@@ -480,11 +480,11 @@ function matxCuatyCarr(){
 
 	$('select#cuatrimestre,select#infocalif,select#indexPlaning,select#carreraCoordi,select#indexUploadExam').on('change',function(){
 	$('select#materiasporcarrera,select#apendCoursePlanning,select#apendExam ').children('option.opcion').remove();
-
-	carrera = $('select#infocalif option:selected,select#carreraCoordi option:selected').val();
-	cuatri= $('select#cuatrimestre option:selected,select#indexPlaning option:selected,select#indexUploadExam option:selected').val();
+	
+	carrera = $('select#infocalif option:selected,select#carreraCoordi option:selected,select.carreraSetExams').val();
+	cuatri= $('select#cuatrimestre option:selected,select#indexPlaning option:selected,select#indexUploadExam option:selected, select.selectCuatri option:selected').val();
 	materias=[];
-
+	// alert('hols');
 	if(carrera != 0 && cuatri != 0){
 		// alert('ok');
 		// console.log(cuatri);
@@ -639,6 +639,9 @@ function matxCuatyCarr(){
 
  });
 }
+
+
+
 
 function regcuatrimestre(){
 
@@ -1149,9 +1152,82 @@ function addUploadTest(){
 
 }
 
+function asignarFechDeExamen(){
 
+	$('select.selectCuatri').on('change',function(){
+
+		numero=parseInt($(this).closest('tr').index()-1);
+		$('option.opcion').remove();
+		carrera=parseInt($('p.carreraSetExams').eq(numero).attr('data-id'));
+		cuatri=$(this).val();
+		materias=[];
+
+		if(cuatri !== 'txt'){
+
+			$.ajax({
+				type:'GET',
+				url:'/sistema/users/materiasporgerarquia/'+carrera+'/'+cuatri,
+				success:function(response){
+					console.info(response);
+					if(typeof(response) !== 'undefined' && response.length >=1 ){
+
+						for(x=0,num=response.length ;x<num;x++){
+
+							opcion='<option class="opcion" value="'+response[x].Course.id+'">'+response[x].Course.name+'</option>';
+							materias.push(opcion);
+						}
+						
+						$('select.materiasExamen').eq(numero).children('option[value="txt"]').text('--Materias Disponibles--');
+						$('select.materiasExamen').eq(numero).append(materias);
+						$('select.materiasExamen').eq(numero).removeAttr('disabled');
+
+					}else if(response.length <=0 ){
+						$('select.materiasExamen').eq(numero).children('option[value="txt"]').text('--Sin materias disponibles--');
+						$('select.materiasExamen').eq(numero).attr('disabled',true);
+						$('select.selectCuatri option[value="txt"]').attr('selected',true);
+
+
+					}
+				}
+			});
+
+
+		}else {
+			alert('Seleccione un cuatrimestre valido');
+		}
+	});
+
+ 	$('select.materiasExamen').on('change',function(){
+		$('select.selectCuatri option[value="txt"]').attr('selected',true);
+		materiaExamen=$('select.materiasExamen').eq(numero).children('option:selected').val();
+		numero=parseInt($(this).closest('tr').index()-1);
+		usrId=$('span.userId').attr('data-id'),
+
+		$.ajax({
+			type:'GET',
+			url:'/sistema/exams/verify/'+materiaExamen,
+			success:function(response){
+
+				if(typeof(response) !== 'undefined' && response == 'noExiste'){
+					// alert('no existe');
+					link='<a class="enlaceRegistro" href="/sistema/exams/add/'+materiaExamen+'/'+usrId+'">Registrar Examenes</a>';
+					$('td.link').eq(numero).append(link);
+				}else {
+					// agregar funcion editar fechas en controller si es que se cambian si no ps sudorr...:v
+
+					$('td.link').eq(numero).append('<p> Ya se encuentran registradas fechas de examen </p>');
+
+				}
+			}
+		});
+		
+
+
+ 	});
+}
 $(function(){
 	
+	asignarFechDeExamen();
 	clona();
 	elimina();
 	gruposXcarrera();

@@ -441,6 +441,7 @@ endif;
 public function alumno($user_id){
 	$goals=[];
 	$examenes=[];
+	$diasDeClase=[];
 	$cuatrimestre=$this->StudentProfile->find('all',array('conditions'=>array(
 		'StudentProfile.user_id'=>$user_id
 		),'fields'=>array('StudentProfile.semester','StudentProfile.career_id','StudentProfile.user_id')));
@@ -464,13 +465,36 @@ public function alumno($user_id){
 			'Goal.course_id'=>$materia[$x]['Course']['id']),'fields'=>array('Goal.id','Goal.description','Goal.parcial',))));
 
 		array_push($examenes,$this->Exam->find('all',array('conditions'=>array(
-			'Exam.course_id'=>$materia[$x]['Course']['id']))));
+			'Exam.course_id'=>$materia[$x]['Course']['id']),
+			'fields'=>array(
+				'Exam.course_id','Exam.partial','Exam.fecha'))));
+
+		//Modificar linea para obtener el cuatrimestre en curso
+		array_push($diasDeClase,$this->CourseModule->find('all',array('conditions'=>array(
+			'CourseModule.course_id'=>$materia[$x]['Course']['id']),
+			'fields'=>array('CourseModule.course_id','CourseModule.day'),
+			'recursive'=>-1)));
 
 	}
-		
+
+
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+	pr($cuatriInicio);
+
+	echo $cuatriInicio['Semester']['inicio'];
+	
+
+
+
+
+	//total de faltas
+
+
+
+
 
 	// $goals=$this->Goal->find('all',array('conditions'=>array('Goal.course_id'=>$materia)));
-	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','examenes','user_id'));
+	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','diasDeClase','user_id','examenes'));
 
 
 
