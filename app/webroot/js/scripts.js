@@ -1202,6 +1202,7 @@ function asignarFechDeExamen(){
 		materiaExamen=$('select.materiasExamen').eq(numero).children('option:selected').val();
 		numero=parseInt($(this).closest('tr').index()-1);
 		usrId=$('span.userId').attr('data-id'),
+		$('a.enlaceRegistro,p.mensaje').remove();
 
 		$.ajax({
 			type:'GET',
@@ -1215,7 +1216,7 @@ function asignarFechDeExamen(){
 				}else {
 					// agregar funcion editar fechas en controller si es que se cambian si no ps sudorr...:v
 
-					$('td.link').eq(numero).append('<p> Ya se encuentran registradas fechas de examen </p>');
+					$('td.link').eq(numero).append('<p class="mensaje">Fechas ya registradas</p>');
 
 				}
 			}
