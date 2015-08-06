@@ -6,7 +6,8 @@
 // pr($goals);
 // pr($calif);
 // pr($diasDeClase);
-pr($examenes);
+// pr($examenes);
+pr($periodosParcial);
 
 echo '<p>'.$this->Html->link('Ver fechas de examen',array('action'=>'examenes',$cuatrimestre[0]['StudentProfile']['user_id'])) .'</p> ';
 echo '<p>'.$this->Html->link('Ver Horario',array('action'=>'horario',$cuatrimestre[0]['StudentProfile']['user_id'])) .'</p> ';

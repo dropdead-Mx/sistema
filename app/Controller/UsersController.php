@@ -481,20 +481,97 @@ public function alumno($user_id){
 	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
 	pr($cuatriInicio);
 
-	echo $cuatriInicio['Semester']['inicio'];
+
+	$inicio=strtotime($cuatriInicio['Semester']['inicio']);
+	$fin=strtotime($cuatriInicio['Semester']['fin']);
+
 	
-
-
-
-
+	// $xd= date('N',strtotime("+1 days",$inicio));
+	// echo date('N',$inicio);
+	// echo $xd;
 	//total de faltas
+	$periodosParcial=array();
+
+	for($y=0; $y<sizeof($examenes); $y++){
+
+		for($w=0; $w < sizeof($examenes[$y]);$w++){
+
+			if( $examenes[$y][$w]['Exam']['partial'] == 1 ) {
+
+				$periodosParcial[] = array(
+							'course_id'=> $examenes[$y][$w]['Exam']['course_id'],
+							'partial'=>$examenes[$y][$w]['Exam']['partial'],
+							'inicio'=>date('Y-m-d',$inicio),
+							'fin'=>date('Y-m-d',strtotime($examenes[$y][$w]['Exam']['fecha']))
+							);
+
+			}
+			else if($examenes[$y][$w]['Exam']['partial'] == 2 ){
+
+				$fechaEx2=strtotime("+1 day",strtotime($examenes[$y][0]['Exam']['fecha']));
+				
+				if(date('N',$fechaEx2) == 6){
+					// echo "no valido".date('Y-m-d',$fechaEx2).' ' ;
+
+					$fechaEx2=strtotime("+2 days",$fechaEx2);
+					// echo "no valido";
+				}
+					else if (date('N',$fechaEx2)==7) {
+					// echo "no valido".date('Y-m-d',$fechaEx2).' ' ;
+
+					$fechaEx2=strtotime("+1 day",$fechaEx2);
+					// echo "no valido";
+
+
+				}
+
+					$periodosParcial[] = array(
+							'course_id'=> $examenes[$y][$w]['Exam']['course_id'],
+							'partial'=>$examenes[$y][$w]['Exam']['partial'],
+							'inicio'=>date('Y-m-d',$fechaEx2),
+							'fin'=>date('Y-m-d',strtotime($examenes[$y][$w]['Exam']['fecha']))
+							);
+
+
+			}
+
+			else if($examenes[$y][$w]['Exam']['partial'] == 3){
+
+				$fechaEx3=strtotime("+1 day",strtotime($examenes[$y][1]['Exam']['fecha']));
+
+				if(date('N',$fechaEx3) == 6){
+					// echo "no valido".date('Y-m-d',$fechaEx3).' ' ;
+
+					$fechaEx3=strtotime("+2 days",$fechaEx3);
+					
+
+				}
+
+				else if (date('N',$fechaEx3)==7) {
+					// echo "no valido".date('Y-m-d',$fechaEx3).' ' ;
+					$fechaEx3=strtotime("+1 day",$fechaEx3);
+
+
+				}
+
+					$periodosParcial[] = array(
+							'course_id'=> $examenes[$y][$w]['Exam']['course_id'],
+							'partial'=>$examenes[$y][$w]['Exam']['partial'],
+							'inicio'=>date('Y-m-d',$fechaEx3),
+							'fin'=>date('Y-m-d',strtotime($examenes[$y][$w]['Exam']['fecha']))
+							);
+
+			}
+
+		}
+	}
 
 
 
 
 
 	// $goals=$this->Goal->find('all',array('conditions'=>array('Goal.course_id'=>$materia)));
-	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','diasDeClase','user_id','examenes'));
+	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','diasDeClase','user_id','examenes','periodosParcial'));
 
 
 
