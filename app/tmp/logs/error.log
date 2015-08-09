@@ -16105,3 +16105,313 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-08-09 00:09:37 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/sistema/app/Controller/UsersController.php, line 577]
+2015-08-09 00:09:37 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 577)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 577, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 577, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 00:10:05 Error: Fatal Error (4): syntax error, unexpected ')' in [/var/www/sistema/app/Controller/UsersController.php, line 577]
+2015-08-09 00:10:05 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 577)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 577, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 577, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 01:19:02 Error: Fatal Error (64): Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in [/var/www/sistema/app/Controller/UsersController.php, line 628]
+2015-08-09 01:19:02 Error: [FatalErrorException] Cannot use isset() on the result of an expression (you can use "null !== expression" instead)
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use isse...', '/var/www/sistem...', 628)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use isse...', '/var/www/sistem...', 628, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot use isse...', '/var/www/sistem...', 628, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 02:57:27 Error: Fatal Error (1): Call to undefined function alldays() in [/var/www/sistema/app/Controller/UsersController.php, line 636]
+2015-08-09 02:57:27 Error: [FatalErrorException] Call to undefined function alldays()
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/sistem...', 636)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/sistem...', 636, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/sistem...', 636, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 02:57:53 Error: Fatal Error (1): Call to undefined function alldays() in [/var/www/sistema/app/Controller/UsersController.php, line 636]
+2015-08-09 02:57:53 Error: [FatalErrorException] Call to undefined function alldays()
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/sistem...', 636)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/sistem...', 636, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/sistem...', 636, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 02:58:07 Error: Fatal Error (4): syntax error, unexpected 'alldays' (T_STRING), expecting '(' in [/var/www/sistema/app/Controller/UsersController.php, line 636]
+2015-08-09 02:58:07 Error: [FatalErrorException] syntax error, unexpected 'alldays' (T_STRING), expecting '('
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 636)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 636, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 636, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 02:58:24 Error: Fatal Error (1): Call to undefined function alldays() in [/var/www/sistema/app/Controller/UsersController.php, line 636]
+2015-08-09 02:58:24 Error: [FatalErrorException] Call to undefined function alldays()
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/sistem...', 636)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/sistem...', 636, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/sistem...', 636, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 02:59:37 Error: Fatal Error (1): Call to undefined function alldays() in [/var/www/sistema/app/Controller/UsersController.php, line 636]
+2015-08-09 02:59:37 Error: [FatalErrorException] Call to undefined function alldays()
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/sistem...', 636)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/sistem...', 636, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/sistem...', 636, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 02:59:39 Error: Fatal Error (1): Call to undefined function alldays() in [/var/www/sistema/app/Controller/UsersController.php, line 636]
+2015-08-09 02:59:39 Error: [FatalErrorException] Call to undefined function alldays()
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/sistem...', 636)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/sistem...', 636, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/sistem...', 636, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 02:59:52 Error: Fatal Error (1): Call to undefined function alldays() in [/var/www/sistema/app/Controller/UsersController.php, line 636]
+2015-08-09 02:59:52 Error: [FatalErrorException] Call to undefined function alldays()
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/sistem...', 636)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/sistem...', 636, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/sistem...', 636, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 02:59:54 Error: Fatal Error (1): Call to undefined function alldays() in [/var/www/sistema/app/Controller/UsersController.php, line 636]
+2015-08-09 02:59:54 Error: [FatalErrorException] Call to undefined function alldays()
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/sistem...', 636)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/sistem...', 636, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/sistem...', 636, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 03:55:43 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/var/www/sistema/app/Controller/UsersController.php, line 644]
+2015-08-09 03:55:43 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 644)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 644, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 644, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 03:58:32 Error: Fatal Error (4): syntax error, unexpected '+=' (T_PLUS_EQUAL) in [/var/www/sistema/app/Controller/UsersController.php, line 660]
+2015-08-09 03:58:32 Error: [FatalErrorException] syntax error, unexpected '+=' (T_PLUS_EQUAL)
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 660)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 660, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 660, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 03:59:18 Error: Fatal Error (1): Unsupported operand types in [/var/www/sistema/app/Controller/UsersController.php, line 660]
+2015-08-09 03:59:18 Error: [FatalErrorException] Unsupported operand types
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/sistem...', 660)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/sistem...', 660, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/sistem...', 660, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 03:59:26 Error: Fatal Error (1): Unsupported operand types in [/var/www/sistema/app/Controller/UsersController.php, line 660]
+2015-08-09 03:59:26 Error: [FatalErrorException] Unsupported operand types
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/sistem...', 660)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/sistem...', 660, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/sistem...', 660, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 04:01:42 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/var/www/sistema/app/Controller/UsersController.php, line 645]
+2015-08-09 04:01:42 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 645)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 645, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 645, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 04:01:52 Error: Fatal Error (1): Unsupported operand types in [/var/www/sistema/app/Controller/UsersController.php, line 662]
+2015-08-09 04:01:52 Error: [FatalErrorException] Unsupported operand types
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/sistem...', 662)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/sistem...', 662, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/sistem...', 662, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 04:03:32 Error: Fatal Error (4): syntax error, unexpected '+=' (T_PLUS_EQUAL) in [/var/www/sistema/app/Controller/UsersController.php, line 653]
+2015-08-09 04:03:32 Error: [FatalErrorException] syntax error, unexpected '+=' (T_PLUS_EQUAL)
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 653)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 653, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 653, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 04:03:34 Error: Fatal Error (4): syntax error, unexpected '+=' (T_PLUS_EQUAL) in [/var/www/sistema/app/Controller/UsersController.php, line 653]
+2015-08-09 04:03:34 Error: [FatalErrorException] syntax error, unexpected '+=' (T_PLUS_EQUAL)
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 653)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 653, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 653, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 04:17:27 Error: Fatal Error (1): Unsupported operand types in [/var/www/sistema/app/Controller/UsersController.php, line 663]
+2015-08-09 04:17:27 Error: [FatalErrorException] Unsupported operand types
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/sistem...', 663)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/sistem...', 663, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/sistem...', 663, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 04:18:44 Error: Fatal Error (1): Unsupported operand types in [/var/www/sistema/app/Controller/UsersController.php, line 668]
+2015-08-09 04:18:44 Error: [FatalErrorException] Unsupported operand types
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/sistem...', 668)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/sistem...', 668, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/sistem...', 668, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 04:19:08 Error: Fatal Error (1): Unsupported operand types in [/var/www/sistema/app/Controller/UsersController.php, line 668]
+2015-08-09 04:19:08 Error: [FatalErrorException] Unsupported operand types
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/sistem...', 668)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/sistem...', 668, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/sistem...', 668, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 04:20:06 Error: Fatal Error (1): Unsupported operand types in [/var/www/sistema/app/Controller/UsersController.php, line 668]
+2015-08-09 04:20:06 Error: [FatalErrorException] Unsupported operand types
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/sistem...', 668)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/sistem...', 668, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/sistem...', 668, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 04:22:50 Error: Fatal Error (4): syntax error, unexpected ':' in [/var/www/sistema/app/Controller/UsersController.php, line 658]
+2015-08-09 04:22:50 Error: [FatalErrorException] syntax error, unexpected ':'
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 658)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 658, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 658, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 04:28:42 Error: Fatal Error (1): Unsupported operand types in [/var/www/sistema/app/Controller/UsersController.php, line 663]
+2015-08-09 04:28:42 Error: [FatalErrorException] Unsupported operand types
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/sistem...', 663)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/sistem...', 663, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/sistem...', 663, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 04:49:22 Error: Fatal Error (4): syntax error, unexpected 'endforeach' (T_ENDFOREACH) in [/var/www/sistema/app/Controller/UsersController.php, line 666]
+2015-08-09 04:49:22 Error: [FatalErrorException] syntax error, unexpected 'endforeach' (T_ENDFOREACH)
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 666)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 666, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 666, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 05:08:19 Error: Fatal Error (4): syntax error, unexpected '[' in [/var/www/sistema/app/Controller/UsersController.php, line 656]
+2015-08-09 05:08:19 Error: [FatalErrorException] syntax error, unexpected '['
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 656)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 656, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 656, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 05:18:14 Error: Fatal Error (4): syntax error, unexpected ''numero_asistencias'' (T_CONSTANT_ENCAPSED_STRING) in [/var/www/sistema/app/Controller/UsersController.php, line 661]
+2015-08-09 05:18:14 Error: [FatalErrorException] syntax error, unexpected ''numero_asistencias'' (T_CONSTANT_ENCAPSED_STRING)
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 661)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 661, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 661, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 12:59:36 Error: Fatal Error (4): syntax error, unexpected ''-'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in [/var/www/sistema/app/Controller/UsersController.php, line 640]
+2015-08-09 12:59:36 Error: [FatalErrorException] syntax error, unexpected ''-'' (T_CONSTANT_ENCAPSED_STRING), expecting ']'
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 640)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 640, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 640, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 13:00:13 Error: Fatal Error (4): syntax error, unexpected ''-'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in [/var/www/sistema/app/Controller/UsersController.php, line 660]
+2015-08-09 13:00:13 Error: [FatalErrorException] syntax error, unexpected ''-'' (T_CONSTANT_ENCAPSED_STRING), expecting ']'
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 660)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 660, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 660, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-09 13:00:19 Error: Fatal Error (4): syntax error, unexpected ''-'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in [/var/www/sistema/app/Controller/UsersController.php, line 660]
+2015-08-09 13:00:19 Error: [FatalErrorException] syntax error, unexpected ''-'' (T_CONSTANT_ENCAPSED_STRING), expecting ']'
+Request URL: /sistema/users/alumno/18
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 660)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 660, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 660, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
