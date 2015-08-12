@@ -354,85 +354,35 @@ function calificParcial(){
 		});
 
 }
-
+//funcion para obtener las asistencias
 function misAsistencias(){
 
-
-
-	$('button.buscarAsistencia').on('click', function() {
-		asistencia=0;
-		retardos=0;
-		faltas=0;
-		var asistencias=[];
-		$('p.asist,strong.noAssist').remove();
-		fecha1=$('input#inicio').val();
-		fecha2=$('input#fin').val();
+	$('select#materiaAsistencias').on('change', function() {
+		// alert('hola');
+		// fecha1=$('input#inicio').val();
+		// fecha2=$('input#fin').val();
 		usuario=$('input#userid').attr('data-id');
-		materia=$('select#materia').val();
+		materia=$('select#materiaAsistencias option:selected').val();
 		console.log(materia);
 
-		// if(fecha1 > fecha2){
-		// 	alert('la fecha 1 es mayor');
-		// }else if(fecha2 > fecha1){
-		// 	alert('la fecha 2 es mayor');
-		// }
-
-		if(fecha1 < fecha2 && materia != ''){
-			// inicio ajax
 			$.ajax({
 			type:"GET",
-			url:'../getassists/'+fecha1+'/'+fecha2+'/'+usuario+'/'+materia,
+			url:'../getassists/'+materia+'/'+usuario,
 			success: function(response){
-				// console.info(response.length);
 				// console.log(response);
 				if(typeof response !== 'undefined' && response.length >0 ){
-					for (var i=0, num=response.length; i< num; i++){
+					// for (var i=0, num=response.length; i< num; i++){
+				console.info(response);
 
 
-						asistencias.push('<p class="asist">  Fecha:  '+response[i].Assist.date_assist+', Status : '+response[i].Assist.status+' Nota : '+response[i].Assist.note+'</p>');
-						var estatus=response[i].Assist.status;
-
-						if (estatus == 1 ){
-							asistencia=asistencia+1;
-						}
-						else if( estatus ==2 ){
-							retardos=retardos+1;
-						}else if( estatus == 3 ){
-							faltas=faltas+1;
-						}
-
-					}
-					$('.AsistenciasTotales').append(asistencias);
-					$('.AsistenciasTotales').append('<p class="asist"> Asistencias: '+asistencia+' Retardos: '+retardos+'  Faltas: '+faltas+'</p>');
-
-
-				}else {
-					$('.AsistenciasTotales').html('<strong class="noAssist">No se encontraron asistencias en ese rango de fechas</strong>');
+					
 				}
 
 			}
 		});
 
  	// fin ajax
-
-		}else if(fecha2 < fecha1 && materia != ''){
-			alert('La fecha final debe ser mayor a la inicial');
-			$('input#inicio').val(' ');
-			$('input#fin').val(' ');
-
-			
-
-
-		}else if(fecha1 == fecha2 && materia !=''){
-			alert('Escoje un rango mayor de fechas');
-			$('input#inicio').val(' ');
-			$('input#fin').val(' ');
-		}
-
-
-		
-
-		
+	
 
 	});
 

@@ -491,213 +491,17 @@ public function alumno($user_id){
 
 
 	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
-	pr($cuatriInicio);
-
-
 	$inicio=strtotime($cuatriInicio['Semester']['inicio']);
 	$fin=strtotime($cuatriInicio['Semester']['fin']);
 
-	
-	// $xd= date('N',strtotime("+1 days",$inicio));
-	// echo date('N',$inicio);
-	// echo $xd;
-	//total de faltas
-	$periodosParcial=array();
 
-	//FOR QUE SIRVE PARA SACAR LOS PERIODOS DE PARCIALES POR CADA MATERIA
-	for($y=0; $y<sizeof($examenes); $y++){
-
-		for($w=0; $w < sizeof($examenes[$y]);$w++){
-
-			if( $examenes[$y][$w]['Exam']['partial'] == 1 ) {
-
-				$periodosParcial[] = array(
-							'course_id'=> $examenes[$y][$w]['Exam']['course_id'],
-							'partial'=>$examenes[$y][$w]['Exam']['partial'],
-							'inicio'=>date('Y-m-d',$inicio),
-							'fin'=>date('Y-m-d',strtotime($examenes[$y][$w]['Exam']['fecha']))
-							);
-
-			}
-			else if($examenes[$y][$w]['Exam']['partial'] == 2 ){
-
-				$fechaEx2=strtotime("+1 day",strtotime($examenes[$y][0]['Exam']['fecha']));
-				
-				if(date('N',$fechaEx2) == 6){
-					// echo "no valido".date('Y-m-d',$fechaEx2).' ' ;
-
-					$fechaEx2=strtotime("+2 days",$fechaEx2);
-					// echo "no valido";
-				}
-					else if (date('N',$fechaEx2)==7) {
-					// echo "no valido".date('Y-m-d',$fechaEx2).' ' ;
-
-					$fechaEx2=strtotime("+1 day",$fechaEx2);
-					// echo "no valido";
-
-
-				}
-
-					$periodosParcial[] = array(
-							'course_id'=> $examenes[$y][$w]['Exam']['course_id'],
-							'partial'=>$examenes[$y][$w]['Exam']['partial'],
-							'inicio'=>date('Y-m-d',$fechaEx2),
-							'fin'=>date('Y-m-d',strtotime($examenes[$y][$w]['Exam']['fecha']))
-							);
-
-
-			}
-
-			else if($examenes[$y][$w]['Exam']['partial'] == 3){
-
-				$fechaEx3=strtotime("+1 day",strtotime($examenes[$y][1]['Exam']['fecha']));
-
-				if(date('N',$fechaEx3) == 6){
-					// echo "no valido".date('Y-m-d',$fechaEx3).' ' ;
-
-					$fechaEx3=strtotime("+2 days",$fechaEx3);
-					
-
-				}
-
-				else if (date('N',$fechaEx3)==7) {
-					// echo "no valido".date('Y-m-d',$fechaEx3).' ' ;
-					$fechaEx3=strtotime("+1 day",$fechaEx3);
-
-
-				}
-
-					$periodosParcial[] = array(
-							'course_id'=> $examenes[$y][$w]['Exam']['course_id'],
-							'partial'=>$examenes[$y][$w]['Exam']['partial'],
-							'inicio'=>date('Y-m-d',$fechaEx3),
-							'fin'=>date('Y-m-d',strtotime($examenes[$y][$w]['Exam']['fecha']))
-							);
-
-			}
-
-		}
-	}
-
-	//FIN DEL FOR PARA SACAR PERIODOS DE LOS PARCIALES POR MATERIA 
-
-	// FOR PARA SACAR LOS DIAS DE CLASE  ARREGLO NUEVO :V 
-
-	$diasClase=array();
-
-	for($z=0; $z<sizeof($diasDeClase);$z++){
-		for($q=0;$q<sizeof($diasDeClase[$z]);$q++){
-			
-			$clase=$diasDeClase[$z][$q]['CourseModule']['course_id'];
-			$dia=$diasDeClase[$z][$q]['CourseModule']['day'];
-
-			if($dia == 'lunes'){
-				$dia=1;
-			}else if($dia == 'martes'){
-				$dia=2;
-			}else if($dia == 'miercoles'){
-				$dia=3;
-			}else if($dia == 'jueves'){
-				$dia=4;
-			}else if($dia == 'viernes'){
-				$dia=5;
-			}
-
-
-			$diasClase[]=array(
-						'materia_id'=>$clase,
-						'dia_clase'=>$dia,
-
-				);
-
-
-
-			
-
-		}
-	}
-
-
-$nuevoArray=array_unique($diasClase,SORT_REGULAR);
-// echo sizeof($nuevoArray);
-// nuevo array es para eliminar si hay dos modulos a diferentes hrs el mismo dia y contar solo una asistencia
-$totalAsistencias=array();
-$asistenciaFinal=array();
-
-foreach ($periodosParcial as $z => $periodo):
-	$mat=$periodo['course_id'];
-	$partialC=$periodo['partial'];
-	$iniP=strtotime($periodo['inicio']);
-	$finP=strtotime($periodo['fin']);
-
-	$identifier=strval($partialC.'-'.$mat);
-
-	foreach($nuevoArray as $w => $diasDClase):
-		$diaC=$diasDClase['dia_clase'];
-		
-		if($partialC == 1 && $mat == $diasDClase['materia_id'] ){
-		
-			$nDays=$this->alldays($iniP,$finP,$diaC);
-			// array_push($tmp,$nDays);
-			if(array_key_exists($identifier, $totalAsistencias)){
-				// $cont=$totalAsistencias[$mat]['numero_asistencias'];
-				$totalAsistencias[$identifier]['numero_asistencias']+=$nDays;
-			}else {
-
-			$totalAsistencias[$identifier]=array(
-				'materia'=>$mat,
-				'parcial'=>1,
-				'inicio_parcial'=>$periodo['inicio'],
-				'fin_parcial'=>$periodo['fin'],
-				'numero_asistencias'=>$nDays);
-			}
-
-		} else if($partialC == 2 && $mat == $diasDClase['materia_id']) {
-
-				$nDays=$this->alldays($iniP,$finP,$diaC);
-			// array_push($tmp,$nDays);
-			if(array_key_exists($identifier, $totalAsistencias)){
-				// $cont=$totalAsistencias[$mat]['numero_asistencias'];
-				$totalAsistencias[$identifier]['numero_asistencias']+=$nDays;
-			}else {
-
-			$totalAsistencias[$identifier]=array(
-				'materia'=>$mat,
-				'parcial'=>1,
-				'inicio_parcial'=>$periodo['inicio'],
-				'fin_parcial'=>$periodo['fin'],
-				'numero_asistencias'=>$nDays);
-			}
-
-		}else if ($partialC == 3 && $mat == $diasDClase['materia_id']){
-
-				$nDays=$this->alldays($iniP,$finP,$diaC);
-			// array_push($tmp,$nDays);
-			if(array_key_exists($identifier, $totalAsistencias)){
-				// $cont=$totalAsistencias[$mat]['numero_asistencias'];
-				$totalAsistencias[$identifier]['numero_asistencias']+=$nDays;
-			}else {
-
-			$totalAsistencias[$identifier]=array(
-				'materia'=>$mat,
-				'parcial'=>1,
-				'inicio_parcial'=>$periodo['inicio'],
-				'fin_parcial'=>$periodo['fin'],
-				'numero_asistencias'=>$nDays);
-			}
-		}
-
-	
-		endforeach;
-
-	endforeach;
 // $total=array();
 
 
 	
 
 	// $goals=$this->Goal->find('all',array('conditions'=>array('Goal.course_id'=>$materia)));
-	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','diasDeClase','user_id','examenes','periodosParcial','diasClase','nuevoArray','diasDeClase','totalAsistencias'));
+	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','diasDeClase','user_id','examenes','periodosParcial'));
 
 
 
@@ -768,23 +572,321 @@ public function horario($id){
 }
 
 
-public function getassists($inicio,$fin,$user,$materia){
+// public function getassists($inicio,$fin,$user,$materia){
 
-$this->RequestHandler->respondAs('json');
+// $this->RequestHandler->respondAs('json');
 
 
-$fechas=$this->Assist->find('all',array('conditions'=>array(
-	'Assist.date_assist BETWEEN ? AND ? '=>array($inicio,$fin),
-	'Assist.user_id'=>$user,
-	'Assist.course_id'=>$materia),
-	'fields'=>array(
-		'Assist.user_id','Assist.date_assist','Assist.status','Assist.note')
-	));
+// $fechas=$this->Assist->find('all',array('conditions'=>array(
+// 	'Assist.date_assist BETWEEN ? AND ? '=>array($inicio,$fin),
+// 	'Assist.user_id'=>$user,
+// 	'Assist.course_id'=>$materia),
+// 	'fields'=>array(
+// 		'Assist.user_id','Assist.date_assist','Assist.status','Assist.note')
+// 	));
 
-$this->set('fechas',$fechas);
-$this->layout='ajax';
+// $this->set('fechas',$fechas);
+// $this->layout='ajax';
+// }
+public function getassists($materia_id,$usuario){
+	$this->RequestHandler->respondAs('json');
+	$this->layout='ajax';
+
+	if($materia_id !== ' ' && $usuario !== ' ' && $this->request->is('ajax')){
+	// usuario auth id 
+	$examenes=$this->Exam->find('all',array('conditions'=>array(
+			'Exam.course_id'=>$materia_id),
+			'fields'=>array(
+				'Exam.course_id','Exam.partial','Exam.fecha')));
+	$diasDeClase=$this->CourseModule->find('all',array('conditions'=>array(
+			'CourseModule.course_id'=>$materia_id),
+			'fields'=>array('CourseModule.course_id','CourseModule.day'),
+			'recursive'=>-1));
+
+
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+	// pr($diasDeClase);
+	// pr($examenes);
+	$inicio=strtotime($cuatriInicio['Semester']['inicio']);
+	$fin=strtotime($cuatriInicio['Semester']['fin']);
+
+	
+	// $xd= date('N',strtotime("+1 days",$inicio));
+	// echo date('N',$inicio);
+	// echo $xd;
+	//total de faltas
+	$periodosParcial=array();
+	// pr($examenes);
+
+	//FOR QUE SIRVE PARA SACAR LOS PERIODOS DE PARCIALES POR CADA MATERIA
+	for($y=0; $y<sizeof($examenes); $y++){
+
+		// for($w=0; $w < sizeof($examenes[$y]);$w++){
+
+			if( $examenes[$y]['Exam']['partial'] == 1 ) {
+
+				$periodosParcial[] = array(
+							'course_id'=> $examenes[$y]['Exam']['course_id'],
+							'partial'=>$examenes[$y]['Exam']['partial'],
+							'inicio'=>date('Y-m-d',$inicio),
+							'fin'=>date('Y-m-d',strtotime($examenes[$y]['Exam']['fecha']))
+							);
+
+			}
+			else if($examenes[$y]['Exam']['partial'] == 2 ){
+
+				$fechaEx2=strtotime("+1 day",strtotime($examenes[0]['Exam']['fecha']));
+				
+				if(date('N',$fechaEx2) == 6){
+					// echo "no valido".date('Y-m-d',$fechaEx2).' ' ;
+
+					$fechaEx2=strtotime("+2 days",$fechaEx2);
+					// echo "no valido";
+				}
+					else if (date('N',$fechaEx2)==7) {
+					// echo "no valido".date('Y-m-d',$fechaEx2).' ' ;
+
+					$fechaEx2=strtotime("+1 day",$fechaEx2);
+					// echo "no valido";
+
+
+				}
+
+					$periodosParcial[] = array(
+							'course_id'=> $examenes[$y]['Exam']['course_id'],
+							'partial'=>$examenes[$y]['Exam']['partial'],
+							'inicio'=>date('Y-m-d',$fechaEx2),
+							'fin'=>date('Y-m-d',strtotime($examenes[$y]['Exam']['fecha']))
+							);
+
+
+			}
+
+			else if($examenes[$y]['Exam']['partial'] == 3){
+
+				$fechaEx3=strtotime("+1 day",strtotime($examenes[1]['Exam']['fecha']));
+
+				if(date('N',$fechaEx3) == 6){
+					// echo "no valido".date('Y-m-d',$fechaEx3).' ' ;
+
+					$fechaEx3=strtotime("+2 days",$fechaEx3);
+					
+
+				}
+
+				else if (date('N',$fechaEx3)==7) {
+					// echo "no valido".date('Y-m-d',$fechaEx3).' ' ;
+					$fechaEx3=strtotime("+1 day",$fechaEx3);
+
+
+				}
+
+					$periodosParcial[] = array(
+							'course_id'=> $examenes[$y]['Exam']['course_id'],
+							'partial'=>$examenes[$y]['Exam']['partial'],
+							'inicio'=>date('Y-m-d',$fechaEx3),
+							'fin'=>date('Y-m-d',strtotime($examenes[$y]['Exam']['fecha']))
+							);
+
+			}
+
+		
+	}
+
+	// pr($periodosParcial);
+
+	//FIN DEL FOR PARA SACAR PERIODOS DE LOS PARCIALES POR MATERIA 
+
+	// FOR PARA SACAR LOS DIAS DE CLASE  ARREGLO NUEVO :V 
+
+	$diasClase=array();
+
+	for($z=0; $z<sizeof($diasDeClase);$z++){
+	
+			
+			$clase=$diasDeClase[$z]['CourseModule']['course_id'];
+			$dia=$diasDeClase[$z]['CourseModule']['day'];
+
+			if($dia == 'lunes'){
+				$dia=1;
+			}else if($dia == 'martes'){
+				$dia=2;
+			}else if($dia == 'miercoles'){
+				$dia=3;
+			}else if($dia == 'jueves'){
+				$dia=4;
+			}else if($dia == 'viernes'){
+				$dia=5;
+			}
+
+
+			$diasClase[]=array(
+						'materia_id'=>$clase,
+						'dia_clase'=>$dia,
+
+				);
+	}
+
+
+$nuevoArray=array_unique($diasClase,SORT_REGULAR);
+// echo sizeof($nuevoArray);
+// pr($nuevoArray);
+// nuevo array es para eliminar si hay dos modulos a diferentes hrs el mismo dia y contar solo una asistencia
+$totalAsistencias=array();
+$asistenciaFinal=array();
+
+foreach ($periodosParcial as $z => $periodo):
+	$mat=$periodo['course_id'];
+	$partialC=$periodo['partial'];
+	$iniP=strtotime($periodo['inicio']);
+	$finP=strtotime($periodo['fin']);
+	$identifier=strval($partialC.'-'.$mat);
+
+	foreach($nuevoArray as $w => $diasDClase):
+		$diaC=$diasDClase['dia_clase'];
+		
+		if($partialC == 1 && $mat == $diasDClase['materia_id'] ){
+		
+			$nDays=$this->alldays($iniP,$finP,$diaC);
+			// array_push($tmp,$nDays);
+			if(array_key_exists($identifier, $totalAsistencias)){
+				// $cont=$totalAsistencias[$mat]['numero_asistencias'];
+				$totalAsistencias[$identifier]['numero_asistencias']+=$nDays;
+			}else {
+
+			$totalAsistencias[$identifier]=array(
+				'materia'=>$mat,
+				'parcial'=>1,
+				'inicio_parcial'=>$periodo['inicio'],
+				'fin_parcial'=>$periodo['fin'],
+				'numero_asistencias'=>$nDays);
+			}
+
+		} else if($partialC == 2 && $mat == $diasDClase['materia_id']) {
+
+				$nDays=$this->alldays($iniP,$finP,$diaC);
+			// array_push($tmp,$nDays);
+			if(array_key_exists($identifier, $totalAsistencias)){
+				// $cont=$totalAsistencias[$mat]['numero_asistencias'];
+				$totalAsistencias[$identifier]['numero_asistencias']+=$nDays;
+			}else {
+
+			$totalAsistencias[$identifier]=array(
+				'materia'=>$mat,
+				'parcial'=>2,
+				'inicio_parcial'=>$periodo['inicio'],
+				'fin_parcial'=>$periodo['fin'],
+				'numero_asistencias'=>$nDays);
+			}
+
+		}else if ($partialC == 3 && $mat == $diasDClase['materia_id']){
+
+				$nDays=$this->alldays($iniP,$finP,$diaC);
+			// array_push($tmp,$nDays);
+			if(array_key_exists($identifier, $totalAsistencias)){
+				// $cont=$totalAsistencias[$mat]['numero_asistencias'];
+				$totalAsistencias[$identifier]['numero_asistencias']+=$nDays;
+			}else {
+
+			$totalAsistencias[$identifier]=array(
+				'materia'=>$mat,
+				'parcial'=>3,
+				'inicio_parcial'=>$periodo['inicio'],
+				'fin_parcial'=>$periodo['fin'],
+				'numero_asistencias'=>$nDays);
+			}
+		}
+
+	
+		endforeach;
+
+	endforeach;
+
+	// Asistencias 1 = asistencia ,2 retardo 3 falta.
+	$misAsistencias=array();
+
+	foreach($totalAsistencias as $k => $totalAssist ):
+
+		$porcentajeCien=$totalAssist['numero_asistencias'];
+		$parcialN=$totalAssist['parcial'];
+		// echo $parcialN;
+		$inicioPar=$totalAssist['inicio_parcial'];
+		$finPar=$totalAssist['fin_parcial'];
+		$asistenciaF=$this->Assist->find('count',array('conditions'=>array('Assist.date_assist BETWEEN ? AND ? '=>array($inicioPar,$finPar),
+			'Assist.course_id'=>$materia_id,
+			'Assist.user_id'=>$usuario,
+			'Assist.status'=>1
+			),
+			'recursive'=>-1));
+		$retardoF=$this->Assist->find('count',array('conditions'=>array('Assist.date_assist BETWEEN ? AND ? '=>array($inicioPar,$finPar),
+			'Assist.course_id'=>$materia_id,
+			'Assist.user_id'=>$usuario,
+			'Assist.status'=>2
+			),
+			'recursive'=>-1));
+
+		$faltaF=$this->Assist->find('count',array('conditions'=>array('Assist.date_assist BETWEEN ? AND ? '=>array($inicioPar,$finPar),
+			'Assist.course_id'=>$materia_id,
+			'Assist.user_id'=>$usuario,
+			'Assist.status'=>3
+			),
+			'recursive'=>-1));
+
+		if($parcialN == 1){
+
+
+			$misAsistencias []['Asistencia']=array(
+				'materia_id'=>$materia_id,
+				'parcial'=>1,
+				'total_Asistencias'=>$porcentajeCien,
+				'porcentajeAsiste'=>($asistenciaF * 100)/$porcentajeCien,
+				'porcentajeRetardo'=>($retardoF * 100)/$porcentajeCien,
+				'porcentajeFalta'=>($faltaF * 100)/$porcentajeCien,
+				'derecho_examen'=>(($asistenciaF * 100)/$porcentajeCien) +(($retardoF * 100)/$porcentajeCien)
+				);
+
+
+
+
+		} else if ($parcialN == 2 ){
+
+
+			$misAsistencias []['Asistencia']=array(
+				'materia_id'=>$materia_id,
+				'parcial'=>2,
+				'total_Asistencias'=>$porcentajeCien,
+				'porcentajeAsiste'=>($asistenciaF * 100)/$porcentajeCien,
+				'porcentajeRetardo'=>($retardoF * 100)/$porcentajeCien,
+				'porcentajeFalta'=>($faltaF * 100)/$porcentajeCien,
+				'derecho_examen'=>(($asistenciaF * 100)/$porcentajeCien) +(($retardoF * 100)/$porcentajeCien)
+				);
+
+		}else if( $parcialN ==3 ){
+	
+
+			$misAsistencias []['Asistencia']=array(
+				'materia_id'=>$materia_id,
+				'parcial'=>3,
+				'total_Asistencias'=>$porcentajeCien,
+				'porcentajeAsiste'=>($asistenciaF * 100)/$porcentajeCien,
+				'porcentajeRetardo'=>($retardoF * 100)/$porcentajeCien,
+				'porcentajeFalta'=>($faltaF * 100)/$porcentajeCien,
+				'derecho_examen'=>(($asistenciaF * 100)/$porcentajeCien) +(($retardoF * 100)/$porcentajeCien)
+				);
+
+		}
+
+
+
+
+
+		endforeach;
+
+		$this->set(compact('misAsistencias'));
+
+		}
+
 }
-
 
 
 public function vercalificaciones($user_id) {

@@ -347,12 +347,12 @@ CREATE TABLE `messages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `remitente` int(11) NOT NULL,
   `destinatario` int(11) NOT NULL,
-  `subject` varchar(50) DEFAULT 'Sin Asunto',
-  `mensaje` text,
+  `subject` varchar(255) NOT NULL,
+  `mensaje` text NOT NULL,
   `hora` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` int(2) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -361,7 +361,6 @@ CREATE TABLE `messages` (
 
 LOCK TABLES `messages` WRITE;
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
-INSERT INTO `messages` VALUES (1,1,62,'sdfsdfdfkjdfgkljasdvxsdssfgg','sdfjdhbsjdfhgsjdgfsjdfhgsjdgfsjdfhgsjgfjsgfsj  sdjgsdjfh gsjdgsd jfhsdgfsjdgf sjdgsdjfh ','2015-07-21 19:25:00',0),(2,1,62,'sdfsdfdfkjdfgkljasdvxsdssfgg','sdfjdhbsjdfhgsjdgfsjdfhgsjdgfsjdfhgsjgfjsgfsj  sdjgsdjfh gsjdgsd jfhsdgfsjdgf sjdgsdjfh ','2015-07-21 19:47:36',0),(3,1,62,'nuevo mensaje xde','asdasdasdasdasdasdasdasdasdasdasdas','2015-07-21 19:48:42',0),(4,1,62,'nuevo mensaje xde2','asdasdasdasdasdasdasdasdasdasdasdas','2015-07-21 19:49:18',0),(5,1,62,'nuevo mensaje xde3','asdasdasdasdasdasdasdasdasdasdasdas','2015-07-21 19:53:30',0),(6,1,62,'nuevo mensaje xde4','asdasdasdasdasdasdasdasdasdasdasdas','2015-07-21 19:56:30',0),(7,1,62,'nuevo mensaje xde5','asdasdasdasdasdasdasdasdasdasdasdas','2015-07-21 19:59:14',0),(8,1,62,'nuevo mensaje xde6','asdasdasdasdasdasdasdasdasdasdasdas','2015-07-21 20:03:52',0),(9,1,62,'nuevo mensaje xde8','asdasdasdasdasdasdasdasdasdasdasdas','2015-07-21 20:04:06',0),(10,1,62,'nuevo mensaje xde8','asdasdasdasdasdasdasdasdasdasdasdas','2015-07-21 20:05:18',0),(11,1,62,'nuevo mensaje xde10','asdasdasdasdasdasdasdasdasdasdasdas','2015-07-21 20:09:13',0),(12,1,62,'nuevo mensaje xde11','asdasdasdasdasdasdasdasdasdasdasdas','2015-07-21 20:09:09',0),(13,1,62,'nuevo mensaje xde11','asdasdasdasdasdasdasdasdasdasdasdas','2015-07-21 20:13:13',0),(14,1,62,'nuevo mensaje xde11','asdasdasdasdasdasdasdasdasdasdasdas','2015-07-21 20:13:11',0),(15,1,62,'nuevo mensaje xde11','asdasdasdasdasdasdasdasdasdasdasdas','2015-07-21 20:13:10',0),(16,1,62,'nuevo mensaje xde11','asdasdasdasdasdasdasdasdasdasdasdas','2015-07-21 20:24:34',0),(17,1,62,'nuevo mensaje xde11','asdasdasdasdasdasdasdasdasdasdasdas','2015-07-21 20:24:33',0),(18,1,62,'nuevo mensaje xde11','asdasdasdasdasdasdasdasdasdasdasdas','2015-07-21 20:24:30',0),(19,1,62,'jc es gay','asdsdfsdfsd juas juas juas','2015-07-21 20:32:20',0),(20,2,62,'este es una prueba 1','juas juas xd xd sdfsdsdfsdf','2015-07-21 20:35:42',0),(21,2,62,'este es una prueba 2','juas juas xd xd sdfsdsdfsdf 1234','2015-07-21 20:35:40',0),(22,2,62,'este es una prueba 3','ahahahhhahahahahaahahah','2015-07-21 20:35:37',0),(23,2,62,'este es una prueba 3','ahahahhhahahahahaahahah','2015-07-21 21:25:02',0);
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -616,4 +615,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-07-24 12:09:13
+-- Dump completed on 2015-07-28 20:17:33

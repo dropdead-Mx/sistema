@@ -1,18 +1,7 @@
 <h2>Bienvenido <?php echo implode($nombre); ?></h2>
 <?php 
 
-// pr($cuatrimestre);
-// pr($materia);
-// pr($goals);
-// pr($calif);
-// pr($diasDeClase);
-// echo 'noParseado'. sizeof($diasClase);
-// pr($nuevoArray);
 
-// pr($examenes);
-pr($totalAsistencias);
-
-// pr($periodosParcial);
 echo '<p>'.$this->Html->link('Ver fechas de examen',array('action'=>'examenes',$cuatrimestre[0]['StudentProfile']['user_id'])) .'</p> ';
 echo '<p>'.$this->Html->link('Ver Horario',array('action'=>'horario',$cuatrimestre[0]['StudentProfile']['user_id'])) .'</p> ';
 
@@ -22,11 +11,10 @@ echo '<p>'.$this->Html->link('Ver Horario',array('action'=>'horario',$cuatrimest
 <div class="asistencias">
 	<p>Buscar asistencias: </p>
 
-	<div><label for="inicio">Fecha inicio : </label> <input type="text" class="datepicker" id="inicio" ></div>
-	<div><label for="fin">Fecha final: </label><input type="text" class="datepicker" id="fin"></div>
+
 	<div>
 	<p>seleccione una materia : </p>
-		<select  id="materia">
+		<select  id="materiaAsistencias">
 		<option value="">--- Materias ---</option>
 			<?php  foreach ($materia as $x => $materias ):
 
@@ -36,7 +24,7 @@ echo '<p>'.$this->Html->link('Ver Horario',array('action'=>'horario',$cuatrimest
 		</select>
 	</div>
 	<input type="hidden" data-id="<?php echo $user_id ;?>" id="userid" >
-	<button class="buscarAsistencia">Buscar</button>
+	<!-- <button class="buscarAsistencia">Buscar</button> -->
 </div>
 
 <div class="AsistenciasTotales">
