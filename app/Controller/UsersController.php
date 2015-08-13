@@ -592,7 +592,7 @@ public function getassists($materia_id,$usuario){
 	$this->RequestHandler->respondAs('json');
 	$this->layout='ajax';
 
-	if($materia_id !== ' ' && $usuario !== ' ' && $this->request->is('ajax')){
+	if($materia_id !== '' && $usuario !== '' && $this->request->is('ajax')){
 	// usuario auth id 
 	$examenes=$this->Exam->find('all',array('conditions'=>array(
 			'Exam.course_id'=>$materia_id),
@@ -831,10 +831,12 @@ foreach ($periodosParcial as $z => $periodo):
 			'Assist.status'=>3
 			),
 			'recursive'=>-1));
+		// $derecho=(($asistenciaF * 100)/$porcentajeCien) +(($retardoF * 100)/$porcentajeCien);
 
 		if($parcialN == 1){
 
 
+			
 			$misAsistencias []['Asistencia']=array(
 				'materia_id'=>$materia_id,
 				'parcial'=>1,

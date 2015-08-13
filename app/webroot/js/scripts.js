@@ -358,12 +358,11 @@ function calificParcial(){
 function misAsistencias(){
 
 	$('select#materiaAsistencias').on('change', function() {
-		// alert('hola');
-		// fecha1=$('input#inicio').val();
-		// fecha2=$('input#fin').val();
+		$('div.asistenciasParcial').remove();
 		usuario=$('input#userid').attr('data-id');
-		materia=$('select#materiaAsistencias option:selected').val();
-		console.log(materia);
+		materia=parseInt($('select#materiaAsistencias option:selected').val());
+		resultados=[];
+
 
 			$.ajax({
 			type:"GET",
@@ -371,18 +370,31 @@ function misAsistencias(){
 			success: function(response){
 				// console.log(response);
 				if(typeof response !== 'undefined' && response.length >0 ){
-					// for (var i=0, num=response.length; i< num; i++){
-				console.info(response);
+					for (var i=0, num=response.length; i< num; i++){
+				// console.info(response);
+				derecho=parseInt(response[i].Asistencia.derecho_examen);
+
+				if(derecho >= 80 ){
+					derecho='si';
+				}else if(derecho < 80){
+					derecho='no';
+				}
+
+				divIni='<div class="asistenciasParcial" ><p> Parcial: '+response[i].Asistencia.parcial+'</p><p> Porcentaje de Asistencias : '+response[i].Asistencia.porcentajeAsiste+'% </p>';
+				divFn='<p>Porcentaje de Retardos : '+response[i].Asistencia.porcentajeRetardo+'%</p><p> Porcentaje de Faltas : '+response[i].Asistencia.porcentajeFalta+'%</p><p>Tiene derecho a examen de este parcial: '+derecho+'</p></div>';
+
+				resultados.push(divIni+divFn);
 
 
+					}
+
+					$('div.AsistenciasTotales').append(resultados);
 					
 				}
 
 			}
 		});
 
- 	// fin ajax
-	
 
 	});
 
