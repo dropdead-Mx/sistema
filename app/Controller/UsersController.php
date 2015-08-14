@@ -844,7 +844,9 @@ foreach ($periodosParcial as $z => $periodo):
 				'porcentajeAsiste'=>($asistenciaF * 100)/$porcentajeCien,
 				'porcentajeRetardo'=>($retardoF * 100)/$porcentajeCien,
 				'porcentajeFalta'=>($faltaF * 100)/$porcentajeCien,
-				'derecho_examen'=>(($asistenciaF * 100)/$porcentajeCien) +(($retardoF * 100)/$porcentajeCien)
+				'derecho_examen'=>(($asistenciaF * 100)/$porcentajeCien) +(($retardoF * 100)/$porcentajeCien),
+				'inicio'=>$totalAssist['inicio_parcial'],
+				'fin'=>$totalAssist['fin_parcial']
 				);
 
 
@@ -860,7 +862,9 @@ foreach ($periodosParcial as $z => $periodo):
 				'porcentajeAsiste'=>($asistenciaF * 100)/$porcentajeCien,
 				'porcentajeRetardo'=>($retardoF * 100)/$porcentajeCien,
 				'porcentajeFalta'=>($faltaF * 100)/$porcentajeCien,
-				'derecho_examen'=>(($asistenciaF * 100)/$porcentajeCien) +(($retardoF * 100)/$porcentajeCien)
+				'derecho_examen'=>(($asistenciaF * 100)/$porcentajeCien) +(($retardoF * 100)/$porcentajeCien),
+				'inicio'=>$totalAssist['inicio_parcial'],
+				'fin'=>$totalAssist['fin_parcial']
 				);
 
 		}else if( $parcialN ==3 ){
@@ -873,7 +877,9 @@ foreach ($periodosParcial as $z => $periodo):
 				'porcentajeAsiste'=>($asistenciaF * 100)/$porcentajeCien,
 				'porcentajeRetardo'=>($retardoF * 100)/$porcentajeCien,
 				'porcentajeFalta'=>($faltaF * 100)/$porcentajeCien,
-				'derecho_examen'=>(($asistenciaF * 100)/$porcentajeCien) +(($retardoF * 100)/$porcentajeCien)
+				'derecho_examen'=>(($asistenciaF * 100)/$porcentajeCien) +(($retardoF * 100)/$porcentajeCien),
+				'inicio'=>$totalAssist['inicio_parcial'],
+				'fin'=>$totalAssist['fin_parcial']
 				);
 
 		}

@@ -28,7 +28,12 @@ for($w=0;$w<$contador;$w++){
 
 // $inicio=min($hrsinicio);
 // echo 'Hola minima inicio : '.$inicio;
+if (sizeof($hrsfin)>=1){
+
 $fin=max($hrsfin);
+}else {
+	$fin=0;
+}
 $hrfin=date("H",strtotime($fin));
 echo '<br>';
 $hrinicio=0;

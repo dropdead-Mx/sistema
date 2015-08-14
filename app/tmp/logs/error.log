@@ -16504,3 +16504,13 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-08-14 14:55:40 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/var/www/sistema/app/View/Users/horario.ctp, line 31]
+2015-08-14 14:55:40 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /sistema/users/horario/7
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 31)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 31, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 31, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

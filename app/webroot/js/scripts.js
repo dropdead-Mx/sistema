@@ -362,17 +362,31 @@ function misAsistencias(){
 		usuario=$('input#userid').attr('data-id');
 		materia=parseInt($('select#materiaAsistencias option:selected').val());
 		resultados=[];
+		f = new Date();
+		mes=f.getMonth();
+		if(mes !== 1 ){
+			mes='0'+f.getMonth()
+		}
+		fech=new Date(f.getFullYear()+'-'+mes+'-'+f.getDate());
+		
+		// console.log(fechaActual);
 
 
 			$.ajax({
 			type:"GET",
 			url:'../getassists/'+materia+'/'+usuario,
 			success: function(response){
-				// console.log(response);
+				console.log(response);
 				if(typeof response !== 'undefined' && response.length >0 ){
 					for (var i=0, num=response.length; i< num; i++){
 				// console.info(response);
 				derecho=parseInt(response[i].Asistencia.derecho_examen);
+				ini= new Date (response[i].Asistencia.inicio.replace(/\"/g, ""));
+				fn= new Date(response[i].Asistencia.fin.replace(/\"/g, ""));
+				
+			
+				
+
 
 				if(derecho >= 80 ){
 					derecho='si';
@@ -380,10 +394,20 @@ function misAsistencias(){
 					derecho='no';
 				}
 
+
+
+				
+
 				divIni='<div class="asistenciasParcial" ><p> Parcial: '+response[i].Asistencia.parcial+'</p><p> Porcentaje de Asistencias : '+response[i].Asistencia.porcentajeAsiste+'% </p>';
 				divFn='<p>Porcentaje de Retardos : '+response[i].Asistencia.porcentajeRetardo+'%</p><p> Porcentaje de Faltas : '+response[i].Asistencia.porcentajeFalta+'%</p><p>Tiene derecho a examen de este parcial: '+derecho+'</p></div>';
 
+				// checar el parcial actual con comparacion de fechas
+				if(fech >= ini && fech <= fn ){
+				
 				resultados.push(divIni+divFn);
+				}
+
+				
 
 
 					}
