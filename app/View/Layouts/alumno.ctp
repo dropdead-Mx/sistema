@@ -1,0 +1,1 @@
+<?php echo $this->requestAction('/users/alumno', array('return')); ?>

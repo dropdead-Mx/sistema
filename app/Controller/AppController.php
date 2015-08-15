@@ -43,17 +43,35 @@ class AppController extends Controller {
 			'logoutRedirect'=>array(
 				'controller'=>'users',
 				'action'=>'login'),
-			
+
 			'authenticate'=>array(
 				'Form'=>array(
 					'fields'=>array('username'=>'email'),
 					'passwordHasher'=>'Blowfish'
 					)
-					)));
+					),
+			'authorize'=>array('Controller')
+			)
+		);
 
 	public function beforeFilter(){
       
-		$this->Auth->allow('login','logout');
-		$this->set('current_user',$this->Auth->user());
+		$this->Auth->allow('login','logout','editStudent','editTeacher');
+		// $this->set('current_user',$this->Auth->user());
+
+		// aqui se ponen las siguientes redirecciones para cada usuario
+
 	}
+
+	// funcion que sirve para asignar permisos al director y a los demas denegarles el accseso
+
+	public function isAuthorized($user) {
+    // Admin can access every action
+    if (isset($user['group_id']) && $user['group_id'] === '5') {
+        return true;
+    }
+
+    // Default deny
+    return false;
+}
 }

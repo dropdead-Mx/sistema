@@ -6,7 +6,28 @@ class CoursesController extends AppController {
 	public $components=array('Session','RequestHandler');
 	public $uses=array('Course','CourseModule','User','Goal','Usrcareer','Career','Semester');
 
+public function isAuthorized($user){
 
+
+	// return parent::isAuthorized($user);
+
+
+	 if ($user['group_id']== '7' ){
+
+		if(in_array($this->action,array('index','tienecrit'))){
+			return true;
+		}else {
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('no se puede acceder');
+				// $this->redirect($this->Auth->redirect());
+			}
+		}
+
+	}
+
+	return parent::isAuthorized($user);
+
+}
 
 	public function index($user_id){
 		$carreras=[];

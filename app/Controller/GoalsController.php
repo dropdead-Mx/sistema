@@ -7,6 +7,29 @@ public $helpers=array('Html','Form','Js');
 public $uses=array('Goal','User','Course','Grupo');
 
 
+public function isAuthorized($user){
+
+
+	// return parent::isAuthorized($user);
+
+
+	 if ($user['group_id']== '7' ){
+
+		if(in_array($this->action,array('index','add'))){
+			return true;
+		}else {
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('no se puede acceder');
+				// $this->redirect($this->Auth->redirect());
+			}
+		}
+
+	}
+
+	return parent::isAuthorized($user);
+
+}
+
 public function index() {
 
 // $this->Goal->User->id=$id;

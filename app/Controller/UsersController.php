@@ -9,7 +9,42 @@ public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile'
 
 public function beforeFilter(){
 	parent::beforeFilter();
-	$this->Auth->allow();
+	// $this->Auth->allow();
+
+
+}
+
+
+public function isAuthorized($user){
+
+	if($user['group_id']=='8'){
+		
+		if(in_array($this->action,array('alumno','index','examenes','horario'))){
+			return true;
+		}else {
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('no se puede acceder');
+				$this->redirect($this->Auth->redirect());
+			}
+		}
+	}
+	// return parent::isAuthorized($user);
+
+
+	 if ($user['group_id']== '7' ){
+
+		if(in_array($this->action,array('index','addTeacher','viewmycourses','calificar','asistencias'))){
+			return true;
+		}else {
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('no se puede acceder');
+				// $this->redirect($this->Auth->redirect());
+			}
+		}
+
+	}
+
+	return parent::isAuthorized($user);
 
 }
 
@@ -21,6 +56,8 @@ public function login(){
 			if($this->Auth->login()){
 				
 				return $this->redirect($this->Auth->redirectUrl());
+
+	
 			}
 			// debug($this->Auth->login());
 			$this->Session->setFlash('Tu usuario/contraseña son incorrectos');
@@ -35,7 +72,10 @@ public function logout(){
 
 public function index() {
 
-$this->layout='coordinador';
+// $this->layout='coordinador';
+	// if($this->Auth->user('group_id')== 8){
+	// 	$this->layout='alumno';
+	// }
 
 }
 
@@ -230,10 +270,10 @@ public function indexTeacher() {
 
 }
 
-public function viewmycourses($id){
-$this->User->id=$id;
-$courses=$this->User->Course->find('all',array('conditions'=>array('Course.user_id'=>$id)));
-$this->set('courses',$courses);
+public function viewmycourses(){
+$idusuario=$this->Auth->User('id');
+$courses=$this->Course->find('all',array('conditions'=>array('Course.user_id'=>$idusuario)));
+$this->set(compact('courses'));
 }
 
 public function calificar($course_id=null,$semester=null,$career_id=null,$parcial){
@@ -476,10 +516,11 @@ public function alldays($inicio,$fin,$dia){
 
 //funcion para vista de estudiantes falta ver que elementos tendra el layout dl alumnno
 
-public function alumno($user_id){
+public function alumno(){
 	$goals=[];
 	$examenes=[];
 	$diasDeClase=[];
+	$user_id=$this->Auth->User('id');
 	$cuatrimestre=$this->StudentProfile->find('all',array('conditions'=>array(
 		'StudentProfile.user_id'=>$user_id
 		),'fields'=>array('StudentProfile.semester','StudentProfile.career_id','StudentProfile.user_id')));
