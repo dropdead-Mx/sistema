@@ -27,7 +27,7 @@ echo '<p>'.$this->Html->link('Ver Horario',array('action'=>'horario',$cuatrimest
 	<!-- <button class="buscarAsistencia">Buscar</button> -->
 </div>
 
-<div class="AsistenciasTotales">
+<div class="AsistenciasTotales" >
 	
 </div>
 

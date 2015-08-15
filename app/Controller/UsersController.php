@@ -7,6 +7,32 @@ public $components=array('Session','RequestHandler','Email');
 public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group','Course','Goal','Obtainedgoal','Usrcareer','CourseModule','Assist','Exam','Semester');
 
 
+public function beforeFilter(){
+	parent::beforeFilter();
+	$this->Auth->allow();
+
+}
+
+public function login(){
+
+		if($this->request->is('post')){
+		
+			
+			if($this->Auth->login()){
+				
+				return $this->redirect($this->Auth->redirectUrl());
+			}
+			// debug($this->Auth->login());
+			$this->Session->setFlash('Tu usuario/contraseña son incorrectos');
+		}
+
+	}
+
+public function logout(){
+		return $this->redirect($this->Auth->logout());
+	}
+
+
 public function index() {
 
 $this->layout='coordinador';
@@ -50,11 +76,11 @@ public function addStudent(){
 
 			$this->request->data['User']['password']=$password;
 
-			// $email = new CakeEmail('default');
-			// $email->to($correo);
-			// $email->from(array('unidorados@universidaddorados.com'=>'Plataforma universidad dorados'));
-			// $email->subject('Registro en la plataforma universidad dorados');
-			// $email->send('Tu correo de acceso a la plataforma es : '.$correo.' Y tu contraseña : '.$password);
+			$email = new CakeEmail('default');
+			$email->to($correo);
+			$email->from(array('unidorados@universidaddorados.com'=>'Plataforma universidad dorados'));
+			$email->subject('Registro en la plataforma universidad dorados');
+			$email->send('Tu correo de acceso a la plataforma es : '.$correo.' Y tu contraseña : '.$password);
 
 			
 			if($this->User->saveAssociated($this->request->data)):

@@ -7,6 +7,12 @@ class CareersController extends AppController {
 	//se define el comente session para mndar mensaje de cuando se guarda un registro
 	public $components= array('Session', 'RequestHandler');
 
+	public function beforeFilter(){
+		parent::beforeFilter();
+		$this->Auth->allow('getGroupsByCareerId');
+	}
+
+	
 
 	public function index() {
 
