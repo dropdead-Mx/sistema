@@ -218,8 +218,14 @@
  * the cake shell command: cake schema create Sessions
  *
  */
+// configuracion del tiempo de expiracion de la sesion
 	Configure::write('Session', array(
-		'defaults' => 'php'
+		'defaults' => 'php',
+		'timeout'=>'30',
+		'cookieTimeout'=>'180',
+		'autoRegenerate' => true,
+		'checkAgent' => false
+
 	));
 
 /**
