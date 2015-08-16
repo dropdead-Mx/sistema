@@ -14,12 +14,35 @@ public function isAuthorized($user){
 
 	 if ($user['group_id']== '7' ){
 
-		if(in_array($this->action,array('index','tienecrit'))){
+		if(in_array($this->action,array('tienecrit'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
 				$this->Session->setFlash('no se puede acceder');
 				// $this->redirect($this->Auth->redirect());
+				$this->redirect(array('controller'=>'users','action'=>'index'));
+
+				
+				
+
+			}
+		}
+
+	}
+
+	else if ($user['group_id']== '6' ){
+
+		if(in_array($this->action,array('index','addModule','tienemod'))){
+			return true;
+		}else {
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('no se puede acceder');
+				// $this->redirect($this->Auth->redirect());
+				$this->redirect(array('controller'=>'users','action'=>'index'));
+				
+				
+				
+
 			}
 		}
 
@@ -29,7 +52,12 @@ public function isAuthorized($user){
 
 }
 
-	public function index($user_id){
+	public function index(){
+		$user_id=$this->Auth->User('id');
+		$tipo=$this->Auth->User('group_id');
+
+		if ($tipo == '6'){
+
 		$carreras=[];
 		$careers= $this->Usrcareer->find('all',array('conditions'=>array(
 			'Usrcareer.user_id'=>$user_id),
@@ -51,6 +79,7 @@ public function isAuthorized($user){
 		// $materias=$this->Course->find('all');
 		// $this->set('materias',$materias);
 		$this->set('carreras',$carreras);
+		}
 		
 	}
 

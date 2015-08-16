@@ -6,7 +6,43 @@ class UploadtestsController extends AppController {
 	public $components=array('Session','RequestHandler');
 	public $uses=array('User','Course','Career','Planning','Usrcareer','Message','Uploadtest');
 
-	public function index($user_id){
+
+	public  function isAuthorized($user){
+
+		 if ($user['group_id']== '7' ){
+
+		if(in_array($this->action,array('subirexamen'))){
+			return true;
+		}else {
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('no se puede acceder');
+				$this->redirect(array('controller'=>'users','action'=>'index'));
+			}
+		}
+
+	}
+
+		else  if ($user['group_id']== '6' ){
+
+		if(in_array($this->action,array('index','getexams','download'))){
+			return true;
+		}else {
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('no se puede acceder');
+				$this->redirect(array('controller'=>'users','action'=>'index'));
+			}
+		}
+
+	}
+
+	return parent::isAuthorized($user);
+}
+
+	public function index(){
+
+		$user_id=$this->Auth->User('id');
+		$tipo=$this->Auth->User('group_id');
+		if($tipo == '6'){
 
 		$carreras=[];
 
@@ -21,10 +57,16 @@ class UploadtestsController extends AppController {
 		}
 
 		$this->set(compact('carreras','user_id'));
+		}
 
 	}
 
-	public function subirexamen($maestro){
+	public function subirexamen(){
+
+		$maestro=$this->Auth->User('id');
+		$tipo=$this->Auth->User('group_id');
+
+		if($tipo == '7'){
 
 		$materias=$this->Course->find('list',array('conditions'=>array('Course.user_id'=>$maestro),'recursive'=>-1,'fields'=>array('Course.id','Course.name')));
 
@@ -36,7 +78,7 @@ class UploadtestsController extends AppController {
 		if($this->request->is('post')){
 			if($this->Uploadtest->save($this->request->data) && $this->Message->save($this->request->data)){
 				$this->Session->setFlash('Examen subido con exito');
-				$this->redirect(array('action'=>'index'));
+				$this->redirect(array('controller'=>'users','action'=>'index'));
 				// debug($this->request->data);
 			} else {
 				// $this->request->data['Uploadtest']['course_id']=' ';
@@ -50,6 +92,8 @@ class UploadtestsController extends AppController {
 		}
 
 		$this->set(compact('coordinadores','materias','maestro'));
+		}
+
 
 	}
 

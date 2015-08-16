@@ -6,6 +6,25 @@ class PlanningsController extends AppController {
 	public $uses=array('User','Course','Career','Planning','Usrcareer','Message');
 
 
+
+public  function isAuthorized($user){
+
+		 if ($user['group_id']== '7' ){
+
+		if(in_array($this->action,array('subirplaneaciones','coordinadorpormateria'))){
+			return true;
+		}else {
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('no se puede acceder');
+				$this->redirect(array('controller'=>'users','action'=>'index'));
+			}
+		}
+
+	}
+
+	return parent::isAuthorized($user);
+}
+
 	public function index($user_id){
 
 		$carreras=[];
@@ -24,9 +43,10 @@ class PlanningsController extends AppController {
 
 	}
 
-	public function subirplaneaciones($maestro){
+	public function subirplaneaciones(){
 
 		// $this->User->id=$user_id
+		$maestro=$this->Auth->User('id');
 
 		$materias=$this->Course->find('list',array('conditions'=>array('Course.user_id'=>$maestro),'recursive'=>-1,'fields'=>array('Course.id','Course.name')));
 
@@ -38,7 +58,7 @@ class PlanningsController extends AppController {
 		if($this->request->is('post')){
 			if($this->Planning->save($this->request->data) && $this->Message->save($this->request->data)){
 				$this->Session->setFlash('Planeacion subida con exito');
-				$this->redirect(array('action'=>'index'));
+				$this->redirect(array('controller'=>'users','action'=>'index'));
 				// debug($this->request->data);
 			} else {
 

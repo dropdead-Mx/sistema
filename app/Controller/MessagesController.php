@@ -6,13 +6,35 @@ public $helpers=array('Form','Html','Js');
 public $components=array('Session','RequestHandler');
 public $uses=array('User','Message');
 
+public  function isAuthorized($user){
+
+		 if ($user['group_id']== '7' ){
+
+		if(in_array($this->action,array('enviarmensaje'))){
+			return true;
+		}else {
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('no se puede acceder');
+				// $this->redirect($this->Auth->redirect());
+				$this->redirect(array('controller'=>'users','action'=>'index'));
+				
+			}
+		}
+
+	}
+
+	return parent::isAuthorized($user);
+}
+
+
 public function index(){
 
 }
 
-public function enviarmensaje($user_id){
+public function enviarmensaje(){
 
-	$this->User->id=$user_id;
+	// $this->User->id=$user_id;
+	$user_id=$this->Auth->User('id');
 	$coordinadores=$this->User->find('list',array('conditions'=>array('User.group_id'=>6),'recursive'=>-1,'fields'=>array(
 		'id','name')));
 

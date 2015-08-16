@@ -10,6 +10,9 @@ public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile'
 public function beforeFilter(){
 	parent::beforeFilter();
 	// $this->Auth->allow();
+	// if ($this->Auth->loggedIn()) {
+	// $this->Auth->deny('login');
+	// }
 
 
 }
@@ -24,7 +27,9 @@ public function isAuthorized($user){
 		}else {
 			if($this->Auth->user('id')){
 				$this->Session->setFlash('no se puede acceder');
-				$this->redirect($this->Auth->redirect());
+				// $this->redirect($this->Auth->redirect());
+				$this->redirect(array('controller'=>'users','action'=>'index'));
+
 			}
 		}
 	}
@@ -39,6 +44,8 @@ public function isAuthorized($user){
 			if($this->Auth->user('id')){
 				$this->Session->setFlash('no se puede acceder');
 				// $this->redirect($this->Auth->redirect());
+				$this->redirect(array('controller'=>'users','action'=>'index'));
+
 			}
 		}
 
@@ -49,6 +56,12 @@ public function isAuthorized($user){
 }
 
 public function login(){
+
+	if ($this->Auth->loggedIn()) { 
+		$this->Session->setFlash('ya te encuentras logueado');
+		$this->redirect(array('action'=>'index'));
+
+	} else {
 
 		if($this->request->is('post')){
 		
@@ -62,6 +75,7 @@ public function login(){
 			// debug($this->Auth->login());
 			$this->Session->setFlash('Tu usuario/contraseña son incorrectos');
 		}
+	}
 
 	}
 
