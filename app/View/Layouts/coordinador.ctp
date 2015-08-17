@@ -2,45 +2,70 @@
 <html lang="es">
 <head>
 	<?php echo $this->Html->charset();?>
-	<title>Bienvendo a la plataforma dorados</title>
+	<title>Plataforma dorados</title>
 	
 	<?php 
 
 	echo $this->Html->meta(array(
 		'description'=>'Sistema integral de alumnos de la universidad dorados de oaxtepec'));
-	echo $this->Html->css(array('normalize','estilo','http://fonts.googleapis.com/css?family=Roboto'));
-	echo $this->Html->script(array('jquery'));
+	echo $this->Html->css(array('normalize','director'));
+	echo $this->Html->script(array('jquery','index'));
 
 	echo $this->fetch('meta');
 	echo $this->fetch('css');
 	echo $this->fetch('script');
 ?>
-</head>
+</head> 
 
 
 <body>
 
 	<header>
-
-	<div class="banner">
-		<figure>
-			<?php echo $this->Html->image("newlogo.png");?>
+		<figure class="logo">
+			<?php echo $this->Html->image("logoNuevo.png");?>
 		</figure>
-
-		<h1>Sistema Integral De Alumnos UD.</h1>
-	</div>
+		
 
 	<div class="usuario">
-		<figure><?php echo $this->Html->image('userfoto.png');?></figure>
-		<p class="config">****configurar</p>
-		<button class="logout">Salir</button>
+		<figure>
+			<?php echo $this->Html->image('userfoto.png');?>
+		</figure>
+		<h2>Director</h2>
+		<h2>Dr.Oscar Polo Lopez Solis</h2>
 	</div>
+
+	<nav>
+		<ul class="menuPrincipal">
+			<li>Coordinadores 
+				<ul class="submenuCoordi">
+					<li>Alta</li>
+					<li>Consulta</li>
+				</ul>
+			</li>
+			<span class="iconCordi"></span>
+			<li>Maestros </li>
+			<span class="iconMaestro"></span>
+			<li>Alumnos 
+				<ul class="submenuAlumnos">
+					<li>Calificaciones</li>
+					<li>Asistencias</li>
+				</ul>
+			</li>
+			<span class="iconAlumno"></span>
+			<li>Archivos </li>
+			<span class="iconFiles"></span>
+			<li>Notificaciones </li>
+			<span class="iconNotifi"></span>
+			<li>Salir </li>
+			<span class="iconLogout"></span>
+		</ul>
+	</nav>
 
 	</header>
 
-	<h2>Area Administrativa</h2>
 
-	<div class="contenedor">
+	<!-- <div class="contenedor">
+	<h2>Area Administrativa</h2>
 		
 		<section >
 
@@ -56,7 +81,7 @@
 		</section>
 
 
-		<!-- separador -->
+		
 
 		<section>
 
@@ -67,7 +92,7 @@
 			
 		</section>
 
-		<!-- separador -->
+		
 
 
 		<section>
@@ -78,41 +103,12 @@
 			
 		</section>
 
-		<!-- separador -->
-
-
-<!-- 		<section>
-
-
-		<p>Calificaciones</p>
-
-			
-		</section> -->
-
-		<!-- separador -->
-
-
-<!-- 		<section>
-
-		<p>Asistencias</p>
-
-			
-		</section> -->
-
-		<!-- separador -->
-<!-- 
-
-		<section>
-
-		<p >Examenes</p>
-
-			
-		</section> -->
+		
 
 
 	</div>
 
-	
+	 -->
 <!-- <footer>
 	<p>Universidad Dorados Oaxtepec 2015</p>
 </footer> -->
