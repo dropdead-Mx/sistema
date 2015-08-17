@@ -76,7 +76,7 @@
 		<?php echo $this->requestAction('/users/indexStudent', array('return')); ?>
 
 
-
+	<p>etiqueta p de prueba el lunes te ama polo</p>
 			
 		</section>
 
