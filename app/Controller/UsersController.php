@@ -9,7 +9,7 @@ public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile'
 
 public function beforeFilter(){
 	parent::beforeFilter();
-	// $this->Auth->allow();
+	$this->Auth->allow('indexcoordinator','indexTeacher','vercalificaciones');
 	// if ($this->Auth->loggedIn()) {
 	// $this->Auth->deny('login');
 	// }
