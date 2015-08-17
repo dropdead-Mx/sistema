@@ -67,6 +67,7 @@
 
 =======
 <p>german el hijo perdido de polo </p>
+<p>jc es amante de ricardo</p>
 	<!-- <div class="contenedor">  
 	<h2>Area Administrativa</h2>
 		
