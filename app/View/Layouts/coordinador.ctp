@@ -64,53 +64,6 @@
 	</header>
 
 
-	<!-- <div class="contenedor">
-	<h2>Area Administrativa</h2>
-		
-		<section >
 
-		<p>Alumnos</p>
-
-		<?php echo $this->requestAction('/users/addStudent', array('return')); ?>
-
-		<?php echo $this->requestAction('/users/indexStudent', array('return')); ?>
-
-
-
-			
-		</section>
-
-
-		
-
-		<section>
-
-		<p>Profesores</p>
-
-		<?php echo $this->requestAction('/users/addTeacher', array('return')); ?>
-		<?php echo $this->requestAction('/users/indexTeacher', array('return')); ?>
-			
-		</section>
-
-		
-
-
-		<section>
-		<p>Materias y Horarios</p>
-		
-		<?php echo $this->requestAction('/courses/index', array('return')); ?>
-			<?php echo $this->requestAction('/courses/add', array('return')); ?>
-			
-		</section>
-
-		
-
-
-	</div>
-
-	 -->
-<!-- <footer>
-	<p>Universidad Dorados Oaxtepec 2015</p>
-</footer> -->
 </body>
 </html>

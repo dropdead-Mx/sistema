@@ -88,7 +88,7 @@ public function index() {
 
 // $this->layout='coordinador';
 	// if($this->Auth->user('group_id')== 8){
-	// 	$this->layout='alumno';
+		$this->layout='coordinador';
 	// }
 
 }
