@@ -12,6 +12,7 @@
 	<tr>
 		<th>Materia</th>
 		<th>Carrera</th>
+		<th>Grupo</th>
 		<th>Dia de la semana</th>
 		<th>Hora Inicio </th>
 		<th>Hora Fin </th>
@@ -21,6 +22,7 @@
 	<tr class='campoModulo'>
 		<td><?php echo $this->Form->input('CourseModule.0.course_id',array('label'=>false,'value'=>$courses));?>	</td>
 		<td><?php echo $this->Form->input('CourseModule.0.career_id',array('label'=>false,'value'=>$careers));?> </td>
+		<td><?php echo $this->Form->input('CourseModule.0.grupo_id',array('label'=>false,'value'=>$grupos,'empty'=>'--Seleccione un grupo--')); ?></td>
 		<td><?php  
 		echo $this->Form->input('CourseModule.0.day',array('label'=>false,
 	'options'=>array('lunes'=>'lunes',

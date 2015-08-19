@@ -36,8 +36,10 @@
 				$('#myTbody  tr.campoModulo:last  td div.input.select').children('select').eq(0).attr({name :''+matName+'[course_id]'});
 				$('#myTbody  tr.campoModulo:last  td div.input.select').children('select').eq(1).attr({name :''+matName+'[career_id]'});
 				$('#myTbody tr.campoModulo:last td div.input.select').children('select').eq(1).attr({id :''+matId+'CareerId'});
-				$('#myTbody  tr.campoModulo:last  td div.input.select').children('select').eq(2).attr({name :''+matName+'[day]'});
-				$('#myTbody tr.campoModulo:last td div.input.select').children('select').eq(2).attr({id :''+matId+'Day'});
+				$('#myTbody  tr.campoModulo:last  td div.input.select').children('select').eq(2).attr({name :''+matName+'[grupo_id]'});
+				$('#myTbody tr.campoModulo:last td div.input.select').children('select').eq(2).attr({id :''+matId+'Grupo'});
+				$('#myTbody  tr.campoModulo:last  td div.input.select').children('select').eq(3).attr({name :''+matName+'[day]'});
+				$('#myTbody tr.campoModulo:last td div.input.select').children('select').eq(3).attr({id :''+matId+'Day'});
 
 				$('#myTbody  tr.campoModulo:last  td div.input.time').children('select').eq(0).attr({name :''+matName+'[start_time][hour]'});
 				$('#myTbody tr.campoModulo:last td div.input.time').children('select').eq(0).attr({id :''+matId+'StartTimeHour'});
@@ -664,15 +666,16 @@ function horarioColumnas(){
 	});
 }
 
+// funcion indexCourses
 function materiasPorCoordinador(){
 
-	$('button#buscarMaterias').on('click',function(){
+	$('select#cuatriCoordiListado, select#carreraCoordiListado').on('change',function(){
 
 	
 		filas=[];
 		tienemodulos=[];
-		carrera = $('select#carreraCoordi option:selected').val();
-		cuatrimestre = $('select#cuatriCoordi option:selected').val();
+		carrera = $('select#carreraCoordiListado option:selected').val();
+		cuatrimestre = $('select#cuatriCoordiListado option:selected').val();
 
 		// alert(carrera+" "+cuatrimestre);
 
@@ -706,7 +709,7 @@ function materiasPorCoordinador(){
 							if(tiene == "✓" ){
 							filaFinal= fila+'<td><a href="../vermodulos/'+response[z].Course.id+'">Ver horario</a></td>'+'<td>'+tiene+'</td></tr>';
 							}else {
-							filaFinal=	fila+'<td><a href="../addModule/'+response[z].Course.id+'/'+carrera+'">Agregar Horario</a></td>'+'<td>'+tiene+'</td></tr>';
+							filaFinal=	fila+'<td><a href="../agregarHorario/'+response[z].Course.id+'/'+carrera+'">Agregar Horario</a></td>'+'<td>'+tiene+'</td></tr>';
 							}
 							filas.push(filaFinal);
 							
@@ -729,7 +732,7 @@ function materiasPorCoordinador(){
 						
 						if (visible == true ){
 							$('table#listadoDeMaterias').fadeOut(1000);
-							$('tr.filaMateria').fadeOut(900).setTimeout(900).remove();
+							$('tr.filaMateria').fadeOut(900).remove();
 							filas.length=0;
 
 						}
@@ -750,14 +753,23 @@ function materiasPorCoordinador(){
 			// Seccion para busquedas con parametros incompletos
 			if( carrera == 0 && cuatrimestre > 0 ){
 
-				alert('seleccione una carrera de la lista');
+				// alert('seleccione una carrera de la lista');
+				$('table#listadoDeMaterias').fadeOut(1000);
+				$('tr.filaMateria').fadeOut(900).remove();
+
 
 			} else if (cuatrimestre == 0 && carrera > 0){
 
-				alert('seleccione un cuatrimestre de la lista');
+				// alert('seleccione un cuatrimestre de la lista');
+				$('table#listadoDeMaterias').fadeOut(1000);
+				$('tr.filaMateria').fadeOut(900).remove();
+
 
 			} else if ( carrera == 0 && cuatrimestre == 0){
 				alert('busqueda fallida ');
+				$('table#listadoDeMaterias').fadeOut(1000);
+				$('tr.filaMateria').fadeOut(900).remove();
+
 			}
 		
 

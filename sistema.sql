@@ -82,6 +82,7 @@ CREATE TABLE `course_modules` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `career_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL,
+  `grupo_id` int(11) NOT NULL,
   `day` varchar(20) NOT NULL,
   `start_time` time NOT NULL,
   `end_time` time NOT NULL,
@@ -97,7 +98,7 @@ CREATE TABLE `course_modules` (
 
 LOCK TABLES `course_modules` WRITE;
 /*!40000 ALTER TABLE `course_modules` DISABLE KEYS */;
-INSERT INTO `course_modules` VALUES (1,19,9,'miercoles','13:00:00','14:00:00',NULL,NULL),(3,19,12,'miercoles','07:01:00','08:01:00',NULL,NULL),(4,19,12,'lunes','13:00:00','16:00:00',NULL,NULL),(5,11,18,'lunes','11:20:00','13:20:00',NULL,NULL),(6,11,18,'martes','09:00:00','11:00:00',NULL,NULL),(7,11,18,'lunes','14:01:00','15:00:00',NULL,NULL),(8,11,18,'jueves','15:03:00','16:03:00',NULL,NULL),(9,19,10,'lunes','01:00:00','02:00:00',NULL,NULL),(10,19,11,'lunes','10:00:00','11:00:00',NULL,NULL),(11,19,11,'martes','13:00:00','14:02:00',NULL,NULL),(12,19,16,'viernes','14:18:00','13:02:00',NULL,NULL),(13,19,16,'viernes','18:01:00','15:01:00',NULL,NULL),(14,19,13,'lunes','09:00:00','10:00:00',NULL,NULL),(15,19,13,'lunes','12:00:00','13:00:00',NULL,NULL),(16,19,16,'viernes','18:02:00','17:03:00',NULL,NULL),(17,19,15,'viernes','15:02:00','16:02:00',NULL,NULL),(18,19,15,'viernes','16:01:00','03:01:00',NULL,NULL),(34,19,9,'lunes','15:00:00','19:00:00',NULL,NULL),(35,19,19,'lunes','11:50:00','12:40:00',NULL,NULL),(36,19,19,'martes','13:30:00','14:20:00',NULL,NULL),(37,19,19,'viernes','15:10:00','16:50:00',NULL,NULL),(38,19,20,'lunes','16:00:00','17:00:00',NULL,NULL),(39,19,20,'martes','17:10:00','18:00:00',NULL,NULL),(40,19,21,'miercoles','10:10:00','11:00:00',NULL,NULL),(41,19,21,'viernes','13:30:00','14:20:00',NULL,NULL),(42,19,22,'viernes','18:00:00','18:50:00',NULL,NULL),(43,19,14,'lunes','08:00:00','09:00:00',NULL,NULL),(44,19,14,'martes','10:00:00','11:00:00',NULL,NULL);
+INSERT INTO `course_modules` VALUES (1,19,9,0,'miercoles','13:00:00','14:00:00',NULL,NULL),(3,19,12,0,'miercoles','07:01:00','08:01:00',NULL,NULL),(4,19,12,0,'lunes','13:00:00','16:00:00',NULL,NULL),(5,11,18,0,'lunes','11:20:00','13:20:00',NULL,NULL),(6,11,18,0,'martes','09:00:00','11:00:00',NULL,NULL),(7,11,18,0,'lunes','14:01:00','15:00:00',NULL,NULL),(8,11,18,0,'jueves','15:03:00','16:03:00',NULL,NULL),(9,19,10,0,'lunes','01:00:00','02:00:00',NULL,NULL),(10,19,11,0,'lunes','10:00:00','11:00:00',NULL,NULL),(11,19,11,0,'martes','13:00:00','14:02:00',NULL,NULL),(12,19,16,0,'viernes','14:18:00','13:02:00',NULL,NULL),(13,19,16,0,'viernes','18:01:00','15:01:00',NULL,NULL),(14,19,13,0,'lunes','09:00:00','10:00:00',NULL,NULL),(15,19,13,0,'lunes','12:00:00','13:00:00',NULL,NULL),(16,19,16,0,'viernes','18:02:00','17:03:00',NULL,NULL),(17,19,15,0,'viernes','15:02:00','16:02:00',NULL,NULL),(18,19,15,0,'viernes','16:01:00','03:01:00',NULL,NULL),(34,19,9,0,'lunes','15:00:00','19:00:00',NULL,NULL),(35,19,19,0,'lunes','11:50:00','12:40:00',NULL,NULL),(36,19,19,0,'martes','13:30:00','14:20:00',NULL,NULL),(37,19,19,0,'viernes','15:10:00','16:50:00',NULL,NULL),(38,19,20,0,'lunes','16:00:00','17:00:00',NULL,NULL),(39,19,20,0,'martes','17:10:00','18:00:00',NULL,NULL),(40,19,21,0,'miercoles','10:10:00','11:00:00',NULL,NULL),(41,19,21,0,'viernes','13:30:00','14:20:00',NULL,NULL),(42,19,22,0,'viernes','18:00:00','18:50:00',NULL,NULL),(43,19,14,0,'lunes','08:00:00','09:00:00',NULL,NULL),(44,19,14,0,'martes','10:00:00','11:00:00',NULL,NULL);
 /*!40000 ALTER TABLE `course_modules` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,7 +114,6 @@ CREATE TABLE `courses` (
   `name` varchar(60) NOT NULL,
   `semester` int(11) NOT NULL,
   `career_id` int(11) NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -124,7 +124,7 @@ CREATE TABLE `courses` (
 
 LOCK TABLES `courses` WRITE;
 /*!40000 ALTER TABLE `courses` DISABLE KEYS */;
-INSERT INTO `courses` VALUES (9,'InglÃ©s BÃ¡sico I',1,19,2),(10,'TeorÃ­a y GeografÃ­a TurÃ­stic',1,19,1),(11,'IntroducciÃ³n a la GastronomÃ­',1,19,2),(12,'MicrobiologÃ­a de Alimentos',1,19,1),(13,'Fundamentos de AdministraciÃ³n',1,19,2),(14,'Fundamentos de Contabilidad',1,19,2),(15,'ComputaciÃ³n I',1,19,1),(16,'Desarrollo Humano y Ã‰tica',2,19,1),(17,'InglÃ©s BÃ¡sico II',2,19,2),(18,'paradigmas de programacion',2,11,2),(19,'MetodologÃ­a y DiseÃ±o de InvestigaciÃ³n',8,19,1),(20,'TransportaciÃ³n Terrestre',8,19,1),(21,'ArqueologÃ­a',8,19,1),(22,'EcologÃ­a y Ambiente',8,19,1),(23,'xddxdxdxxxxx',2,14,2);
+INSERT INTO `courses` VALUES (9,'InglÃ©s BÃ¡sico I',1,19),(10,'TeorÃ­a y GeografÃ­a TurÃ­stic',1,19),(11,'IntroducciÃ³n a la GastronomÃ­',1,19),(12,'MicrobiologÃ­a de Alimentos',1,19),(13,'Fundamentos de AdministraciÃ³n',1,19),(14,'Fundamentos de Contabilidad',1,19),(15,'ComputaciÃ³n I',1,19),(16,'Desarrollo Humano y Ã‰tica',2,19),(17,'InglÃ©s BÃ¡sico II',2,19),(18,'paradigmas de programacion',2,11),(19,'MetodologÃ­a y DiseÃ±o de InvestigaciÃ³n',8,19),(20,'TransportaciÃ³n Terrestre',8,19),(21,'ArqueologÃ­a',8,19),(22,'EcologÃ­a y Ambiente',8,19),(23,'xddxdxdxxxxx',2,14);
 /*!40000 ALTER TABLE `courses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,7 +151,7 @@ CREATE TABLE `employee_profiles` (
 
 LOCK TABLES `employee_profiles` WRITE;
 /*!40000 ALTER TABLE `employee_profiles` DISABLE KEYS */;
-INSERT INTO `employee_profiles` VALUES (1,1,'ING.','dinero.jpg','1'),(2,2,'ING.','Abstract-Geometric-Wallpapers-HD.jpg','2'),(25,62,'LIC.','/img',NULL),(26,63,'LIC.','/img',NULL),(27,67,'LIC.',NULL,''),(28,68,'LIC.','11109157_1597936787113930_3347809650319831639_n.jpg','28'),(29,69,'LIC.','D:.jpg','29'),(31,81,'ING','MorganFreeman.png','31'),(32,82,'LIC.','piojo-herrea.jpg','32');
+INSERT INTO `employee_profiles` VALUES (1,1,'ING.','iseeu.jpg','1'),(2,2,'ING.','Abstract-Geometric-Wallpapers-HD.jpg','2'),(25,62,'LIC.','/img',NULL),(26,63,'LIC.','/img',NULL),(27,67,'LIC.',NULL,''),(28,68,'LIC.','11109157_1597936787113930_3347809650319831639_n.jpg','28'),(29,69,'LIC.','D:.jpg','29'),(31,81,'ING','MorganFreeman.png','31'),(32,82,'LIC.','piojo-herrea.jpg','32');
 /*!40000 ALTER TABLE `employee_profiles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -272,6 +272,7 @@ CREATE TABLE `goals` (
   `description` varchar(20) NOT NULL,
   `user_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL,
+  `grupo_id` int(11) NOT NULL,
   `parcial` int(11) NOT NULL,
   `percentage` float NOT NULL,
   `created` datetime DEFAULT NULL,
@@ -286,7 +287,7 @@ CREATE TABLE `goals` (
 
 LOCK TABLES `goals` WRITE;
 /*!40000 ALTER TABLE `goals` DISABLE KEYS */;
-INSERT INTO `goals` VALUES (1,'Lecturas',1,10,1,30,'2015-05-21 22:57:36','2015-05-21 22:57:36'),(2,'Tareas',1,10,1,20,'2015-05-21 22:57:36','2015-05-21 22:57:36'),(3,'Asistencias',1,10,1,10,'2015-05-21 22:57:36','2015-05-21 22:57:36'),(4,'Examen',1,10,1,40,'2015-05-21 22:57:36','2015-05-21 22:57:36'),(5,'Investigaciones',1,12,1,30,'2015-05-21 22:58:45','2015-05-21 22:58:45'),(6,'Asistencias',1,12,1,10,'2015-05-21 22:58:45','2015-05-21 22:58:45'),(7,'Examen',1,12,1,30,'2015-05-21 22:58:45','2015-05-21 22:58:45'),(8,'participaciones',1,12,1,30,'2015-05-21 22:58:45','2015-05-21 22:58:45');
+INSERT INTO `goals` VALUES (1,'Lecturas',1,10,0,1,30,'2015-05-21 22:57:36','2015-05-21 22:57:36'),(2,'Tareas',1,10,0,1,20,'2015-05-21 22:57:36','2015-05-21 22:57:36'),(3,'Asistencias',1,10,0,1,10,'2015-05-21 22:57:36','2015-05-21 22:57:36'),(4,'Examen',1,10,0,1,40,'2015-05-21 22:57:36','2015-05-21 22:57:36'),(5,'Investigaciones',1,12,0,1,30,'2015-05-21 22:58:45','2015-05-21 22:58:45'),(6,'Asistencias',1,12,0,1,10,'2015-05-21 22:58:45','2015-05-21 22:58:45'),(7,'Examen',1,12,0,1,30,'2015-05-21 22:58:45','2015-05-21 22:58:45'),(8,'participaciones',1,12,0,1,30,'2015-05-21 22:58:45','2015-05-21 22:58:45');
 /*!40000 ALTER TABLE `goals` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -358,7 +359,7 @@ CREATE TABLE `messages` (
   `hora` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` int(2) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -367,7 +368,7 @@ CREATE TABLE `messages` (
 
 LOCK TABLES `messages` WRITE;
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
-INSERT INTO `messages` VALUES (1,1,62,'Examen para imprimir de la materia: ComputaciÃ³n I','Nuevo examen disponible para descarga de la materia ComputaciÃ³n I, Periodo: Primer parcial','2015-08-02 21:51:04',1);
+INSERT INTO `messages` VALUES (1,1,62,'Planeacion de la materia: EcologÃ­a y Ambiente','planeacion 2 beta','2015-08-16 02:32:37',1),(2,1,62,'Planeacion de la materia: MicrobiologÃ­a de Alimentos','planeacion microbiologia','2015-08-16 02:55:04',1),(3,1,62,'Examen para imprimir de la materia: TeorÃ­a y GeografÃ­a TurÃ­stic','Nuevo examen disponible para descarga de la materia TeorÃ­a y GeografÃ­a TurÃ­stic, Periodo: Primer parcial','2015-08-16 03:04:32',1);
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -445,7 +446,7 @@ CREATE TABLE `plannings` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -454,7 +455,7 @@ CREATE TABLE `plannings` (
 
 LOCK TABLES `plannings` WRITE;
 /*!40000 ALTER TABLE `plannings` DISABLE KEYS */;
-INSERT INTO `plannings` VALUES (1,62,1,19,15,'planeacion semana 2','planeacionxD.rar','1','2015-08-02 12:21:12','2015-08-02 12:21:12');
+INSERT INTO `plannings` VALUES (1,62,1,19,22,'planeacion 2 beta','planeacionxD.rar','1','2015-08-15 21:32:37','2015-08-15 21:32:37'),(2,62,1,19,12,'planeacion microbiologia','PanelFinder_CSharp.rar','2','2015-08-15 21:55:04','2015-08-15 21:55:04');
 /*!40000 ALTER TABLE `plannings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -525,7 +526,7 @@ CREATE TABLE `student_profiles` (
   `matricula` varchar(12) NOT NULL,
   `semester` int(3) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -534,8 +535,35 @@ CREATE TABLE `student_profiles` (
 
 LOCK TABLES `student_profiles` WRITE;
 /*!40000 ALTER TABLE `student_profiles` DISABLE KEYS */;
-INSERT INTO `student_profiles` VALUES (5,7,11,5,'ISC2015001',1),(12,16,11,5,'LT20150088',1),(14,18,19,38,'LT20150098',1),(56,65,19,38,'LT20150093',1),(57,66,19,41,'LT002120AD',8),(58,70,11,5,'ICS2015001',1),(59,72,11,5,'ISC2015432',1),(60,73,19,38,'ISC2015009',1),(65,78,19,38,'LT12300ASD',1),(66,79,11,5,'ISC1240093',1),(72,88,12,28,'LAHGY20154',1),(73,89,11,5,'ISC201500S',1);
+INSERT INTO `student_profiles` VALUES (5,7,11,5,'ISC2015001',1),(12,16,11,5,'LT20150088',1),(14,18,19,38,'LT20150098',1),(56,65,19,38,'LT20150093',1),(57,66,19,41,'LT002120AD',8),(58,70,11,5,'ICS2015001',1),(59,72,11,5,'ISC2015432',1),(60,73,19,38,'ISC2015009',1),(65,78,19,38,'LT12300ASD',1),(66,79,11,5,'ISC1240093',1),(73,89,11,5,'ISC201500S',1),(74,90,19,38,'LT2015ALX0',1),(75,91,19,38,'LT2015AX92',1),(77,93,11,5,'ISC2015002',1);
 /*!40000 ALTER TABLE `student_profiles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `teachercourses`
+--
+
+DROP TABLE IF EXISTS `teachercourses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `teachercourses` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `course_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `grupo_id` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `teachercourses`
+--
+
+LOCK TABLES `teachercourses` WRITE;
+/*!40000 ALTER TABLE `teachercourses` DISABLE KEYS */;
+/*!40000 ALTER TABLE `teachercourses` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -556,7 +584,7 @@ CREATE TABLE `uploadtests` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `modified` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -565,7 +593,7 @@ CREATE TABLE `uploadtests` (
 
 LOCK TABLES `uploadtests` WRITE;
 /*!40000 ALTER TABLE `uploadtests` DISABLE KEYS */;
-INSERT INTO `uploadtests` VALUES (1,62,1,15,1,'Formato de EvaluaciÃ³n (plan 2010).docx','1','2015-08-02 21:51:04','2015-08-02 21:51:04');
+INSERT INTO `uploadtests` VALUES (1,62,1,15,1,'Formato de EvaluaciÃ³n (plan 2010).docx','1','2015-08-02 21:51:04','2015-08-02 21:51:04'),(2,62,1,10,1,'Guia del reporte de residencias.doc','2','2015-08-16 03:04:32','2015-08-16 03:04:32');
 /*!40000 ALTER TABLE `uploadtests` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -582,10 +610,10 @@ CREATE TABLE `users` (
   `apat` varchar(40) NOT NULL,
   `amat` varchar(40) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `password` varchar(40) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
   `group_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -594,7 +622,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Uriel','Cardoso','Alcantar','mmmasas@gmail.com','kljlkj',7),(2,'German','MARTINEZ','SOLIS','gms.linux@gmail.com','QWQWQWQW',7),(7,'JUAN','XXXXXX','XXXSFG','xxx@dd.com','ssssssds',8),(16,'JUAN','RAMIREZ','CASTRO','jcs@hmail.com','sasdfdf4',8),(18,'KINK','JAVAN','GAONA','kinghentai069@xxx.com','23swdcdfdf',8),(62,'Juaquin','avalos','alcantar','jqalvc@outlook.com','weeddffgghh',6),(63,'RICARDO','DFHHJK','RAMIREZ','rfc@hotmail.com','asasasasasa',6),(65,'JUAN CARLOS','UZTATTO','SJFHCC','jc_34.09@gfs.com','contraseÃ±a',8),(66,'ANA','RODRIGUEZ','VILLANUEVA','ana34_3@hotmail.com','ana09234',8),(67,'JUAN','ALVARES','RODRIGUEZ','juan.rdz@gmail.com','contraseÃ±a1',6),(68,'EVERALDO','ALCANTAR','ALCANTAR','everaldo.a34@gmail.com','everaldo12',6),(69,'FLOR','DIAS','RAMIREZ','flor_rems13@hotmail.com','contraseÃ±a12',7),(70,'JUANITO','DIAS','RODRIGUEZ','juan342@gmail.com','contraseÃ±a',8),(72,'ALAN','MORA','PEREZ','alan_304@hotmail.com','contraseÃ±a123',8),(73,'JUAN','PEDRO','ALCANTAR','juan.rdzQ@outlook.com','ssssssshshshshsh',8),(78,'OSCAR','REYES','SAMBRANO','oscar_smb34@hotmail.com','@LTORS201546',8),(79,'JUAN','ARNULFO','PERES','jn23_sdf@gmail.com','$ISCJAP201565',8),(81,'ARON','BOBADILLA','RAMIREZ','rmnx12_99@hotmail.com','$INGABR201514',7),(82,'MIGUEL','HERRERA','HURTADO','mgs_st@gmail.com','LIC.MHH201570',6),(88,'PABLO','ALCANTAR','PEREZ','gms.linux@gmail.com','$LAHYGPAP201584',8),(89,'JUAN','ALCANTAR','RAMIREZ','jcns@gmai.com','$ISCJAR201510',8);
+INSERT INTO `users` VALUES (1,'Uriel','Cardoso','Alcantar','urielcardozo99@gmail.com','$2a$10$WT.THi.J2nXJ2wEOJ3KMe.y4r8tV2f.GD3HUOWU4Ted/RsXCnPrwm',7),(2,'German','MARTINEZ','SOLIS','gms.linux@gmail.com','QWQWQWQW',7),(7,'JUAN','XXXXXX','XXXSFG','xxx@dd.com','ssssssds',8),(16,'JUAN','RAMIREZ','CASTRO','jcs@hmail.com','sasdfdf4',8),(18,'KINK','JAVAN','GAONA','kinghentai069@hotmail.com','$2a$10$AwHmPLkiuAAJYlQZoFYpwuUtxYbRukn7mVQkGGhLVu3zgFpfFRNwS',8),(62,'Juaquin','avalos','alcantar','jqalvc@outlook.com','weeddffgghh',6),(63,'RICARDO','DFHHJK','RAMIREZ','rfc@hotmail.com','asasasasasa',6),(65,'JUAN CARLOS','UZTATTO','SJFHCC','jc_34.09@gfs.com','contraseÃ±a',8),(66,'ANA','RODRIGUEZ','VILLANUEVA','ana34_3@hotmail.com','ana09234',8),(67,'JUAN','ALVARES','RODRIGUEZ','juan.rdz@gmail.com','contraseÃ±a1',6),(68,'EVERALDO','ALCANTAR','ALCANTAR','everaldo.a34@gmail.com','everaldo12',6),(69,'FLOR','DIAS','RAMIREZ','flor_rems13@hotmail.com','contraseÃ±a12',7),(70,'JUANITO','DIAS','RODRIGUEZ','juan342@gmail.com','contraseÃ±a',8),(72,'ALAN','MORA','PEREZ','alan_304@hotmail.com','contraseÃ±a123',8),(73,'JUAN','PEDRO','ALCANTAR','juan.rdzQ@outlook.com','ssssssshshshshsh',8),(78,'OSCAR','REYES','SAMBRANO','oscar_smb34@hotmail.com','@LTORS201546',8),(79,'JUAN','ARNULFO','PERES','jn23_sdf@gmail.com','$ISCJAP201565',8),(81,'ARON','BOBADILLA','RAMIREZ','rmnx12_99@hotmail.com','$INGABR201514',7),(82,'MIGUEL','HERRERA','HURTADO','mgs_st@gmail.com','LIC.MHH201570',6),(89,'JUAN','ALCANTAR','RAMIREZ','jcns@gmai.com','$ISCJAR201510',8),(90,'ALEJANDRA','REYES','BETANCOUR','alejxD23_btn@hotmail.com','$2a$10$eMfOEADiruxqUt6PAgZs0.s8i4x4/h9XK',8),(91,'AXEL','RUIZ','ALCANTAR','heblackparade@hotmail.com','$2a$10$pq8Lz/ZmJ5XRD2WMpgi9CeEPbeH/G8U/T',8),(93,'ANDRES','BAHENA','RODRIGUEZ','german.mtz.solis@gmail.com','$2a$10$n.QySR9YK1xPFsqYwlp9oeAYyV32GdZ4GL9bL6yeSGZh0FBuG.H7S',8);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -656,4 +684,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-08-12  1:46:54
+-- Dump completed on 2015-08-19 13:56:09

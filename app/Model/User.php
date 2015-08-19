@@ -26,8 +26,8 @@ public $hasOne= array(
 	);
 
 public $hasMany=array(
-	'Course'=>array(
-		'className'=>'Course'),
+	// 'Course'=>array(
+	// 	'className'=>'Course'),
 	'Assist'=>array(
 		'className'=>'Assist'),
 	'Planning'=>array(

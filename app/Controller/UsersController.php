@@ -9,7 +9,7 @@ public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile'
 
 public function beforeFilter(){
 	parent::beforeFilter();
-	$this->Auth->allow('indexcoordinator','indexTeacher','vercalificaciones');
+	$this->Auth->allow('indexcoordinator','indexTeacher','vercalificaciones','materiasporgerarquia','index');
 	// if ($this->Auth->loggedIn()) {
 	// $this->Auth->deny('login');
 	// }
@@ -88,7 +88,7 @@ public function index() {
 
 // $this->layout='coordinador';
 	// if($this->Auth->user('group_id')== 8){
-		$this->layout='coordinador';
+		// $this->layout='coordinador';
 	// }
 
 }

@@ -4,7 +4,12 @@ class CoursesController extends AppController {
 
 	public $helpers=array('Form','Html','Js');
 	public $components=array('Session','RequestHandler');
-	public $uses=array('Course','CourseModule','User','Goal','Usrcareer','Career','Semester');
+	public $uses=array('Course','CourseModule','User','Goal','Usrcareer','Career','Semester','Grupo');
+
+public function beforeFilter(){
+	parent::beforeFilter();
+	$this->Auth->allow('index','getcoursesbycoordinator','tienemod','vermodulos','agregarHorario');
+}
 
 public function isAuthorized($user){
 
@@ -52,11 +57,11 @@ public function isAuthorized($user){
 
 }
 
-	public function index(){
-		$user_id=$this->Auth->User('id');
-		$tipo=$this->Auth->User('group_id');
+	public function index($user_id){
+		// $user_id=$this->Auth->User('id');
+		// $tipo=$this->Auth->User('group_id');
 
-		if ($tipo == '6'){
+		// if ($tipo == '6'){
 
 		$carreras=[];
 		$careers= $this->Usrcareer->find('all',array('conditions'=>array(
@@ -79,7 +84,7 @@ public function isAuthorized($user){
 		// $materias=$this->Course->find('all');
 		// $this->set('materias',$materias);
 		$this->set('carreras',$carreras);
-		}
+		// }
 		
 	}
 
@@ -131,8 +136,8 @@ public function isAuthorized($user){
 		endif;
 	}
 
-	public function addModule($id=null, $career_id=null){
-		$this->Course->id=$id;
+	public function agregarHorario($course_id=null, $career_id=null){
+		$this->Course->id=$course_id;
 		$this->Course->career_id=$career_id;
 
 
@@ -144,13 +149,17 @@ public function isAuthorized($user){
 			endif;
 		endif;
 
-
+		$opciones=$this->Course->find('all',array('conditions'=>array('Course.id'=>$course_id)));
 		$careers=$this->Course->Career->find('list',array('conditions'=>array('Career.id'=>$career_id)));
-		$courses=$this->Course->find('list',array('conditions'=>array('Course.id'=>$id)));
+		$courses=$this->Course->find('list',array('conditions'=>array('Course.id'=>$course_id)));
+		// pr($opciones);
 
+		$grupos=$this->Grupo->find('list',array('conditions'=>array(
+			'Grupo.period'=>$opciones[0]['Course']['semester'],
+			'Grupo.career_id'=>$opciones[0]['Course']['career_id'])));
+		// pr($grupos);
 
-
-		$this->set(compact('careers','courses'));
+		$this->set(compact('careers','courses','grupos'));
 	}
 
 
@@ -279,6 +288,16 @@ public function isAuthorized($user){
 
  	}
 
+public function asignarProfesor($materia_id){
+$datos=$this->Course->find('all',array('conditions'=>array(
+		'Course.id'=>$materia_id)));
+$grupos=$this->Grupo->find('list',array('conditions'=>array(
+			'Grupo.period'=>$datos[0]['Course']['semester'],
+			'Grupo.career_id'=>$datos[0]['Course']['career_id'])));
+
+$profesores=$this->User->find('list',array('conditions'=>))
+	
+}
 
 
 

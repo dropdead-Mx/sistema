@@ -1,7 +1,7 @@
 <h2>Listado De Materias</h2>
 
 
-<select id='carreraCoordi'>
+<select id='carreraCoordiListado'>
 	<option value='0'>--Seleccione una carrera --</option>
 	<?php 
 	for($z=0;$z<= sizeof($carreras)-1;$z++){
@@ -11,7 +11,7 @@
 	?>
 </select>
 
-<select id='cuatriCoordi'>
+<select id='cuatriCoordiListado'>
 	<option value="0">--Seleccione un cuatrimestre--</option>
 	<option value="1">1°</option>
 	<option value="2">2°</option>
@@ -26,7 +26,7 @@
 
 </select>
 
-<button id='buscarMaterias'> Buscar Materias</button>
+<!-- <button id='buscarMaterias'> Buscar Materias</button> -->
 
 
 

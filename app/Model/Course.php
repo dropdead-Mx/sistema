@@ -7,11 +7,11 @@ class Course extends AppModel {
 		'Career'=>array(
 			'className'=>'Career')
 			
-			,
-		'User'=>array(
-			'className'=>'User',
+			// ,
+		// 'User'=>array(
+		// 	'className'=>'User',
 			
-			'conditions'=>array('User.group_id'=>'7')),
+		// 	'conditions'=>array('User.group_id'=>'7')),
 		// 'Goal'=>array(
 		// 	'className'=>'Goal')
 			);

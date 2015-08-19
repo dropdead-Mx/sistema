@@ -21529,4 +21529,257 @@ Stack Trace:
 #25 C:\xampp\htdocs\sistema\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #26 {main}
 >>>>>>> 535deaa8ce9a0681403fccfa56a52cccf51ca428
-#xd
+#xd2015-08-19 12:15:14 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Course.user_id' in 'on clause'
+Request URL: /sistema/users/alumno/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Course`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Course`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Course`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Course), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(543): Model->find('all', Array)
+#7 [internal function]: UsersController->alumno()
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-08-19 12:16:08 Error: [MissingActionException] Action UsersController::course() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'course',
+)
+Request URL: /sistema/users/course
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-08-19 12:16:16 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/users
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-19 12:16:21 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/users
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-19 12:25:39 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Course.user_id' in 'on clause'
+Request URL: /sistema/users/materiasporgerarquia/19/undefined
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Course`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Course`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Course`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Course), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(1011): Model->find('all', Array)
+#7 [internal function]: UsersController->materiasporgerarquia('19', 'undefined')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-08-19 12:26:20 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Course.user_id' in 'on clause'
+Request URL: /sistema/users/materiasporgerarquia/13/undefined
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Course`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Course`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Course`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Course), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(1011): Model->find('all', Array)
+#7 [internal function]: UsersController->materiasporgerarquia('13', 'undefined')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-08-19 12:26:26 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Course.user_id' in 'on clause'
+Request URL: /sistema/users/materiasporgerarquia/14/undefined
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Course`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Course`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Course`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Course), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(1011): Model->find('all', Array)
+#7 [internal function]: UsersController->materiasporgerarquia('14', 'undefined')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-08-19 12:26:43 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Course.user_id' in 'on clause'
+Request URL: /sistema/users/materiasporgerarquia/19/undefined
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Course`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Course`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Course`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Course), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(1011): Model->find('all', Array)
+#7 [internal function]: UsersController->materiasporgerarquia('19', 'undefined')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-08-19 12:29:12 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Course.user_id' in 'on clause'
+Request URL: /sistema/users/materiasporgerarquia/19/undefined
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Course`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Course`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Course`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Course), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(1011): Model->find('all', Array)
+#7 [internal function]: UsersController->materiasporgerarquia('19', 'undefined')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-08-19 13:03:30 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Course.user_id' in 'on clause'
+Request URL: /sistema/courses/addModule/17/19
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Course`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Course`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Course`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Course), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/CoursesController.php(152): Model->find('all', Array)
+#7 [internal function]: CoursesController->addModule('17', '19')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CoursesController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-08-19 13:04:04 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Course.user_id' in 'on clause'
+Request URL: /sistema/courses/addModule/17/19
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Course`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Course`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Course`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Course), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/CoursesController.php(152): Model->find('all', Array)
+#7 [internal function]: CoursesController->addModule('17', '19')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CoursesController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-08-19 13:05:13 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Course.user_id' in 'on clause'
+Request URL: /sistema/courses/addModule/17/19
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Course`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Course`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Course`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Course), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/CoursesController.php(152): Model->find('all', Array)
+#7 [internal function]: CoursesController->addModule('17', '19')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CoursesController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-08-19 13:05:38 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Course.user_id' in 'on clause'
+Request URL: /sistema/courses/addModule/17/19
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Course`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Course`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Course`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Course), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/CoursesController.php(152): Model->find('all', Array)
+#7 [internal function]: CoursesController->addModule('17', '19')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CoursesController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-08-19 13:05:51 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Course.user_id' in 'on clause'
+Request URL: /sistema/courses/addModule/17/19
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Course`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Course`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Course`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Course), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/CoursesController.php(152): Model->find('all', Array)
+#7 [internal function]: CoursesController->addModule('17', '19')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CoursesController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-08-19 13:06:32 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Course.user_id' in 'on clause'
+Request URL: /sistema/courses/addModule/17/19
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Course`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Course`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Course`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Course), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/CoursesController.php(152): Model->find('all', Array)
+#7 [internal function]: CoursesController->addModule('17', '19')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CoursesController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-08-19 13:12:21 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/sistema/app/Controller/CoursesController.php, line 157]
+2015-08-19 13:12:21 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /sistema/courses/addModule/17/19
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/sistem...', 157)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/sistem...', 157, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/sistem...', 157, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-19 13:15:47 Error: [MissingActionException] Action CoursesController::addModule() could not be found.
+Exception Attributes: array (
+  'controller' => 'CoursesController',
+  'action' => 'addModule',
+)
+Request URL: /sistema/courses/addModule/17/19
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-08-19 13:16:48 Error: [MissingViewException] View file "Courses/agregar_horario.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Courses/agregar_horario.ctp',
+)
+Request URL: /sistema/courses/agregarHorario/17/19
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /var/www/sistema/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
+#4 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

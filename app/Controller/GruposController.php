@@ -6,6 +6,10 @@ class GruposController extends AppController {
 	public $components=array('Session');
 	public $uses=array('Grupo','Career');
 
+public function beforeFilter(){
+	parent::beforeFilter();
+	$this->Auth->allow();
+}
 
 
 public function index() {
