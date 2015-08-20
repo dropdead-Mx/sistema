@@ -36,6 +36,7 @@
 		<th>Id</th>
 		<th>Nombre</th>
 		<th>Cuatrimestre</th>
+		<th>Grupo</th>
 		<th>opciones</th>
 		<!-- <th>Modulos</th>  -->
 		<th>Tiene modulos registrados</th>

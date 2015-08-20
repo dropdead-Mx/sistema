@@ -21783,3 +21783,13 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
 #4 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2015-08-19 14:11:38 Error: Fatal Error (4): syntax error, unexpected 'value' (T_STRING), expecting ')' in [/var/www/sistema/app/View/Courses/asignar_profesor.ctp, line 13]
+2015-08-19 14:11:38 Error: [FatalErrorException] syntax error, unexpected 'value' (T_STRING), expecting ')'
+Request URL: /sistema/courses/asignarProfesor/12
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 13, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 13, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

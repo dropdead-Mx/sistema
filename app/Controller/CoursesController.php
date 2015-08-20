@@ -8,7 +8,8 @@ class CoursesController extends AppController {
 
 public function beforeFilter(){
 	parent::beforeFilter();
-	$this->Auth->allow('index','getcoursesbycoordinator','tienemod','vermodulos','agregarHorario');
+	// $this->Auth->allow('index','getcoursesbycoordinator','tienemod','vermodulos','agregarHorario','asignarProfesor');
+	$this->Auth->allow();
 }
 
 public function isAuthorized($user){
@@ -290,13 +291,37 @@ public function isAuthorized($user){
 
 public function asignarProfesor($materia_id){
 $datos=$this->Course->find('all',array('conditions'=>array(
-		'Course.id'=>$materia_id)));
+		'Course.id'=>$materia_id),
+	'recursive'=>-1));
 $grupos=$this->Grupo->find('list',array('conditions'=>array(
 			'Grupo.period'=>$datos[0]['Course']['semester'],
 			'Grupo.career_id'=>$datos[0]['Course']['career_id'])));
 
-$profesores=$this->User->find('list',array('conditions'=>))
+$profesores=$this->User->find('list',array('conditions'=>array('User.group_id'=>7)));
+
+$this->set(compact('grupos','datos','profesores'));
+
 	
+}
+
+public function getgroupsbycourse($materia_id=null){
+	$this->RequestHandler->respondAs('json');
+	$this->layout='ajax';
+		
+	$datos=$this->Course->find('all',array('conditions'=>array(
+		'Course.id'=>$materia_id),
+	'recursive'=>-1));
+	if($this->request->is('ajax') && $materia_id !== ' '){
+$grupos=$this->Grupo->find('all',array('conditions'=>array(
+			'Grupo.period'=>$datos[0]['Course']['semester'],
+			'Grupo.career_id'=>$datos[0]['Course']['career_id']),
+			'recursive'=>-1));
+
+$this->set(compact('grupos'));
+	}else {
+	
+
+}
 }
 
 

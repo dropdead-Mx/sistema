@@ -704,8 +704,27 @@ function materiasPorCoordinador(){
 								url:'../tienemod/'+response[z].Course.id,
 								dataType:'json',
 								async:false}).responseText);
+
+							grupo=$.parseJSON($.ajax({
+								type:'GET',
+								url:'/sistema/courses/getgroupsbycourse/'+response[z].Course.id,
+								dataType:'json',
+								async:false}).responseText);
+
+							console.log(grupo.length);
+
+							selectini='<select class="listaGrupos"><option value="txt">--Selecciona un grupo--</option>';
+							sumaOpciones='';
+							for(q=0,n=grupo.length;q<n;q++){
+								opcionesGrupos='<option value="'+grupo[q].Grupo.id+'">'+grupo[q].Grupo.name+'</option>'
+								sumaOpciones=sumaOpciones+opcionesGrupos;
+							}
 							
-							fila='<tr class ="filaMateria"><td>'+response[z].Course.id+'</td>'+'<td>'+response[z].Course.name+'</td>'+'<td>'+response[z].Course.semester+'</td>';
+							finSelect=selectini+sumaOpciones+'</select>';
+
+
+							
+							fila='<tr class ="filaMateria"><td>'+response[z].Course.id+'</td>'+'<td>'+response[z].Course.name+'</td>'+'<td>'+response[z].Course.semester+'</td>'+'<td>'+finSelect+'</td>';
 							if(tiene == "✓" ){
 							filaFinal= fila+'<td><a href="../vermodulos/'+response[z].Course.id+'">Ver horario</a></td>'+'<td>'+tiene+'</td></tr>';
 							}else {
