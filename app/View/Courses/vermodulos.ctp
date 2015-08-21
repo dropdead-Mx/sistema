@@ -19,6 +19,7 @@ echo $this->Form->create('Course');
 	<tr>
 		<th>Materia</th>
 		<th>Carrera</th>
+		<th>Grupo</th>
 		<th>Dia de la semana</th>
 		<th>Hora Inicio HH:MM AM/PM</th>
 		<th>Hora Fin HH:MM AM/PM</th>
@@ -39,6 +40,8 @@ $career=$modulo['Career']['id'];?>
 		<td><?php echo $this->Form->input('CourseModule.'.$k.'.career_id',array('label'=>false,
 		'options'=>array(
 		$career=>$modulo['Career']['name'])));?> </td>
+		<td><?php echo $this->Form->input('CourseModule.0.grupo_id',array('label'=>false,'options'=>$grup,'type'=>'select',)); ?></td>
+
 		<td><?php  
 		echo $this->Form->input('CourseModule.'.$k.'.day',array('label'=>false,
 	'options'=>array('lunes'=>'lunes',

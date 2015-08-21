@@ -699,11 +699,11 @@ function materiasPorCoordinador(){
 							
 							//ajax anidado para ver si ya tiene modulos registrados
 
-							tiene=$.parseJSON($.ajax({
-								type:'GET',
-								url:'../tienemod/'+response[z].Course.id,
-								dataType:'json',
-								async:false}).responseText);
+							// tiene=$.parseJSON($.ajax({
+							// 	type:'GET',
+							// 	url:'../tienemod/'+response[z].Course.id,
+							// 	dataType:'json',
+							// 	async:false}).responseText);
 
 							grupo=$.parseJSON($.ajax({
 								type:'GET',
@@ -711,7 +711,7 @@ function materiasPorCoordinador(){
 								dataType:'json',
 								async:false}).responseText);
 
-							console.log(grupo.length);
+							
 
 							selectini='<select class="listaGrupos"><option value="txt">--Selecciona un grupo--</option>';
 							sumaOpciones='';
@@ -724,12 +724,12 @@ function materiasPorCoordinador(){
 
 
 							
-							fila='<tr class ="filaMateria"><td>'+response[z].Course.id+'</td>'+'<td>'+response[z].Course.name+'</td>'+'<td>'+response[z].Course.semester+'</td>'+'<td>'+finSelect+'</td>';
-							if(tiene == "✓" ){
-							filaFinal= fila+'<td><a href="../vermodulos/'+response[z].Course.id+'">Ver horario</a></td>'+'<td>'+tiene+'</td></tr>';
-							}else {
-							filaFinal=	fila+'<td><a href="../agregarHorario/'+response[z].Course.id+'/'+carrera+'">Agregar Horario</a></td>'+'<td>'+tiene+'</td></tr>';
-							}
+							fila='<tr class ="filaMateria"><td>'+response[z].Course.name+'</td><td class="slc">'+finSelect+'</td>';
+							// if(tiene == "✓" ){
+							// filaFinal= fila+'<td><a href="../vermodulos/'+response[z].Course.id+'">Ver horario</a></td>'+'<td>'+'</td></tr>';
+							// }else {
+							filaFinal=	fila+'<td class="linkContainer" data-course="'+response[z].Course.id+'" data-carrera="'+carrera+'"><a  hidden class="linkGpo" href="../agregarHorario/'+response[z].Course.id+'/'+carrera+'">Agregar Horario</a></td>'+'<td class="checkTieneMod">'+'</td></tr>';
+							// }
 							filas.push(filaFinal);
 							
 						}
@@ -1243,8 +1243,65 @@ function asignarFechDeExamen(){
 
  	});
 }
-$(function(){
+
+
+function verifica(){
+contador=0;
+linkOriginal=[];
+$(document).on('change','.listaGrupos',function(){
+	$(document).find('span.checkSucces').remove();
+	numero=parseInt($(this).closest('tr').index()-1);
+	materiaLink=$(document).find('td.linkContainer').eq(numero).attr('data-course');
+	carreraLink=$(document).find('td.linkContainer').eq(numero).attr('data-carrera');
+	$(document).find('a.linkVer,a.linkagrega').remove();
+
+	if($(this).val() !== 'txt'){
+	grup=parseInt($(this).val());
+		
+	$.ajax({
+		url:'../tienemod/'+materiaLink+'/'+grup,
+		type:'GET',
+		success:function(response){
+
+			if(response.length >=1 ){
+
+				// $('span.chkMod').text(' ');
+
+				respuesta='<span class="checkSucces">'+response+'</span>';
+				$(document).find('td.checkTieneMod').eq(numero).append(respuesta);
+
+				if(response == "✓" ){
+					link='<a class="linkVer" href="../vermodulos/'+materiaLink+'/'+grup+'">ver horario</a>'
+					$(document).find('td.linkContainer').eq(numero).append(link);
+					
+				}else {
+					// link='<a class="linkVer" href="../agregarHorario/'+materiaLink+'/'+grup+'">agregar horario</a>'
+					link='<a class="linkagrega" href="../agregarHorario/'+materiaLink+'/'+carreraLink+'/'+grup+'">agregar horario</a>'
+
+					$(document).find('td.linkContainer').eq(numero).append(link);
+				}
+			}
+		}
+	});
+	}else {
+		alert('selecciona un grupo correcto');
+	}
 	
+
+
+
+
+
+});
+
+
+
+
+
+}
+
+$(function(){
+	verifica();
 	asignarFechDeExamen();
 	clona();
 	elimina();

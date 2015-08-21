@@ -2,8 +2,7 @@
 <h3>Agregar modulos por semana para la materia:  <?php echo implode($courses); ?> </h3>
 
 
-
-<?php echo $this->Form->create('Course',array('action'=>'addModule'));?>
+<?php echo $this->Form->create('Course',array('action'=>'agregarHorario'));?>
 
 <table>
 
@@ -22,7 +21,7 @@
 	<tr class='campoModulo'>
 		<td><?php echo $this->Form->input('CourseModule.0.course_id',array('label'=>false,'value'=>$courses));?>	</td>
 		<td><?php echo $this->Form->input('CourseModule.0.career_id',array('label'=>false,'value'=>$careers));?> </td>
-		<td><?php echo $this->Form->input('CourseModule.0.grupo_id',array('label'=>false,'value'=>$grupos,'empty'=>'--Seleccione un grupo--')); ?></td>
+		<td><?php echo $this->Form->input('CourseModule.0.grupo_id',array('label'=>false,'options'=>$grupoDfault,'type'=>'select')); ?></td>
 		<td><?php  
 		echo $this->Form->input('CourseModule.0.day',array('label'=>false,
 	'options'=>array('lunes'=>'lunes',

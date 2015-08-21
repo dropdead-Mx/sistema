@@ -33,13 +33,13 @@
 <table id='listadoDeMaterias' hidden >
 
 	<tr>
-		<th>Id</th>
+		<!-- <th>Id</th> -->
 		<th>Nombre</th>
-		<th>Cuatrimestre</th>
+		<!-- <th>Cuatrimestre</th> -->
 		<th>Grupo</th>
 		<th>opciones</th>
 		<!-- <th>Modulos</th>  -->
-		<th>Tiene modulos registrados</th>
+		<th>Tiene horario registrado</th>
 <!-- 		<th>Carrera</th>
 		<th>Impartida por:</th>
 		<th>Acciones</th>

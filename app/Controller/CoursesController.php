@@ -137,7 +137,7 @@ public function isAuthorized($user){
 		endif;
 	}
 
-	public function agregarHorario($course_id=null, $career_id=null){
+	public function agregarHorario($course_id=null, $career_id=null,$grupo=null){
 		$this->Course->id=$course_id;
 		$this->Course->career_id=$career_id;
 
@@ -155,16 +155,17 @@ public function isAuthorized($user){
 		$courses=$this->Course->find('list',array('conditions'=>array('Course.id'=>$course_id)));
 		// pr($opciones);
 
-		$grupos=$this->Grupo->find('list',array('conditions'=>array(
-			'Grupo.period'=>$opciones[0]['Course']['semester'],
-			'Grupo.career_id'=>$opciones[0]['Course']['career_id'])));
+		// $grupos=$this->Grupo->find('list',array('conditions'=>array(
+		// 	'Grupo.period'=>$opciones[0]['Course']['semester'],
+		// 	'Grupo.career_id'=>$opciones[0]['Course']['career_id'])));
 		// pr($grupos);
+		$grupoDfault=$this->Grupo->find('list',array('conditions'=>array('Grupo.id'=>$grupo)));
 
-		$this->set(compact('careers','courses','grupos'));
+		$this->set(compact('careers','courses','grupoDfault'));
 	}
 
 
- 	public function tienemod($course_id){
+ 	public function tienemod($course_id=null,$grupo=null){
 		$this->RequestHandler->respondAs('json');
 		$mensaje=' ';
  		$this->Course->CourseModule->course_id=$course_id;
@@ -172,7 +173,7 @@ public function isAuthorized($user){
 		$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
 		$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
 		$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
- 		$existe= $this->Course->CourseModule->find('count',array('conditions'=>array('CourseModule.course_id'=>$course_id)));
+ 		$existe= $this->Course->CourseModule->find('count',array('conditions'=>array('CourseModule.course_id'=>$course_id,'CourseModule.grupo_id'=>$grupo)));
  		// $existe= $this->Course->CourseModule->find('count',array('conditions'=>array('CourseModule.created BETWEEN ? AND ? '=>array(
  		// 	$inicio,$fin),
  		// 'CourseModule.course_id'=>$course_id)));
@@ -246,11 +247,11 @@ public function isAuthorized($user){
 
  	}
 
- 	public function vermodulos($course_id) {
-
+ 	public function vermodulos($course_id,$grupo) {
+ 		//agregar inicio y fin de semestre
  		$existe=$this->CourseModule->find('count',array(
  			'conditions'=>array(
- 				'CourseModule.course_id'=>$course_id)));
+ 				'CourseModule.course_id'=>$course_id,'CourseModule.grupo_id'=>$grupo)));
  		if($existe > 0 ){
  				if($this->request->is('post')):
  			// debug($this->request->data);
@@ -259,10 +260,12 @@ public function isAuthorized($user){
 				$this->redirect(array('action'=>'index'));
 				endif;
 			endif;
-
+			$grup=$this->Grupo->find('list',array('conditions'=>array('Grupo.id'=>$grupo)));
+			
 			$modulos= $this->CourseModule->find('all',array('conditions'=>array(
-				'course_id'=> $course_id)));
-			$this->set(compact('modulos'));
+				'course_id'=> $course_id,'CourseModule.grupo_id'=>$grupo)));
+
+			$this->set(compact('modulos','grup'));
 
  		}else {
  			$this->Session->setFlash('No existen modulos registrados para este curso ');

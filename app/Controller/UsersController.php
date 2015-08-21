@@ -9,7 +9,8 @@ public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile'
 
 public function beforeFilter(){
 	parent::beforeFilter();
-	$this->Auth->allow('indexcoordinator','indexTeacher','vercalificaciones','materiasporgerarquia','index');
+	// $this->Auth->allow('indexcoordinator','indexTeacher','vercalificaciones','materiasporgerarquia','index');
+	$this->Auth->allow();
 	// if ($this->Auth->loggedIn()) {
 	// $this->Auth->deny('login');
 	// }
@@ -1041,6 +1042,7 @@ public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$par
 	'Goal.course_id'=>$course_id,
 	'Goal.parcial'=>$parcial )));
 
+	//aqui agregar la variable de grupo
 	$estudiantes=$this->StudentProfile->find('all',array('conditions'=>array('StudentProfile.career_id'=>$career_id,
 		'StudentProfile.semester'=>$cuatrimestre,
 		)
