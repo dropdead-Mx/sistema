@@ -119,11 +119,11 @@
 
 			 ?>
 			</td>
-			<td><?php echo $this->Html->link('1er parcial',array('controller'=>'users','action'=>'calificar',$course['Course']['id'],$course['Course']['semester'],$course['Course']['career_id'],1,$course['Course']['grupo_id']));?>
+			<td><?php echo $this->Html->link('1er parcial',array('controller'=>'users','action'=>'calificar',$course['Course']['id'],$course['Course']['semester'],$course['Course']['career_id'],1,$course['Course']['grupo_id'],$course['Course']['teacher_id']));?>
 
-				<?php echo $this->Html->link('2do parcial',array('controller'=>'users','action'=>'calificar',$course['Course']['id'],$course['Course']['semester'],$course['Course']['career_id'],2,$course['Course']['grupo_id']));?>
+				<?php echo $this->Html->link('2do parcial',array('controller'=>'users','action'=>'calificar',$course['Course']['id'],$course['Course']['semester'],$course['Course']['career_id'],2,$course['Course']['grupo_id'],$course['Course']['teacher_id']));?>
 
-				<?php echo $this->Html->link('3er parcial',array('controller'=>'users','action'=>'calificar',$course['Course']['id'],$course['Course']['semester'],$course['Course']['career_id'],3,$course['Course']['grupo_id']));?>
+				<?php echo $this->Html->link('3er parcial',array('controller'=>'users','action'=>'calificar',$course['Course']['id'],$course['Course']['semester'],$course['Course']['career_id'],3,$course['Course']['grupo_id'],$course['Course']['teacher_id']));?>
 
 
 			</td>

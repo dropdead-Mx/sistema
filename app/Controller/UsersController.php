@@ -325,19 +325,37 @@ public function viewmycourses($idusuario){
 $this->set(compact('courses'));
 }
 
-public function calificar($course_id=null,$semester=null,$career_id=null,$parcial,$grupo){
+public function calificar($course_id=null,$semester=null,$career_id=null,$parcial=null,$grupo=null,$user_id=null){
 
 	$this->Course->id=$course_id;
 	$this->Course->semester=$semester;
 	$this->Career->id=$career_id;
 	// $this->Auth->User('id')=$user_id;
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
 
 
 	if($this->request->is('post')):
+
+		
+		$usuario=$this->request->data['Obtainedgoal']['00']['user_id'];
+		$criterio=$this->request->data['Obtainedgoal']['00']['goal_id'];
+
+		// echo $usuario;
+
+		$existe=$this->Obtainedgoal->find('count',array('conditions'=>array('Obtainedgoal.created BETWEEN ? AND ? '=>array($inicio,$fin),
+			'Obtainedgoal.user_id'=>$usuario,'Obtainedgoal.goal_id'=>$criterio)));
+		if($existe === 0){
+
 		if($this->User->Obtainedgoal->saveAll($this->request->data['Obtainedgoal'])):
 			$this->Session->setFlash('Calificaciones Asignadas correctamente');
 			$this->redirect(array('action'=>'index'));
 			endif;
+		}else if($existe >=1 ){
+			$this->Session->setFlash('Ya has evaluado este parcial');
+			$this->redirect(array('action'=>'index'));
+		}
 		endif;
 
 	$estudiantes=$this->User->StudentProfile->find('all',array('conditions'=>array('StudentProfile.career_id'=>$career_id,
@@ -345,11 +363,11 @@ public function calificar($course_id=null,$semester=null,$career_id=null,$parcia
 		'StudentProfile.grupo_id'=>$grupo)
 		));
 	// Agregar funcion ajax para criterios de evaluacion por parcial
-	// $critdevaluacion=$this->Goal->find('all',array('conditions'=>array(
-	// 	'Goal.course_id'=>$course_id,'Goal.parcial'=>$parcial,'Goal.grupo_id'=>$grupo,'Goal.user_id'=>$user_id)));
-	//posible bug
 	$critdevaluacion=$this->Goal->find('all',array('conditions'=>array(
-		'Goal.course_id'=>$course_id,'Goal.parcial'=>$parcial,'Goal.grupo_id'=>$grupo)));
+		'Goal.created BETWEEN ? AND ? '=>array($inicio,$fin),'Goal.course_id'=>$course_id,'Goal.parcial'=>$parcial,'Goal.grupo_id'=>$grupo,'Goal.user_id'=>$user_id)));
+	//posible bug
+	// $critdevaluacion=$this->Goal->find('all',array('conditions'=>array(
+	// 	'Goal.course_id'=>$course_id,'Goal.parcial'=>$parcial,'Goal.grupo_id'=>$grupo)));
 	$gpo=$this->Grupo->find('all',array('conditions'=>array(
 		'Grupo.id'=>$grupo)));
 
