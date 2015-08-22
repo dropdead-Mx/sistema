@@ -1,4 +1,4 @@
-<h3>Evaluacion para la materia : <?php echo implode($materia);?></h3>
+<h3>Evaluacion para la materia : <?php echo implode($materia);?> del grupo <?php echo$gpo[0]['Grupo']['name'];?></h3>
 
 
 

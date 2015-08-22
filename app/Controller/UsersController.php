@@ -350,6 +350,8 @@ public function calificar($course_id=null,$semester=null,$career_id=null,$parcia
 	//posible bug
 	$critdevaluacion=$this->Goal->find('all',array('conditions'=>array(
 		'Goal.course_id'=>$course_id,'Goal.parcial'=>$parcial,'Goal.grupo_id'=>$grupo)));
+	$gpo=$this->Grupo->find('all',array('conditions'=>array(
+		'Grupo.id'=>$grupo)));
 
 	
 
@@ -357,7 +359,7 @@ public function calificar($course_id=null,$semester=null,$career_id=null,$parcia
 
 	$materia = $this->Course->find('list',array('conditions'=>array('Course.id'=>$course_id)));
 
-	$this->set(compact('estudiantes','critdevaluacion','materia','partial'));
+	$this->set(compact('estudiantes','critdevaluacion','materia','partial','gpo'));
 	}else  if (sizeof($critdevaluacion)==0){
 		$this->Session->setFlash('no se encontraron croterios de evaluacion registrados');
 		$this->redirect(array('action'=>'index'));
@@ -497,7 +499,7 @@ public function eliminacc($id,$user_id){
 }
 
 
-public function asistencias($career_id, $semester, $id_materia, $id){
+public function asistencias($career_id, $semester, $id_materia, $id,$grupo){
 
 
  // $id=$this->User->id;
@@ -554,12 +556,13 @@ if($this->request->is('post')):
 
 endif;
 }
-	$modulos=$this->CourseModule->find('all',array('conditions'=>array('CourseModule.course_id'=>$id_materia,'CourseModule.day'=>$dia)));
+	$modulos=$this->CourseModule->find('all',array('conditions'=>array('CourseModule.course_id'=>$id_materia,'CourseModule.day'=>$dia,'CourseModule.grupo_id'=>$grupo)));
 	// pr($modulos);
+	$grup=$this->Grupo->Find('all',array('conditions'=>array('Grupo.id'=>$grupo)));
 	$estudiantes=$this->User->StudentProfile->find('all',array('conditions'=>array('StudentProfile.career_id'=>$career_id,
-		'StudentProfile.semester '=>$semester)
+		'StudentProfile.semester '=>$semester,'StudentProfile.grupo_id'=>$grupo)
 		));
-	$this->set(compact('estudiantes','modulos','id_materia'));
+	$this->set(compact('estudiantes','modulos','id_materia','grup'));
 
 }
 

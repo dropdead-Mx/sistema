@@ -1,4 +1,4 @@
-<h3><?php echo $modulos[0]['Course']['name'].':  '.date('d-M-Y'); ?></h3>
+<h3><?php echo $modulos[0]['Course']['name'].':  '.date('d-M-Y'); ?> Grupo: <?php echo $grup[0]['Grupo']['name']?></h3>
 <?php
 $modulo=$modulos[0]['CourseModule']['id'];
 $materia= $modulos[0]['Course']['id'];
