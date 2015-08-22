@@ -20,9 +20,12 @@
 			<td><?php echo $course['Course']['semester'] ?></td>
 			<td><?php echo $course['Course']['career_name'] ?></td>
 			<td>
-			<?php $idmat= $course['Course']['id'];
+			<?php 
+			$idmat= $course['Course']['id'];
+			$grupo=$course['Course']['grupo_id'];
+			$usuario=$course['Course']['teacher_id'];
 
-			$acciones= $this->element('tienecrit',array('idmat'=>$idmat));
+			$acciones= $this->element('tienecrit',array('idmat'=>$idmat,'grupo'=>$grupo,'usuario'=>$usuario));
 			// echo $acciones;
 			if($acciones ==='100') {
 				echo '1er parcial registrado';
@@ -116,11 +119,11 @@
 
 			 ?>
 			</td>
-			<td><?php echo $this->Html->link('1er parcial',array('controller'=>'users','action'=>'calificar',$course['Course']['id'],$course['Course']['semester'],$course['Course']['career_id'],1));?>
+			<td><?php echo $this->Html->link('1er parcial',array('controller'=>'users','action'=>'calificar',$course['Course']['id'],$course['Course']['semester'],$course['Course']['career_id'],1,$course['Course']['grupo_id']));?>
 
-				<?php echo $this->Html->link('2do parcial',array('controller'=>'users','action'=>'calificar',$course['Course']['id'],$course['Course']['semester'],$course['Course']['career_id'],2));?>
+				<?php echo $this->Html->link('2do parcial',array('controller'=>'users','action'=>'calificar',$course['Course']['id'],$course['Course']['semester'],$course['Course']['career_id'],2,$course['Course']['grupo_id']));?>
 
-				<?php echo $this->Html->link('3er parcial',array('controller'=>'users','action'=>'calificar',$course['Course']['id'],$course['Course']['semester'],$course['Course']['career_id'],3));?>
+				<?php echo $this->Html->link('3er parcial',array('controller'=>'users','action'=>'calificar',$course['Course']['id'],$course['Course']['semester'],$course['Course']['career_id'],3,$course['Course']['grupo_id']));?>
 
 
 			</td>

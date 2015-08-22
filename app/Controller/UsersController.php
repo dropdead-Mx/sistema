@@ -325,11 +325,12 @@ public function viewmycourses($idusuario){
 $this->set(compact('courses'));
 }
 
-public function calificar($course_id=null,$semester=null,$career_id=null,$parcial){
+public function calificar($course_id=null,$semester=null,$career_id=null,$parcial,$grupo){
 
 	$this->Course->id=$course_id;
 	$this->Course->semester=$semester;
 	$this->Career->id=$career_id;
+	// $this->Auth->User('id')=$user_id;
 
 
 	if($this->request->is('post')):
@@ -340,14 +341,27 @@ public function calificar($course_id=null,$semester=null,$career_id=null,$parcia
 		endif;
 
 	$estudiantes=$this->User->StudentProfile->find('all',array('conditions'=>array('StudentProfile.career_id'=>$career_id,
-		'StudentProfile.semester '=>$semester)
+		'StudentProfile.semester '=>$semester,
+		'StudentProfile.grupo_id'=>$grupo)
 		));
 	// Agregar funcion ajax para criterios de evaluacion por parcial
+	// $critdevaluacion=$this->Goal->find('all',array('conditions'=>array(
+	// 	'Goal.course_id'=>$course_id,'Goal.parcial'=>$parcial,'Goal.grupo_id'=>$grupo,'Goal.user_id'=>$user_id)));
+	//posible bug
 	$critdevaluacion=$this->Goal->find('all',array('conditions'=>array(
-		'Goal.course_id'=>$course_id,'Goal.parcial'=>$parcial)));
+		'Goal.course_id'=>$course_id,'Goal.parcial'=>$parcial,'Goal.grupo_id'=>$grupo)));
+
+	
+
+	if(sizeof($critdevaluacion)>=1){
+
 	$materia = $this->Course->find('list',array('conditions'=>array('Course.id'=>$course_id)));
 
 	$this->set(compact('estudiantes','critdevaluacion','materia','partial'));
+	}else  if (sizeof($critdevaluacion)==0){
+		$this->Session->setFlash('no se encontraron croterios de evaluacion registrados');
+		$this->redirect(array('action'=>'index'));
+	}
 
 }
 

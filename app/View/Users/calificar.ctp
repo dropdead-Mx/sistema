@@ -18,7 +18,7 @@
 	<?php foreach($critdevaluacion as $X => $crtev):?>
 
 	<th>
-	<?php echo $crtev['Goal']['description'].' '.$crtev['Goal']['percentage'].'%'; ?>
+	<?php echo $crtev['Goal']['description']; ?>
 	</th>
 
 

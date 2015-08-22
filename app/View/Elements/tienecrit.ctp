@@ -1,5 +1,5 @@
 <?php 
 
- echo $this->requestAction('/courses/tienecrit/'.$idmat);
+ echo $this->requestAction('/courses/tienecrit/'.$idmat.'/'.$grupo.'/'.$usuario);
 
 ?>

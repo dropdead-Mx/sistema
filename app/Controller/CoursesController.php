@@ -198,13 +198,14 @@ public function isAuthorized($user){
 
  	}
 
- 	public function tienecrit($course_id){
+ 	public function tienecrit($course_id,$grupo,$usuario){
  		$this->Course->Goal->course_id=$course_id;
  		$itera=3;
  		$tiene='';
+ 		// $usuario=$this->Auth->User('id');
 
  		for ($x=1;$x<=$itera;$x++){
- 		$existe=$this->Course->Goal->find('count',array('conditions'=>array('Goal.course_id'=>$course_id,'Goal.parcial'=>$x)));
+ 		$existe=$this->Course->Goal->find('count',array('conditions'=>array('Goal.course_id'=>$course_id,'Goal.parcial'=>$x,'Goal.grupo_id'=>$grupo,'Goal.user_id'=>$usuario)));
  		
  		if($existe > 0){
  			echo '1';
