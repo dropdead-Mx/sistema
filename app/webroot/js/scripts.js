@@ -228,7 +228,7 @@ function incGoal() {
 			alert('no se permite agregar mas campos');
 		}else {
 
-		var inputsH=$('#GoalForm input[type="hidden"].escondido1:last,#GoalForm input[type="hidden"].escondido2:last,#GoalForm input[type="hidden"].escondido3:last').clone(true);
+		var inputsH=$('#GoalForm input[type="hidden"].escondido1:last,#GoalForm input[type="hidden"].escondido2:last,#GoalForm input[type="hidden"].escondido3:last,#GoalForm input[type="hidden"].escondido4:last').clone(true);
 		// alert(inputsH);
 		inputsH.each(function(){
 			$(this).attr("name",$(this).attr("name").replace(/(\d+)/,''+z));
@@ -301,17 +301,17 @@ function checkPorcentaje(){
 
 function toUppercase() {
 
-	$('form.addForm input[type="text"],form.editForm input[type="text"]').keyup(function(){
+	$('form.addForm input[type="text"],form.editForm input[type="text"],form#GoalForm input.capitalGoal').keyup(function(){
 		$(this).val($(this).val().toUpperCase());
 	});
 
 
-	$('form.addForm input[type="text"],form.editForm input[type="text"]').focusout(function(){
+	$('form.addForm input[type="text"],form.editForm input[type="text"],form#GoalForm input.capitalGoal').focusout(function(){
 		$(this).val($(this).val().toUpperCase());
 
 
 	});
-		$('form.addForm input[type="text"],form.editForm input[type="text"]').focus(function(){
+		$('form.addForm input[type="text"],form.editForm input[type="text"],form#GoalForm input.capitalGoal').focus(function(){
 		$(this).val($(this).val().toUpperCase());
 
 

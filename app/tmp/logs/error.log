@@ -21894,3 +21894,269 @@ Stack Trace:
 #1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CoursesController), Object(CakeRequest))
 #2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2015-08-21 21:37:08 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Course.user_id' in 'where clause'
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Course`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Course`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Course`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Course), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('all', Array)
+#6 /var/www/sistema/app/Controller/UsersController.php(292): Model->find('all', Array)
+#7 [internal function]: UsersController->viewmycourses('1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-08-21 21:47:00 Error: Fatal Error (1): Cannot access empty property in [/var/www/sistema/lib/Cake/Controller/Controller.php, line 437]
+2015-08-21 21:47:00 Error: [FatalErrorException] Cannot access empty property
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Cannot access e...', '/var/www/sistem...', 437)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot access e...', '/var/www/sistem...', 437, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot access e...', '/var/www/sistem...', 437, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 21:48:21 Error: Fatal Error (1): Cannot access empty property in [/var/www/sistema/lib/Cake/Controller/Controller.php, line 437]
+2015-08-21 21:48:21 Error: [FatalErrorException] Cannot access empty property
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Cannot access e...', '/var/www/sistem...', 437)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot access e...', '/var/www/sistem...', 437, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot access e...', '/var/www/sistem...', 437, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 21:51:41 Error: Fatal Error (1): Cannot access empty property in [/var/www/sistema/lib/Cake/Controller/Controller.php, line 437]
+2015-08-21 21:51:41 Error: [FatalErrorException] Cannot access empty property
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Cannot access e...', '/var/www/sistem...', 437)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot access e...', '/var/www/sistem...', 437, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot access e...', '/var/www/sistem...', 437, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 21:52:19 Error: Fatal Error (1): Cannot access empty property in [/var/www/sistema/lib/Cake/Controller/Controller.php, line 437]
+2015-08-21 21:52:19 Error: [FatalErrorException] Cannot access empty property
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Cannot access e...', '/var/www/sistem...', 437)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot access e...', '/var/www/sistem...', 437, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot access e...', '/var/www/sistem...', 437, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 21:53:01 Error: Fatal Error (1): Cannot access empty property in [/var/www/sistema/lib/Cake/Controller/Controller.php, line 437]
+2015-08-21 21:53:01 Error: [FatalErrorException] Cannot access empty property
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Cannot access e...', '/var/www/sistem...', 437)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot access e...', '/var/www/sistem...', 437, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot access e...', '/var/www/sistem...', 437, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 21:57:15 Error: Fatal Error (1): Cannot access empty property in [/var/www/sistema/lib/Cake/Controller/Controller.php, line 437]
+2015-08-21 21:57:15 Error: [FatalErrorException] Cannot access empty property
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Cannot access e...', '/var/www/sistem...', 437)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot access e...', '/var/www/sistem...', 437, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot access e...', '/var/www/sistem...', 437, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 22:00:21 Error: Fatal Error (4): syntax error, unexpected ',' in [/var/www/sistema/app/Controller/AppController.php, line 68]
+2015-08-21 22:00:21 Error: [FatalErrorException] syntax error, unexpected ','
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 68)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 68, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 68, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 22:03:29 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 9]
+2015-08-21 22:03:29 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 22:03:39 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 9]
+2015-08-21 22:03:39 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 22:04:16 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 9]
+2015-08-21 22:04:16 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 22:05:02 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 9]
+2015-08-21 22:05:02 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 22:06:14 Error: Fatal Error (4): syntax error, unexpected '$cuatri' (T_VARIABLE), expecting function (T_FUNCTION) in [/var/www/sistema/app/Controller/UsersController.php, line 9]
+2015-08-21 22:06:14 Error: [FatalErrorException] syntax error, unexpected '$cuatri' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 22:06:16 Error: Fatal Error (4): syntax error, unexpected '$cuatri' (T_VARIABLE), expecting function (T_FUNCTION) in [/var/www/sistema/app/Controller/UsersController.php, line 9]
+2015-08-21 22:06:16 Error: [FatalErrorException] syntax error, unexpected '$cuatri' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 22:06:17 Error: Fatal Error (4): syntax error, unexpected '$cuatri' (T_VARIABLE), expecting function (T_FUNCTION) in [/var/www/sistema/app/Controller/UsersController.php, line 9]
+2015-08-21 22:06:17 Error: [FatalErrorException] syntax error, unexpected '$cuatri' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 22:06:30 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 9]
+2015-08-21 22:06:30 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 22:11:18 Error: Fatal Error (4): syntax error, unexpected 'var' (T_VAR) in [/var/www/sistema/app/Controller/AppController.php, line 64]
+2015-08-21 22:11:18 Error: [FatalErrorException] syntax error, unexpected 'var' (T_VAR)
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 64)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 64, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 64, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 22:11:39 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/sistema/app/Controller/AppController.php, line 67]
+2015-08-21 22:11:39 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 67)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 67, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 67, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 22:45:40 Error: Fatal Error (4): syntax error, unexpected ')' in [/var/www/sistema/app/Controller/UsersController.php, line 294]
+2015-08-21 22:45:40 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 294)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 294, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 294, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 22:48:27 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/var/www/sistema/app/Controller/UsersController.php, line 311]
+2015-08-21 22:48:27 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 311)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 311, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 311, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 22:51:46 Error: Fatal Error (4): syntax error, unexpected ''teacher_id'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/var/www/sistema/app/Controller/UsersController.php, line 315]
+2015-08-21 22:51:46 Error: [FatalErrorException] syntax error, unexpected ''teacher_id'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 315)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 315, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 315, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 23:03:24 Error: Fatal Error (4): syntax error, unexpected 'beforeFilter' (T_STRING), expecting variable (T_VARIABLE) in [/var/www/sistema/app/Controller/GoalsController.php, line 9]
+2015-08-21 23:03:24 Error: [FatalErrorException] syntax error, unexpected 'beforeFilter' (T_STRING), expecting variable (T_VARIABLE)
+Request URL: /sistema/goals/add/1/12/2
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 9, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 23:03:57 Error: Fatal Error (4): syntax error, unexpected '*' in [/var/www/sistema/app/Controller/GoalsController.php, line 11]
+2015-08-21 23:03:57 Error: [FatalErrorException] syntax error, unexpected '*'
+Request URL: /sistema/goals/add/1/12/2
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 11)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 11, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 11, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 23:13:15 Error: Fatal Error (4): syntax error, unexpected ',', expecting ')' in [/var/www/sistema/app/View/Users/viewmycourses.ctp, line 36]
+2015-08-21 23:13:15 Error: [FatalErrorException] syntax error, unexpected ',', expecting ')'
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 36)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 36, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 36, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 23:13:30 Error: Fatal Error (4): syntax error, unexpected ',', expecting ')' in [/var/www/sistema/app/View/Users/viewmycourses.ctp, line 41]
+2015-08-21 23:13:30 Error: [FatalErrorException] syntax error, unexpected ',', expecting ')'
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 41)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 41, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 41, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-21 23:13:31 Error: Fatal Error (4): syntax error, unexpected ',', expecting ')' in [/var/www/sistema/app/View/Users/viewmycourses.ctp, line 41]
+2015-08-21 23:13:31 Error: [FatalErrorException] syntax error, unexpected ',', expecting ')'
+Request URL: /sistema/users/viewmycourses/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 41)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 41, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 41, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

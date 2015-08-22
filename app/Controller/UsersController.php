@@ -4,13 +4,15 @@ class UsersController extends AppController {
 
 public $helpers=array('Html','Form','Js');
 public $components=array('Session','RequestHandler','Email');
-public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group','Course','Goal','Obtainedgoal','Usrcareer','CourseModule','Assist','Exam','Semester');
+public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group','Course','Goal','Obtainedgoal','Usrcareer','CourseModule','Assist','Exam','Semester','Teachercourse');
 
+	
 
 public function beforeFilter(){
 	parent::beforeFilter();
 	// $this->Auth->allow('indexcoordinator','indexTeacher','vercalificaciones','materiasporgerarquia','index');
 	$this->Auth->allow();
+	
 	// if ($this->Auth->loggedIn()) {
 	// $this->Auth->deny('login');
 	// }
@@ -287,9 +289,39 @@ public function indexTeacher() {
 
 // proxima  a modificar
 
-public function viewmycourses(){
-$idusuario=$this->Auth->User('id');
-$courses=$this->Course->find('all',array('conditions'=>array('Course.user_id'=>$idusuario)));
+public function viewmycourses($idusuario){	
+// $idusuario=$this->Auth->User('id');
+	$nombreUsuario=
+	$courses=[];
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+
+	$impartiendo=$this->Teachercourse->find('all',array('conditions'=>array('Teachercourse.created BETWEEN ? AND ? '=>array($inicio,$fin),
+		'Teachercourse.user_id'=>$idusuario)));
+	// pr($impartiendo);
+	for($x=0;$x<sizeof($impartiendo);$x++){
+
+		$opcion=$this->Course->find('all',array('conditions'=>array(
+			'Course.id'=>$impartiendo[$x]['Teachercourse']['course_id'])));
+
+		$courses[]['Course']=array(
+			'id'=>$opcion[0]['Course']['id'],
+			'name'=>$opcion[0]['Course']['name'],
+			'semester'=>$opcion[0]['Course']['semester'],
+			'career_id'=>$opcion[0]['Career']['id'],
+			'career_name'=>$opcion[0]['Career']['name'],
+			'grupo_id'=>$impartiendo[$x]['Teachercourse']['grupo_id'],
+			'teacher_id'=>$idusuario
+
+			);
+
+
+	}
+
+// $courses=$this->Course->find('all',array('conditions'=>array('Course.user_id'=>$idusuario)));
+	
+	// $miscursos=$this->Teachercourse->find()
 $this->set(compact('courses'));
 }
 

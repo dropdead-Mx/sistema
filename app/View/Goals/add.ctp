@@ -13,6 +13,9 @@
 			'label'=>false,
 			'type'=>'text')); ?>
 			<?php echo $this->Form->hidden('Goal.0.parcial',array('label'=>false,'value'=>$partial,'class'=>'escondido3'));?>
+			<?php echo $this->Form->hidden('Goal.0.grupo_id',array('label'=>false,'value'=>$grupo,'class'=>'escondido4'));?>
+
+
 		</div>
 
 
@@ -31,7 +34,7 @@
 
 		<tr class="contenido">
 
-		<td><?php echo $this->Form->input('Goal.0.description',array('label'=>false,'class'=>'required')); ?></td>
+		<td><?php echo $this->Form->input('Goal.0.description',array('label'=>false,'class'=>'required capitalGoal')); ?></td>
 		
 
 		<td> <?php echo $partial; ?></td>

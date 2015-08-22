@@ -6,7 +6,10 @@ public $components=array('Session','RequestHandler');
 public $helpers=array('Html','Form','Js');
 public $uses=array('Goal','User','Course','Grupo');
 
-
+public function beforeFilter(){
+	parent::beforeFilter();
+	$this->Auth->allow();
+}
 public function isAuthorized($user){
 
 
@@ -38,7 +41,7 @@ public function index() {
 
 }
 
-public function add($user_id=null,$course_id=null,$partial=null) {
+public function add($user_id=null,$course_id=null,$partial=null,$grupo=null) {
 	$this->Course->id=$course_id;
 	$this->User->id=$user_id;
 	$partial;
@@ -61,7 +64,7 @@ public function add($user_id=null,$course_id=null,$partial=null) {
 	$materia=$this->Course->find('list',array('conditions'=>array('Course.id'=>$course_id)));
 	// $grupos=$this->Grupo->find('list');
 
-	$this->set(compact('user_id','course_id','materia','partial'));
+	$this->set(compact('user_id','course_id','materia','partial','grupo'));
 }
 	
 
