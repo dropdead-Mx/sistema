@@ -1253,7 +1253,7 @@ $(document).on('change','.listaGrupos',function(){
 	numero=parseInt($(this).closest('tr').index()-1);
 	materiaLink=$(document).find('td.linkContainer').eq(numero).attr('data-course');
 	carreraLink=$(document).find('td.linkContainer').eq(numero).attr('data-carrera');
-	$(document).find('a.linkVer,a.linkagrega,a.linkAsigna, br,p.pStatus').remove();
+	$(document).find('a.linkVer,a.linkagrega,a.linkAsigna, br,a.reasignaMat').remove();
 
 	if($(this).val() !== 'txt'){
 	grup=parseInt($(this).val());
