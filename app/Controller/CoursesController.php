@@ -325,6 +325,28 @@ $this->set(compact('grupo','datos','profesores'));
 	
 }
 
+public function reasignarProf($materia_id,$grupo_id){
+	$dat=$this->Teachercourse->find('all',array('conditions'=>array('Teachercourse.course_id'=>$materia_id,'Teachercourse.grupo_id'=>$grupo_id)));
+	// pr($dat);
+	$this->Teachercourse->id=$dat[0]['Teachercourse']['id'];
+	if($this->request->is('GET')):
+		$this->request->data=$this->Teachercourse->read();
+	else:
+		if($this->Teachercourse->save($this->request->data)):
+			$this->Session->setFlash('Maestro reasignado');
+			$this->redirect(array('action'=>'index'));
+			endif;
+		endif;
+	$profesores=$this->User->find('list',array('conditions'=>array('User.group_id'=>7)));
+
+	$materia=$this->Course->Find('all',array('conditions'=>array('Course.id'=>$materia_id)));
+
+
+		$this->set(compact('grupo_id','profesores','materia'));
+
+
+}
+
 public function tieneprof($materia,$grupo){
 	$this->RequestHandler->respondAs('json');
 	$this->layout='ajax';

@@ -1295,7 +1295,8 @@ $(document).on('change','.listaGrupos',function(){
 			// console.log('estatus tiene maestro: '+response)
 			timeout:2000
 			if( parseInt(response) === 1){
-				lnk='<p class="pStatus">Ya tiene profesor asignado </p>';
+				// lnk='<p class="pStatus">Ya tiene profesor asignado </p>';
+				lnk='<a class="reasignaMat" href="/sistema/courses/reasignarProf/'+materiaLink+'/'+grup+'"> Reasignar profesor</a>'
 
 			}else if(parseInt(response) === 0 ){
 				lnk='<a style="display:block" class="linkAsigna" href="/sistema/courses/asignarProfesor/'+materiaLink+'/'+grup+'">Asignar profesor </a>';
