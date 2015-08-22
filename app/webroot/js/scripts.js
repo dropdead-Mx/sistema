@@ -728,7 +728,7 @@ function materiasPorCoordinador(){
 							// if(tiene == "✓" ){
 							// filaFinal= fila+'<td><a href="../vermodulos/'+response[z].Course.id+'">Ver horario</a></td>'+'<td>'+'</td></tr>';
 							// }else {
-							filaFinal=	fila+'<td class="linkContainer" data-course="'+response[z].Course.id+'" data-carrera="'+carrera+'"><a  hidden class="linkGpo" href="../agregarHorario/'+response[z].Course.id+'/'+carrera+'">Agregar Horario</a></td>'+'<td class="checkTieneMod">'+'</td></tr>';
+							filaFinal=	fila+'<td class="linkContainer" data-course="'+response[z].Course.id+'" data-carrera="'+carrera+'"><div class="uno"></div> <div class="dos"></div></td>'+'<td class="checkTieneMod">'+'</td></tr>';
 							// }
 							filas.push(filaFinal);
 							
@@ -1253,7 +1253,7 @@ $(document).on('change','.listaGrupos',function(){
 	numero=parseInt($(this).closest('tr').index()-1);
 	materiaLink=$(document).find('td.linkContainer').eq(numero).attr('data-course');
 	carreraLink=$(document).find('td.linkContainer').eq(numero).attr('data-carrera');
-	$(document).find('a.linkVer,a.linkagrega').remove();
+	$(document).find('a.linkVer,a.linkagrega,a.linkAsigna, br,p.pStatus').remove();
 
 	if($(this).val() !== 'txt'){
 	grup=parseInt($(this).val());
@@ -1265,24 +1265,50 @@ $(document).on('change','.listaGrupos',function(){
 
 			if(response.length >=1 ){
 
-				// $('span.chkMod').text(' ');
+			
 
 				respuesta='<span class="checkSucces">'+response+'</span>';
 				$(document).find('td.checkTieneMod').eq(numero).append(respuesta);
 
 				if(response == "✓" ){
-					link='<a class="linkVer" href="../vermodulos/'+materiaLink+'/'+grup+'">ver horario</a>'
-					$(document).find('td.linkContainer').eq(numero).append(link);
+					link='<a class="linkVer" href="../vermodulos/'+materiaLink+'/'+grup+'">Ver horario</a>'
+					$(document).find('td.linkContainer div.uno').eq(numero).append(link);
 					
 				}else {
 					// link='<a class="linkVer" href="../agregarHorario/'+materiaLink+'/'+grup+'">agregar horario</a>'
-					link='<a class="linkagrega" href="../agregarHorario/'+materiaLink+'/'+carreraLink+'/'+grup+'">agregar horario</a>'
+					link='<a class="linkagrega" href="../agregarHorario/'+materiaLink+'/'+carreraLink+'/'+grup+'">Agregar horario</a>'
 
-					$(document).find('td.linkContainer').eq(numero).append(link);
+					$(document).find('td.linkContainer div.uno').eq(numero).append(link);
 				}
+			
+				
+
 			}
 		}
 	});
+
+	$.ajax({
+		url:'/sistema/courses/tieneprof/'+materiaLink+'/'+grup,
+		type:'GET',
+		success:function(response){
+
+			// console.log('estatus tiene maestro: '+response)
+			timeout:2000
+			if( parseInt(response) === 1){
+				lnk='<p class="pStatus">Ya tiene profesor asignado </p>';
+
+			}else if(parseInt(response) === 0 ){
+				lnk='<a style="display:block" class="linkAsigna" href="/sistema/courses/asignarProfesor/'+materiaLink+'/'+grup+'">Asignar profesor </a>';
+			}
+
+			$(document).find('td.linkContainer div.dos').eq(numero).append(lnk);
+
+		}
+
+	});
+
+
+
 	}else {
 		alert('selecciona un grupo correcto');
 	}

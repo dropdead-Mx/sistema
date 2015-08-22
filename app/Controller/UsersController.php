@@ -285,6 +285,8 @@ public function indexTeacher() {
 
 }
 
+// proxima  a modificar
+
 public function viewmycourses(){
 $idusuario=$this->Auth->User('id');
 $courses=$this->Course->find('all',array('conditions'=>array('Course.user_id'=>$idusuario)));

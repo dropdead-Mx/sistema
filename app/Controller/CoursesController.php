@@ -4,7 +4,7 @@ class CoursesController extends AppController {
 
 	public $helpers=array('Form','Html','Js');
 	public $components=array('Session','RequestHandler');
-	public $uses=array('Course','CourseModule','User','Goal','Usrcareer','Career','Semester','Grupo');
+	public $uses=array('Course','CourseModule','User','Goal','Usrcareer','Career','Semester','Grupo','Teachercourse');
 
 public function beforeFilter(){
 	parent::beforeFilter();
@@ -292,19 +292,55 @@ public function isAuthorized($user){
 
  	}
 
-public function asignarProfesor($materia_id){
+public function asignarProfesor($materia_id,$grupo){
+
 $datos=$this->Course->find('all',array('conditions'=>array(
 		'Course.id'=>$materia_id),
 	'recursive'=>-1));
-$grupos=$this->Grupo->find('list',array('conditions'=>array(
-			'Grupo.period'=>$datos[0]['Course']['semester'],
-			'Grupo.career_id'=>$datos[0]['Course']['career_id'])));
 
 $profesores=$this->User->find('list',array('conditions'=>array('User.group_id'=>7)));
 
-$this->set(compact('grupos','datos','profesores'));
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
 
+if($this->request->is('post')):
+
+	$exist=$this->Teachercourse->find('count',array('conditions'=>array(
+		'Teachercourse.created BETWEEN ? AND ? '=>array($inicio,$fin),
+		'Teachercourse.course_id'=>$this->request->data['Teachercourse']['course_id'],
+		'Teachercourse.grupo_id'=>$this->request->data['Teachercourse']['grupo_id'])));
+	if($exist <= 0){
+
+	if($this->Teachercourse->save($this->request->data)):
+		$this->Session->setFlash('Materia asignada');
+	endif;
+	}else {
+		$this->Session->setFlash('Ya existe un profesor asignado para esta materia');
+		$this->redirect(array('action'=>'index'));
+	}
+endif;
+
+$this->set(compact('grupo','datos','profesores'));
 	
+}
+
+public function tieneprof($materia,$grupo){
+	$this->RequestHandler->respondAs('json');
+	$this->layout='ajax';
+	if($this->request->is('ajax') && $materia !== 0 && $grupo !== 0  ){
+
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+
+	$tieneprofesor=$this->Teachercourse->find('count',array('conditions'=>array(
+		'Teachercourse.created BETWEEN ? AND ? '=>array($inicio,$fin),
+		'Teachercourse.course_id'=>$materia,
+		'Teachercourse.grupo_id'=>$grupo)));
+
+	$this->set(compact('tieneprofesor'));
+	}
 }
 
 public function getgroupsbycourse($materia_id=null){
@@ -326,6 +362,8 @@ $this->set(compact('grupos'));
 
 }
 }
+
+
 
 
 
