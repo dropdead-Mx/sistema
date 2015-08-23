@@ -4,7 +4,7 @@ class UploadtestsController extends AppController {
 	
 	public $helpers=array('Html','Form','Js');
 	public $components=array('Session','RequestHandler');
-	public $uses=array('User','Course','Career','Planning','Usrcareer','Message','Uploadtest','Teachercourse','Semester');
+	public $uses=array('User','Course','Career','Planning','Usrcareer','Message','Uploadtest','Teachercourse','Semester','Grupo');
 
 public function beforeFilter(){
 	parent::beforeFilter();
@@ -84,13 +84,14 @@ public function beforeFilter(){
 
 			$matId=$miscursos[$x]['Teachercourse']['course_id'];
 			$grupo=$miscursos[$x]['Teachercourse']['grupo_id'];
+			$grupoNombre=$this->Grupo->find('all',array('conditions'=>array('Grupo.id'=>$grupo)));
 
 			$datos=$this->Course->find('all',array('conditions'=>array('Course.id'=>$matId),'recursive'=>-1));
 
 			
 				// array_push($options,'value'=>$matId,'name'=>$datos['Course']['name']);
 			$options[]=array(
-				'value'=>$matId,'name'=>$datos[0]['Course']['name'],'data-grupo'=>$grupo
+				'value'=>$matId,'name'=>$datos[0]['Course']['name'],'data-grupo'=>$grupo,'data-gruponame'=>$grupoNombre[0]['Grupo']['name']
 				);
 				
 

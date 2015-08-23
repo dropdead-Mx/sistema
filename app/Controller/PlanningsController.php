@@ -3,7 +3,7 @@ class PlanningsController extends AppController {
 
 	public $helpers=array('Html','Form','Js');
 	public $components=array('Session','RequestHandler');
-	public $uses=array('User','Course','Career','Planning','Usrcareer','Message');
+	public $uses=array('User','Course','Career','Planning','Usrcareer','Message','Semester','Teachercourse','Grupo');
 
 public function beforeFilter(){
 	parent::beforeFilter();
@@ -46,12 +46,40 @@ public  function isAuthorized($user){
 
 	}
 
-	public function subirplaneaciones(){
+	public function subirplaneaciones($maestro){
 
 		// $this->User->id=$user_id
-		$maestro=$this->Auth->User('id');
+		// $maestro=$this->Auth->User('id');
 
-		$materias=$this->Course->find('list',array('conditions'=>array('Course.user_id'=>$maestro),'recursive'=>-1,'fields'=>array('Course.id','Course.name')));
+		// $materias=$this->Course->find('list',array('conditions'=>array('Course.user_id'=>$maestro),'recursive'=>-1,'fields'=>array('Course.id','Course.name')));
+
+		$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+		$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+		$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+		$miscursos=$this->Teachercourse->find('all',array('conditions'=>array(
+			'Teachercourse.created BETWEEN ? AND ? '=>array($inicio,$fin),'Teachercourse.user_id'=>$maestro)));
+		// pr($miscursos);
+
+		for($x=0;$x<sizeof($miscursos);$x++){
+
+			$matId=$miscursos[$x]['Teachercourse']['course_id'];
+			$grupo=$miscursos[$x]['Teachercourse']['grupo_id'];
+
+			$grupoNombre=$this->Grupo->find('all',array('conditions'=>array('Grupo.id'=>$grupo)));
+
+			$datos=$this->Course->find('all',array('conditions'=>array('Course.id'=>$matId),'recursive'=>-1));
+
+			
+				// array_push($options,'value'=>$matId,'name'=>$datos['Course']['name']);
+			$options[]=array(
+				'value'=>$matId,'name'=>$datos[0]['Course']['name'],'data-grupo'=>$grupo,'data-gruponame'=>$grupoNombre[0]['Grupo']['name']
+				);
+				
+
+			
+
+		}
+
 
 		$coordinadores=$this->User->find('list',array('conditions'=>array(
 			'User.group_id'=>6),
@@ -72,7 +100,7 @@ public  function isAuthorized($user){
 
 		}
 
-		$this->set(compact('coordinadores','materias','maestro'));
+		$this->set(compact('coordinadores','options','maestro'));
 
 	}
 

@@ -933,8 +933,8 @@ function getCoordi(){
 		idmateria=parseInt($(this).val());
 		$('.coordiOpcion').remove();
 		grupo=parseInt($(this).find(':selected').attr('data-grupo'));
-		
-		$('#examenUpload').val(grupo);
+		grupoName=$(this).find(':selected').attr('data-gruponame');
+		$('#examenUpload,#planeacionUpload').val(grupo);
 		if(typeof(idmateria) !== ''){
 
 			$.ajax({
@@ -988,7 +988,7 @@ function getCoordi(){
  	// $('input#planeacionDescripcion')
 
 	$('input#planeacionDescripcion').keyup(function(){
-	materia='Planeacion de la materia: '+$('select#materiaPlaneacion option:selected').text();
+	materia='Planeacion de la materia: '+$('select#materiaPlaneacion option:selected').text()+' del grupo: '+grupoName;
 		// alert($("select#materiaPlaneacion option[value='"+idOpcion+"'']").text());
 		console.log(materia);
 		// $(this).val($(this).val().toUpperCase());
@@ -998,7 +998,7 @@ function getCoordi(){
 
 
 	$('input#planeacionDescripcion').focusout(function(){
-	materia='Planeacion de la materia: '+$('select#materiaPlaneacion option:selected').text();
+	materia='Planeacion de la materia: '+$('select#materiaPlaneacion option:selected').text()+'d el grupo: '+grupoName;
 
 		// $(this).val($(this).val().toUpperCase());
 	$('#planeacionAsunto').val(materia);
@@ -1009,7 +1009,7 @@ function getCoordi(){
 	});
 	
 	$('input#planeacionDescripcion').focus(function(){
-	materia='Planeacion de la materia: '+$('select#materiaPlaneacion option:selected').text();
+	materia='Planeacion de la materia: '+$('select#materiaPlaneacion option:selected').text()+' del grupo:'+grupoName;
 
 	$('#planeacionAsunto').val(materia);
 		$('#planeacionTextoMsn').val($(this).val());
@@ -1023,7 +1023,7 @@ function getCoordi(){
 		periodo=$('select#materiaExamen option:selected').val();
 		materia=$('select#materiaExamen option:selected').val();
 		asunto='Examen para imprimir de la materia: '+$('select#materiaExamen option:selected').text();
-		texto='Nuevo examen disponible para descarga de la materia '+$('select#materiaExamen option:selected').text()+', Periodo: '+$('select#parcialExamen option:selected').text();
+		texto='Nuevo examen disponible para descarga de la materia '+$('select#materiaExamen option:selected').text()+', Periodo: '+$('select#parcialExamen option:selected').text()+' del grupo:'+grupoName;
 		console.log(para+' '+periodo+' '+materia+' '+texto);
 		if( para >= 0 && periodo > 0 && materia >=0 ){
 			$('#examenPara').val(para);
