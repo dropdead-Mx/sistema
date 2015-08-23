@@ -932,7 +932,9 @@ function getCoordi(){
 		// $('select#selectCoordi').addAttr('hidden');
 		idmateria=parseInt($(this).val());
 		$('.coordiOpcion').remove();
-
+		grupo=parseInt($(this).find(':selected').attr('data-grupo'));
+		
+		$('#examenUpload').val(grupo);
 		if(typeof(idmateria) !== ''){
 
 			$.ajax({

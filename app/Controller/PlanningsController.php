@@ -5,7 +5,10 @@ class PlanningsController extends AppController {
 	public $components=array('Session','RequestHandler');
 	public $uses=array('User','Course','Career','Planning','Usrcareer','Message');
 
-
+public function beforeFilter(){
+	parent::beforeFilter();
+	$this->Auth->allow();
+}
 
 public  function isAuthorized($user){
 

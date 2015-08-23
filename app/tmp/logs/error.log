@@ -22255,3 +22255,99 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-08-23 11:42:39 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Course.user_id' in 'where clause'
+Request URL: /sistema/uploadtests/subirexamen/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `Course`...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Course`...', Array, Array)
+#3 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1106): DboSource->fetchAll('SELECT `Course`...', false)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3018): DboSource->read(Object(Course), Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2990): Model->_readDataSource('list', Array)
+#6 /var/www/sistema/app/Controller/UploadtestsController.php(74): Model->find('list', Array)
+#7 [internal function]: UploadtestsController->subirexamen('1')
+#8 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UploadtestsController), Array)
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UploadtestsController), Object(CakeRequest))
+#11 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-08-23 11:44:53 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/sistema/app/Controller/UploadtestsController.php, line 75]
+2015-08-23 11:44:53 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /sistema/uploadtests/subirexamen/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/sistem...', 75)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/sistem...', 75, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/sistem...', 75, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-23 11:48:11 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/sistema/app/Controller/UploadtestsController.php, line 75]
+2015-08-23 11:48:11 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /sistema/uploadtests/subirexamen/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/sistem...', 75)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/sistem...', 75, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/sistem...', 75, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-23 14:03:01 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/var/www/sistema/app/Controller/UploadtestsController.php, line 90]
+2015-08-23 14:03:01 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /sistema/uploadtests/subirexamen/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 90)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 90, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 90, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-23 14:11:01 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/sistema/app/Controller/UploadtestsController.php, line 90]
+2015-08-23 14:11:01 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /sistema/uploadtests/subirexamen/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/sistem...', 90)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/sistem...', 90, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/sistem...', 90, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-23 14:11:39 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/sistema/app/Controller/UploadtestsController.php, line 90]
+2015-08-23 14:11:39 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /sistema/uploadtests/subirexamen/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/sistem...', 90)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/sistem...', 90, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/sistem...', 90, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-23 14:21:09 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/var/www/sistema/app/Controller/UploadtestsController.php, line 91]
+2015-08-23 14:21:09 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /sistema/uploadtests/subirexamen/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 91)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 91, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 91, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-23 14:21:58 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/sistema/app/Controller/UploadtestsController.php, line 92]
+2015-08-23 14:21:58 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /sistema/uploadtests/subirexamen/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/sistem...', 92)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/sistem...', 92, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/sistem...', 92, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-23 14:22:06 Error: Fatal Error (4): syntax error, unexpected '}' in [/var/www/sistema/app/Controller/UploadtestsController.php, line 99]
+2015-08-23 14:22:06 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /sistema/uploadtests/subirexamen/1
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 99)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 99, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 99, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

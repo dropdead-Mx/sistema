@@ -3,8 +3,9 @@
 <?php 
 
 echo $this->Form->create('Uploadtest',array('type'=>'file','novalidate'=>'novalidate','id'=>'formSubirExamen'));
-echo $this->Form->input('course_id',array('type'=>'select','options'=>$materias,'id'=>'materiaExamen','empty'=>'--Seleccione una materia--',
+echo $this->Form->select('course_id',$options,array('id'=>'materiaExamen','empty'=>'--Seleccione una materia--',
 	'label'=>'Materia'));
+echo $this->Form->hidden('grupo_id',array('type'=>'text','id'=>'examenUpload'));
 echo $this->Form->input('coordi_id',array('type'=>'select','label'=>'Coordinador','id'=>'selectCoordi','hidden'=>true));
 echo $this->Form->hidden('user_id',array('type'=>'text','value'=>$maestro));
 echo $this->Form->input('partial',array('type'=>'select','options'=>array(

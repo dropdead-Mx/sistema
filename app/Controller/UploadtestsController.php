@@ -4,9 +4,12 @@ class UploadtestsController extends AppController {
 	
 	public $helpers=array('Html','Form','Js');
 	public $components=array('Session','RequestHandler');
-	public $uses=array('User','Course','Career','Planning','Usrcareer','Message','Uploadtest');
+	public $uses=array('User','Course','Career','Planning','Usrcareer','Message','Uploadtest','Teachercourse','Semester');
 
-
+public function beforeFilter(){
+	parent::beforeFilter();
+	$this->Auth->allow();
+}
 	public  function isAuthorized($user){
 
 		 if ($user['group_id']== '7' ){
@@ -61,14 +64,39 @@ class UploadtestsController extends AppController {
 
 	}
 
-	public function subirexamen(){
+	public function subirexamen($maestro){
 
-		$maestro=$this->Auth->User('id');
-		$tipo=$this->Auth->User('group_id');
+		$options=array();
+		// $maestro=$this->Auth->User('id');
+		// $tipo=$this->Auth->User('group_id');
 
-		if($tipo == '7'){
+		// if($tipo == '7'){
 
-		$materias=$this->Course->find('list',array('conditions'=>array('Course.user_id'=>$maestro),'recursive'=>-1,'fields'=>array('Course.id','Course.name')));
+		// $materias=$this->Course->find('list',array('conditions'=>array('Course.user_id'=>$maestro),'recursive'=>-1,'fields'=>array('Course.id','Course.name')));
+		$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+		$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+		$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+		$miscursos=$this->Teachercourse->find('all',array('conditions'=>array(
+			'Teachercourse.created BETWEEN ? AND ? '=>array($inicio,$fin),'Teachercourse.user_id'=>$maestro)));
+		// pr($miscursos);
+
+		for($x=0;$x<sizeof($miscursos);$x++){
+
+			$matId=$miscursos[$x]['Teachercourse']['course_id'];
+			$grupo=$miscursos[$x]['Teachercourse']['grupo_id'];
+
+			$datos=$this->Course->find('all',array('conditions'=>array('Course.id'=>$matId),'recursive'=>-1));
+
+			
+				// array_push($options,'value'=>$matId,'name'=>$datos['Course']['name']);
+			$options[]=array(
+				'value'=>$matId,'name'=>$datos[0]['Course']['name'],'data-grupo'=>$grupo
+				);
+				
+
+			
+
+		}
 
 		$coordinadores=$this->User->find('list',array('conditions'=>array(
 			'User.group_id'=>6),
@@ -90,9 +118,9 @@ class UploadtestsController extends AppController {
 			}
 
 		}
-
-		$this->set(compact('coordinadores','materias','maestro'));
-		}
+		// pr($materias);
+		$this->set(compact('coordinadores','options','maestro'));
+		// }
 
 
 	}
