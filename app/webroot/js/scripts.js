@@ -468,7 +468,9 @@ function matxCuatyCarr(){
 
 	$('select#cuatrimestre,select#infocalif,select#indexPlaning,select#carreraCoordi,select#indexUploadExam').on('change',function(){
 	$('select#materiasporcarrera,select#apendCoursePlanning,select#apendExam ').children('option.opcion').remove();
-	
+	$('option.optionUpl').remove();
+	$('select#appendGrupo').attr('disabled',true);
+	$('select#appendGrupo option[value="txt"]').text('--Sin grupos disponibles--');
 	carrera = $('select#infocalif option:selected,select#carreraCoordi option:selected,select.carreraSetExams').val();
 	cuatri= $('select#cuatrimestre option:selected,select#indexPlaning option:selected,select#indexUploadExam option:selected, select.selectCuatri option:selected').val();
 	materias=[];
@@ -511,7 +513,7 @@ function matxCuatyCarr(){
 			}else {
 				// alert('No se encontraron materias para esta carrera y semestre');
 				$('select#materiasporcarrera option[class="noMaterias"],select#apendCoursePlanning option[value="txt"],select#apendExam option[value="txt"]').text('--Sin materias disponibles--');
-
+				
 				$('select#apendCoursePlanning,select#parcialUploadTest,select#apendExam ').attr('disabled',true);
 				btn=$('button#buscaPlaneacion').is(':visible');
 				// if(btn === true ){
@@ -1128,18 +1130,24 @@ function addUploadTest(){
 	$('select#parcialUploadTest,select#apendExam').on('change',function(){
 		materia=$('select#apendExam option:selected').val();
 		materiaNombre=$('select#apendExam option:selected').text();
-		$('tr.filaExamen').remove();
+		grupoId=$('select#appendGrupo option:selected').attr('val');
+
+		$('tr.filaExamen,option.opcionesGp').remove();
+		
 
 		parcial=$('select#parcialUploadTest option:selected').val();
 		examenesDescarga=[];
-		if(materia !== 'txt' && parcial !== 'txt'){
+		if(materia !== 'txt' && parcial !== 'txt' && grupoId !== 'txt'){
 			$('table#tablaDeExamenes').fadeOut('slow');
+			// console.log(grupoId);
+			// console.log(materia);
+			// console.log(parcial);
 
 		$.ajax({
 		type:'GET',
-		url:'/sistema/uploadtests/getexams/'+materia+'/'+parcial,
+		url:'/sistema/uploadtests/getexams/'+materia+'/'+parcial+'/'+grupoId,
 		success:function(response){
-			// console.info(response);
+			console.info(response);
 
 			if(typeof(response) !== 'undefined' && response.length >=1 ){
 
@@ -1161,13 +1169,45 @@ function addUploadTest(){
 			 else if(response.length <=0){
 					// alert('No se encontraron examenes para descarga');
 				}
+
+				
 		}
 	});
+
+			// ajax para los grupos
+		
+
 		}
-	})
+	});
 	
 
+	$('select#apendExam').on('change',function(){
+			materia2=$('select#apendExam option:selected').val();
+			opcionesGp=[];
+			$('option.optionUpl').remove()
+			$.ajax({
+					type:'GET',
+					url:'/sistema/courses/getgroupsbycourse/'+materia2,
+					success:function(response){
+						// console.log(response);
 
+						if(response.length >=1){
+							for(w=0,n=response.length;w<n;w++){
+
+								opcion='<option class="optionUpl" val="'+response[w].Grupo.id+'">'+response[w].Grupo.name+'</opcion>';
+								opcionesGp.push(opcion);
+							}
+
+							$('select#appendGrupo').append(opcionesGp);
+							$('select#appendGrupo').attr('disabled',false);
+							$('select#appendGrupo option[value="txt"]').text('--Grupos disponibles--');
+						} else if(response.length >=0){
+							$('select#appendGrupo').attr('disabled',true);
+							$('select#appendGrupo option[value="txt"]').text('--Sin grupos disponibles--');
+						}
+					}
+				});
+			});
 
 }
 

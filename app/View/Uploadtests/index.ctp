@@ -16,21 +16,26 @@
 <select id="indexUploadExam">
 	
 	<option value="txt">Selecciona un cuatrimestre</option>
-	<option value="1">1ro</option>
-	<option value="2">2do</option>
-	<option value="3">3ro</option>
-	<option value="4">4to</option>
-	<option value="5">5to</option>
-	<option value="6">6to</option>
-	<option value="7">7mo</option>
-	<option value="8">8vo</option>
-	<option value="9">9no</option>
-	<option value="10">10mo</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
 
 </select>
 
 <select id="apendExam"disabled>
 	<option value="txt" >--Sin materias disponibles--</option>
+</select>
+
+<select  id="appendGrupo" disabled>
+	<option value="txt" >--Sin grupos disponibles--</option>
+	
 </select>
 
 <select id="parcialUploadTest" disabled>

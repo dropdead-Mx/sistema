@@ -41,11 +41,11 @@ public function beforeFilter(){
 	return parent::isAuthorized($user);
 }
 
-	public function index(){
+	public function index($user_id){
 
-		$user_id=$this->Auth->User('id');
-		$tipo=$this->Auth->User('group_id');
-		if($tipo == '6'){
+		// $user_id=$this->Auth->User('id');
+		// $tipo=$this->Auth->User('group_id');
+		// if($tipo == '6'){
 
 		$carreras=[];
 
@@ -60,7 +60,7 @@ public function beforeFilter(){
 		}
 
 		$this->set(compact('carreras','user_id'));
-		}
+		// }
 
 	}
 
@@ -126,12 +126,17 @@ public function beforeFilter(){
 
 	}
 
-	public function getexams($course_id,$partial){
+	public function getexams($course_id,$partial,$grupo){
 		$this->RequestHandler->respondAs('json');
 		$this->layout='ajax';
-		$examenes=$this->Uploadtest->find('all',array('conditions'=>array(
+		$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+		$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+		$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+		
+		$examenes=$this->Uploadtest->find('all',array('conditions'=>array('Uploadtest.created BETWEEN ? AND ? '=>array($inicio,$fin),
 			'Uploadtest.course_id'=>$course_id,
-			'Uploadtest.partial'=>$partial),
+			'Uploadtest.partial'=>$partial,
+			'Uploadtest.grupo_id'=>$grupo),
 		'fields'=>array(
 			'Uploadtest.id','Uploadtest.created','Uploadtest.partial','Uploadtest.examen','User.name','User.apat','User.amat')));
 
