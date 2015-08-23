@@ -1058,7 +1058,7 @@ function getCoordi(){
 
 function addPlannings(){
 
-	$('select#apendCoursePlanning').on('change',function() {
+	$('select#apendCoursePlanning,#gruposPlanning').on('change',function() {
 
 		
 		$('tr.filaPlaneacion').remove();
@@ -1067,22 +1067,23 @@ function addPlannings(){
 		cuatri=$('select#indexPlaning option:selected').val();
 		materia=$('select#apendCoursePlanning option:selected').val();
 		ident=$('table#tablaDePlaneaciones').attr('data-identifier');
-
+		grupo=$('select#gruposPlanning option:selected').attr('val');
 		planeaciones=[];
 
-		if(carrera !== 'txt' && cuatri !== 'txt' && materia !== 'txt' ){
+		if(carrera !== 'txt' && cuatri !== 'txt' && materia !== 'txt' && grupo !== 'txt'){
 			$('table#tablaDePlaneaciones').fadeOut('slow');
-		
+			// console.log(grupo);
+
 
 			$.ajax({
 
 				type:'get',
-				url:'../verplaneaciones/'+ident+'/'+materia,
+				url:'../verplaneaciones/'+ident+'/'+materia+'/'+grupo,
 				success:function(response){
 
 
 
-					console.info(response);
+					console.log(response);
 					if(typeof(response) !== 'undefined' && response.length >= 1){
 
 
@@ -1116,11 +1117,40 @@ function addPlannings(){
 
 		}else {
 
-			alert('verifica bien las opciones para realizar la busqueda');
+			// alert('verifica bien las opciones para realizar la busqueda');
 		}
 
 
 	});	
+
+ 		$('select#apendCoursePlanning').on('change',function(){
+			materia2=$('select#apendCoursePlanning option:selected').val();
+			opcionesGp=[];
+			$('option.optionUplP').remove()
+			$.ajax({
+					type:'GET',
+					url:'/sistema/courses/getgroupsbycourse/'+materia2,
+					success:function(response){
+						// console.log(response);
+
+						if(response.length >=1){
+							for(w=0,n=response.length;w<n;w++){
+
+								opcion='<option class="optionUplP" val="'+response[w].Grupo.id+'">'+response[w].Grupo.name+'</opcion>';
+								opcionesGp.push(opcion);
+							}
+
+							$('select#gruposPlanning').append(opcionesGp);
+							$('select#gruposPlanning').attr('disabled',false);
+							$('select#gruposPlanning option[value="txt"]').text('--Grupos disponibles--');
+						} else if(response.length >=0){
+							$('select#gruposPlanning').attr('disabled',true);
+							$('select#gruposPlanning option[value="txt"]').text('--Sin grupos disponibles--');
+						}
+					}
+				});
+			});
+
 
 }
 function addUploadTest(){

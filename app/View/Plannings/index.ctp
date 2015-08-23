@@ -34,6 +34,10 @@
 	<option value="txt" >--Sin materias disponibles--</option>
 </select>
 
+<select id="gruposPlanning" disabled>
+	<option value="txt">--Sin grupos--</option>
+</select>
+
 <!-- <button id="buscaPlaneacion" hidden >Buscar</button> -->
 
 

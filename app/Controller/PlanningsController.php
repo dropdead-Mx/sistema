@@ -176,16 +176,18 @@ public  function isAuthorized($user){
 
 	}
 
-	public function verplaneaciones($user_id,$course_id){
+	public function verplaneaciones($user_id,$course_id,$grupo){
 		$this->RequestHandler->respondAs('json');
 		$this->layout='ajax';
 		$planeaciones=[];
 		$usr='';
-
+		$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+		$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+		$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
 
 		// **AGREGAR CONDICION PARA QUE MUESTRE LAS PLANEACIONES DENTRO DEL CUATRIMESTRE ACTUAL
-		$planeacion=$this->Planning->find('all', array('conditions'=>array('Planning.coordi_id'=>$user_id,
-			'Planning.course_id'=>$course_id),
+		$planeacion=$this->Planning->find('all', array('conditions'=>array('Planning.created BETWEEN ? AND ? '=>array($inicio,$fin),'Planning.coordi_id'=>$user_id,
+			'Planning.course_id'=>$course_id,'Planning.grupo_id'=>$grupo),
 			'recursive'=>1,
 			'fields'=>array(
 				'Planning.id','Planning.description','Planning.planeacion','Planning.created','User.name','User.apat','User.amat')));
