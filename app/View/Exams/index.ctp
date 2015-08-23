@@ -11,6 +11,7 @@ echo $this->Html->script('scripts');
 			<th>Carrera</th>
 			<th>Cuatrimestre</th>
 			<th>Materia</th>
+			<th>Grupo</th>
 			<th>Crear fechas de examen</th>
 		</tr>
  <?php  
@@ -30,21 +31,26 @@ echo $this->Html->script('scripts');
 			<td>
 				<select name="cuatimestres" class="selectCuatri">
 					<option value='txt'>--Selecciona el Cuatrimestre</option>
-					<option value="1">1er cuatri</option>
-					<option value="2">2do cuatri</option>
-					<option value="3">3er cuatri </option>
-					<option value="4">4to cuatri </option>
-					<option value="5">5to cuatri </option>
-					<option value="6">6to cuatri </option>
-					<option value="7">7mo cuatri </option>
-					<option value="8">8vo cuatri </option>
-					<option value="9">9no cuatri </option>
-					<option value="10">10mo cuatri </option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
 				</select>
 			</td>
 			<td>
 				<select  class="materiasExamen"  disabled>
 					<option value='txt'>--Sin materias disponibles--</option>
+				</select>
+			</td>
+			<td>
+				<select class="gruposExamen" disabled>
+					<option value="txt">--Sin grupos--</option>
 				</select>
 			</td>
 

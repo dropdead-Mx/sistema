@@ -452,7 +452,7 @@ function delimitaHrs(){
 
 
 		enteros = $(this).text().match(/\d0/);
-		console.log(enteros);
+		// console.log(enteros);
 		if(enteros == null && $(this).text() != '--'){
 			
 			$(this).remove();
@@ -1174,7 +1174,10 @@ function asignarFechDeExamen(){
 	$('select.selectCuatri').on('change',function(){
 
 		numero=parseInt($(this).closest('tr').index()-1);
-		$('option.opcion').remove();
+		$('option.opcion ,option.gruposXCarrera,a.enlaceRegistro').remove();
+		$('select.gruposExamen option[value="txt"]').attr('selected',true);
+		$('select.gruposExamen').attr('disabled',true);
+
 		carrera=parseInt($('p.carreraSetExams').eq(numero).attr('data-id'));
 		cuatri=$(this).val();
 		materias=[];
@@ -1185,7 +1188,7 @@ function asignarFechDeExamen(){
 				type:'GET',
 				url:'/sistema/users/materiasporgerarquia/'+carrera+'/'+cuatri,
 				success:function(response){
-					console.info(response);
+					
 					if(typeof(response) !== 'undefined' && response.length >=1 ){
 
 						for(x=0,num=response.length ;x<num;x++){
@@ -1200,6 +1203,8 @@ function asignarFechDeExamen(){
 
 					}else if(response.length <=0 ){
 						$('select.materiasExamen').eq(numero).children('option[value="txt"]').text('--Sin materias disponibles--');
+						$('select.materiasExamen').children('option[value="txt"]').text('--Sin materias disponibles--');
+						$('select.materiasExamen').attr('disabled',true);
 						$('select.materiasExamen').eq(numero).attr('disabled',true);
 						// $('select.selectCuatri option[value="txt"]').attr('selected',true);
 
@@ -1216,21 +1221,67 @@ function asignarFechDeExamen(){
 
  	$('select.materiasExamen').on('change',function(){
 		$('select.selectCuatri option[value="txt"]').attr('selected',true);
-		materiaExamen=$('select.materiasExamen').eq(numero).children('option:selected').val();
 		numero=parseInt($(this).closest('tr').index()-1);
+		grupos=[];
+		materiaExamen=$('select.materiasExamen').eq(numero).children('option:selected').val();
 		usrId=$('span.userId').attr('data-id'),
-		$('a.enlaceRegistro,p.mensaje').remove();
+
+		$('a.enlaceRegistro,p.mensaje,option.gruposXCarrera').remove();
 
 		$.ajax({
 			type:'GET',
-			url:'/sistema/exams/verify/'+materiaExamen,
+			url:'/sistema/courses/getgroupsbycourse/'+materiaExamen,
+			success:function(response){
+
+
+				if(typeof(response) !== 'undefined'&& response.length >=1 ){
+
+				
+
+					for( x=0 ,num=response.length; x < num; x++){
+						option='<option class="gruposXCarrera" value="'+response[x].Grupo.id+'">'+response[x].Grupo.name+'</option>';
+				
+						grupos.push(option);
+					}
+					$('select.gruposExamen').eq(numero).append(grupos);
+					// $('select.gruposExamen option[value="txt"]').eq(numero).attr('selected',true);
+					$('select.gruposExamen option[value="txt"]').eq(numero).text('--Grupos disponibles--');
+					$('select.gruposExamen').eq(numero).removeAttr('disabled');
+				}else {
+					$('select.gruposExamen option[value="txt"]').attr('selected',true);
+					$('select.gruposExamen').attr('disabled',true);
+					$('select.gruposExamen option[value="txt"]').text('sin grupos');
+
+				}
+			}
+		});
+
+
+	
+
+		$('select.gruposExamen').eq(numero).on('change',function(){
+		$('a.enlaceRegistro,p.mensaje').remove();
+		grupo=$('select.gruposExamen').eq(numero).children('option:selected').val();
+
+			if(grupo ==='txt'){
+
+			}else {
+
+
+			$.ajax({
+			type:'GET',
+			url:'/sistema/exams/verify/'+materiaExamen+'/'+grupo,
 			success:function(response){
 
 				if(typeof(response) !== 'undefined' && response == 'noExiste'){
 					// alert('no existe');
-					link='<a class="enlaceRegistro" href="/sistema/exams/add/'+materiaExamen+'/'+usrId+'">Registrar Examenes</a>';
+				$('a.enlaceRegistro,p.mensaje').remove();
+
+					link='<a class="enlaceRegistro" href="/sistema/exams/add/'+materiaExamen+'/'+usrId+'/'+grupo+'">Registrar Examenes</a>';
 					$('td.link').eq(numero).append(link);
 				}else {
+				$('a.enlaceRegistro,p.mensaje').remove();
+					
 					// agregar funcion editar fechas en controller si es que se cambian si no ps sudorr...:v
 
 					$('td.link').eq(numero).append('<p class="mensaje">Fechas ya registradas</p>');
@@ -1238,7 +1289,15 @@ function asignarFechDeExamen(){
 				}
 			}
 		});
+				
+			}
+
+		});
+
 		
+		
+		
+
 
 
  	});
