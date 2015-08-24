@@ -279,7 +279,7 @@ CREATE TABLE `goals` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -288,7 +288,7 @@ CREATE TABLE `goals` (
 
 LOCK TABLES `goals` WRITE;
 /*!40000 ALTER TABLE `goals` DISABLE KEYS */;
-INSERT INTO `goals` VALUES (1,'Lecturas',1,10,0,1,30,'2015-05-21 22:57:36','2015-05-21 22:57:36'),(2,'Tareas',1,10,0,1,20,'2015-05-21 22:57:36','2015-05-21 22:57:36'),(3,'Asistencias',1,10,0,1,10,'2015-05-21 22:57:36','2015-05-21 22:57:36'),(4,'Examen',1,10,0,1,40,'2015-05-21 22:57:36','2015-05-21 22:57:36'),(5,'Investigaciones',1,12,0,1,30,'2015-05-21 22:58:45','2015-05-21 22:58:45'),(6,'Asistencias',1,12,0,1,10,'2015-05-21 22:58:45','2015-05-21 22:58:45'),(7,'Examen',1,12,0,1,30,'2015-05-21 22:58:45','2015-05-21 22:58:45'),(8,'participaciones',1,12,0,1,30,'2015-05-21 22:58:45','2015-05-21 22:58:45'),(9,'EXAMEN ',1,12,38,2,30,'2015-08-21 23:33:45','2015-08-21 23:33:45'),(10,'TAREAS',1,12,38,2,30,'2015-08-21 23:33:45','2015-08-21 23:33:45'),(11,'INVESTIGACIONES',1,12,38,2,20,'2015-08-21 23:33:45','2015-08-21 23:33:45'),(12,'PRACTICAS',1,12,38,2,10,'2015-08-21 23:33:45','2015-08-21 23:33:45'),(13,'ASISTENCIAS',1,12,38,2,10,'2015-08-21 23:33:45','2015-08-21 23:33:45'),(14,'EXAMEN',69,12,42,3,90,'2015-08-22 00:13:02','2015-08-22 00:13:02'),(15,'ASISTENCIAS',69,12,42,3,10,'2015-08-22 00:13:02','2015-08-22 00:13:02'),(16,'EXAMEN',1,12,38,1,40,'2015-08-22 13:24:17','2015-08-22 13:24:17'),(17,'ASISTENCIAS',1,12,38,1,10,'2015-08-22 13:24:17','2015-08-22 13:24:17'),(18,'TAREAS',1,12,38,1,30,'2015-08-22 13:24:17','2015-08-22 13:24:17'),(19,'PRACTICAS',1,12,38,1,20,'2015-08-22 13:24:17','2015-08-22 13:24:17');
+INSERT INTO `goals` VALUES (1,'EXAMEN',1,12,38,1,50,'2015-08-23 23:40:28','2015-08-23 23:40:28'),(2,'ASISTENCIAS',1,12,38,1,10,'2015-08-23 23:40:28','2015-08-23 23:40:28'),(3,'TAREAS',1,12,38,1,20,'2015-08-23 23:40:28','2015-08-23 23:40:28'),(4,'PARTICIPACIONES',1,12,38,1,20,'2015-08-23 23:40:28','2015-08-23 23:40:28');
 /*!40000 ALTER TABLE `goals` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -360,7 +360,7 @@ CREATE TABLE `messages` (
   `hora` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` int(2) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -369,7 +369,7 @@ CREATE TABLE `messages` (
 
 LOCK TABLES `messages` WRITE;
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
-INSERT INTO `messages` VALUES (1,1,62,'Planeacion de la materia: EcologÃ­a y Ambiente','planeacion 2 beta','2015-08-16 02:32:37',1),(2,1,62,'Planeacion de la materia: MicrobiologÃ­a de Alimentos','planeacion microbiologia','2015-08-16 02:55:04',1),(3,1,62,'Examen para imprimir de la materia: TeorÃ­a y GeografÃ­a TurÃ­stic','Nuevo examen disponible para descarga de la materia TeorÃ­a y GeografÃ­a TurÃ­stic, Periodo: Primer parcial','2015-08-16 03:04:32',1);
+INSERT INTO `messages` VALUES (1,1,62,'Examen para imprimir de la materia: MicrobiologÃ­a de Alimentos','Nuevo examen disponible para descarga de la materia MicrobiologÃ­a de Alimentos, Periodo: Primer parcial del grupo:1 A','2015-08-23 20:58:34',1),(2,1,62,'Planeacion de la materia: MicrobiologÃ­a de Alimentosd el grupo: 1 A','planeacion semana 1','2015-08-23 21:30:03',1);
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -441,13 +441,14 @@ CREATE TABLE `plannings` (
   `user_id` int(11) NOT NULL,
   `career_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL,
+  `grupo_id` int(11) NOT NULL,
   `description` varchar(255) NOT NULL,
   `planeacion` varchar(255) NOT NULL,
   `planeacion_dir` varchar(255) NOT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -456,7 +457,7 @@ CREATE TABLE `plannings` (
 
 LOCK TABLES `plannings` WRITE;
 /*!40000 ALTER TABLE `plannings` DISABLE KEYS */;
-INSERT INTO `plannings` VALUES (1,62,1,19,22,'planeacion 2 beta','planeacionxD.rar','1','2015-08-15 21:32:37','2015-08-15 21:32:37'),(2,62,1,19,12,'planeacion microbiologia','PanelFinder_CSharp.rar','2','2015-08-15 21:55:04','2015-08-15 21:55:04');
+INSERT INTO `plannings` VALUES (1,62,1,19,12,38,'planeacion semana 1','icomoon.zip','1','2015-08-23 16:30:03','2015-08-23 16:30:03');
 /*!40000 ALTER TABLE `plannings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -580,13 +581,14 @@ CREATE TABLE `uploadtests` (
   `coordi_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL,
+  `grupo_id` int(11) NOT NULL,
   `partial` int(11) NOT NULL,
   `examen` varchar(255) NOT NULL,
   `examen_dir` varchar(255) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `modified` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -595,7 +597,7 @@ CREATE TABLE `uploadtests` (
 
 LOCK TABLES `uploadtests` WRITE;
 /*!40000 ALTER TABLE `uploadtests` DISABLE KEYS */;
-INSERT INTO `uploadtests` VALUES (1,62,1,15,1,'Formato de EvaluaciÃ³n (plan 2010).docx','1','2015-08-02 21:51:04','2015-08-02 21:51:04'),(2,62,1,10,1,'Guia del reporte de residencias.doc','2','2015-08-16 03:04:32','2015-08-16 03:04:32');
+INSERT INTO `uploadtests` VALUES (1,62,1,12,38,1,'MySQLypostgresql.doc','1','2015-08-23 20:58:34','2015-08-23 20:58:34');
 /*!40000 ALTER TABLE `uploadtests` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -686,4 +688,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-08-22 19:16:03
+-- Dump completed on 2015-08-24  0:44:55
