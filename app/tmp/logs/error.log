@@ -22455,3 +22455,31 @@ Request URL: /sistema/home
 Stack Trace:
 #0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-08-24 17:45:20 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/files/employee_profile/foto/29/thumb_D%3A.jpg
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-24 17:46:41 Error: [MissingHelperException] Helper class AuthHelper could not be found.
+Exception Attributes: array (
+  'class' => 'AuthHelper',
+  'plugin' => false,
+)
+Request URL: /sistema/users
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Auth')
+#1 /var/www/sistema/lib/Cake/View/View.php(848): HelperCollection->__isset('Auth')
+#2 /var/www/sistema/app/View/Layouts/default.ctp(50): View->__get('Auth')
+#3 /var/www/sistema/lib/Cake/View/View.php(961): include('/var/www/sistem...')
+#4 /var/www/sistema/lib/Cake/View/View.php(923): View->_evaluate('/var/www/sistem...', Array)
+#5 /var/www/sistema/lib/Cake/View/View.php(546): View->_render('/var/www/sistem...')
+#6 /var/www/sistema/lib/Cake/View/View.php(481): View->renderLayout('', 'default')
+#7 /var/www/sistema/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#8 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#10 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}

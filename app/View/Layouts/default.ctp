@@ -46,7 +46,16 @@ $cakeVersion = __d('universidad_dorados', 'CakePHP %s', Configure::version())
 
 			<?php echo $this->Session->flash(); ?>
 
-			<?php echo $this->fetch('content'); ?>
+			<?php echo $this->fetch('content'); 
+			$tipo= $current_user['group_id'];
+			if($tipo == 8){
+
+			echo $this->element('texto');
+			}else if($tipo == 7){
+			echo $this->element('lista');
+
+			}
+			?>
 		</div>
 		<div id="footer">
 		
