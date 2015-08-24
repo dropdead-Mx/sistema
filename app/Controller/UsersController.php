@@ -749,22 +749,31 @@ public function horario($id){
 public function getassists($materia_id,$usuario){
 	$this->RequestHandler->respondAs('json');
 	$this->layout='ajax';
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+		$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+		$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
 
 	if($materia_id !== '' && $usuario !== '' && $this->request->is('ajax')){
 	// usuario auth id 
+	$exdata=$this->StudentProfile->find('all',array('conditions'=>array(
+		'StudentProfile.user_id'=>$usuario),
+		'recursive'=>-1));
+
 	$examenes=$this->Exam->find('all',array('conditions'=>array(
+			'Exam.created BETWEEN ? AND ?'=>array($inicio,$fin),
+			'Exam.grupo_id'=>$exdata[0]['StudentProfile']['user_id'],
 			'Exam.course_id'=>$materia_id),
 			'fields'=>array(
 				'Exam.course_id','Exam.partial','Exam.fecha')));
 	$diasDeClase=$this->CourseModule->find('all',array('conditions'=>array(
-			'CourseModule.course_id'=>$materia_id),
+			'CourseModule.created BETWEEN ? AND ?'=>array($inicio,$fin),
+			'CourseModule.course_id'=>$materia_id,
+			'CourseModule.grupo_id'=>$exdata[0]['StudentProfile']['grupo_id']),
 			'fields'=>array('CourseModule.course_id','CourseModule.day'),
 			'recursive'=>-1));
 
 
-		$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
-		$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
-		$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+		
 	
 
 	
@@ -971,12 +980,14 @@ foreach ($periodosParcial as $z => $periodo):
 		$finPar=$totalAssist['fin_parcial'];
 		$asistenciaF=$this->Assist->find('count',array('conditions'=>array('Assist.date_assist BETWEEN ? AND ? '=>array($inicioPar,$finPar),
 			'Assist.course_id'=>$materia_id,
+			'Assist.grupo_id'=>$exdata[0]['StudentProfile']['grupo_id'],
 			'Assist.user_id'=>$usuario,
 			'Assist.status'=>1
 			),
 			'recursive'=>-1));
 		$retardoF=$this->Assist->find('count',array('conditions'=>array('Assist.date_assist BETWEEN ? AND ? '=>array($inicioPar,$finPar),
 			'Assist.course_id'=>$materia_id,
+			'Assist.grupo_id'=>$exdata[0]['StudentProfile']['grupo_id'],
 			'Assist.user_id'=>$usuario,
 			'Assist.status'=>2
 			),
@@ -984,6 +995,7 @@ foreach ($periodosParcial as $z => $periodo):
 
 		$faltaF=$this->Assist->find('count',array('conditions'=>array('Assist.date_assist BETWEEN ? AND ? '=>array($inicioPar,$finPar),
 			'Assist.course_id'=>$materia_id,
+			'Assist.grupo_id'=>$exdata[0]['StudentProfile']['grupo_id'],
 			'Assist.user_id'=>$usuario,
 			'Assist.status'=>3
 			),
