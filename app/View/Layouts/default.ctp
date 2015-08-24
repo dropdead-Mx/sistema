@@ -44,7 +44,7 @@ $cakeVersion = __d('universidad_dorados', 'CakePHP %s', Configure::version())
 		</div>
 		<div id="content">
 
-			<?php echo $this->Session->flash(); ?>
+			
 
 			<?php echo $this->fetch('content'); 
 			$tipo= $current_user['group_id'];
@@ -56,6 +56,12 @@ $cakeVersion = __d('universidad_dorados', 'CakePHP %s', Configure::version())
 
 			}
 			?>
+
+		<!-- linea para pintar errores en cake  -->
+		<div class="errores">
+			
+		<?php echo $this->Session->flash(); ?>
+		</div>
 		</div>
 		<div id="footer">
 		

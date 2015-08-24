@@ -61,7 +61,7 @@ public function isAuthorized($user){
 public function login(){
 
 	if ($this->Auth->loggedIn()) { 
-		$this->Session->setFlash('ya te encuentras logueado');
+		$this->Session->setFlash('ya te encuentras logueado','default',array('class'=>'mensajeError'));
 		$this->redirect(array('action'=>'index'));
 
 	} else {
@@ -76,7 +76,7 @@ public function login(){
 	
 			}
 			// debug($this->Auth->login());
-			$this->Session->setFlash('Tu usuario/contraseña son incorrectos');
+			$this->Session->setFlash('Tu usuario/contraseña son incorrectos','default',array('class'=>'mensajeError'));
 		}
 	}
 
