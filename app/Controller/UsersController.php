@@ -325,11 +325,11 @@ public function viewmycourses($idusuario){
 $this->set(compact('courses'));
 }
 
-public function calificar($course_id=null,$semester=null,$career_id=null,$parcial=null,$grupo=null,$user_id=null){
+public function calificar($course_id,$semester,$career_id,$parcial,$grupo,$user_id){
 
-	$this->Course->id=$course_id;
-	$this->Course->semester=$semester;
-	$this->Career->id=$career_id;
+	// $this->Course->id=$course_id;
+	// $this->Course->semester=$semester;
+	// $this->Career->id=$career_id;
 	// $this->Auth->User('id')=$user_id;
 	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
 	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
@@ -342,47 +342,34 @@ public function calificar($course_id=null,$semester=null,$career_id=null,$parcia
 		'StudentProfile.grupo_id'=>$grupo)
 		));
 
-	$critdevaluacion=$this->Goal->find('all',array('conditions'=>array(
-		'Goal.created BETWEEN ? AND ? '=>array($inicio,$fin),'Goal.course_id'=>$course_id,'Goal.parcial'=>$parcial,'Goal.grupo_id'=>$grupo,'Goal.user_id'=>$user_id)));
-
-	
-	if(sizeof($critdevaluacion)>=1){
 
 	$materia = $this->Course->find('list',array('conditions'=>array('Course.id'=>$course_id)));
-
+	$critdevaluacion=$this->Goal->find('all',array('conditions'=>array(
+		'Goal.created BETWEEN ? AND ? '=>array($inicio,$fin),'Goal.course_id'=>$course_id,'Goal.parcial'=>$parcial,'Goal.grupo_id'=>$grupo,'Goal.user_id'=>$user_id)));
+	if(sizeof($critdevaluacion) >=1 ){
+		
+	$existe=$this->Obtainedgoal->find('count',array('conditions'=>array('Obtainedgoal.created BETWEEN ? AND ?'=>array($inicio,$fin),'Obtainedgoal.user_id'=>$estudiantes[0]['User']['id'],'Obtainedgoal.goal_id'=>$critdevaluacion[0]['Goal']['id'])));
 	$this->set(compact('estudiantes','critdevaluacion','materia','partial','gpo'));
-	}else  if (sizeof($critdevaluacion)==0){
-		$this->Session->setFlash('no se encontraron croterios de evaluacion registrados');
-		$this->redirect(array('action'=>'index'));
 	}
 
+	$n=sizeof($critdevaluacion);
+	if( $this->request->is('get') && $n== 0 ){
+		$this->Session->setFlash('no se encontraron criterios de evaluacion registrados');
+		$this->redirect(array('action'=>'index'));
 
-	$existe=$this->Obtainedgoal->find('count',array('conditions'=>array('Obtainedgoal.created BETWEEN ? AND ? '=>array($inicio,$fin),
-			'Obtainedgoal.user_id'=>$estudiantes[0]['User']['id'],'Obtainedgoal.goal_id'=>$critdevaluacion[0]['Goal']['id'])));
-	
-	if($existe === 0){
+	}
 
-	if($this->request->is('post')):
-
-		if($this->User->Obtainedgoal->saveAll($this->request->data['Obtainedgoal'])):
+	if( $this->request->is('post') && $existe == 0){
+		// debug($this->request->data['Obtainedgoal']);
+		if($this->Obtainedgoal->saveAll($this->request->data['Obtainedgoal'])):
 			$this->Session->setFlash('Calificaciones Asignadas correctamente');
 			$this->redirect(array('action'=>'index'));
 			endif;
-		endif;
-	}else if ($existe >=1){
+		} else if($existe >=1){
 
 		$this->Session->setFlash('Ya has evaluado este parcial');
 		$this->redirect(array('action'=>'index'));
-	}
-
-	
-	// Agregar funcion ajax para criterios de evaluacion por parcial
-	
-	// $critdevaluacion=$this->Goal->find('all',array('conditions'=>array(
-	// 	'Goal.course_id'=>$course_id,'Goal.parcial'=>$parcial,'Goal.grupo_id'=>$grupo)));
-	
-
-	
+		}
 
 
 }
@@ -1106,7 +1093,9 @@ $this->layout='ajax';
 
 //funcion ajax para hacer la busqueda de calificaciones vista coordinador vercalificaciones
 public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$parcial) {
-	$this->RequestHandler->respondAs('json');
+	// $this->RequestHandler->respondAs('json');
+	// 	$this->layout='ajax';
+
 	$calificacionesObtenidas=[];
 	$promedioPorAlumno=[];
 	$suma=array();
@@ -1206,7 +1195,6 @@ public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$par
 
 		}
 
-		$this->layout='ajax';
 		// pr($arrayFinal);
 
 
@@ -1221,7 +1209,7 @@ public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$par
 	
 
 
-	
+	pr($calificacionesObtenidas);
 
 
 
