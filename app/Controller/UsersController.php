@@ -347,7 +347,7 @@ public function calificar($course_id,$semester,$career_id,$parcial,$grupo,$user_
 	$critdevaluacion=$this->Goal->find('all',array('conditions'=>array(
 		'Goal.created BETWEEN ? AND ? '=>array($inicio,$fin),'Goal.course_id'=>$course_id,'Goal.parcial'=>$parcial,'Goal.grupo_id'=>$grupo,'Goal.user_id'=>$user_id)));
 	if(sizeof($critdevaluacion) >=1 ){
-		
+
 	$existe=$this->Obtainedgoal->find('count',array('conditions'=>array('Obtainedgoal.created BETWEEN ? AND ?'=>array($inicio,$fin),'Obtainedgoal.user_id'=>$estudiantes[0]['User']['id'],'Obtainedgoal.goal_id'=>$critdevaluacion[0]['Goal']['id'])));
 	$this->set(compact('estudiantes','critdevaluacion','materia','partial','gpo'));
 	}
@@ -1093,8 +1093,8 @@ $this->layout='ajax';
 
 //funcion ajax para hacer la busqueda de calificaciones vista coordinador vercalificaciones
 public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$parcial) {
-	// $this->RequestHandler->respondAs('json');
-	// 	$this->layout='ajax';
+	$this->RequestHandler->respondAs('json');
+	$this->layout='ajax';
 
 	$calificacionesObtenidas=[];
 	$promedioPorAlumno=[];
@@ -1116,7 +1116,7 @@ public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$par
 	//busca los criterios de evaluacion del cuatrimestre actual
 	$goals=$this->Goal->find('all',array('conditions'=>array('Goal.created BETWEEN ? AND ? '=>array($inicio,$fin),
 	'Goal.course_id'=>$course_id,
-	'Goal.parcial'=>$parcial )));
+	'Goal.parcial'=>$parcial)));
 
 	//aqui agregar la variable de grupo
 	$estudiantes=$this->StudentProfile->find('all',array('conditions'=>array('StudentProfile.career_id'=>$career_id,
@@ -1208,8 +1208,6 @@ public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$par
 	}
 	
 
-
-	pr($calificacionesObtenidas);
 
 
 
