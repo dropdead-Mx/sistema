@@ -602,59 +602,58 @@ public function alldays($inicio,$fin,$dia){
 
 //funcion para vista de estudiantes falta ver que elementos tendra el layout dl alumnno
 
-public function alumno(){
+public function alumno($user_id){
 	$goals=[];
 	$examenes=[];
 	$diasDeClase=[];
-	$user_id=$this->Auth->User('id');
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+
+	// $user_id=$this->Auth->User('id');
 	$cuatrimestre=$this->StudentProfile->find('all',array('conditions'=>array(
 		'StudentProfile.user_id'=>$user_id
-		),'fields'=>array('StudentProfile.semester','StudentProfile.career_id','StudentProfile.user_id')));
+		),'fields'=>array('StudentProfile.semester','StudentProfile.career_id','StudentProfile.user_id','StudentProfile.grupo_id')));
 
 	$materia=$this->Course->find('all',array('conditions'=>array(
-		'Course.semester'=>$cuatrimestre[0]['StudentProfile']['semester'],'Course.career_id'=>$cuatrimestre[0]['StudentProfile']['career_id'])));
+		'Course.semester'=>$cuatrimestre[0]['StudentProfile']['semester'],'Course.career_id'=>$cuatrimestre[0]['StudentProfile']['career_id']),'recursive'=>-1));
 
 	$nombre=$this->User->find('list',array('conditions'=>array('User.id'=>$cuatrimestre[0]['StudentProfile']['user_id']),'fields'=>'User.name'));
 
-	$calif=$this->Obtainedgoal->find('list',array('conditions'=>array('Obtainedgoal.user_id'=>$user_id),'fields'=>array(
+	$calif=$this->Obtainedgoal->find('list',array('conditions'=>array('Obtainedgoal.created BETWEEN ? AND ? '=>array($inicio,$fin),'Obtainedgoal.user_id'=>$user_id),'fields'=>array(
 		'Obtainedgoal.goal_id','Obtainedgoal.percentage_obtained')));
 
 
 	$contador= sizeof($materia);
+	
 
-	// echo $materia[0]['Course']['name'];
 
 	for($x=0;$x<$contador; $x++){
-
-		array_push($goals,$this->Goal->find('list',array('conditions'=>array(
-			'Goal.course_id'=>$materia[$x]['Course']['id']),'fields'=>array('Goal.id','Goal.description','Goal.parcial',))));
-
+		
+		array_push($goals,$this->Goal->find('list',array('conditions'=>array('Goal.created BETWEEN ? AND ? '=>array($inicio,$fin),
+			'Goal.course_id'=>$materia[$x]['Course']['id'],'Goal.grupo_id'=>$cuatrimestre[0]['StudentProfile']['grupo_id']),'fields'=>array('Goal.id','Goal.description','Goal.parcial'))));
+		
+		
 		array_push($examenes,$this->Exam->find('all',array('conditions'=>array(
+			'Exam.created BETWEEN ? AND ? '=>array($inicio,$fin),
+			'Exam.grupo_id'=>$cuatrimestre[0]['StudentProfile']['grupo_id'],
 			'Exam.course_id'=>$materia[$x]['Course']['id']),
 			'fields'=>array(
 				'Exam.course_id','Exam.partial','Exam.fecha'))));
 
 		//Modificar linea para obtener el cuatrimestre en curso
 		array_push($diasDeClase,$this->CourseModule->find('all',array('conditions'=>array(
+			'CourseModule.created BETWEEN ? AND ? '=>array($inicio,$fin),
+
 			'CourseModule.course_id'=>$materia[$x]['Course']['id']),
+			'CourseModule.grupo_id'=>$cuatrimestre[0]['StudentProfile']['grupo_id'],
 			'fields'=>array('CourseModule.course_id','CourseModule.day'),
 			'recursive'=>-1)));
 
 	}
 
-
-	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
-	$inicio=strtotime($cuatriInicio['Semester']['inicio']);
-	$fin=strtotime($cuatriInicio['Semester']['fin']);
-
-
-// $total=array();
-
-
-	
-
 	// $goals=$this->Goal->find('all',array('conditions'=>array('Goal.course_id'=>$materia)));
-	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','diasDeClase','user_id','examenes','periodosParcial'));
+	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','diasDeClase','user_id','examenes'));
 
 
 
@@ -672,7 +671,7 @@ public function examenes($id){
 
 		$cuatrimestre=$this->StudentProfile->find('all',array('conditions'=>array(
 		'StudentProfile.user_id'=>$id
-		),'fields'=>array('StudentProfile.semester','StudentProfile.career_id','StudentProfile.user_id')));
+		),'fields'=>array('StudentProfile.semester','StudentProfile.career_id','StudentProfile.user_id','StudentProfile.grupo_id')));
 
 		$materia=$this->Course->find('all',array('conditions'=>array(
 		'Course.semester'=>$cuatrimestre[0]['StudentProfile']['semester'],'Course.career_id'=>$cuatrimestre[0]['StudentProfile']['career_id']),
@@ -684,7 +683,8 @@ public function examenes($id){
 
 
 		array_push($examenes,$this->Exam->find('all',array('conditions'=>array(
-			'Exam.created BETWEEN ? AND ? '=>array($inicio,$fin),'Exam.course_id'=>$materia[$x]['Course']['id']))));
+			'Exam.created BETWEEN ? AND ? '=>array($inicio,$fin),'Exam.course_id'=>$materia[$x]['Course']['id'],
+			'Exam.grupo_id'=>$cuatrimestre[0]['StudentProfile']['grupo_id']))));
 
 	}
 
@@ -695,11 +695,14 @@ public function examenes($id){
 public function horario($id){
 
 		$modulos=[];
+		$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+		$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+		$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
 
 		$dias=['lunes','martes','miercoles','jueves','viernes'];
 		$cuatrimestre=$this->StudentProfile->find('all',array('conditions'=>array(
 		'StudentProfile.user_id'=>$id
-		),'fields'=>array('StudentProfile.semester','StudentProfile.career_id','StudentProfile.user_id')));
+		),'fields'=>array('StudentProfile.semester','StudentProfile.career_id','StudentProfile.user_id','StudentProfile.grupo_id')));
 
 		$materia=$this->Course->find('list',array('conditions'=>array(
 		'Course.semester'=>$cuatrimestre[0]['StudentProfile']['semester'],'Course.career_id'=>$cuatrimestre[0]['StudentProfile']['career_id'])));
@@ -711,7 +714,9 @@ public function horario($id){
 		// echo $k;
 
 		array_push($modulos,$this->CourseModule->find('all',array('conditions'=>array(
-			'CourseModule.course_id'=>$k),
+			'CourseModule.created BETWEEN ? AND ? '=>array($inicio,$fin),
+			'CourseModule.course_id'=>$k,
+			'CourseModule.grupo_id'=>$cuatrimestre[0]['StudentProfile']['grupo_id']),
 		'fields'=>array(
 			'CourseModule.course_id','CourseModule.day','.CourseModule.start_time','CourseModule.end_time'))));
 
@@ -757,11 +762,10 @@ public function getassists($materia_id,$usuario){
 			'recursive'=>-1));
 
 
-	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
-	// pr($diasDeClase);
-	// pr($examenes);
-	$inicio=strtotime($cuatriInicio['Semester']['inicio']);
-	$fin=strtotime($cuatriInicio['Semester']['fin']);
+		$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+		$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+		$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+	
 
 	
 	// $xd= date('N',strtotime("+1 days",$inicio));

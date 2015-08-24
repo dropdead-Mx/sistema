@@ -36,7 +36,7 @@ echo '<p>'.$this->Html->link('Ver Horario',array('action'=>'horario',$cuatrimest
 
 <div>
 	<h3><?php echo $materias['Course']['name']; ?></h3>
-	<p>Impartida por : <?php echo $materias['User']['name']; ?></p>
+	
 	
 	<?php 
 	$tamaño=sizeof($goals[$k]);
