@@ -2,7 +2,7 @@
 
 
 
-<?php echo $this->Form->create('User',array('action'=>'calificar','id'=>'calificacionesPar'));?>
+<?php echo $this->Form->create('User',array('id'=>'calificacionesPar'));?>
 
 
 <table>
@@ -39,9 +39,7 @@
 
 			echo $this->Form->hidden('Obtainedgoal.'.($k.$X).'.goal_id',array('label'=>false,'value'=>$id,'class'=>'calf'));
 			echo $this->Form->hidden('Obtainedgoal.'.($k.$X).'.user_id',array('label'=>false,'value'=>$student,'class'=>'calf'));
-			echo $this->Form->input('Obtainedgoal.'.($k.$X).'.percentage_obtained',array('label'=>false,'div'=>false,'class'=>'calf','required'=>true
-			
-				));
+			echo $this->Form->input('Obtainedgoal.'.($k.$X).'.percentage_obtained',array('label'=>false,'div'=>false,'class'=>'calf','required'=>true));
 		?>
 	</td>
 	<?php endforeach;?>
