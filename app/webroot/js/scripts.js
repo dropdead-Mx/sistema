@@ -468,7 +468,9 @@ function matxCuatyCarr(){
 
 	$('select#cuatrimestre,select#infocalif,select#indexPlaning,select#carreraCoordi,select#indexUploadExam').on('change',function(){
 	$('select#materiasporcarrera,select#apendCoursePlanning,select#apendExam ').children('option.opcion').remove();
-	$('option.optionUpl').remove();
+	$('option.optionUpl,option.opcionConMat').remove();
+	$('select#gruposConsultarCalif option[value="txt"]').attr('selected',true);
+	$('select#gruposConsultarCalif option[value="txt"]').text('--Sin grupos--');
 	$('select#appendGrupo').attr('disabled',true);
 	$('select#appendGrupo option[value="txt"]').text('--Sin grupos disponibles--');
 	carrera = $('select#infocalif option:selected,select#carreraCoordi option:selected,select.carreraSetExams').val();
@@ -552,22 +554,23 @@ function matxCuatyCarr(){
 	cuatri= $('select#cuatrimestre option:selected').val();
 	materia=$('select#materiasporcarrera').val();
 	parcial=$('select#parciales').val();
+	grupo=$('select#gruposConsultarCalif option:selected').val();
 	calificaciones=[];
 	
 
 
-	if( carrera != 0 && cuatri != 0 && materia != 0 && parcial != 0 ){
+	if( carrera != 0 && cuatri != 0 && materia != 0 && parcial != 0 && grupo !== 'txt'){
 
-
+		console.log(grupo);
 
 
 		$.ajax({
 			type:'GET',
-			url:'../consultarcalificaciones/'+carrera+'/'+cuatri+'/'+materia+'/'+parcial,
+			url:'../consultarcalificaciones/'+carrera+'/'+cuatri+'/'+materia+'/'+parcial+'/'+grupo,
 			success:function(response){
 				// $('p.alumno').fadeOut(300);
 
-				// console.info(response);
+				console.info(response);
 				if(typeof response !== 'undefined' && response.length >0 ){
 
 					for (var i=0, num=response.length; i< num; i++){
@@ -1452,13 +1455,43 @@ $(document).on('change','.listaGrupos',function(){
 
 });
 
+}
 
+function gruposCalificaciones(){
 
+	$('select#materiasporcarrera').on('change',function(){
+		opcionesCons=[];
+		$('option.opcionConMat').remove();
+		materiaID=$(this).val();
+		$.ajax({
 
+			url:'/sistema/courses/getgroupsbycourse/'+materiaID,
+			type:'GET',
+			success:function(response){
+				console.log(response);
+
+				if(response.length >= 1 && typeof(response) !== 'undefined'){
+					for(x=0 ,num=response.length;x<num;x++){
+
+						opcionConsulta='<option class="opcionConMat" value="'+response[x].Grupo.id+'">'+response[x].Grupo.name+'</option>'
+					opcionesCons.push(opcionConsulta);
+					}
+					$('select#gruposConsultarCalif').append(opcionesCons);
+					$('select#gruposConsultarCalif option[value="txt"]').text('--Grupos disponibles--');
+				}else {
+					$('select#gruposConsultarCalif option[value="txt"]').text('--Sin grupos--');
+
+				}
+			}
+
+		});
+
+	});
 
 }
 
 $(function(){
+	gruposCalificaciones();
 	verifica();
 	asignarFechDeExamen();
 	clona();

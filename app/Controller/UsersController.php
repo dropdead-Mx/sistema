@@ -1180,7 +1180,7 @@ $this->layout='ajax';
 }
 
 //funcion ajax para hacer la busqueda de calificaciones vista coordinador vercalificaciones
-public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$parcial) {
+public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$parcial,$grupo) {
 	$this->RequestHandler->respondAs('json');
 	$this->layout='ajax';
 
@@ -1204,6 +1204,7 @@ public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$par
 	//busca los criterios de evaluacion del cuatrimestre actual
 	$goals=$this->Goal->find('all',array('conditions'=>array('Goal.created BETWEEN ? AND ? '=>array($inicio,$fin),
 	'Goal.course_id'=>$course_id,
+	'Goal.grupo_id'=>$grupo,
 	'Goal.parcial'=>$parcial)));
 
 	//aqui agregar la variable de grupo
