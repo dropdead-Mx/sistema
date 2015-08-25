@@ -1,8 +1,5 @@
-<div class="form">
-<fieldset>
-	<legend>Agregar coordinador</legend>
-
-
+<div class="registroDirector">
+	<h3>Registrar director</h3>
 	<?php 
 		// $selected=array();
 		echo $this->Form->create('User',array('class'=>'addForm','type'=>'file','novalidate'=>'novalidate'));
@@ -12,7 +9,7 @@
 		echo $this->Form->input ('amat',array('label'=>'Apellido Materno'));
 		echo $this->Form->input ('email',array('label'=>'Correo Electronico'));
 		echo $this->Form->hidden('password',array('label'=>'Contraseña'));
-		echo $this->Form->hidden ('group_id',array('value'=> '6'));
+		echo $this->Form->hidden ('group_id',array('value'=> '5'));
 		echo $this->Form->input('EmployeeProfile.lv_education',array('label'=>'Nivel de estudios',
 		'options'=> array('LIC'=>'LIC','ING'=>'ING','MTRO'=>'MTRO','DR'=>'DR'),
 		'empty'=>'Seleccione el nivel'));
@@ -20,11 +17,9 @@
 		echo $this->Form->input('EmployeeProfile.foto_dir',array('type'=>'hidden'));
 
 
-		echo $this->Form->end('Registrar coordinador');
+		echo $this->Form->end('Registrar director');
 
 ?>
-
-</fieldset>
 
 </div>
 <?php echo  $this->Html->script('scripts');?>

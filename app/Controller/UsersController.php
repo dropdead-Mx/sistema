@@ -94,9 +94,64 @@ public function index() {
 		// $this->layout='coordinador';
 	// }
 
+	
+
+
 }
 
+public function agregardirector(){
 
+	$this->User->virtualFields['name']='User.name';
+
+	if($this->request->is('post')):
+		$this->User->create();
+
+	$nombre=$this->request->data['User']['name'];
+	$ap=$this->request->data['User']['apat'];
+	$am=$this->request->data['User']['amat'];
+	$correo=$this->request->data['User']['email'];
+	$lv=$this->request->data['EmployeeProfile']['lv_education'];
+	
+
+
+	$existe =$this->User->find('count',array('conditions'=>array(
+		'User.name'=>$nombre,
+		'User.apat'=>$ap,
+		'User.amat'=>$am,
+		'User.email'=>$correo
+		)));
+
+	if($existe > 0 ){
+
+		$this->Session->setFlash('El usuario que intentas registrar ya existe ingresa uno nuevo');
+		$this->request->data=' ';
+
+	}else {
+		$simbolos=['@','#','$'];
+		$password=$simbolos[rand(0,2)].$lv.$nombre[0].$ap[0].$am[0].date("Y").rand(10,90);
+
+		// $this->request->data['User']['password']=$password;
+		$this->request->data['User']['password']='contraseña';
+
+
+
+		// $email = new CakeEmail('default');
+			// $email->to($correo);
+			// $email->from(array('unidorados@universidaddorados.com'=>'Plataforma universidad dorados'));
+			// $email->subject('Registro en la plataforma universidad dorados');
+			// $email->send('Tu correo de acceso a la plataforma es : '.$correo.' Y tu contraseña : '.$password);
+
+		if($this->User->saveAssociated($this->request->data)):
+			$this->Session->setFlash('Director registrado con exito');
+			$this->redirect(array('action'=>'index'));
+			
+		endif;
+	}
+	endif;
+
+
+
+}
 public function addStudent(){
 	$this->User->virtualFields['name']='User.name';
 
@@ -133,11 +188,11 @@ public function addStudent(){
 
 			$this->request->data['User']['password']=$password;
 
-			$email = new CakeEmail('default');
-			$email->to($correo);
-			$email->from(array('unidorados@universidaddorados.com'=>'Plataforma universidad dorados'));
-			$email->subject('Registro en la plataforma universidad dorados');
-			$email->send('Tu correo de acceso a la plataforma es : '.$correo.' Y tu contraseña : '.$password);
+			// $email = new CakeEmail('default');
+			// $email->to($correo);
+			// $email->from(array('unidorados@universidaddorados.com'=>'Plataforma universidad dorados'));
+			// $email->subject('Registro en la plataforma universidad dorados');
+			// $email->send('Tu correo de acceso a la plataforma es : '.$correo.' Y tu contraseña : '.$password);
 
 			
 			if($this->User->saveAssociated($this->request->data)):
@@ -263,7 +318,27 @@ public function editTeacher($id= null){
 	else:
 		if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Perfil actualizado');
-			$this->redirect(array('action'=>'indexTeacher'));
+			$this->redirect(array('action'=>'index'));
+			endif;
+	endif;
+
+
+}
+
+public function editacoordinador($id= null){
+
+			$this->User->id=$id;
+
+
+	$this->User->virtualFields['name']='User.name';
+
+	if($this->request->is('get')):
+		$this->request->data=$this->User->read();
+
+	else:
+		if($this->User->saveAssociated($this->request->data)):
+			$this->Session->setFlash('Perfil actualizado');
+			$this->redirect(array('action'=>'index'));
 			endif;
 	endif;
 
@@ -277,6 +352,19 @@ public function deleteTeacher($id){
 		if($this->User->delete($id)):
 			$this->Session->setFlash('Profesor eliminado');
 			$this->redirect(array('action'=>'indexTeacher'));
+		endif;
+	endif;
+		
+
+}
+public function eliminarcoordi($id){
+	$this->User->id=$id;
+	if($this->request->is('get')):
+		throw new MethodNotAllowedException();
+	else:
+		if($this->User->delete($id)):
+			$this->Session->setFlash('coordinador eliminado');
+			$this->redirect(array('action'=>'index'));
 		endif;
 	endif;
 		

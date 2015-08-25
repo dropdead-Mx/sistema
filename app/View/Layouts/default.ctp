@@ -50,9 +50,9 @@ $cakeVersion = __d('universidad_dorados', 'CakePHP %s', Configure::version())
 			$tipo= $current_user['group_id'];
 			if($tipo == 8){
 
-			echo $this->element('texto');
+			// echo $this->element('texto');
 			}else if($tipo == 7){
-			echo $this->element('lista');
+			// echo $this->element('lista');
 
 			}
 			?>

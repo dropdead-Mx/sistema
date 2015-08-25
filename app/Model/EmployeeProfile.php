@@ -59,7 +59,11 @@ class EmployeeProfile extends AppModel {
 				'message'=>'Esta imagen ya existe seleccione otra',
 				'on'=>'update')
 
-			)
+			),
+		'lv_education'=>array(
+			'rule'=>array('lengthBetween',1,20),
+			'required'=>true,
+			'message'=>'Este campo es obligatorio')
 		);
 
 function checkUniqueName($data){
