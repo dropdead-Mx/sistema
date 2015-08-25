@@ -25,7 +25,7 @@ public function isAuthorized($user){
 
 		if ($user['group_id']== '5' ){
 
-		if(in_array($this->action,array('index','indexcoordinator','indexTeacher','editacoordinador','eliminarcoordi','addcoordi','vercarreras'))){
+		if(in_array($this->action,array('index','indexcoordinator','indexTeacher','editacoordinador','eliminarcoordi','addcoordi','vercarreras','assigncareers'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
