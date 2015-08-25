@@ -11,7 +11,7 @@ public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile'
 public function beforeFilter(){
 	parent::beforeFilter();
 	// $this->Auth->allow('indexcoordinator','indexTeacher','vercalificaciones','materiasporgerarquia','index');
-	$this->Auth->allow();
+	// $this->Auth->allow();
 	
 	// if ($this->Auth->loggedIn()) {
 	// $this->Auth->deny('login');
@@ -23,9 +23,55 @@ public function beforeFilter(){
 
 public function isAuthorized($user){
 
+		if ($user['group_id']== '5' ){
+
+		if(in_array($this->action,array('index','indexcoordinator','indexTeacher','editacoordinador','eliminarcoordi','addcoordi','vercarreras'))){
+			return true;
+		}else {
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('no se puede acceder');
+				// $this->redirect($this->Auth->redirect());
+				$this->redirect(array('controller'=>'users','action'=>'index'));
+
+			}
+		}
+
+	}
+
+		if ($user['group_id']== '6' ){
+
+		if(in_array($this->action,array('materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher'))){
+			return true;
+		}else {
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('no se puede acceder');
+				// $this->redirect($this->Auth->redirect());
+				$this->redirect(array('controller'=>'users','action'=>'index'));
+
+			}
+		}
+
+	}
+
+
+	if ($user['group_id']== '7' ){
+
+		if(in_array($this->action,array('index','viewmycourses','calificar','asistencias'))){
+			return true;
+		}else {
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('no se puede acceder');
+				// $this->redirect($this->Auth->redirect());
+				$this->redirect(array('controller'=>'users','action'=>'index'));
+
+			}
+		}
+
+	}
+
 	if($user['group_id']=='8'){
 		
-		if(in_array($this->action,array('alumno','index','examenes','horario'))){
+		if(in_array($this->action,array('alumno','index','examenes','horario','getassists'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -39,20 +85,7 @@ public function isAuthorized($user){
 	// return parent::isAuthorized($user);
 
 
-	 if ($user['group_id']== '7' ){
 
-		if(in_array($this->action,array('index','addTeacher','viewmycourses','calificar','asistencias'))){
-			return true;
-		}else {
-			if($this->Auth->user('id')){
-				$this->Session->setFlash('no se puede acceder');
-				// $this->redirect($this->Auth->redirect());
-				$this->redirect(array('controller'=>'users','action'=>'index'));
-
-			}
-		}
-
-	}
 
 	return parent::isAuthorized($user);
 
@@ -377,8 +410,10 @@ public function indexTeacher() {
 
 // proxima  a modificar
 
-public function viewmycourses($idusuario){	
-// $idusuario=$this->Auth->User('id');
+public function viewmycourses(){	
+	$rango=$this->Auth->User('group_id');
+	if($rango == 7 ){
+		$idusuario=$this->Auth->User('id');
 	$nombreUsuario=
 	$courses=[];
 	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
@@ -411,14 +446,20 @@ public function viewmycourses($idusuario){
 	
 	// $miscursos=$this->Teachercourse->find()
 $this->set(compact('courses'));
+
+	}
+	
 }
 
-public function calificar($course_id,$semester,$career_id,$parcial,$grupo,$user_id){
+public function calificar($course_id,$semester,$career_id,$parcial,$grupo){
 
 	// $this->Course->id=$course_id;
 	// $this->Course->semester=$semester;
 	// $this->Career->id=$career_id;
-	// $this->Auth->User('id')=$user_id;
+	$rango=$this->Auth->User('group_id');
+	if($rango == 7 ){
+
+	$user_id=$this->Auth->User('id');
 	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
 	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
 	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
@@ -458,6 +499,7 @@ public function calificar($course_id,$semester,$career_id,$parcial,$grupo,$user_
 		$this->Session->setFlash('Ya has evaluado este parcial');
 		$this->redirect(array('action'=>'index'));
 		}
+	}
 
 
 }
@@ -594,11 +636,15 @@ public function eliminacc($id,$user_id){
 }
 
 
-public function asistencias($career_id, $semester, $id_materia, $id,$grupo){
+public function asistencias($career_id, $semester, $id_materia,$grupo){
 
 
  // $id=$this->User->id;
 // array_push($arreglo,$id);
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+
 $semana=array(
 	0=>'domingo',
 	1=>'lunes',
@@ -610,45 +656,40 @@ $semana=array(
 
 $day = date("w");
 $dia=$semana[$day];
-
+$fecha=date("Y-m-d");
 
 $imparte=$this->CourseModule->find('count',array('conditions'=>array(
+	'CourseModule.created BETWEEN ? AND ?'=>array($inicio,$fin),
 	'CourseModule.course_id'=>$id_materia,
-	'CourseModule.day'=>$dia
+	'CourseModule.day'=>$dia,
+	'CourseModule.grupo_id'=>$grupo
 	)));
 
+$existe=$this->Assist->find('count',array('conditions'=>array(
+		'Assist.created BETWEEN ? AND ? '=>array($inicio,$fin),
+		'Assist.date_assist'=>$fecha,
+		'Assist.grupo_id'=>$grupo,
+		'Assist.course_id'=>$id_materia)));
+
 if ($imparte === 0){
-	$this->Session->setFlash('Hoy no impartes esta materia');
-	$this->redirect(array('action'=>'viewmycourses',$id));
-}else if ($imparte > 0){
+	$this->Session->setFlash('Hoy no impartes esta materia','default',array('class'=>'mensajeError'));
+	$this->redirect(array('action'=>'index'));
+} else if($existe >= 1 ){
+	$this->Session->setFlash('Ya pasaste asistencia de esta materia ','default',array('class'=>'mensajeError'));
+		$this->redirect(array('controller'=>'users','action'=>'index'));
+}
+
+
+
+else if ($imparte > 0 && $existe==0){
 
 
 if($this->request->is('post')):
 	$this->Assist->create();
-	
-	$fecha=$this->request->data['Assist'][0]['date_assist'];
-	$modulo=$this->request->data['Assist'][0]['course_id'];
-	$grupo=$this->request->data['Assist'][0]['grupo_id'];
-
-	$existe=$this->Assist->find('count',array('conditions'=>array(
-		'Assist.date_assist'=>$fecha,
-		'Assist.grupo_id'=>$grupo,
-		'Assist.course_id'=>$modulo)));
-
-	if($existe > 0 ){
-		$this->Session->setFlash('Ya pasaste asistencia de esta materia solo se permite 1 vez');
-		$this->redirect(array('controller'=>'users','action'=>'viewmycourses',$id));
-
-	}else {
-
-	
-	if($this->Assist->saveAll($this->request->data['Assist'])):
-		$this->Session->setFlash("asistencia guardada");
-		$this->redirect(array('controller'=>'users','action'=>'viewmycourses',$id));
+		if($this->Assist->saveAll($this->request->data['Assist'])):
+		$this->Session->setFlash("asistencia guardada",'default',array('class'=>'mensajeOk'));
+		$this->redirect(array('controller'=>'users','action'=>'index'));
 	endif;
-
-}
-
 endif;
 }
 	$modulos=$this->CourseModule->find('all',array('conditions'=>array('CourseModule.course_id'=>$id_materia,'CourseModule.day'=>$dia,'CourseModule.grupo_id'=>$grupo)));
@@ -677,7 +718,10 @@ public function alldays($inicio,$fin,$dia){
 
 //funcion para vista de estudiantes falta ver que elementos tendra el layout dl alumnno
 
-public function alumno($user_id){
+public function alumno(){
+
+	if($this->Auth->User('group_id') == 8){
+
 	$goals=[];
 	$examenes=[];
 	$diasDeClase=[];
@@ -685,7 +729,7 @@ public function alumno($user_id){
 	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
 	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
 
-	// $user_id=$this->Auth->User('id');
+	$user_id=$this->Auth->User('id');
 	$cuatrimestre=$this->StudentProfile->find('all',array('conditions'=>array(
 		'StudentProfile.user_id'=>$user_id
 		),'fields'=>array('StudentProfile.semester','StudentProfile.career_id','StudentProfile.user_id','StudentProfile.grupo_id')));
@@ -729,6 +773,10 @@ public function alumno($user_id){
 
 	// $goals=$this->Goal->find('all',array('conditions'=>array('Goal.course_id'=>$materia)));
 	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','diasDeClase','user_id','examenes'));
+	}else {
+		$this->Session->setFlash('denegado','default',array('class'=>'mensajeError'));
+		$this->redirect(array('action'=>'index'));
+	}
 
 
 
@@ -1141,9 +1189,15 @@ foreach ($periodosParcial as $z => $periodo):
 }
 
 
-public function vercalificaciones($user_id) {
+public function vercalificaciones() {
+
+	$rango=$this->Auth->User('group_id');
+	if($rango == 6){
+
 
 	$infocarreras=[];
+	$user_id=$this->Auth->User('id');
+
 
 	$carreras=$this->Usrcareer->find('all',array('conditions'=>array('Usrcareer.user_id'=>$user_id),'fields'=>'Usrcareer.career_id'));
 
@@ -1159,6 +1213,7 @@ public function vercalificaciones($user_id) {
 		endforeach;
 
 	$this->set(compact('infocarreras'));
+	}
 
 }
 

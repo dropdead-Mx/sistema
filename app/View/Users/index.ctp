@@ -8,4 +8,7 @@
 <a href="/sistema/users/logout">cerrar sesion</a>
 
 <!-- linea para mostrar foto -->
-<?php echo $this->Html->image('../files/employee_profile/foto/'.$current_user['EmployeeProfile']['foto_dir'].'/'.'thumb_'.$current_user['EmployeeProfile']['foto']);?>
+
+ <?php 
+// echo $this->Html->image('../files/employee_profile/foto/'.$current_user['EmployeeProfile']['foto_dir'].'/'.'thumb_'.$current_user['EmployeeProfile']['foto']);
+?>
