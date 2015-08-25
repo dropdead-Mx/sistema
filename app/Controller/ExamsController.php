@@ -10,10 +10,43 @@ class ExamsController extends AppController {
 	
 	public function beforeFilter(){
 		parent::beforeFilter();
-		$this->Auth->allow();
+		// $this->Auth->allow();
 	}
-	public function index($id=null){
-	$this->User->id=$id;
+
+
+	public function isAuthorized($user){
+
+
+
+		if ($user['group_id']== '6' ){
+
+		if(in_array($this->action,array('index','verify','add'))){
+			return true;
+		}else {
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('no se puede acceder');
+				// $this->redirect($this->Auth->redirect());
+				$this->redirect(array('controller'=>'users','action'=>'index'));
+
+			}
+		}
+
+	}
+
+
+
+	// return parent::isAuthorized($user);
+
+
+
+
+	return parent::isAuthorized($user);
+
+}
+	public function index(){
+	// $this->User->id=$id;
+	$id=$this->Auth->User('id');
+
 	$grupos=[];
 	$careers = $this->Usrcareer->find('list',array('conditions'=>array('Usrcareer.user_id'=>$id),'fields'=>'career_id'));
 	$careers2=$this->Career->find('all',array('conditions'=>array('Career.id'=>$careers)));
@@ -61,12 +94,12 @@ class ExamsController extends AppController {
 		if($this->request->is('post')):
 
 			if($this->Exam->saveAll($this->request->data['Exam'] )):
-				$this->Session->setFlash('Fechas de examenes asignadas');
+				$this->Session->setFlash('Fechas de examenes asignadas','default',array('class'=>'mensajeOk'));
 				$this->redirect(array('action'=>'index',$id));
 			endif;
 		endif;
 	}else {
-		$this->Session->setFlash('Ya has asignado fechas de examen para este grupo y materia');
+		$this->Session->setFlash('Ya has asignado fechas de examen para este grupo y materia','default',array('class'=>'mensajeError'));
 				$this->redirect(array('action'=>'index',$id));
 	}
 
