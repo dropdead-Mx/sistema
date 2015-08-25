@@ -8,7 +8,7 @@ class UploadtestsController extends AppController {
 
 public function beforeFilter(){
 	parent::beforeFilter();
-	$this->Auth->allow();
+	// $this->Auth->allow();
 }
 	public  function isAuthorized($user){
 
@@ -64,13 +64,13 @@ public function beforeFilter(){
 
 	}
 
-	public function subirexamen($maestro){
+	public function subirexamen(){
 
 		$options=array();
-		// $maestro=$this->Auth->User('id');
-		// $tipo=$this->Auth->User('group_id');
+		$maestro=$this->Auth->User('id');
+		$tipo=$this->Auth->User('group_id');
 
-		// if($tipo == '7'){
+		if($tipo == '7'){
 
 		// $materias=$this->Course->find('list',array('conditions'=>array('Course.user_id'=>$maestro),'recursive'=>-1,'fields'=>array('Course.id','Course.name')));
 		$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
@@ -105,23 +105,41 @@ public function beforeFilter(){
 			'fields'=>array('User.id','User.name')));
 
 		if($this->request->is('post')){
+			
+			$grupo=$this->request->data['Uploadtest']['grupo_id'];
+			$curso=$this->request->data['Uploadtest']['course_id'];
+			$parcial=$this->request->data['Uploadtest']['partial'];
+
+			$existe=$this->Uploadtest->find('count',array('conditions'=>array(
+				'Uploadtest.created BETWEEN ? AND ?'=>array($inicio,$fin),
+				'Uploadtest.grupo_id'=>$grupo,
+				'Uploadtest.course_id'=>$curso,
+				'Uploadtest.partial'=>$parcial)));
+
+
+			if($existe === 0){
+
 			if($this->Uploadtest->save($this->request->data) && $this->Message->save($this->request->data)){
-				$this->Session->setFlash('Examen subido con exito');
+				$this->Session->setFlash('Examen subido con exito','default',array('class'=>'mensajeOk'));
 				$this->redirect(array('controller'=>'users','action'=>'index'));
-				// debug($this->request->data);
+				
 			} else {
-				// $this->request->data['Uploadtest']['course_id']=' ';
-				// $this->request->data['Uploadtest']['partial']=' ';
 
-				// debug($this->request->data);
-
-				// $this->request->data='';
 			}
+
+			}else if($existe >=1){
+				$this->Session->setFlash('Ya has subido un examen para este parcial','default',array('class'=>'mensajeError'));
+				$this->redirect(array('controller'=>'users','action'=>'index'));
+			}
+
+
+		
+
 
 		}
 		// pr($materias);
 		$this->set(compact('coordinadores','options','maestro'));
-		// }
+		}
 
 
 	}
