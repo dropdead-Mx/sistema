@@ -836,6 +836,12 @@ function verMensajesAnteriores() {
 
 function mensajepush(){
 	timestamp=Math.floor(Date.now() / 1000);
+
+
+	
+
+	
+
 	// timestamp=null;
 	mensajesLeidos=[];
 	mensajesNuevos=[];
@@ -848,7 +854,7 @@ function mensajepush(){
 
 	// contador.on('click',function(){
 		numero=parseInt(contador.text());
-		console.log(numero);
+		// console.log(numero);
 
 
 	$.ajax({
@@ -878,21 +884,28 @@ function mensajepush(){
 				if(typeof response !== 'undefined' && response.length >= 1  ){
 
 
-
-					contador.attr('data-contador',response.length);
-					// setTimeout(100);
-					// indicador=response.length;
-					if(indicador < contador.attr('data-contador') && ejecucion > 1){
-						contador.text(parseInt(contador.text())+1);
-					}else {
-						// console.log(contador.text());
-						// $('p.contadorMensaje').append('sin mensajes nuevos');
-					}
+					$.ajax({
+		type:'GET',
+		url:'/sistema/messages/contador',
+		success:function(response){
+			$('p.contadorMensaje').text(response);
+		}
+		
+	});
+					// contador.attr('data-contador',response.length);
+					// // setTimeout(100);
+					// // indicador=response.length;
+					// if(indicador < contador.attr('data-contador') && ejecucion > 1){
+					// 	contador.text(parseInt(contador.text())+1);
+					// }else {
+					// 	// console.log(contador.text());
+					// 	// $('p.contadorMensaje').append('sin mensajes nuevos');
+					// }
 
 
 					for(x=0, numero = response.length; x < numero; x++){
 
-						// console.log(x)
+						console.log(x)
 
 					if(parseInt(response[x].Message.status) == 1 ){
 
@@ -909,6 +922,7 @@ function mensajepush(){
 					}
 				$('div.mnsgNuevo').append(mensajesNuevos);
 				$('div.mnsgLeidos').append(mensajesLeidos);
+
 				mensajess();
 				ejecucion++;
 
@@ -1081,7 +1095,7 @@ function addPlannings(){
 			$.ajax({
 
 				type:'get',
-				url:'../verplaneaciones/'+ident+'/'+materia+'/'+grupo,
+				url:'/sistema/plannings/verplaneaciones/'+ident+'/'+materia+'/'+grupo,
 				success:function(response){
 
 

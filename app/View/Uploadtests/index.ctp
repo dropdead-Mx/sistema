@@ -1,4 +1,4 @@
-<h3>Descargar Planeaciones</h3>
+<h3>Descargar Examenes</h3>
 
 <select id="carreraCoordi" >
 	<option value="rxt">--Selecciona una carrera--</option>

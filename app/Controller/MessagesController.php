@@ -4,9 +4,26 @@ class MessagesController extends AppController {
 
 public $helpers=array('Form','Html','Js');
 public $components=array('Session','RequestHandler');
-public $uses=array('User','Message');
+public $uses=array('User','Message','Semester');
+
 
 public  function isAuthorized($user){
+
+
+	 if ($user['group_id']== '6' ){
+
+		if(in_array($this->action,array('index','listamensaje','leermensaje','leido','contador'))){
+			return true;
+		}else {
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('no se puede acceder');
+				// $this->redirect($this->Auth->redirect());
+				$this->redirect(array('controller'=>'users','action'=>'index'));
+				
+			}
+		}
+
+	}
 
 		 if ($user['group_id']== '7' ){
 
@@ -28,6 +45,18 @@ public  function isAuthorized($user){
 
 
 public function index(){
+
+	// $cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+	// 	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+	// 	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+	// $dest=$this->Auth->User('id');
+
+	// $mensajes=$this->Message->find('count',array('conditions'=>array(
+	// 	'Message.created BETWEEN ? AND ?'=>array($inicio,$fin),
+	// 	'Message.destinatario'=>$dest,
+	// 	'Message.status'=>1),'order'=>array('Message.id DESC')));
+
+	// $this->set(compact('mensajes'));
 
 }
 
@@ -74,11 +103,38 @@ public function leermensaje($fechaActual){
 	// $this->set(compact('mensaje'));
 
 }
+public function contador(){
+	$dest=$this->Auth->User('id');
+	$this->RequestHandler->respondAs('json');
+	$this->layout='ajax';
+		$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+		$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+		$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
 
+		$total=$this->Message->find('count',array('conditions'=>array(
+		'Message.created BETWEEN ? AND ?'=>array($inicio,$fin),
+		'Message.destinatario'=>$dest,
+		'Message.status'=>1),'order'=>array('Message.id DESC')));
+
+	
+	$this->set(compact('total'));
+
+
+}
 public function listamensaje(){
 
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+		$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+		$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+
+	$dest=$this->Auth->User('id');
 	$this->RequestHandler->respondAs('json');
-	$mensajes=$this->Message->find('all',array('order'=>array('Message.id DESC')));
+
+	$mensajes=$this->Message->find('all',array('conditions'=>array(
+		'Message.created BETWEEN ? AND ?'=>array($inicio,$fin),
+		'Message.destinatario'=>$dest),'order'=>array('Message.id DESC')));
+
+
 	$this->layout='ajax';
 	$this->set(compact('mensajes'));
 

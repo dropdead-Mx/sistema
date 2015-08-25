@@ -28,7 +28,8 @@ public  function isAuthorized($user){
 	return parent::isAuthorized($user);
 }
 
-	public function index($user_id){
+	public function index(){
+		$user_id=$this->Auth->User('id');
 
 		$carreras=[];
 

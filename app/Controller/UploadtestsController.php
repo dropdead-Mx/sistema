@@ -41,11 +41,11 @@ public function beforeFilter(){
 	return parent::isAuthorized($user);
 }
 
-	public function index($user_id){
+	public function index(){
 
-		// $user_id=$this->Auth->User('id');
-		// $tipo=$this->Auth->User('group_id');
-		// if($tipo == '6'){
+		$user_id=$this->Auth->User('id');
+		$tipo=$this->Auth->User('group_id');
+		if($tipo == '6'){
 
 		$carreras=[];
 
@@ -60,7 +60,7 @@ public function beforeFilter(){
 		}
 
 		$this->set(compact('carreras','user_id'));
-		// }
+		}
 
 	}
 
