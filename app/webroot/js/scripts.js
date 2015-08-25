@@ -690,7 +690,7 @@ function materiasPorCoordinador(){
 			$.ajax({
 
 				type:'GET',
-				url:'../getcoursesbycoordinator/'+carrera+'/'+cuatrimestre,
+				url:'/sistema/courses/getcoursesbycoordinator/'+carrera+'/'+cuatrimestre,
 				success:function(response){
 				
 				// console.info(response);
@@ -1407,7 +1407,7 @@ $(document).on('change','.listaGrupos',function(){
 	grup=parseInt($(this).val());
 		
 	$.ajax({
-		url:'../tienemod/'+materiaLink+'/'+grup,
+		url:'/sistema/courses/tienemod/'+materiaLink+'/'+grup,
 		type:'GET',
 		success:function(response){
 
@@ -1419,12 +1419,12 @@ $(document).on('change','.listaGrupos',function(){
 				$(document).find('td.checkTieneMod').eq(numero).append(respuesta);
 
 				if(response == "✓" ){
-					link='<a class="linkVer" href="../vermodulos/'+materiaLink+'/'+grup+'">Ver horario</a>'
+					link='<a class="linkVer" href="/sistema/courses/vermodulos/'+materiaLink+'/'+grup+'">Ver horario</a>'
 					$(document).find('td.linkContainer div.uno').eq(numero).append(link);
 					
 				}else {
 					// link='<a class="linkVer" href="../agregarHorario/'+materiaLink+'/'+grup+'">agregar horario</a>'
-					link='<a class="linkagrega" href="../agregarHorario/'+materiaLink+'/'+carreraLink+'/'+grup+'">Agregar horario</a>'
+					link='<a class="linkagrega" href="/sistema/courses/agregarHorario/'+materiaLink+'/'+carreraLink+'/'+grup+'">Agregar horario</a>'
 
 					$(document).find('td.linkContainer div.uno').eq(numero).append(link);
 				}

@@ -23119,3 +23119,66 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-08-25 01:46:27 Warning: Warning (2): Missing argument 1 for UsersController::consultarcalificaciones() in [/var/www/sistema/app/Controller/UsersController.php, line 1238]
+Trace:
+UsersController::consultarcalificaciones() - APP/Controller/UsersController.php, line 1238
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-25 01:46:27 Warning: Warning (2): Missing argument 2 for UsersController::consultarcalificaciones() in [/var/www/sistema/app/Controller/UsersController.php, line 1238]
+Trace:
+UsersController::consultarcalificaciones() - APP/Controller/UsersController.php, line 1238
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-25 01:46:27 Warning: Warning (2): Missing argument 3 for UsersController::consultarcalificaciones() in [/var/www/sistema/app/Controller/UsersController.php, line 1238]
+Trace:
+UsersController::consultarcalificaciones() - APP/Controller/UsersController.php, line 1238
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-25 01:46:27 Warning: Warning (2): Missing argument 4 for UsersController::consultarcalificaciones() in [/var/www/sistema/app/Controller/UsersController.php, line 1238]
+Trace:
+UsersController::consultarcalificaciones() - APP/Controller/UsersController.php, line 1238
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-25 01:46:27 Warning: Warning (2): Missing argument 5 for UsersController::consultarcalificaciones() in [/var/www/sistema/app/Controller/UsersController.php, line 1238]
+Trace:
+UsersController::consultarcalificaciones() - APP/Controller/UsersController.php, line 1238
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-25 01:56:55 Error: [MissingControllerException] Controller class LogoutController could not be found.
+Exception Attributes: array (
+  'class' => 'LogoutController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/logout
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-25 01:58:29 Warning: Warning (2): Missing argument 1 for CoursesController::index() in [/var/www/sistema/app/Controller/CoursesController.php, line 61]
+Trace:
+CoursesController::index() - APP/Controller/CoursesController.php, line 61
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+

@@ -25,3 +25,57 @@ Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
 Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
 [main] - APP/webroot/index.php, line 118
 
+2015-08-25 01:46:27 Notice: Notice (8): Undefined variable: course_id in [/var/www/sistema/app/Controller/UsersController.php, line 1261]
+Trace:
+UsersController::consultarcalificaciones() - APP/Controller/UsersController.php, line 1261
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-25 01:46:27 Notice: Notice (8): Undefined variable: grupo in [/var/www/sistema/app/Controller/UsersController.php, line 1262]
+Trace:
+UsersController::consultarcalificaciones() - APP/Controller/UsersController.php, line 1262
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-25 01:46:27 Notice: Notice (8): Undefined variable: parcial in [/var/www/sistema/app/Controller/UsersController.php, line 1263]
+Trace:
+UsersController::consultarcalificaciones() - APP/Controller/UsersController.php, line 1263
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-25 01:46:27 Notice: Notice (8): Undefined variable: career_id in [/var/www/sistema/app/Controller/UsersController.php, line 1266]
+Trace:
+UsersController::consultarcalificaciones() - APP/Controller/UsersController.php, line 1266
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-25 01:46:27 Notice: Notice (8): Undefined variable: cuatrimestre in [/var/www/sistema/app/Controller/UsersController.php, line 1267]
+Trace:
+UsersController::consultarcalificaciones() - APP/Controller/UsersController.php, line 1267
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2015-08-25 01:58:29 Notice: Notice (8): Undefined variable: user_id in [/var/www/sistema/app/Controller/CoursesController.php, line 69]
+Trace:
+CoursesController::index() - APP/Controller/CoursesController.php, line 69
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
