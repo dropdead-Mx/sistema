@@ -4,7 +4,7 @@
 <section>
 	<strong>contador</strong>
 
-	<p data-contador="0" class="contadorMensaje" onclick="leerMensajes">0</p>
+	<p data-contador="0" class="contadorMensaje" ></p>
 	<div class="mnsgNuevo">
 
 	<strong>Mensajes nuevos</strong>

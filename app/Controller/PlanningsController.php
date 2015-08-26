@@ -7,10 +7,23 @@ class PlanningsController extends AppController {
 
 public function beforeFilter(){
 	parent::beforeFilter();
-	$this->Auth->allow();
+	// $this->Auth->allow();
 }
 
 public  function isAuthorized($user){
+
+			 if ($user['group_id']== '6' ){
+
+		if(in_array($this->action,array('index','verplaneaciones','download'))){
+			return true;
+		}else {
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('no se puede acceder','default',array('class'=>'mensajeError'));
+				$this->redirect(array('controller'=>'users','action'=>'index'));
+			}
+		}
+
+	}
 
 		 if ($user['group_id']== '7' ){
 
@@ -18,7 +31,7 @@ public  function isAuthorized($user){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
-				$this->Session->setFlash('no se puede acceder');
+				$this->Session->setFlash('no se puede acceder','default',array('class'=>'mensajeError'));
 				$this->redirect(array('controller'=>'users','action'=>'index'));
 			}
 		}
@@ -28,7 +41,12 @@ public  function isAuthorized($user){
 	return parent::isAuthorized($user);
 }
 
-	public function index($user_id){
+	public function index(){
+		$rango=$this->Auth->User('group_id');
+
+		if($rango == 6){
+
+		$user_id=$this->Auth->User('id');
 
 		$carreras=[];
 
@@ -43,13 +61,14 @@ public  function isAuthorized($user){
 		}
 
 		$this->set(compact('carreras','user_id'));
+		}
 
 	}
 
-	public function subirplaneaciones($maestro){
+	public function subirplaneaciones(){
 
 		// $this->User->id=$user_id
-		// $maestro=$this->Auth->User('id');
+		$maestro=$this->Auth->User('id');
 
 		// $materias=$this->Course->find('list',array('conditions'=>array('Course.user_id'=>$maestro),'recursive'=>-1,'fields'=>array('Course.id','Course.name')));
 

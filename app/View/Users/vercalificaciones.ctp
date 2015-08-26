@@ -33,6 +33,10 @@ echo '</select>';
 <select  id="materiasporcarrera">
 	<option class="noMaterias">--Sin materias--</option>
 </select>
+
+<select id="gruposConsultarCalif">
+	<option value="txt">--Sin grupos--</option>
+</select>
 <select  id="parciales">
 	<option value="0"> -- Seleccione el parcial -- </option>
 	<option value="1"> 1er Parcial </option>
@@ -44,6 +48,6 @@ echo '</select>';
 
 <button id="buscarCalificaciones">Buscar</button>
 <section class='pintaCalificaciones'>
-	*
+	
 </section>
 <?php echo $this->Html->script('scripts');?>

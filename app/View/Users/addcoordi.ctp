@@ -19,18 +19,6 @@
 		echo $this->Form->input('EmployeeProfile.foto',array('type'=>'file','label'=>'Foto de perfil'));
 		echo $this->Form->input('EmployeeProfile.foto_dir',array('type'=>'hidden'));
 
-		// echo pr($careers);
-
-		// $contador = count($careers);
-
-		// for ($x=1; $x <= $contador ; $x++){
-		// 	$value =$careers[$x+10];
-		// 	echo $this->Form->input('Usrcareer.'.$x.'.career_id',array('value'=>$x+10,'hiddenField' => false,'label'=>$value,'type'=>'checkbox','multiple'=>true));
-		// 	// echo ($careers[$x+10]);
-		// }
-		// echo $this->Form->hidden('UsersCareers.'.$x.'.user_id');
-		// debug($careers);
-		// echo $this->Form->select('Usrcareer.career_id',$careers,array('multiple'=>'checkbox'));
 
 		echo $this->Form->end('Registrar coordinador');
 

@@ -8,7 +8,7 @@ public $uses=array('Goal','User','Course','Grupo');
 
 public function beforeFilter(){
 	parent::beforeFilter();
-	$this->Auth->allow();
+	// $this->Auth->allow();
 }
 public function isAuthorized($user){
 
@@ -41,10 +41,16 @@ public function index() {
 
 }
 
-public function add($user_id=null,$course_id=null,$partial=null,$grupo=null) {
+public function add($course_id=null,$partial=null,$grupo=null) {
 	$this->Course->id=$course_id;
-	$this->User->id=$user_id;
+	
 	$partial;
+
+	$rango=$this->Auth->User('group_id');
+
+	if($rango == 7){
+
+	$user_id=$this->Auth->User('id');
 
 	
 
@@ -54,8 +60,8 @@ public function add($user_id=null,$course_id=null,$partial=null,$grupo=null) {
 		if($this->Goal->saveAll($this->request->data['Goal'])):
 			
 			// debug($this->request->data);
-			$this->Session->setFlash('Criterio Guardado con exito!!');
-			$this->redirect(array('controller'=>'users','action'=>'viewmycourses',$user_id));
+			$this->Session->setFlash('Criterio Guardado con exito!!','default',array('class'=>'mensajeOk'));
+			$this->redirect(array('controller'=>'users','action'=>'viewmycourses'));
 		endif;
 
 	endif;
@@ -65,6 +71,7 @@ public function add($user_id=null,$course_id=null,$partial=null,$grupo=null) {
 	// $grupos=$this->Grupo->find('list');
 
 	$this->set(compact('user_id','course_id','materia','partial','grupo'));
+	}
 }
 	
 

@@ -468,7 +468,9 @@ function matxCuatyCarr(){
 
 	$('select#cuatrimestre,select#infocalif,select#indexPlaning,select#carreraCoordi,select#indexUploadExam').on('change',function(){
 	$('select#materiasporcarrera,select#apendCoursePlanning,select#apendExam ').children('option.opcion').remove();
-	$('option.optionUpl').remove();
+	$('option.optionUpl,option.opcionConMat').remove();
+	$('select#gruposConsultarCalif option[value="txt"]').attr('selected',true);
+	$('select#gruposConsultarCalif option[value="txt"]').text('--Sin grupos--');
 	$('select#appendGrupo').attr('disabled',true);
 	$('select#appendGrupo option[value="txt"]').text('--Sin grupos disponibles--');
 	carrera = $('select#infocalif option:selected,select#carreraCoordi option:selected,select.carreraSetExams').val();
@@ -552,22 +554,23 @@ function matxCuatyCarr(){
 	cuatri= $('select#cuatrimestre option:selected').val();
 	materia=$('select#materiasporcarrera').val();
 	parcial=$('select#parciales').val();
+	grupo=$('select#gruposConsultarCalif option:selected').val();
 	calificaciones=[];
 	
 
 
-	if( carrera != 0 && cuatri != 0 && materia != 0 && parcial != 0 ){
+	if( carrera != 0 && cuatri != 0 && materia != 0 && parcial != 0 && grupo !== 'txt'){
 
-
+		console.log(grupo);
 
 
 		$.ajax({
 			type:'GET',
-			url:'../consultarcalificaciones/'+carrera+'/'+cuatri+'/'+materia+'/'+parcial,
+			url:'../consultarcalificaciones/'+carrera+'/'+cuatri+'/'+materia+'/'+parcial+'/'+grupo,
 			success:function(response){
 				// $('p.alumno').fadeOut(300);
 
-				// console.info(response);
+				console.info(response);
 				if(typeof response !== 'undefined' && response.length >0 ){
 
 					for (var i=0, num=response.length; i< num; i++){
@@ -687,7 +690,7 @@ function materiasPorCoordinador(){
 			$.ajax({
 
 				type:'GET',
-				url:'../getcoursesbycoordinator/'+carrera+'/'+cuatrimestre,
+				url:'/sistema/courses/getcoursesbycoordinator/'+carrera+'/'+cuatrimestre,
 				success:function(response){
 				
 				// console.info(response);
@@ -833,6 +836,12 @@ function verMensajesAnteriores() {
 
 function mensajepush(){
 	timestamp=Math.floor(Date.now() / 1000);
+
+
+	
+
+	
+
 	// timestamp=null;
 	mensajesLeidos=[];
 	mensajesNuevos=[];
@@ -845,7 +854,7 @@ function mensajepush(){
 
 	// contador.on('click',function(){
 		numero=parseInt(contador.text());
-		console.log(numero);
+		// console.log(numero);
 
 
 	$.ajax({
@@ -875,21 +884,28 @@ function mensajepush(){
 				if(typeof response !== 'undefined' && response.length >= 1  ){
 
 
-
-					contador.attr('data-contador',response.length);
-					// setTimeout(100);
-					// indicador=response.length;
-					if(indicador < contador.attr('data-contador') && ejecucion > 1){
-						contador.text(parseInt(contador.text())+1);
-					}else {
-						// console.log(contador.text());
-						// $('p.contadorMensaje').append('sin mensajes nuevos');
-					}
+					$.ajax({
+		type:'GET',
+		url:'/sistema/messages/contador',
+		success:function(response){
+			$('p.contadorMensaje').text(response);
+		}
+		
+	});
+					// contador.attr('data-contador',response.length);
+					// // setTimeout(100);
+					// // indicador=response.length;
+					// if(indicador < contador.attr('data-contador') && ejecucion > 1){
+					// 	contador.text(parseInt(contador.text())+1);
+					// }else {
+					// 	// console.log(contador.text());
+					// 	// $('p.contadorMensaje').append('sin mensajes nuevos');
+					// }
 
 
 					for(x=0, numero = response.length; x < numero; x++){
 
-						// console.log(x)
+						console.log(x)
 
 					if(parseInt(response[x].Message.status) == 1 ){
 
@@ -906,6 +922,7 @@ function mensajepush(){
 					}
 				$('div.mnsgNuevo').append(mensajesNuevos);
 				$('div.mnsgLeidos').append(mensajesLeidos);
+
 				mensajess();
 				ejecucion++;
 
@@ -1078,7 +1095,7 @@ function addPlannings(){
 			$.ajax({
 
 				type:'get',
-				url:'../verplaneaciones/'+ident+'/'+materia+'/'+grupo,
+				url:'/sistema/plannings/verplaneaciones/'+ident+'/'+materia+'/'+grupo,
 				success:function(response){
 
 
@@ -1390,7 +1407,7 @@ $(document).on('change','.listaGrupos',function(){
 	grup=parseInt($(this).val());
 		
 	$.ajax({
-		url:'../tienemod/'+materiaLink+'/'+grup,
+		url:'/sistema/courses/tienemod/'+materiaLink+'/'+grup,
 		type:'GET',
 		success:function(response){
 
@@ -1402,12 +1419,12 @@ $(document).on('change','.listaGrupos',function(){
 				$(document).find('td.checkTieneMod').eq(numero).append(respuesta);
 
 				if(response == "✓" ){
-					link='<a class="linkVer" href="../vermodulos/'+materiaLink+'/'+grup+'">Ver horario</a>'
+					link='<a class="linkVer" href="/sistema/courses/vermodulos/'+materiaLink+'/'+grup+'">Ver horario</a>'
 					$(document).find('td.linkContainer div.uno').eq(numero).append(link);
 					
 				}else {
 					// link='<a class="linkVer" href="../agregarHorario/'+materiaLink+'/'+grup+'">agregar horario</a>'
-					link='<a class="linkagrega" href="../agregarHorario/'+materiaLink+'/'+carreraLink+'/'+grup+'">Agregar horario</a>'
+					link='<a class="linkagrega" href="/sistema/courses/agregarHorario/'+materiaLink+'/'+carreraLink+'/'+grup+'">Agregar horario</a>'
 
 					$(document).find('td.linkContainer div.uno').eq(numero).append(link);
 				}
@@ -1452,13 +1469,43 @@ $(document).on('change','.listaGrupos',function(){
 
 });
 
+}
 
+function gruposCalificaciones(){
 
+	$('select#materiasporcarrera').on('change',function(){
+		opcionesCons=[];
+		$('option.opcionConMat').remove();
+		materiaID=$(this).val();
+		$.ajax({
 
+			url:'/sistema/courses/getgroupsbycourse/'+materiaID,
+			type:'GET',
+			success:function(response){
+				console.log(response);
+
+				if(response.length >= 1 && typeof(response) !== 'undefined'){
+					for(x=0 ,num=response.length;x<num;x++){
+
+						opcionConsulta='<option class="opcionConMat" value="'+response[x].Grupo.id+'">'+response[x].Grupo.name+'</option>'
+					opcionesCons.push(opcionConsulta);
+					}
+					$('select#gruposConsultarCalif').append(opcionesCons);
+					$('select#gruposConsultarCalif option[value="txt"]').text('--Grupos disponibles--');
+				}else {
+					$('select#gruposConsultarCalif option[value="txt"]').text('--Sin grupos--');
+
+				}
+			}
+
+		});
+
+	});
 
 }
 
 $(function(){
+	gruposCalificaciones();
 	verifica();
 	asignarFechDeExamen();
 	clona();

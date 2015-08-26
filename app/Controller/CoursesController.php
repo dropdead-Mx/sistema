@@ -9,7 +9,7 @@ class CoursesController extends AppController {
 public function beforeFilter(){
 	parent::beforeFilter();
 	// $this->Auth->allow('index','getcoursesbycoordinator','tienemod','vermodulos','agregarHorario','asignarProfesor');
-	$this->Auth->allow();
+	// $this->Auth->allow();
 }
 
 public function isAuthorized($user){
@@ -38,7 +38,7 @@ public function isAuthorized($user){
 
 	else if ($user['group_id']== '6' ){
 
-		if(in_array($this->action,array('index','addModule','tienemod'))){
+		if(in_array($this->action,array('tieneprof','getcoursesbycoordinator','index','agregarHorario','tienemod','getgroupsbycourse','asignarProfesor','tienemod','vermodulos','reasignarProf'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -58,11 +58,11 @@ public function isAuthorized($user){
 
 }
 
-	public function index($user_id){
-		// $user_id=$this->Auth->User('id');
-		// $tipo=$this->Auth->User('group_id');
+	public function index(){
+		$user_id=$this->Auth->User('id');
+		$tipo=$this->Auth->User('group_id');
 
-		// if ($tipo == '6'){
+		if ($tipo == '6'){
 
 		$carreras=[];
 		$careers= $this->Usrcareer->find('all',array('conditions'=>array(
@@ -85,7 +85,7 @@ public function isAuthorized($user){
 		// $materias=$this->Course->find('all');
 		// $this->set('materias',$materias);
 		$this->set('carreras',$carreras);
-		// }
+		}
 		
 	}
 

@@ -12,7 +12,7 @@
 	<?php
 		// echo $this->Html->meta('icon');
 
-		echo $this->Html->css(array('cake.generic','jquery-ui.min'));
+		echo $this->Html->css(array('login','jquery-ui.min','normalize'));
 		echo $this->Html->script(array('jquery','jquery-ui.min'));
 		
 
@@ -23,23 +23,26 @@
 </head>
 <body>
 	<div id="container">
-		<div id="header">
-			<h1>Plataforma Dorados</h1>
-		</div>
+		
 		<div id="content">
 
-			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); 
 			$tipo= $current_user['group_id'];
 			if($tipo == 8){
 
-			echo $this->element('texto');
+			// echo $this->element('texto');
 			}else if($tipo == 7){
-			echo $this->element('lista');
+			// echo $this->element('lista');
 
 			}
 			?>
+
+		<!-- linea para pintar errores en cake  -->
+		<div class="errores">
+			
+		<?php echo $this->Session->flash(); ?>
+		</div>
 		</div>
 		<div id="footer">
 		
