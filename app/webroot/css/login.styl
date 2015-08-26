@@ -2,30 +2,64 @@ azulObscuro=#2c3e50
 naranja=#f39c12
 gris=#7f8c8d
 blanco=#ecf0f1
-
+azulClaro=#26bce0
+rojo=#e74c3c
 div.loginEncabezado
 	background azulObscuro 
-	text-align center
-	padding 2%
 	border-bottom 3px solid  naranja
 	box-shadow 3px 0px 3px  black
 	color #fff
-	font-weight bold
-	font-size 24px
 	font-family arial
+	font-size 24px
+	font-weight bold
+	padding 2%
+	text-align center
 
 div#loginForm
-	display block
-	margin 3% auto
-	width 70%
 	background  #FFF
+	display block
+	margin 3% auto 0% 3%
 	padding 12px
 	text-align  center
+	label
+		color gris
 	input
-		width 70%
-		border 2px solid azulObscuro
+		border 2px solid azulClaro
+		border-radius 5px
 		display block
-		margin 2% auto
+		display block
+		margin 4% auto
+		padding 2%
+		width 70%
+		
 	input[type=submit]
-		margin-top 10px
-		width 25%
+		background azulObscuro
+		border none
+		color #fff 
+		display block
+		font-weight bold
+		margin 15px auto 0px auto
+		padding 3%
+		width 32%
+		
+h2
+	text-align center
+	color azulObscuro
+	margin 1% auto
+	display none
+p.textoBienvenida
+	display none
+	
+
+div.errores
+	background rojo
+	color #fff
+	width 88%
+	display block
+	margin 0 auto
+	text-align center
+	padding 1%
+	border-radius 5px
+	font-weight bold
+	
+		
