@@ -1,0 +1,35 @@
+#DIRECTOR
+	
+alejandrosh@gmail.com
+	
+	/users/indexcoordinator
+	/users/addcoordi
+
+
+#COORDINADOR
+
+juaquinalcantar@gmail.com
+	
+	/messages/ ok
+	/exams/ ok
+	/plannings/ ok
+	/users/addStudentok
+	/users/indexStudent *
+	/users/addTeacher ok 
+	/users/indexTeacher *
+	/users/vercalificaciones/ *
+	/courses/ *
+
+#MAESTRO
+
+urielcardozo99@gmail.com
+	/users/viewmycourses *
+	/uploadtests/subirexamen/ ok
+	/plannings/subirplaneaciones/ ok
+
+#ALUMNO
+kingleegaona@hotmail.com
+
+	/users/alumno/
+
+	
