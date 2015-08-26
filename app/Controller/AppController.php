@@ -60,7 +60,7 @@ class AppController extends Controller {
 	public function beforeFilter(){
       
 		$this->Auth->allow('login','logout','editStudent','editTeacher');
-		// $this->set('current_user',$this->Auth->user());
+		$this->set('current_user',$this->Auth->user());
 	
 		// aqui se ponen las siguientes redirecciones para cada usuario
 
