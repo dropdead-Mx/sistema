@@ -16,6 +16,6 @@
 ?>
 </div>
 
-<h2>Bienvenido</h2>
+<h2 class="Bienvenido">Bienvenido</h2>
 <p class="textoBienvenida">La manera más segura y fácil para educadores de conectarse y colaborar con estudiantes entre sí.</p>
 </div>

@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.43, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.44, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: sistema
 -- ------------------------------------------------------
--- Server version	5.5.43-0+deb7u1
+-- Server version	5.5.44-0+deb7u1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -33,7 +33,7 @@ CREATE TABLE `assists` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `assists` (
 
 LOCK TABLES `assists` WRITE;
 /*!40000 ALTER TABLE `assists` DISABLE KEYS */;
-INSERT INTO `assists` VALUES (1,18,11,38,2,'2015-04-21','juas',NULL,NULL),(2,65,11,38,3,'2015-04-21','xdeee',NULL,NULL),(3,18,3,38,2,'2015-04-22','',NULL,NULL),(4,65,3,38,3,'2015-04-22','',NULL,NULL),(5,18,19,38,1,'2015-04-23','es gay ',NULL,NULL),(6,65,19,38,3,'2015-04-23','este es mas ',NULL,NULL),(7,18,11,38,3,'2015-05-05','',NULL,NULL),(8,65,11,38,2,'2015-05-05','',NULL,NULL),(9,18,9,38,1,'2015-05-07','',NULL,NULL),(10,65,9,38,1,'2015-05-07','',NULL,NULL);
+INSERT INTO `assists` VALUES (1,18,12,38,1,'2015-08-24','','2015-08-24 23:42:40','2015-08-24 23:42:40'),(2,65,12,38,2,'2015-08-24','','2015-08-24 23:42:40','2015-08-24 23:42:40'),(3,73,12,38,1,'2015-08-24','','2015-08-24 23:42:40','2015-08-24 23:42:40'),(4,78,12,38,1,'2015-08-24','','2015-08-24 23:42:40','2015-08-24 23:42:40'),(5,90,12,38,2,'2015-08-24','','2015-08-24 23:42:40','2015-08-24 23:42:40'),(6,91,12,38,2,'2015-08-24','','2015-08-24 23:42:40','2015-08-24 23:42:40');
 /*!40000 ALTER TABLE `assists` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ CREATE TABLE `course_modules` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `course_modules` (
 
 LOCK TABLES `course_modules` WRITE;
 /*!40000 ALTER TABLE `course_modules` DISABLE KEYS */;
-INSERT INTO `course_modules` VALUES (1,19,12,38,'lunes','08:10:00','09:10:00','2015-08-22 12:57:40','2015-08-22 12:57:40'),(2,19,12,38,'miercoles','13:20:00','14:10:00','2015-08-22 12:57:40','2015-08-22 12:57:40'),(3,19,12,38,'viernes','15:10:00','16:10:00','2015-08-22 12:57:40','2015-08-22 12:57:40');
+INSERT INTO `course_modules` VALUES (1,19,12,38,'lunes','08:10:00','09:10:00','2015-08-22 12:57:40','2015-08-22 12:57:40'),(2,19,12,38,'miercoles','13:20:00','14:10:00','2015-08-22 12:57:40','2015-08-22 12:57:40'),(3,19,12,38,'viernes','15:10:00','16:10:00','2015-08-22 12:57:40','2015-08-22 12:57:40'),(4,19,9,38,'martes','07:00:00','08:20:00','2015-08-25 09:47:38','2015-08-25 09:47:38'),(5,19,9,38,'miercoles','09:00:00','10:00:00','2015-08-25 09:47:38','2015-08-25 09:47:38');
 /*!40000 ALTER TABLE `course_modules` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -182,7 +182,7 @@ CREATE TABLE `exams` (
 
 LOCK TABLES `exams` WRITE;
 /*!40000 ALTER TABLE `exams` DISABLE KEYS */;
-INSERT INTO `exams` VALUES (1,9,38,1,'2015-03-03','08:10:00','09:00:00','2015-08-22 19:05:11','2015-08-22 19:05:11'),(2,9,38,2,'2015-04-10','10:00:00','11:10:00','2015-08-22 19:05:11','2015-08-22 19:05:11'),(3,9,38,3,'2015-05-19','14:10:00','15:00:00','2015-08-22 19:05:11','2015-08-22 19:05:11'),(4,9,38,4,'2015-06-16','09:00:00','13:10:00','2015-08-22 19:05:11','2015-08-22 19:05:11'),(5,9,38,5,'2015-07-15',NULL,NULL,'2015-08-22 19:05:11','2015-08-22 19:05:11');
+INSERT INTO `exams` VALUES (1,12,38,1,'2015-05-08','08:00:00','09:00:00','2015-08-25 01:35:56','2015-08-25 01:35:56'),(2,12,38,2,'2015-05-14','11:20:00','13:20:00','2015-08-25 01:35:56','2015-08-25 01:35:56'),(3,12,38,3,'2015-06-19','10:00:00','11:00:00','2015-08-25 01:35:56','2015-08-25 01:35:56'),(4,12,38,4,'2015-07-22','12:20:00','13:20:00','2015-08-25 01:35:56','2015-08-25 01:35:56'),(5,12,38,5,'2015-08-11',NULL,NULL,'2015-08-25 01:35:56','2015-08-25 01:35:56');
 /*!40000 ALTER TABLE `exams` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -279,7 +279,7 @@ CREATE TABLE `goals` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -288,7 +288,7 @@ CREATE TABLE `goals` (
 
 LOCK TABLES `goals` WRITE;
 /*!40000 ALTER TABLE `goals` DISABLE KEYS */;
-INSERT INTO `goals` VALUES (1,'EXAMEN',1,12,38,1,30,'2015-08-24 14:17:29','2015-08-24 14:17:29'),(2,'TAREAS',1,12,38,1,30,'2015-08-24 14:17:29','2015-08-24 14:17:29'),(3,'ASISTENCIA',1,12,38,1,10,'2015-08-24 14:17:29','2015-08-24 14:17:29'),(4,'PARTICIPACIONES',1,12,38,1,20,'2015-08-24 14:17:29','2015-08-24 14:17:29'),(5,'PRACTICAS',1,12,38,1,10,'2015-08-24 14:17:29','2015-08-24 14:17:29'),(6,'EXAMEN',1,12,38,2,50,'2015-08-24 16:00:08','2015-08-24 16:00:08'),(7,'ASISTENCIAS',1,12,38,2,10,'2015-08-24 16:00:08','2015-08-24 16:00:08'),(8,'PRACTICAS',1,12,38,2,40,'2015-08-24 16:00:08','2015-08-24 16:00:08');
+INSERT INTO `goals` VALUES (1,'EXAMEN',1,12,38,1,30,'2015-08-24 14:17:29','2015-08-24 14:17:29'),(2,'TAREAS',1,12,38,1,30,'2015-08-24 14:17:29','2015-08-24 14:17:29'),(3,'ASISTENCIA',1,12,38,1,10,'2015-08-24 14:17:29','2015-08-24 14:17:29'),(4,'PARTICIPACIONES',1,12,38,1,20,'2015-08-24 14:17:29','2015-08-24 14:17:29'),(5,'PRACTICAS',1,12,38,1,10,'2015-08-24 14:17:29','2015-08-24 14:17:29'),(6,'EXAMEN',1,12,38,2,50,'2015-08-24 16:00:08','2015-08-24 16:00:08'),(7,'ASISTENCIAS',1,12,38,2,10,'2015-08-24 16:00:08','2015-08-24 16:00:08'),(8,'PRACTICAS',1,12,38,2,40,'2015-08-24 16:00:08','2015-08-24 16:00:08'),(9,'EXAMEN',1,9,38,1,40,'2015-08-25 09:46:07','2015-08-25 09:46:07'),(10,'ASISTENCIAS',1,9,38,1,50,'2015-08-25 09:46:07','2015-08-25 09:46:07'),(11,'TAREA',1,9,38,1,5,'2015-08-25 09:46:07','2015-08-25 09:46:07'),(12,'PARTICIPACION',1,9,38,1,5,'2015-08-25 09:46:07','2015-08-25 09:46:07');
 /*!40000 ALTER TABLE `goals` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -359,8 +359,10 @@ CREATE TABLE `messages` (
   `mensaje` text NOT NULL,
   `hora` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` int(2) DEFAULT '1',
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -369,7 +371,7 @@ CREATE TABLE `messages` (
 
 LOCK TABLES `messages` WRITE;
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
-INSERT INTO `messages` VALUES (1,1,62,'Examen para imprimir de la materia: MicrobiologÃ­a de Alimentos','Nuevo examen disponible para descarga de la materia MicrobiologÃ­a de Alimentos, Periodo: Primer parcial del grupo:1 A','2015-08-23 20:58:34',1),(2,1,62,'Planeacion de la materia: MicrobiologÃ­a de Alimentosd el grupo: 1 A','planeacion semana 1','2015-08-23 21:30:03',1);
+INSERT INTO `messages` VALUES (1,1,62,'Examen para imprimir de la materia: MicrobiologÃ­a de Alimentos','Nuevo examen disponible para descarga de la materia MicrobiologÃ­a de Alimentos, Periodo: Primer parcial del grupo:1 A','2015-08-25 05:33:40',0,NULL,NULL),(2,1,62,'Examen para imprimir de la materia: MicrobiologÃ­a de Alimentos','Nuevo examen disponible para descarga de la materia MicrobiologÃ­a de Alimentos, Periodo: Segundo parcial del grupo:1 A','2015-08-25 05:53:05',0,'2015-08-25 00:51:35','2015-08-25 00:53:05'),(3,1,62,'Examen para imprimir de la materia: MicrobiologÃ­a de Alimentos','Nuevo examen disponible para descarga de la materia MicrobiologÃ­a de Alimentos, Periodo: Tercer parcial del grupo:1 A','2015-08-25 05:55:44',0,'2015-08-25 00:53:48','2015-08-25 00:55:44'),(4,1,62,'Examen para imprimir de la materia: MicrobiologÃ­a de Alimentos','Nuevo examen disponible para descarga de la materia MicrobiologÃ­a de Alimentos, Periodo: Cuatrimestral del grupo:1 A','2015-08-25 06:16:54',0,'2015-08-25 01:16:37','2015-08-25 01:16:54'),(5,1,62,'Examen para imprimir de la materia: MicrobiologÃ­a de Alimentos','Nuevo examen disponible para descarga de la materia MicrobiologÃ­a de Alimentos, Periodo: Primer parcial del grupo:1 A','2015-08-25 06:18:33',0,'2015-08-25 01:18:22','2015-08-25 01:18:33'),(6,1,62,'Planeacion de la materia: MicrobiologÃ­a de Alimentosd el grupo: 1 A','planeacion semana 1','2015-08-25 06:26:14',0,'2015-08-25 01:23:14','2015-08-25 01:26:14'),(7,1,62,'Examen para imprimir de la materia: InglÃ©s BÃ¡sico I','Nuevo examen disponible para descarga de la materia InglÃ©s BÃ¡sico I, Periodo: Primer parcial del grupo:1 A','2015-08-25 07:13:35',0,'2015-08-25 02:12:13','2015-08-25 02:13:35');
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -448,7 +450,7 @@ CREATE TABLE `plannings` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -457,7 +459,7 @@ CREATE TABLE `plannings` (
 
 LOCK TABLES `plannings` WRITE;
 /*!40000 ALTER TABLE `plannings` DISABLE KEYS */;
-INSERT INTO `plannings` VALUES (1,62,1,19,12,38,'planeacion semana 1','icomoon.zip','1','2015-08-23 16:30:03','2015-08-23 16:30:03');
+INSERT INTO `plannings` VALUES (1,62,1,19,12,38,'planeacion semana 1','icomoon.zip','1','2015-08-23 16:30:03','2015-08-23 16:30:03'),(2,62,1,19,12,38,'planeacion semana 1','jquery-validation-1.13.1.zip','2','2015-08-25 01:23:14','2015-08-25 01:23:14');
 /*!40000 ALTER TABLE `plannings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -565,7 +567,7 @@ CREATE TABLE `teachercourses` (
 
 LOCK TABLES `teachercourses` WRITE;
 /*!40000 ALTER TABLE `teachercourses` DISABLE KEYS */;
-INSERT INTO `teachercourses` VALUES (1,12,1,38,'2015-08-21 19:27:19','2015-08-21 21:28:28'),(2,12,69,42,'2015-08-22 00:11:15','2015-08-22 00:11:15'),(3,9,2,38,'2015-08-22 17:35:34','2015-08-22 17:35:34');
+INSERT INTO `teachercourses` VALUES (1,12,1,38,'2015-08-21 19:27:19','2015-08-21 21:28:28'),(2,12,69,42,'2015-08-22 00:11:15','2015-08-22 00:11:15'),(3,9,1,38,'2015-08-22 17:35:34','2015-08-25 02:09:04');
 /*!40000 ALTER TABLE `teachercourses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -588,7 +590,7 @@ CREATE TABLE `uploadtests` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `modified` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -597,7 +599,7 @@ CREATE TABLE `uploadtests` (
 
 LOCK TABLES `uploadtests` WRITE;
 /*!40000 ALTER TABLE `uploadtests` DISABLE KEYS */;
-INSERT INTO `uploadtests` VALUES (1,62,1,12,38,1,'MySQLypostgresql.doc','1','2015-08-23 20:58:34','2015-08-23 20:58:34');
+INSERT INTO `uploadtests` VALUES (1,62,1,12,38,1,'EJERCICIOS_1_UNIDAD.docx','1','2015-08-25 06:18:22','2015-08-25 06:18:22'),(2,62,1,9,38,1,'Carta aceptacion.docx','2','2015-08-25 07:12:13','2015-08-25 07:12:13');
 /*!40000 ALTER TABLE `uploadtests` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -688,4 +690,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-08-24 20:48:23
+-- Dump completed on 2015-08-26 14:22:59

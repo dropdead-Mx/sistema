@@ -1,5 +1,5 @@
 $(function(){
-	$('header li').on('click',menu);
+	$('ul.menuPrincipal li').on('click',menu);
 	
 });
 

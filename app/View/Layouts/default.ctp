@@ -12,8 +12,8 @@
 	<?php
 		// echo $this->Html->meta('icon');
 
-		echo $this->Html->css(array('login','jquery-ui.min','normalize'));
-		echo $this->Html->script(array('jquery','jquery-ui.min'));
+		echo $this->Html->css(array('login','jquery-ui.min','normalize','general'));
+		echo $this->Html->script(array('jquery','jquery-ui.min','index'));
 		
 
 		echo $this->fetch('meta');
@@ -29,9 +29,9 @@
 
 			<?php echo $this->fetch('content'); 
 			$tipo= $current_user['group_id'];
-			if($tipo == 8){
+			if($tipo == 5){
 
-			// echo $this->element('texto');
+			echo $this->element('menu');
 			}else if($tipo == 7){
 			// echo $this->element('lista');
 

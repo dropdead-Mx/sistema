@@ -38,7 +38,7 @@ div#loginForm input[type=submit] {
   padding: 3%;
   width: 32%;
 }
-h2 {
+h2.bienvenido {
   text-align: center;
   color: #2c3e50;
   margin: 1% auto;
@@ -48,8 +48,7 @@ p.textoBienvenida {
   display: none;
 }
 div.errores {
-  background: #e74c3c;
-  color: #fff;
+  color: #e74c3c;
   width: 88%;
   display: block;
   margin: 0 auto;
