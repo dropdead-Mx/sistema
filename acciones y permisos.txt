@@ -4,6 +4,7 @@ alejandrosh@gmail.com
 	
 	/users/indexcoordinator
 	/users/addcoordi
+	/users/indexStudent
 
 
 #COORDINADOR
@@ -14,10 +15,10 @@ juaquinalcantar@gmail.com
 	/exams/ ok
 	/plannings/ ok
 	/users/addStudentok
-	/users/indexStudent *
+	/users/indexStudent ok
 	/users/addTeacher ok 
-	/users/indexTeacher *
-	/users/vercalificaciones/ *
+	/users/indexTeacher ok
+	/users/vercalificaciones/ ok
 	/courses/ *
 
 #MAESTRO

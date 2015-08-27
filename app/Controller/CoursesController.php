@@ -9,13 +9,31 @@ class CoursesController extends AppController {
 public function beforeFilter(){
 	parent::beforeFilter();
 	// $this->Auth->allow('index','getcoursesbycoordinator','tienemod','vermodulos','agregarHorario','asignarProfesor');
-	// $this->Auth->allow();
+	$this->Auth->allow('tieneprof');
 }
 
 public function isAuthorized($user){
 
 
 	// return parent::isAuthorized($user);
+
+		 if ($user['group_id']== '5' ){
+
+		if(in_array($this->action,array())){
+			return true;
+		}else {
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('no se puede acceder');
+				// $this->redirect($this->Auth->redirect());
+				$this->redirect(array('controller'=>'users','action'=>'index'));
+
+				
+				
+
+			}
+		}
+
+	}
 
 
 	 if ($user['group_id']== '7' ){
@@ -180,7 +198,7 @@ public function isAuthorized($user){
 
  		if($existe >= 1){
  			$mensaje='✓';
- 		} else {
+ 		} else if ($existe ==0 ){
  			$mensaje= '✖';
  		}
 
@@ -351,7 +369,7 @@ public function reasignarProf($materia_id,$grupo_id){
 public function tieneprof($materia,$grupo){
 	$this->RequestHandler->respondAs('json');
 	$this->layout='ajax';
-	if($this->request->is('ajax') && $materia !== 0 && $grupo !== 0  ){
+	// if($this->request->is('ajax') && $materia !== 0 && $grupo !== 0  ){
 
 	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
 	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
@@ -363,7 +381,7 @@ public function tieneprof($materia,$grupo){
 		'Teachercourse.grupo_id'=>$grupo)));
 
 	$this->set(compact('tieneprofesor'));
-	}
+	// }
 }
 
 public function getgroupsbycourse($materia_id=null){

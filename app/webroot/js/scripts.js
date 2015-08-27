@@ -1404,6 +1404,7 @@ $(document).on('change','.listaGrupos',function(){
 	carreraLink=$(document).find('td.linkContainer').eq(numero).attr('data-carrera');
 	$(document).find('a.linkVer,a.linkagrega,a.linkAsigna, br,a.reasignaMat').remove();
 
+
 	if($(this).val() !== 'txt'){
 	grup=parseInt($(this).val());
 		
@@ -1414,7 +1415,7 @@ $(document).on('change','.listaGrupos',function(){
 
 			if(response.length >=1 ){
 
-			
+				
 
 				respuesta='<span class="checkSucces">'+response+'</span>';
 				$(document).find('td.checkTieneMod').eq(numero).append(respuesta);
@@ -1423,7 +1424,7 @@ $(document).on('change','.listaGrupos',function(){
 					link='<a class="linkVer" href="/sistema/courses/vermodulos/'+materiaLink+'/'+grup+'">Ver horario</a>'
 					$(document).find('td.linkContainer div.uno').eq(numero).append(link);
 					
-				}else {
+				}else if(response == '✖') {
 					// link='<a class="linkVer" href="../agregarHorario/'+materiaLink+'/'+grup+'">agregar horario</a>'
 					link='<a class="linkagrega" href="/sistema/courses/agregarHorario/'+materiaLink+'/'+carreraLink+'/'+grup+'">Agregar horario</a>'
 
@@ -1436,24 +1437,30 @@ $(document).on('change','.listaGrupos',function(){
 		}
 	});
 
+ 	
+
 	$.ajax({
 		url:'/sistema/courses/tieneprof/'+materiaLink+'/'+grup,
 		type:'GET',
 		success:function(response){
 
+			console.log(response);
 			// console.log('estatus tiene maestro: '+response)
-			timeout:2000
+			
 			if( parseInt(response) === 1){
 				// lnk='<p class="pStatus">Ya tiene profesor asignado </p>';
 				lnk='<a class="reasignaMat" href="/sistema/courses/reasignarProf/'+materiaLink+'/'+grup+'"> Reasignar profesor</a>'
-
-			}else if(parseInt(response) === 0 ){
-				lnk='<a style="display:block" class="linkAsigna" href="/sistema/courses/asignarProfesor/'+materiaLink+'/'+grup+'">Asignar profesor </a>';
-			}
-
 			$(document).find('td.linkContainer div.dos').eq(numero).append(lnk);
+				
+			}else if(parseInt(response) === 0 ){
+				lnk='<a  class="linkAsigna" href="/sistema/courses/asignarProfesor/'+materiaLink+'/'+grup+'">Asignar profesor </a>';
+			$(document).find('td.linkContainer div.dos').eq(numero).append(lnk);
+			}
+			console.log(response);
 
 		}
+			
+
 
 	});
 
