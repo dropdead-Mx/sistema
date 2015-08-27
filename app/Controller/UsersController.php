@@ -1283,7 +1283,8 @@ public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$par
 	$this->RequestHandler->respondAs('json');
 	$this->layout='ajax';
 
-	$calificacionesObtenidas=[];
+	if($this->request->is('ajax')){
+		$calificacionesObtenidas=[];
 	$promedioPorAlumno=[];
 	$suma=array();
 
@@ -1340,10 +1341,13 @@ public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$par
 
 
 }}
+	// pr($calificacionesObtenidas);
 
 	$contador=sizeof($calificacionesObtenidas);
 
-	if($contador > 0 ){
+	
+
+	if($contador > 0 && sizeof($calificacionesObtenidas[0]) !== 0){
 
 		foreach ($calificacionesObtenidas as $k => $calif):
 		
@@ -1383,15 +1387,18 @@ public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$par
 
 		}
 
-		// pr($arrayFinal);
+	
 
 
 
 
 	$this->set(compact('arrayFinal',$arrayFinal));
 
-	}else {
+	} 
+	else {
+	
 	$this->set(compact('arrayFinal',$arrayFinal));
+
 
 	}
 	
@@ -1399,8 +1406,11 @@ public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$par
 
 
 
+
 }
 
+	}
+	
 
 
 

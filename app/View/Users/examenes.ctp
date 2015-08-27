@@ -34,7 +34,7 @@ $texto='No asignado aun';
 
 		}else {
 			// echo '<strong>Fecha : </strong>'.$texto;
-			echo "<strong>Datos de examen no asignados aun</strong>";
+			echo "<strong>N/A</strong>";
 		}
 
 		
@@ -49,7 +49,7 @@ $texto='No asignado aun';
 
 		}else {
 			// echo '<strong>Fecha : </strong>'.$texto;
-			echo "<strong>Datos de examen no asignados aun</strong>";
+			echo "<strong>N/A</strong>";
 		}
 
 
@@ -64,7 +64,7 @@ $texto='No asignado aun';
 
 		}else {
 			// echo '<strong>Fecha : </strong>'.$texto;
-			echo "<strong>Datos de examen no asignados aun</strong>";
+			echo "<strong>N/A</strong>";
 		}
 
 		?></td>
@@ -78,7 +78,7 @@ $texto='No asignado aun';
 
 		}else {
 			// echo '<strong>Fecha : </strong>'.$texto;
-			echo "<strong>Datos de examen no asignados aun</strong>";
+			echo "<strong>N/A</strong>";
 		}
 
 		?></td>
@@ -93,7 +93,7 @@ $texto='No asignado aun';
 
 		}else {
 			// echo '<strong>Fecha : </strong>'.$texto;
-			echo "<strong>Datos de examen no asignados aun</strong>";
+			echo "<strong>N/A</strong>";
 		}
 
 
@@ -108,4 +108,3 @@ $texto='No asignado aun';
 </table>
 
 
-<?php echo $this->Html->link('Atras',array('action'=>'alumno',$id));?>

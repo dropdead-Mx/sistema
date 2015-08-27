@@ -376,7 +376,7 @@ function misAsistencias(){
 
 			$.ajax({
 			type:"GET",
-			url:'../getassists/'+materia+'/'+usuario,
+			url:'/sistema/users/getassists/'+materia+'/'+usuario,
 			success: function(response){
 				console.log(response);
 				if(typeof response !== 'undefined' && response.length >0 ){
@@ -546,7 +546,7 @@ function matxCuatyCarr(){
 				// setTimeout(10000);
 
 
-
+				$('p.mensajeError').remove();
  	
 
 
@@ -561,7 +561,7 @@ function matxCuatyCarr(){
 
 	if( carrera != 0 && cuatri != 0 && materia != 0 && parcial != 0 && grupo !== 'txt'){
 
-		console.log(grupo);
+		// console.log(grupo);
 
 
 		$.ajax({
@@ -570,14 +570,15 @@ function matxCuatyCarr(){
 			success:function(response){
 				// $('p.alumno').fadeOut(300);
 
-				console.info(response);
+				console.log(response);
 				if(typeof response !== 'undefined' && response.length >0 ){
 
 					for (var i=0, num=response.length; i< num; i++){
+						console.log(parseInt(response[i].calificacion));
 
 						// materias.push('<option value="'+response[i].Course.id+'"class="opcion">'+response[i].Course.name+'</option>');
-						if(response[i].calificacion != null ){
-							calificaciones.push('<p class="alumno">'+response[i].nombre+' calificacion del parcial '+parcial+': '+response[i].calificacion+'</p>');
+						if(response[i].calificacion !== 0 ){
+							calificaciones.push('<p class="alumno">'+response[i].nombre+': '+response[i].calificacion+'</p>');
 						}else if (response[i].calificacion == 'null' ) {
 
 						}
@@ -609,7 +610,7 @@ function matxCuatyCarr(){
 
 
 
-							alert('El profesor no ah registrado calificaciones aun');
+							$('section.pintaCalificaciones').append('<p class="mensajeError">El profesor no ah registrado calificaciones aun</p>');
 							$('p.alumno').slideToggle(900,function(){
 
 							$('p.alumno').remove();

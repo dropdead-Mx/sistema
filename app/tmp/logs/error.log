@@ -23302,3 +23302,30 @@ Request URL: /sistema/files/employee_profile/foto/thumb_
 Stack Trace:
 #0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-08-26 23:20:16 Error: [MissingControllerException] Controller class GetassistsController could not be found.
+Exception Attributes: array (
+  'class' => 'GetassistsController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/getassists/14/18
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-26 23:20:18 Error: [MissingControllerException] Controller class GetassistsController could not be found.
+Exception Attributes: array (
+  'class' => 'GetassistsController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/getassists/9/18
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-26 23:20:28 Error: [MissingControllerException] Controller class GetassistsController could not be found.
+Exception Attributes: array (
+  'class' => 'GetassistsController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/getassists/14/18
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
