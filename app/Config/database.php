@@ -73,7 +73,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'root',
-		'password' => 'netapi065@_',
+		'password' => '',
 		// 'password' => '',
 		'database' => 'sistema',
 		'prefix' => '',

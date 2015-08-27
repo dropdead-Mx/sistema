@@ -22417,6 +22417,33 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+<<<<<<< HEAD
+2015-08-24 21:17:11 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sistema/users/login
+Stack Trace:
+#0 /opt/lampp/htdocs/sistema/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /opt/lampp/htdocs/sistema/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /opt/lampp/htdocs/sistema/lib/Cake/Model/Model.php(3613): ConnectionManager::getDataSource('default')
+#3 /opt/lampp/htdocs/sistema/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /opt/lampp/htdocs/sistema/lib/Cake/Model/Model.php(3640): Model->setSource('users')
+#5 /opt/lampp/htdocs/sistema/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /opt/lampp/htdocs/sistema/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /opt/lampp/htdocs/sistema/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /opt/lampp/htdocs/sistema/app/View/Users/login.ctp(6): FormHelper->create('User', Array)
+#9 /opt/lampp/htdocs/sistema/lib/Cake/View/View.php(961): include('/opt/lampp/htdo...')
+#10 /opt/lampp/htdocs/sistema/lib/Cake/View/View.php(923): View->_evaluate('/opt/lampp/htdo...', Array)
+#11 /opt/lampp/htdocs/sistema/lib/Cake/View/View.php(473): View->_render('/opt/lampp/htdo...')
+#12 /opt/lampp/htdocs/sistema/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#13 /opt/lampp/htdocs/sistema/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#14 /opt/lampp/htdocs/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#15 /opt/lampp/htdocs/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+=======
 2015-08-24 14:23:32 Error: Fatal Error (4): syntax error, unexpected '$', expecting variable (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 1108]
 2015-08-24 14:23:32 Error: [FatalErrorException] syntax error, unexpected '$', expecting variable (T_VARIABLE)
 Request URL: /sistema/users/calificar/12/1/19/2/38/1
@@ -22437,6 +22464,9 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+<<<<<<< HEAD
+>>>>>>> upstream/master
+=======
 2015-08-24 17:08:49 Error: [MissingControllerException] Controller class SistemaController could not be found.
 Exception Attributes: array (
   'class' => 'SistemaController',
@@ -22455,6 +22485,9 @@ Request URL: /sistema/home
 Stack Trace:
 #0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+<<<<<<< HEAD
+>>>>>>> upstream/master
+=======
 2015-08-24 17:45:20 Error: [MissingControllerException] Controller class FilesController could not be found.
 Exception Attributes: array (
   'class' => 'FilesController',
@@ -22483,6 +22516,9 @@ Stack Trace:
 #9 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
 #10 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #11 {main}
+<<<<<<< HEAD
+>>>>>>> upstream/master
+=======
 2015-08-24 19:52:11 Error: [MissingActionException] Action UsersController::agregar director() could not be found.
 Exception Attributes: array (
   'controller' => 'UsersController',
@@ -23182,6 +23218,9 @@ Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
 Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
 [main] - APP/webroot/index.php, line 118
 
+<<<<<<< HEAD
+>>>>>>> upstream/master
+=======
 2015-08-25 09:37:50 Error: [MissingControllerException] Controller class IndexcoordinatorController could not be found.
 Exception Attributes: array (
   'class' => 'IndexcoordinatorController',
@@ -23211,3 +23250,4 @@ Stack Trace:
 #1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
 #2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+>>>>>>> upstream/master
