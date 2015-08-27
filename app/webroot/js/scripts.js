@@ -1505,7 +1505,126 @@ function gruposCalificaciones(){
 
 }
 
+function buscaGrupos(){
+
+	$('select#carrerasAlumno,select#cuatrimestreAlumno').on('change',function (){
+		$('option.opcionAl').remove();
+
+
+
+		gruposA=[];
+		carrera=$('select#carrerasAlumno option:selected').val();
+		cuatri=$('select#cuatrimestreAlumno option:selected').val();
+
+		if(carrera !== 'txt' && cuatri !== 'txt'){
+
+			$.ajax({
+				url:'/sistema/users/gruposxcarreraycuatri/'+carrera+'/'+cuatri,
+				type:'GET',
+				success:function(response){
+
+					// console.log(response);
+
+					if(typeof(response) !== 'undefined' && response.length >=1){
+
+						for(x=0,n=response.length;x<n;x++){
+
+
+						grupoAl='<option class="opcionAl" value="'+response[x].Grupo.id+'">'+response[x].Grupo.name+'</option>';
+						gruposA.push(grupoAl);
+						}
+
+						$('select#gruposPorCarreraYCuatri option[value="txt"]').text('Grupos disponibles');
+						$('select#gruposPorCarreraYCuatri').append(gruposA);
+
+
+					}else if(response.length ==0 ) {
+						$('select#gruposPorCarreraYCuatri option[value="txt"]').text('Sin grupos');
+						$('option.opcionAl').remove();
+						if($('table#listadoAlumnos').is(':visible')==true){
+							$('table#listadoAlumnos').attr('hidden',true);
+						}
+
+
+					}
+				}
+			});
+		}else {
+			if($('table#listadoAlumnos').is(':visible')==true){
+							$('table#listadoAlumnos').attr('hidden',true);
+						}
+		}
+	});
+
+
+}
+
+function buscarAlumnos(){
+
+	$('select#gruposPorCarreraYCuatri,select#carrerasAlumno,select#cuatrimestreAlumno').on('change',function(){
+
+		$('tr.infoAlumnos').remove();
+		
+		listado=[];
+		grupo=$('select#gruposPorCarreraYCuatri option:selected').attr('value');
+		carrera=$('select#carrerasAlumno option:selected').val();
+		cuatri=$('select#cuatrimestreAlumno option:selected').val();
+		rango=$('span#rango').attr('data-rango');
+
+		if( cuatri !== 'txt'  && carrera !== 'txt' &&  grupo !== 'txt'){
+
+		// console.log(carrera+' '+cuatri+' '+grupo);
+
+			$.ajax({
+				url:'/sistema/users/buscaralumnos/'+carrera+'/'+cuatri+'/'+grupo,
+				type:'GET',
+				success:function(response){
+
+					if(typeof(response) !== 'undefined' && response.length >=1){
+
+						for(x=0,num=response.length;x<num;x++){
+
+							fila='<tr class="infoAlumnos"><td>'+response[x].User.name+'</td><td>'+response[x].StudentProfile.matricula+'</td><td>'+response[x].User.email+'</td>';
+							
+
+							// fila2='<td></td></tr>';
+							if(rango == 6){
+								fila2='<td><a href="/sistema/users/editStudent/'+response[x].User.id+'">Editar perfil</a><a href="/sistema/users/deleteStudent/'+response[x].User.id+'">Eliminar</a></td></tr>';
+							listado.push(fila+fila2);
+
+							}else if(rango == 5){
+								// fila2='<td><a href="/sistema/users/editStudent/'+response[x].User.id+'">Editar perfil</a></td></tr>';
+							listado.push(fila+'</tr>');
+
+							}
+
+
+						}
+
+						$('table#listadoAlumnos').append(listado);
+						$('table#listadoAlumnos').removeAttr('hidden');
+					}else {
+						$('tr.infoAlumnos').remove();
+						if($('table#listadoAlumnos').is(':visible')==true){
+							$('table#listadoAlumnos').attr('hidden',true);
+						}
+
+					}
+				}
+			});
+		}else {
+			if($('table.listadoAlumnos').is(':visible')==true){
+							$('table#listadoAlumnos').attr('hidden',true);
+						}
+		}
+	});
+
+
+}
+
 $(function(){
+	buscarAlumnos();
+	buscaGrupos();
 	gruposCalificaciones();
 	verifica();
 	asignarFechDeExamen();

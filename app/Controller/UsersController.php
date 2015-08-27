@@ -25,7 +25,7 @@ public function isAuthorized($user){
 
 		if ($user['group_id']== '5' ){
 
-		if(in_array($this->action,array('index','indexcoordinator','indexTeacher','editacoordinador','eliminarcoordi','addcoordi','vercarreras','assigncareers'))){
+		if(in_array($this->action,array('indexStudent','buscaralumnos','gruposxcarreraycuatri','index','indexcoordinator','indexTeacher','editacoordinador','eliminarcoordi','addcoordi','vercarreras','assigncareers'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -40,7 +40,7 @@ public function isAuthorized($user){
 
 		if ($user['group_id']== '6' ){
 
-		if(in_array($this->action,array('materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher'))){
+		if(in_array($this->action,array('buscaralumnos','gruposxcarreraycuatri','materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -269,20 +269,79 @@ public function editStudent($id=null) {
 
 public function deleteStudent($id){
 	$this->User->id=$id;
-	if($this->request->is('get')):
-		throw new MethodNotAllowedException();
-	else:
-		if($this->User->delete($id)):
-			$this->Session->setFlash('Estudiante eliminado');
-			$this->redirect(array('action'=>'indexStudent'));
-		endif;
-	endif;
+	if($this->Auth->User('group_id')==6){
+		// throw new MethodNotAllowedException();
+	
+		if($this->User->delete($id)){
+			$this->Session->setFlash('Estudiante eliminado','default',array('class'=>'mensajeOk'));
+			$this->redirect(array('action'=>'index'));
+		};
+	}else {
+		$this->Session->setFlash('No tienes acceso a esta opcion','default',array('class'=>'mensajeError'));
+			$this->redirect(array('action'=>'index'));
+	}
 		
+
+}
+
+public function gruposxcarreraycuatri($carrera,$cuatri){
+	$this->RequestHandler->respondAs('json');
+	$this->layout='ajax';
+
+	if($this->request->is('ajax') && $carrera >0 && $cuatri >0){
+
+		$grupos=$this->Grupo->find('all',array('conditions'=>array(
+			'Grupo.career_id'=>$carrera,'Grupo.period'=>$cuatri),'recursive'=>-1));
+		$this->set(compact('grupos'));
+	}
+}
+
+public function buscaralumnos($carrera,$cuatri,$grupo){
+
+	$this->RequestHandler->respondAs('json');
+	$this->layout='ajax';
+
+	if($this->request->is('ajax')){
+
+	$alumnos=$this->User->StudentProfile->find('all',array('conditions'=>array(
+		'StudentProfile.career_id'=>$carrera,
+		'StudentProfile.semester'=>$cuatri,
+		'StudentProfile.grupo_id'=>$grupo),
+		'fields'=>array(
+			'User.name','User.email','User.id','StudentProfile.matricula')));
+
+	
+	$this->set(compact('alumnos'));
+	}
 
 }
 public function indexStudent() {
 
-	$this->set('estudiantes',$this->User->StudentProfile->find('all',array('conditions'=>array('User.group_id'=>8))));
+	// $this->set('estudiantes',$this->User->StudentProfile->find('all',array('conditions'=>array('User.group_id'=>8))));
+	if($this->Auth->User('group_id')==5){
+		$carreras=$this->Career->find('all',array('recursive'=>-1));
+		$this->set(compact('carreras'));
+	
+
+	}
+
+	else if($this->Auth->User('group_id')==6){
+		$carreras=[];
+
+		$miscarreras=$this->Usrcareer->find('all',array('conditions'=>array('Usrcareer.user_id'=>$this->Auth->User('id'))));
+
+		foreach($miscarreras as $k => $carrera){
+
+			array_push($carreras,$this->Career->find('all',array('conditions'=>array(
+				'Career.id'=>$carrera['Usrcareer']['career_id']),'recursive'=>-1)));
+
+
+		}
+
+
+
+		$this->set(compact('carreras'));
+	}
 }
 
 

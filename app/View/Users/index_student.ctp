@@ -1,43 +1,68 @@
-<h2>Listado de estudiantes</h2>
+<marquee><h3>LhIsThArR eZtHuDiAnTeS  (  ͡ ͡° ͜ ʖ ͡ ͡°) </h3></marquee>
+<!-- <h3>Listar Estudiantes</h3> -->
 
-<table>
-	
-	<tr>
-		<th>id</th>
-		<th>Nombre</th>
-		<th>Carrera</th>
-		<th>Grupo</th>
-		<th>Matricula</th>
-		<th>Email</th>
-		<th>password</th>
 
-		<th>Acciones</th>
-	</tr>
+	<span id="rango"  hidden data-rango="<?php echo $current_user['group_id']?>"> z</span>
+	<select id="carrerasAlumno">
+	<option value="txx">Carrera</option>
+		<?php 
+		if($current_user['group_id']== 6){
 
-<?php foreach($estudiantes as $k =>$estudiante ): ?>
-	<tr>
-		<td><?php echo $estudiante ['User']['id'] ?></td>
-		<td><?php echo $estudiante ['User']['name'] ?></td>
+		foreach($carreras as $op => $opcion){
+
+			echo '<option value="'.$opcion[0]['Career']['id'].'">'.$opcion[0]['Career']['name'].'</option>';
+		}
+		}else if($current_user['group_id']== 5){
+
+			foreach($carreras as $op => $opcion){
+
+			echo '<option value="'.$opcion['Career']['id'].'">'.$opcion['Career']['name'].'</option>';
+		}
+
+		}
+		?>
+	</select>
+
+	<select  id="cuatrimestreAlumno">
+		<option value="txt">seleccione un cuatrimestre</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+	</select>
+
+	<select  id="gruposPorCarreraYCuatri">
+		<option value="txt">Sin grupos</option>
+	</select>
+
+	<table id="listadoAlumnos" hidden>
+		<tr>
+			<th>Nombre</th>
+			<th>Matricula</th>
+			<th>Email</th>
+			<?php 
+			if($current_user['group_id']==6){
+				echo "<th>Opciones</th>";
+
+			}else if($current_user['group_id']==5){
+
+			}
+			?>
+			
 		
-		<td><?php echo $estudiante['Career']['name']?></td>
-		<td><?php echo $estudiante['Grupo']['name']?></td>
-		<td><?php echo $estudiante ['StudentProfile']['matricula'] ?></td>
-		<td><?php echo $estudiante ['User']['email'] ?></td>
-		<td><?php echo $estudiante ['User']['password'] ?></td>
-
-		<td>
-			<?php echo $this->Html->link('Editar', array('action'=>'editStudent',$estudiante['User']['id'])); ?>
-			&nbsp
-			<?php echo $this->Form->postlink('Eliminar',array('action'=>'deleteStudent',$estudiante['User']['id']),array('confirm'=>'deceas Eliminar al estudiante')); ?>
-		</td>
+		</tr>
 
 
 
-	</tr>
-
-<?php endforeach;?>
+	</table>
 
 
-</table>
 
-<?php echo $this->Html->link('agregar estudiante', array('controller'=>'users','action'=>'addStudent')); ?>
+
+<?php echo $this->Html->script('scripts');?>
