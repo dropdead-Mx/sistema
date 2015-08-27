@@ -404,7 +404,51 @@ public function eliminarcoordi($id){
 
 }
 public function indexTeacher() {
-	$this->set('maestros',$this->User->EmployeeProfile->find('all',array('conditions'=>array('User.group_id'=>'7'))));
+	$materiasImparte=[];
+	$maestros=$this->User->EmployeeProfile->find('all',array('conditions'=>array('User.group_id'=>'7')));
+	// pr($maestros);
+
+	for($x=0;$x<sizeof($maestros);$x++){
+		$profesor=$maestros[$x]['User']['id'];
+
+		$materiasPorMaestro=$this->Teachercourse->find('all',array('conditions'=>array('Teachercourse.user_id'=>$profesor),'fields'=>array(
+			'Teachercourse.user_id','Teachercourse.course_id')));
+
+
+		for($k=0;$k<sizeof($materiasPorMaestro);$k++){
+		// echo $materiasPorMaestro[$k]['Teachercourse']['user_id'];
+		if (isset($materiasPorMaestro[$k]['Teachercourse']['course_id'])){
+			// echo $materiasPorMaestro[$k]['Teachercourse']['course_id'].' ';
+			$nombre=$this->Course->find('all',array('conditions'=>array('Course.id'=>$materiasPorMaestro[$k]['Teachercourse']['course_id']),
+				'recursive'=>-1,'fields'=>array('Course.id','Course.name')));
+
+			for($w=0;$w<sizeof($nombre);$w++){
+
+			$materiasImparte[]=array(
+				'teacher_id'=>$profesor,
+				'course_id'=>$nombre[$w]['Course']['id'],
+				'course_name'=>$nombre[$w]['Course']['name']);
+			}
+
+		}
+
+
+
+			
+
+
+
+		}
+		
+
+
+
+
+	}
+
+	
+	$this->set(compact('maestros','materiasImparte'));
+
 
 }
 

@@ -12,7 +12,7 @@
 	
 	<th>Nivel de educacion</th>
 	<th>Foto</th>
-		<!-- <th>Status</th> -->
+		<th>Materias que imparte:</th>
 		<th>Acciones</th>
 	</tr>
 
@@ -28,6 +28,20 @@
 
 		<td><?php echo $this->Html->image('../files/employee_profile/foto/'.$maestro['EmployeeProfile']['foto_dir'].'/'.'thumb_'.$maestro['EmployeeProfile']['foto']) ?></td>
 	
+		<td>
+			<?php 
+
+				foreach ($materiasImparte as $key => $impartiendo) {
+					if($impartiendo['teacher_id'] == $maestro['User']['id']){
+						echo '<p>'.$impartiendo['course_name'].'</p>';
+
+					
+					}
+
+				}
+
+			?>
+		</td>
 
 		<td>
 			<?php echo $this->Html->link('Editar', array('action'=>'editTeacher',$maestro['User']['id'])); ?>
