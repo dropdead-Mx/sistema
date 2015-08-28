@@ -55,6 +55,20 @@
 <input type="text"  id="fechaAsistencia1" class="datepicker" hidden >
 <input type="text"  id="fechaAsistencia2" class="datepicker" hidden>
 
+<div id="seccionAsistencias">
+	
+<table id="resultadosAsistencias" hidden>
+
+	<tr>
+		<th>Nombre</th>
+		<th>Fecha</th>
+		<th>Estatus</th>
+		<th>Nota</th>
+		<th>Editar</th>
+	</tr>
+</table>
+</div>
+
 
 
 
