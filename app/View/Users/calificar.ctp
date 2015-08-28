@@ -39,7 +39,7 @@
 
 			echo $this->Form->hidden('Obtainedgoal.'.($k.$X).'.goal_id',array('label'=>false,'value'=>$id,'class'=>'calf'));
 			echo $this->Form->hidden('Obtainedgoal.'.($k.$X).'.user_id',array('label'=>false,'value'=>$student,'class'=>'calf'));
-			echo $this->Form->input('Obtainedgoal.'.($k.$X).'.percentage_obtained',array('label'=>false,'div'=>false,'class'=>'calf','required'=>true));
+			echo $this->Form->input('Obtainedgoal.'.($k.$X).'.percentage_obtained',array('label'=>false,'div'=>false,'class'=>'calf','required'=>true,'placeholder'=>'De 0 a 100%'));
 		?>
 	</td>
 	<?php endforeach;?>
@@ -51,6 +51,10 @@
 
 
 </table>
+
+<div class="error">
+	<p class="mensajeError"></p>
+</div>
 
 
 <?php echo $this->Form->end('Guardar Calificaciones'); ?>

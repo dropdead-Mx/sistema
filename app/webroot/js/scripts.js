@@ -321,39 +321,117 @@ function toUppercase() {
 
 }
 
-function calificParcial(){
-	i=0;
-		// $('button.xd3').on('click',function(){
-	$('#calificacionesPar').on('submit',function() {
-	i=0;
+// function calificParcial(){
+// 	i=0;
+// 		// $('button.xd3').on('click',function(){
+// 	$('#calificacionesPar').on('submit',function() {
+// 	i=0;
 
-	$('#calificacionesPar  input.calf[type="number"]').each(function(){
-		$(this).css('background','#fff');
+// 	$('#calificacionesPar  input.calf[type="number"]').each(function(){
+// 		$(this).css('background','#fff');
 
 
-		actual=parseFloat($(this).val());
-		maximo=parseFloat($(this).parent('td.porcentaje').attr('data-porcentaje'));
+// 		actual=parseFloat($(this).val());
+// 		maximo=parseFloat($(this).parent('td.porcentaje').attr('data-porcentaje'));
 
-		if(actual > maximo ){
-		$(this).css('background','red');
-		return i+=1;
+// 		if(actual > maximo ){
+// 		$(this).css('background','red');
+// 		return i+=1;
 
-		}
-		else if (actual <= maximo) {
-		// $(this).css('border','2px solid green');x
+// 		}
+// 		else if (actual <= maximo) {
+// 		// $(this).css('border','2px solid green');x
+// 		}
+
+// 	});
+
+// 	if(i > 0){
+// 		alert('Corrige los campos marcados en rojo, no deben ser mayores al porcentaje asignado');
+// 		return false;
+// 	}else {
+// 		return true;
+// 	}
+
+// // alert(i);
+// 		});
+
+// }
+function calificarParcial(){
+
+	$('#calificacionesPar input.calf[type="number"]').on('focus',function(){
+
+		if($(this).hasClass('ok')==true ){
+			$(this).removeClass('ok');
+			
+
+			$(this).val(' ');
+		}else if($(this).hasClass('errorOverflow')==true){
+			$(this).removeClass('errorOverflow');
+			$(this).css('background','#fff');
+			$(this).css('color','#000');
+			$(this).val(' ');
 		}
 
 	});
 
-	if(i > 0){
-		alert('Corrige los campos marcados en rojo, no deben ser mayores al porcentaje asignado');
-		return false;
-	}else {
-		return true;
-	}
 
-// alert(i);
+	$('#calificacionesPar').on('submit',function(){
+		i=0
+		$('#calificacionesPar input.calf[type="number"]').each(function(){
+
+			total=0;
+			actual=parseFloat($(this).val());
+			cienPorciento=parseFloat($(this).parent('td.porcentaje').attr('data-porcentaje'));
+
+			if(actual >100){
+				$(this).css('background','#e74c3c');
+				$(this).css('color','#fff');
+				$(this).addClass('errorOverflow');
+			
+
+				return i+=1;
+
+			}else{
+
+
+
+
+			if($(this).hasClass('ok')==false){
+
+			if($(this).hasClass('errorOverflow')==true){
+				$(this).removeClass('errorOverflow');
+				$(this).css('background','#fff');
+				$(this).css('color','#000');
+
+			}
+			total=(actual*cienPorciento)/100;
+			$(this).val(total);
+			$(this).addClass('ok');
+
+
+			}
+
+			
+
+		
+			}
+
 		});
+
+		if(i>0){
+				$('p.mensajeError').text('Corrige los errores en rojo no pueden ser mayores al 100%');
+				return false;
+
+			}else{
+				setTimeout(function(){
+					console.log('esperando..');
+					return false;
+			}, 4000);
+
+				
+			}
+
+	});
 
 }
 //funcion para obtener las asistencias
@@ -1642,7 +1720,7 @@ $(function(){
 	materiasXmaestro();
 	toUppercase();
 	incGoal();
-	calificParcial();
+	calificarParcial();
 	delimitaHrs();
 	matxCuatyCarr();
 	regcuatrimestre();
@@ -1662,6 +1740,8 @@ $(function(){
 			return false;
 		}
 	});
+
+	$
 
 	horarioColumnas();
 	materiasPorCoordinador();
