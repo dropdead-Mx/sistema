@@ -2,11 +2,11 @@
 
 div.contenedor
 	background url(images/Hexagon-3.jpg)
-	padding 2%
+	padding 0% 2%
 	width 100%
-	height 465px
+	height 510px
 	figure
-		margin 2% auto 4% auto
+		margin 0% auto 25% auto
 		padding 0
 		width 50%
 		display block
@@ -18,18 +18,20 @@ div.contenedor
 		width 70%
 		display inline-block
 		border none
-		background blanco
+		background transparent
 		border-radius 5px
 		color azulObscuro
 		font-weight bold
 		vertical-align top
+		padding 1%
+		border-bottom 4px solid esmeralda
 		&:focus
-			border 3px solid verde
+			border-bottom 3px solid blanco
 	label
 		display inline-block
 		font-family Flaticon
 		width 8%
-		margin 0 1% 0 10%
+		margin 0 1% 0 7%
 		font-size 25px
 		color azulObscuro
 		&[for=userLogin]:after
@@ -43,14 +45,16 @@ div.contenedor
 		display block
 		margin 2% auto
 div.errores
-	background red
-	color blanco
+	color rojo
 	width 70%
 	display block
 	margin 3% auto
 	padding 2%
-	border-radius 10px
+	font-weight bold
 	text-align center
 	
-		
-		
+@media screen and (min-width:479px) and (orientation: landscape) 
+
+	div.contenedor
+		figure
+			margin-bottom 1%

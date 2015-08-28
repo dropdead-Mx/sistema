@@ -5,9 +5,10 @@
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>
 		
-		Plataforma 
+		Plataforma Dorados
 	</title>
 	<?php
 		// echo $this->Html->meta('icon');

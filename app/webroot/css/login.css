@@ -7,12 +7,12 @@
 }
 div.contenedor {
   background: url("images/Hexagon-3.jpg");
-  padding: 2%;
+  padding: 0% 2%;
   width: 100%;
-  height: 465px;
+  height: 510px;
 }
 div.contenedor figure {
-  margin: 2% auto 4% auto;
+  margin: 0% auto 25% auto;
   padding: 0;
   width: 50%;
   display: block;
@@ -26,20 +26,22 @@ div.contenedor input {
   width: 70%;
   display: inline-block;
   border: none;
-  background: #fff;
+  background: transparent;
   border-radius: 5px;
   color: #2c3e50;
   font-weight: bold;
   vertical-align: top;
+  padding: 1%;
+  border-bottom: 4px solid #2ecc71;
 }
 div.contenedor input:focus {
-  border: 3px solid #16a085;
+  border-bottom: 3px solid #fff;
 }
 div.contenedor label {
   display: inline-block;
   font-family: Flaticon;
   width: 8%;
-  margin: 0 1% 0 10%;
+  margin: 0 1% 0 7%;
   font-size: 25px;
   color: #2c3e50;
 }
@@ -57,12 +59,16 @@ div.contenedor input[type=submit] {
   margin: 2% auto;
 }
 div.errores {
-  background: #f00;
-  color: #fff;
+  color: #e74c3c;
   width: 70%;
   display: block;
   margin: 3% auto;
   padding: 2%;
-  border-radius: 10px;
+  font-weight: bold;
   text-align: center;
+}
+@media screen and (min-width: 479px) and (orientation: landscape) {
+  div.contenedor figure {
+    margin-bottom: 1%;
+  }
 }
