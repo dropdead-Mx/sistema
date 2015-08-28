@@ -1,7 +1,7 @@
 <div class="menu">
 <div class="encabezadoMenu">
 <figure class="logoUni">
-	<?php echo $this->Html->image("logoNuevo.png");?>
+<?php echo $this->Html->image("logoNuevo.png");?>
 </figure>
 	<p></p>
 </div>
