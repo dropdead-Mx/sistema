@@ -11,7 +11,7 @@ public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile'
 public function beforeFilter(){
 	parent::beforeFilter();
 	// $this->Auth->allow('indexcoordinator','indexTeacher','vercalificaciones','materiasporgerarquia','index');
-	// $this->Auth->allow();
+	$this->Auth->allow('gruposxcarreraycuatri');
 	
 	// if ($this->Auth->loggedIn()) {
 	// $this->Auth->deny('login');
@@ -25,7 +25,7 @@ public function isAuthorized($user){
 
 		if ($user['group_id']== '5' ){
 
-		if(in_array($this->action,array('indexStudent','buscaralumnos','gruposxcarreraycuatri','index','indexcoordinator','indexTeacher','editacoordinador','eliminarcoordi','addcoordi','vercarreras','assigncareers'))){
+		if(in_array($this->action,array('consultarasistencias','verasistencias','indexStudent','buscaralumnos','gruposxcarreraycuatri','index','indexcoordinator','indexTeacher','editacoordinador','eliminarcoordi','addcoordi','vercarreras','assigncareers'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -40,7 +40,7 @@ public function isAuthorized($user){
 
 		if ($user['group_id']== '6' ){
 
-		if(in_array($this->action,array('buscaralumnos','gruposxcarreraycuatri','materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher'))){
+		if(in_array($this->action,array('consultarasistencias','verasistencias','buscaralumnos','gruposxcarreraycuatri','materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -1468,7 +1468,69 @@ public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$par
 
 }
 
+
 	}
+
+
+public function consultarasistencias($materia=null,$grupo=null,$fecha1=null,$fecha2=null){
+
+	$this->RequestHandler->respondAs('json');
+	$this->layout='ajax';
+	// $XD= $materia.' '.$grupo.' '.$fecha1.' '.$fecha2;
+	// $this->set(compact('XD'));
+
+	if($fecha1 !== null && $fecha2 == null){
+
+	$asistencias=$this->Assist->find('all',array('conditions'=>array(
+		'Assist.grupo_id'=>$grupo,
+		'Assist.course_id'=>$materia,
+		'Assist.date_assist'=>$fecha1)));
+
+	$this->set(compact('asistencias'));
+	}else if( $fecha1 !== null && $fecha2 !==null){
+
+		$fech1=date('Y-m-d H:i:s',strtotime($fecha1));
+		$fech2=date('Y-m-d H:i:s',strtotime($fecha2));
+
+		$asistenciasDos=$this->Assist->find('all',array('conditions'=>array(
+		'Assist.created BETWEEN ? AND ?'=>array($fech1,$fech2),
+		'Assist.grupo_id'=>$grupo,
+		'Assist.course_id'=>$materia,
+		)));
+
+	$this->set(compact('asistenciasDos'));
+
+	}
+
+}
+
+public function verasistencias(){
+
+	if($this->Auth->User('group_id')==5){
+		$carreras=$this->Career->find('all');
+		$this->set(compact('carreras'));
+	}else if($this->Auth->User('group_id')==6){
+		$carreras=[];
+		$getId=$this->Usrcareer->find('all',array('conditions'=>array(
+			'Usrcareer.user_id'=>$this->Auth->User('id'))));
+
+		for($x=0;$x<sizeof($getId);$x++){
+			$mat=$this->Career->find('all',array('conditions'=>array(
+				'Career.id'=>$getId[$x]['Usrcareer']['career_id'])));
+
+			$carreras[]=array(
+				'career_id'=>$getId[$x]['Usrcareer']['career_id'],
+				'career_name'=>$mat[0]['Career']['name'],
+				'career_abrev'=>$mat[0]['Career']['abrev']);
+
+		}
+
+		$this->set(compact('carreras'));
+
+
+	}
+
+}
 	
 
 

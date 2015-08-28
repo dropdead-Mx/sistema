@@ -1707,7 +1707,111 @@ function buscarAlumnos(){
 
 }
 
+function consultaAsistencias(){
+
+	$('select#asistenciaCarrera, select#cuatriAsistencia').on('change',function(){
+
+		$('option.optMat,option.optG').remove();
+		carrera=$('select#asistenciaCarrera option:selected').val();
+		cuatri=$('select#cuatriAsistencia option:selected').val();
+		console.log(carrera+' '+cuatri);
+		materias=[];
+		grupos=[];
+
+		if(carrera !== 'txt' && cuatri !== 'txt'){
+
+			$.ajax({
+				type:'GET',
+				url:'/sistema/users/materiasporgerarquia/'+carrera+'/'+cuatri,
+				success:function(response){
+
+					if(response.length >=1){
+						for(x=0,n=response.length;x<n;x++){
+							opcionM='<option class="optMat" value="'+response[x].Course.id+'">'+response[x].Course.name+'</option>';
+							materias.push(opcionM);
+						}
+						$('select#materiaAsistencia option[value="txt"]').text('Materias disponibles');
+						$('select#materiaAsistencia').append(materias);
+					}else {
+						$('select#materiaAsistencia option[value="txt"]').text('Sin materias');
+						$('option.optMat').remove();
+
+
+					}
+				}
+			}); //fin ajax1
+
+			// ajax2
+			$.ajax({
+				type:'GET',
+				url:'/sistema/users/gruposxcarreraycuatri/'+carrera+'/'+cuatri,
+				success:function(response){
+					if(response.length >=1){
+						for(y=0,num=response.length;y<num;y++){
+							opcionG='<option class="optG" value="'+response[y].Grupo.id+'">'+response[y].Grupo.name+'</option>';
+							grupos.push(opcionG);
+						}
+
+						$('select#asistGrupo option[value="txt"]').text('Grupos disponibles');
+						$('select#asistGrupo').append(grupos);
+
+					}else {
+						$('select#asistGrupo option[value="txt"]').text('Sin grupos');
+						$('option.optG').remove();
+
+
+					}
+				}
+			});//fin ajax2
+		}
+
+	}); //fin select de opciones
+
+ 	$('form#opcionBusqueda').on('change',function(){
+ 		$('#fechaAsistencia1,#fechaAsistencia2').val('');
+ 		opcion=$('input[name=busca]:checked','#opcionBusqueda').val();
+ 		console.log(opcion);
+
+ 		if(opcion=="dia"){
+ 			if($('#fechaAsistencia2').is(':visible')==true){
+ 				$('#fechaAsistencia2').fadeOut('slow');
+ 			}
+ 			$('#fechaAsistencia1').fadeIn('slow');
+ 		}else {
+ 			$('#fechaAsistencia1,#fechaAsistencia2').fadeIn('slow');
+ 		}
+
+ 	}); //fin del check del radio button 
+
+ 	$('button#buscaAsistencia').on('click',function(){
+ 		grupo=$('#asistGrupo option:selected').val();
+ 		materia=$('#materiaAsistencia option:selected').val();
+ 		fecha1=$('#fechaAsistencia1').val();
+ 		fecha2=$('#fechaAsistencia2').val();
+
+ 		if(materia !== 'txt' && grupo !== 'txt' ){
+
+ 			$.ajax({
+ 				type:'GET',
+ 				url:'/sistema/users/consultarasistencias/'+materia+'/'+grupo+'/'+fecha1+'/'+fecha2,
+ 				success:function(response){
+ 				console.log(response);
+ 				}
+ 			});
+ 		}else {
+ 			console.log('error');
+ 		}
+
+
+ 	});
+
+
+
+}
+
 $(function(){
+
+	consultaAsistencias();
 	buscarAlumnos();
 	buscaGrupos();
 	gruposCalificaciones();

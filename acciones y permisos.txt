@@ -5,6 +5,8 @@ alejandrosh@gmail.com
 	/users/indexcoordinator
 	/users/addcoordi
 	/users/indexStudent
+	/verasistencias/
+	
 
 
 #COORDINADOR
@@ -20,6 +22,7 @@ juaquinalcantar@gmail.com
 	/users/indexTeacher ok
 	/users/vercalificaciones/ ok
 	/courses/ *
+	/verasistencias/
 
 #MAESTRO
 

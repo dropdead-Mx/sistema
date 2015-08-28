@@ -1,5 +1,5 @@
-<marquee><h3>LhIsThArR eZtHuDiAnTeS  (  ͡ ͡° ͜ ʖ ͡ ͡°) </h3></marquee>
-<!-- <h3>Listar Estudiantes</h3> -->
+
+<h3>Listar Estudiantes</h3>
 
 
 	<span id="rango"  hidden data-rango="<?php echo $current_user['group_id']?>"> z</span>
