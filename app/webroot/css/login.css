@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/flaticon.eot");
+  src: url("../fonts/flaticon.eot#iefix") format("embedded-opentype"), url("f../fonts/laticon.woff") format("woff"), url("../fonts/flaticon.ttf") format("truetype"), url("../fonts/flaticon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+div.contenedor {
+  background: url("images/Hexagon-3.jpg");
+  padding: 2%;
+  width: 100%;
+  height: 465px;
+}
+div.contenedor figure {
+  margin: 2% auto 4% auto;
+  padding: 0;
+  width: 50%;
+  display: block;
+}
+div.contenedor figure img {
+  width: 100%;
+}
+div.contenedor input {
+  margin: 1% 5% 8% 0%;
+  display: block;
+  width: 70%;
+  display: inline-block;
+  border: none;
+  background: #fff;
+  border-radius: 5px;
+  color: #2c3e50;
+  font-weight: bold;
+  vertical-align: top;
+}
+div.contenedor input:focus {
+  border: 3px solid #16a085;
+}
+div.contenedor label {
+  display: inline-block;
+  font-family: Flaticon;
+  width: 8%;
+  margin: 0 1% 0 10%;
+  font-size: 25px;
+  color: #2c3e50;
+}
+div.contenedor label[for=userLogin]:after {
+  content: "\e008";
+}
+div.contenedor label[for=passwordLogin]:after {
+  content: '\e004';
+}
+div.contenedor input[type=submit] {
+  background: #2ecc71;
+  color: #fff;
+  padding: 2%;
+  display: block;
+  margin: 2% auto;
+}
+div.errores {
+  background: #f00;
+  color: #fff;
+  width: 70%;
+  display: block;
+  margin: 3% auto;
+  padding: 2%;
+  border-radius: 10px;
+  text-align: center;
+}

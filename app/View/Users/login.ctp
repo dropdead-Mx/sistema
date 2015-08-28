@@ -8,13 +8,16 @@
  
 	
 	echo $this->Form->create('User',array('action' => 'login'));
-	echo $this->Form->input('email',array('label'=>'+','id'=>'userLogin'));
-	echo $this->Form->input('password',array('label'=>'+','id'=>'passwordLogin'));
+	echo $this->Form->input('email',array('label'=>'','id'=>'userLogin','placeholder'=>'Usuario'));
+	echo $this->Form->input('password',array('label'=>'','id'=>'passwordLogin','placeholder'=>'Password'));
 	echo $this->Form->end('Entrar');
 
 
 ?>
 </div>
-
+<div class="errores">
+			
+		<?php echo $this->Session->flash(); ?>
+</div>
 
 </div>

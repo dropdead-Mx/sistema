@@ -1,0 +1,56 @@
+@import iconos
+
+div.contenedor
+	background url(images/Hexagon-3.jpg)
+	padding 2%
+	width 100%
+	height 465px
+	figure
+		margin 2% auto 4% auto
+		padding 0
+		width 50%
+		display block
+		img
+			width 100%
+	input
+		margin 1% 5% 8% 0%
+		display block
+		width 70%
+		display inline-block
+		border none
+		background blanco
+		border-radius 5px
+		color azulObscuro
+		font-weight bold
+		vertical-align top
+		&:focus
+			border 3px solid verde
+	label
+		display inline-block
+		font-family Flaticon
+		width 8%
+		margin 0 1% 0 10%
+		font-size 25px
+		color azulObscuro
+		&[for=userLogin]:after
+			content "\e008" 
+		&[for=passwordLogin]:after
+			content '\e004'
+	input[type=submit]
+		background esmeralda 
+		color blanco
+		padding 2%
+		display block
+		margin 2% auto
+div.errores
+	background red
+	color blanco
+	width 70%
+	display block
+	margin 3% auto
+	padding 2%
+	border-radius 10px
+	text-align center
+	
+		
+		

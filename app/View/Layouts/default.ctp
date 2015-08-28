@@ -39,19 +39,9 @@
 			?>
 
 		<!-- linea para pintar errores en cake  -->
-		<div class="errores">
-			
-		<?php echo $this->Session->flash(); ?>
-		</div>
-		</div>
-		<div id="footer">
 		
-			
-			<p>
-				<?php 
-				// echo $cakeVersion; ?>
-			</p>
 		</div>
+	
 	</div>
 
 	<?php echo $this->Js->writeBuffer();?>
