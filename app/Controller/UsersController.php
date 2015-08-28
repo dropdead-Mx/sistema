@@ -25,7 +25,7 @@ public function isAuthorized($user){
 
 		if ($user['group_id']== '5' ){
 
-		if(in_array($this->action,array('materiasporgerarquia','consultarasistencias','verasistencias','indexStudent','buscaralumnos','gruposxcarreraycuatri','index','indexcoordinator','indexTeacher','editacoordinador','eliminarcoordi','addcoordi','vercarreras','assigncareers'))){
+		if(in_array($this->action,array('vercalificaciones','consultarcalificaciones','materiasporgerarquia','consultarasistencias','verasistencias','indexStudent','buscaralumnos','gruposxcarreraycuatri','index','indexcoordinator','indexTeacher','editacoordinador','eliminarcoordi','addcoordi','vercarreras','assigncareers'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -1316,6 +1316,10 @@ public function vercalificaciones() {
 		endforeach;
 
 	$this->set(compact('infocarreras'));
+	}else if($rango == 5){
+		$infocarreras=$this->Career->find('all');
+	$this->set(compact('infocarreras'));
+
 	}
 
 }

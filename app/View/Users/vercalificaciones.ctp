@@ -3,15 +3,25 @@
 <?php 
 
 // pr($carreras);
-// pr($infocarreras);
+
 
 echo '<select id="infocalif">';
 echo '<option value="0" >Seleccione una carrera</option>';
+
+if($current_user['group_id']==6){
 
 foreach($infocarreras as $x => $info):
 	echo '<option value='.$info[0]['Career']['id'].'>'.$info[0]['Career']['name'].'</option>';
 
 endforeach;
+
+}else if($current_user['group_id'] ==5){
+	
+foreach($infocarreras as $x => $info):
+	echo '<option value='.$info['Career']['id'].'>'.$info['Career']['name'].'</option>';
+
+endforeach;
+}
 
 echo '</select>';
 ?>

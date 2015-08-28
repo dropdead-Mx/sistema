@@ -6,6 +6,7 @@ alejandrosh@gmail.com
 	/users/addcoordi
 	/users/indexStudent
 	/verasistencias/
+	/vercalificaciones/
 	
 
 

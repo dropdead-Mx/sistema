@@ -9,7 +9,7 @@ class CoursesController extends AppController {
 public function beforeFilter(){
 	parent::beforeFilter();
 	// $this->Auth->allow('index','getcoursesbycoordinator','tienemod','vermodulos','agregarHorario','asignarProfesor');
-	$this->Auth->allow('tieneprof');
+	$this->Auth->allow('tieneprof','getgroupsbycourse');
 }
 
 public function isAuthorized($user){
@@ -19,7 +19,7 @@ public function isAuthorized($user){
 
 		 if ($user['group_id']== '5' ){
 
-		if(in_array($this->action,array())){
+		if(in_array($this->action,array('getgroupsbycourse'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
