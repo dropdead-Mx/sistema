@@ -1784,18 +1784,80 @@ function consultaAsistencias(){
  	}); //fin del check del radio button 
 
  	$('button#buscaAsistencia').on('click',function(){
+ 	
+
+
+
+
  		grupo=$('#asistGrupo option:selected').val();
  		materia=$('#materiaAsistencia option:selected').val();
  		fecha1=$('#fechaAsistencia1').val();
  		fecha2=$('#fechaAsistencia2').val();
+ 		resultados=[];
+ 	$('tr.resultAsist,p.mensajeError').fadeOut('slow',function(){
+ 	
+ 		
+ 		$(this).remove();
 
+ 
+ 	});
  		if(materia !== 'txt' && grupo !== 'txt' ){
 
  			$.ajax({
  				type:'GET',
  				url:'/sistema/users/consultarasistencias/'+materia+'/'+grupo+'/'+fecha1+'/'+fecha2,
  				success:function(response){
+ 			
  				console.log(response);
+
+ 				if(response.length>=1 && typeof(response) !== 'undefined'){
+
+ 					for(w=0 ,c=response.length;w<c ;w++){
+
+ 						estado='';
+
+ 						if(parseInt(response[w].Assist.status) ==1){
+ 							estado="Asistencia";
+ 						}else if(parseInt(response[w].Assist.status) ==2){
+ 							estado="Retardo";
+ 						}else if(parseInt(response[w].Assist.status) ==3){
+ 							estado="Falta";
+ 						}
+
+ 						fila='<tr class="resultAsist"><td>'+response[w].User.name+'</td><td>'+response[w].Assist.date_assist+'</td><td>'+estado+'</td><td>'+response[w].Assist.note+'</td><td>Link cambiar asistencia</td></tr>';
+ 						resultados.push(fila);
+ 					}
+ 					$('table#resultadosAsistencias').append(resultados);
+
+ 					if($('#resultadosAsistencias').is(':visible')==true){ 
+ 						
+ 						setTimeout(function(){
+ 						$('#resultadosAsistencias').fadeIn('slow');
+
+ 						},6000);
+
+ 					}else {
+ 						$('#resultadosAsistencias').fadeIn(1000);
+ 					
+
+ 					}
+
+
+
+ 				}else {
+ 					$('tr.resultAsist').remove();
+
+ 					if($('#resultadosAsistencias').is(':visible')==true){
+ 						$('#resultadosAsistencias').fadeOut('fast');
+ 					$('#seccionAsistencias').append('<p class="mensajeError">No se encontraron asistencias</p>');
+
+ 					}else {
+ 					$('#seccionAsistencias').append('<p class="mensajeError">No se encontraron asistencias</p>');
+
+ 					}
+
+ 				}
+
  				}
  			});
  		}else {
