@@ -13,7 +13,7 @@
 	<?php
 		// echo $this->Html->meta('icon');
 
-		echo $this->Html->css(array('login','jquery-ui.min','normalize','general'));
+		echo $this->Html->css(array('login','jquery-ui.min','normalize','menu'));
 		echo $this->Html->script(array('jquery','jquery-ui.min','index'));
 		
 
@@ -33,6 +33,7 @@
 			if($tipo == 5){
 
 			echo $this->element('menu');
+			//echo $this->element('addcoordi');
 			}else if($tipo == 7){
 			// echo $this->element('lista');
 
