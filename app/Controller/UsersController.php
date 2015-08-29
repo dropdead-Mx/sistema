@@ -886,11 +886,11 @@ public function alumno(){
 
 }
 
-public function examenes($id){
+public function examenes(){
 		$examenes=[];
 
 		//variable para opbtener el semestre mas actual
-
+		$id=$this->Auth->User('id');
 		$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
 		$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
 		$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
@@ -918,9 +918,10 @@ public function examenes($id){
 
 } 
 
-public function horario($id){
+public function horario(){
 
 		$modulos=[];
+		$id=$this->Auth->User('id');
 		$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
 		$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
 		$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
@@ -1535,7 +1536,48 @@ public function verasistencias(){
 	}
 
 }
+
+public function fechasexamen(){
+
+}
+public function horarioclases(){
 	
+}
+
+public function consultarhorarios(){
+
+	$usuario=$this->Auth->User('id');
+	$rol=$this->Auth->User('group_id');
+
+	if($rol == 5 ){
+
+		$carreras=$this->Career->find('all');
+		$this->set(compact('carreras'));
+
+	}else if($rol ==6){
+
+		$carreras=[];
+		$getId=$this->Usrcareer->find('all',array('conditions'=>array(
+			'Usrcareer.user_id'=>$this->Auth->User('id'))));
+
+		for($x=0;$x<sizeof($getId);$x++){
+			$mat=$this->Career->find('all',array('conditions'=>array(
+				'Career.id'=>$getId[$x]['Usrcareer']['career_id'])));
+
+			$carreras[]=array(
+				'career_id'=>$getId[$x]['Usrcareer']['career_id'],
+				'career_name'=>$mat[0]['Career']['name'],
+				'career_abrev'=>$mat[0]['Career']['abrev']);
+
+		}
+
+		$this->set(compact('carreras')); 
+
+	}
+}
+
+
+
 
 
 

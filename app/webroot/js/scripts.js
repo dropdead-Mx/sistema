@@ -1499,7 +1499,7 @@ $(document).on('change','.listaGrupos',function(){
 				$(document).find('td.checkTieneMod').eq(numero).append(respuesta);
 
 				if(response == "✓" ){
-					link='<a class="linkVer" href="/sistema/courses/vermodulos/'+materiaLink+'/'+grup+'">Ver horario</a>'
+					link='<a class="linkVer" href="/sistema/courses/vermodulos/'+materiaLink+'/'+grup+'">Editar horario</a>'
 					$(document).find('td.linkContainer div.uno').eq(numero).append(link);
 					
 				}else if(response == '✖') {

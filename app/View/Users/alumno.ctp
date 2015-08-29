@@ -2,8 +2,8 @@
 <?php 
 
 
-echo '<p>'.$this->Html->link('Ver fechas de examen',array('action'=>'examenes',$cuatrimestre[0]['StudentProfile']['user_id'])) .'</p> ';
-echo '<p>'.$this->Html->link('Ver Horario',array('action'=>'horario',$cuatrimestre[0]['StudentProfile']['user_id'])) .'</p> ';
+echo '<p>'.$this->Html->link('Ver fechas de examen',array('action'=>'examenes')) .'</p> ';
+echo '<p>'.$this->Html->link('Ver Horario',array('action'=>'horario')) .'</p> ';
 
 ?>
 
