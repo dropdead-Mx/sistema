@@ -1,65 +1,60 @@
-azulObscuro=#2c3e50
-naranja=#f39c12
-gris=#7f8c8d
-blanco=#ecf0f1
-azulClaro=#26bce0
-rojo=#e74c3c
-div.loginEncabezado
-	background azulObscuro 
-	border-bottom 3px solid  naranja
-	box-shadow 3px 0px 3px  black
-	color #fff
-	font-family arial
-	font-size 24px
-	font-weight bold
-	padding 2%
-	text-align center
+@import iconos
 
-div#loginForm
-	background  #FFF
-	display block
-	margin 3% auto 0% 3%
-	padding 12px
-	text-align  center
-	label
-		color gris
+div.contenedor
+	background url(images/Hexagon-3.jpg)
+	padding 0% 2%
+	width 100%
+	height 510px
+	figure
+		margin 0% auto 25% auto
+		padding 0
+		width 50%
+		display block
+		img
+			width 100%
 	input
-		border 2px solid azulClaro
-		border-radius 5px
+		margin 1% 5% 8% 0%
 		display block
-		display block
-		margin 4% auto
-		padding 2%
 		width 70%
-		
-	input[type=submit]
-		background azulObscuro
+		display inline-block
 		border none
-		color #fff 
-		display block
+		background transparent
+		border-radius 5px
+		color azulObscuro
 		font-weight bold
-		margin 15px auto 0px auto
-		padding 3%
-		width 32%
-		
-h2.bienvenido
-	text-align center
-	color azulObscuro
-	margin 1% auto
-	display none
-p.textoBienvenida
-	display none
-	
-
+		vertical-align top
+		padding 1%
+		border-bottom 4px solid esmeralda
+		&:focus
+			border-bottom 3px solid blanco
+	label
+		display inline-block
+		font-family Flaticon
+		width 8%
+		margin 0 1% 0 7%
+		font-size 25px
+		color azulObscuro
+		&[for=userLogin]:after
+			content "\e008" 
+		&[for=passwordLogin]:after
+			content '\e004'
+	input[type=submit]
+		background esmeralda 
+		color blanco
+		padding 2%
+		display block
+		margin 2% auto
 div.errores
-	
 	color rojo
-	width 88%
+	width 70%
 	display block
-	margin 0 auto
-	text-align center
-	padding 1%
-	border-radius 5px
+	margin 3% auto
+	padding 2%
 	font-weight bold
+	text-align center
 	
-		
+@media screen and (min-width:479px) and (orientation: landscape) 
+
+	div.contenedor
+		figure
+			margin-bottom 1%

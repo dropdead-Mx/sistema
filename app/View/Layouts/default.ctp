@@ -5,14 +5,15 @@
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>
 		
-		Plataforma 
+		Plataforma Dorados
 	</title>
 	<?php
 		// echo $this->Html->meta('icon');
 
-		echo $this->Html->css(array('login','jquery-ui.min','normalize','general'));
+		echo $this->Html->css(array('login','jquery-ui.min','normalize','menu'));
 		echo $this->Html->script(array('jquery','jquery-ui.min','index'));
 		
 
@@ -32,6 +33,7 @@
 			if($tipo == 5){
 
 			echo $this->element('menu');
+			//echo $this->element('addcoordi');
 			}else if($tipo == 7){
 			// echo $this->element('lista');
 
@@ -39,19 +41,9 @@
 			?>
 
 		<!-- linea para pintar errores en cake  -->
-		<div class="errores">
-			
-		<?php echo $this->Session->flash(); ?>
-		</div>
-		</div>
-		<div id="footer">
 		
-			
-			<p>
-				<?php 
-				// echo $cakeVersion; ?>
-			</p>
 		</div>
+	
 	</div>
 
 	<?php echo $this->Js->writeBuffer();?>

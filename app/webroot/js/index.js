@@ -1,11 +1,16 @@
 $(function(){
-	$('ul.menuPrincipal li').on('click',menu);
+	$('div.bolita').on('click',muestraMenu);
+	$('ul.menuPrincipal > li').on('click',muestraSubmenu);
 	
 });
 
-function menu(elemento)
+function muestraMenu()
 {
-	$(this).children().toggle('slow')
-	
+	$('nav').show('slow');
 }
 
+function muestraSubmenu()
+{
+	$(this).children().toggle('slow');
+
+}

@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<?php echo $this->Html->charset();?>
-	<title>Plataforma dorados</title>
+	<title>carlos dorados</title>
 	
 	<?php 
 
