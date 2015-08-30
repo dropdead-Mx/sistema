@@ -7,8 +7,10 @@ $(function(){
 
 function muestraMenu()
 {
+	$('ul.submenuCoordi').hide();
+	$('ul.submenuAlumnos').hide();
 	$('nav').show('slow');
-		$('div.formulario').hide('slow');
+	$('div.formulario').hide('slow');
 }
 
 function muestraSubmenu()

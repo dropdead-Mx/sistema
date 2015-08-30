@@ -1,3 +1,5 @@
+<div class="coordinadores">
+	
 <h3>coordinadores Universidad Dorados</h3>
 
 <table>
@@ -30,3 +32,4 @@
 	
 
 </table>
+</div>
