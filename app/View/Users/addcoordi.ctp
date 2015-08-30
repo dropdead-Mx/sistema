@@ -1,8 +1,8 @@
-<div class="form">
-<fieldset>
-	<legend>Agregar coordinador</legend>
 
 
+<div class="formulario">
+<h2 class="tituloCoordi">Agregar Coordinador</h2>
+		
 	<?php 
 		// $selected=array();
 		echo $this->Form->create('User',array('class'=>'addForm','type'=>'file','novalidate'=>'novalidate'));
@@ -24,7 +24,7 @@
 
 ?>
 
-</fieldset>
+	</div>
 
-</div>
+
 <?php echo  $this->Html->script('scripts');?>

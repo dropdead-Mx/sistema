@@ -1,0 +1,80 @@
+@import iconos
+
+
+h2.tituloCoordi 
+	text-align center
+	background azulObscuro
+	color blanco
+	padding 2%
+	border-radius 10px
+	font-size 20px
+	width 90%
+	display block
+	margin 1% auto
+div.formulario
+	display none
+	margin 4% 0
+	padding 2%
+	input
+		display block
+		width 80%
+		margin 3% auto
+		padding 2%
+		border 1px solid plata
+		border-radius 5px
+		&:focus
+			border 1px solid azulClaro
+			box-shadow 2px 2px 2px #000
+	label
+		display block
+		width 80%
+		margin 3% auto
+		padding 2%
+		color blanco
+		font-weight bold
+		border-radius 5px
+		position relative
+		&[for="UserName"]
+			background esmeralda
+		&:after
+			content ""
+			border-top 10px solid esmeralda
+			border-left 10px solid transparent
+			border-right 10px solid transparent
+			border-bottom 10px solid transparent
+			bottom -17px
+			position absolute
+			left 7px
+		&[for="UserApat"]
+			background naranja
+			&:after
+				border-top 10px solid naranja
+		&[for="UserAmat"]
+			background morado
+			&:after
+				border-top 10px solid morado
+		&[for="UserEmail"]
+			background rojo
+			&:after
+				border-top 10px solid rojo
+		&[for="EmployeeProfileLvEducation"]
+			background azulObscuro
+			&:after
+				border-top 10px solid azulObscuro
+		&[for="EmployeeProfileFoto"]
+			background verde
+			&:after
+				border-top 10px solid verde
+	select
+		width 80%
+		display block
+		margin 2% auto
+		padding 2%
+		border 1px solid plata
+		color azulObscuro
+		border-radius 5px
+	input[type=submit]
+		background plata
+		color azulObscuro
+		
+	

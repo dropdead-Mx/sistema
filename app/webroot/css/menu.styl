@@ -3,7 +3,7 @@
 div.encabezadoMenu
 	background url(images/Hexagon-3.jpg)
 	background-size 100% 100%
-	height 250px
+	height 200px
 	position relative
 	&:after
 		margin 0
@@ -17,20 +17,20 @@ div.encabezadoMenu
 		left 0
 		bottom 0
 	figure.logoUni
-		width 50%
+		width 40%
 		display block
-		margin 0 auto 5% auto
+		margin 0 auto 0% auto
 		img
 			width 100%
 	figure.fotoUser
-		width 80px
-		height 80px
+		width 75px
+		height 75px
 		margin 0 0 0 3%
 		display inline-block
 		img
 			border 3px solid blanco
 			width 100%
-			height 80px
+			height 75px
 			border-radius 50%
 	div.usuario
 		width 65%
@@ -50,7 +50,7 @@ div.encabezadoMenu
 		height 38px
 		border-radius 50%
 		position absolute
-		right  10px
+		right  5px
 		bottom -13px
 		z-index 999
 		box-shadow 3px 3px 1px gris
@@ -68,6 +68,7 @@ div.encabezadoMenu
 nav
 	background blanco
 	color gris
+	vertical-align top
 	ul.menuPrincipal
 		margin 0
 		padding 0px 10px 0 10px
@@ -116,11 +117,44 @@ nav
 		li
 			padding 3%
 			list-style none
-			width 77%
+			width 79%
 			display inline-block
 			margin 2% auto
 			border-bottom  1px solid gris
-			ul
-				display none
-				li
-					border none
+		ul.submenuCoordi, ul.submenuAlumnos
+			display none
+			li
+				border none
+				padding 1%
+					
+
+@media screen and (min-width:470px) and (orientation: landscape) 
+
+	div.encabezadoMenu
+		&:after
+			content ""
+			display none
+		figure.fotoUser
+			margin 0 0 0 20%
+		div.usuario
+			width 60% 
+	ul.menuPrincipal
+		li
+			width 34% !important
+	ul.submenuCoordi
+		li
+			width 20% !important
+			margin 1% 0
+			text-align center
+			background verde
+			color blanco
+			border-radius 10px 
+	ul.submenuAlumnos
+		li
+			width 25% !important
+			margin 1% 0
+			text-align center
+			background naranjaObscuro
+			color blanco
+			border-radius 10px 
+			
