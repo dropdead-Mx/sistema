@@ -32,3 +32,43 @@
 	<option value="9">9</option>
 	<option value="10">10</option>
 </select>
+
+
+<select  id="gruposHorario">
+	<option value="txt">Sin grupos</option>
+</select>
+
+<button id="buscaHorario">Buscar</button>
+<form id="tipoHorario">
+	<input type="radio" name="buscaH" value="hClases">Horarios de clase
+	<input type="radio" name="buscaH" value="hExamenes">Horarios de Examenes
+
+</form>
+
+
+<table id="horarioExamenes" hidden>
+
+	<tr>
+		<th>Materia: </th>
+		<th>Parcial</th>
+		<th>Fecha </th>
+		<th>Hora</th>
+
+	</tr>
+	
+</table>
+
+<table id="horarioClases" hidden>
+	
+	<tr>
+		<th>Materia</th>
+		<th>Dia</th>
+		<th>Hora</th>
+
+	</tr>
+	
+</table>
+
+<?php echo $this->Html->script('scripts');?>
+
+

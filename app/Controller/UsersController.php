@@ -11,7 +11,7 @@ public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile'
 public function beforeFilter(){
 	parent::beforeFilter();
 	// $this->Auth->allow('indexcoordinator','indexTeacher','vercalificaciones','materiasporgerarquia','index');
-	$this->Auth->allow('gruposxcarreraycuatri','consultarasistencias');
+	$this->Auth->allow('gruposxcarreraycuatri','consultarasistencias','fechashorarios');
 	
 	// if ($this->Auth->loggedIn()) {
 	// $this->Auth->deny('login');
@@ -25,7 +25,7 @@ public function isAuthorized($user){
 
 		if ($user['group_id']== '5' ){
 
-		if(in_array($this->action,array('vercalificaciones','consultarcalificaciones','materiasporgerarquia','consultarasistencias','verasistencias','indexStudent','buscaralumnos','gruposxcarreraycuatri','index','indexcoordinator','indexTeacher','editacoordinador','eliminarcoordi','addcoordi','vercarreras','assigncareers'))){
+		if(in_array($this->action,array('fechashorarios','consultarhorarios','vercalificaciones','consultarcalificaciones','materiasporgerarquia','consultarasistencias','verasistencias','indexStudent','buscaralumnos','gruposxcarreraycuatri','index','indexcoordinator','indexTeacher','editacoordinador','eliminarcoordi','addcoordi','vercarreras','assigncareers'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -40,7 +40,7 @@ public function isAuthorized($user){
 
 		if ($user['group_id']== '6' ){
 
-		if(in_array($this->action,array('consultarasistencias','verasistencias','buscaralumnos','gruposxcarreraycuatri','materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher'))){
+		if(in_array($this->action,array('fechashorarios','consultarhorarios','consultarasistencias','verasistencias','buscaralumnos','gruposxcarreraycuatri','materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -1537,12 +1537,53 @@ public function verasistencias(){
 
 }
 
-public function fechasexamen(){
+public function fechashorarios($grupo_id=null,$opcion=null){
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+	$this->RequestHandler->respondAs('json');
+	$this->layout='ajax';
+	$tipo=[];
+
+	if($grupo_id !==null && $opcion=='hExamenes'){
+
+		$fechasExamen=[];
+		$fechas=$this->Exam->find('all',array('conditions'=>array(
+			'Exam.created BETWEEN ? AND ?'=>array($inicio,$fin),
+			'Exam.grupo_id'=>$grupo_id)));
+		
+
+		for($x=0;$x<sizeof($fechas);$x++){
+
+			$nombreMat=$this->Course->find('all',array('conditions'=>array(
+				'Course.id'=>$fechas[$x]['Exam']['course_id'])));
+
+			$fechasExamen[]['Examen']=array(
+				'id'=>$fechas[$x]['Exam']['id'],
+				'course_id'=>$fechas[$x]['Exam']['course_id'],
+				'course_name'=>$nombreMat[0]['Course']['name'],
+				'partial'=>$fechas[$x]['Exam']['partial'],
+				'fecha'=>$fechas[$x]['Exam']['fecha'],
+				'inicio'=>$fechas[$x]['Exam']['start_time']);
+		}
+
+
+		$this->set(compact('fechasExamen'));
+
+	}else if($grupo_id !==null && $opcion=='hClases'){
+
+		$horarioClases=$this->CourseModule->find('all',array('conditions'=>array(
+			'CourseModule.created BETWEEN ?AND ?'=>array($inicio,$fin),
+			'CourseModule.grupo_id'=>$grupo_id)));
+
+		$this->set(compact('horarioClases'));
+
+	}
+
+
 
 }
-public function horarioclases(){
-	
-}
+
 
 public function consultarhorarios(){
 

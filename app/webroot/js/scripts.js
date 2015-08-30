@@ -1871,8 +1871,142 @@ function consultaAsistencias(){
 
 }
 
-$(function(){
+function consultaHorarios(){
 
+$('select#carreraHorario,select#cuatriHorario').on('change',function(){
+	
+	$('option.grupoOpH').remove();
+	carreraH=$('select#carreraHorario option:selected').val();
+	cuatriH=$('select#cuatriHorario option:selected').val();
+	gruposH=[];
+
+
+	if(carreraH !== 'txt' && cuatriH !== 'txt'){
+		$.ajax({
+			type:'GET',
+			url:'/sistema/users/gruposxcarreraycuatri/'+carreraH+'/'+cuatriH,
+			success:function(response){
+
+				if(response.length >=1){
+
+					for(x=0,n=response.length;x<n;x++){
+
+						grupoOp='<option class="grupoOpH" value="'+response[x].Grupo.id+'">'+response[x].Grupo.name+'</option>';
+						gruposH.push(grupoOp);
+
+					}
+					$('select#gruposHorario option[value="txt"]').text('Grupos disponibles');
+					$('select#gruposHorario').append(gruposH);
+				}else {
+					$('option.grupoOpH').remove();
+					$('select#gruposHorario option[value="txt"]').text('Sin grupos');
+
+
+				}
+			}
+		});
+	}
+
+});
+
+
+	$('button#buscaHorario').on('click',function(){
+
+		grupo=$('select#gruposHorario option:selected').val();
+		opcion=$('input[name=buscaH]:checked','#tipoHorario').val();
+		filas=[];
+		$('tr.filaTabla').remove();
+
+		if(grupo !== 'txt' && typeof(opcion) !== 'undefined'){
+			// console.log(opcion+' '+grupo);
+
+			$.ajax({
+				type:'GET',
+				url:'/sistema/users/fechashorarios/'+grupo+'/'+opcion,
+				success:function(response){
+
+					if(typeof(response) !== 'undefined' && response.length >=1){
+
+						if(opcion == 'hExamenes'){
+
+							if ($('table#horarioClases').is(':visible')==true){
+								$('table#horarioClases').attr('hidden',true);
+							}
+							for(x=0,n=response.length;x<n;x++){
+								console.log(response);
+								parcial=response[x].Examen.partial;
+
+								if(response[x].Examen.partial == 4){
+								parcial='cuatrimestral';
+
+								}else if (response[x].Examen.partial == 5){
+									parcial='Extraordinario';
+								}else {
+								parcial=response[x].Examen.partial;
+
+								}
+
+								hora=response[x].Examen.inicio;
+								if (hora == null){
+									hora='N/A';
+								}
+								fila='<tr class="filaTabla"><td> '+response[x].Examen.course_name+'</td><td> '+parcial+'</td><td> '+response[x].Examen.fecha+' </td> <td> '+hora+'</td></tr>';
+								filas.push(fila);
+							}
+							$('table#horarioExamenes').append(filas);
+							if($('table#horarioExamenes').is(':visible')==false){
+								
+							$('table#horarioExamenes').removeAttr('hidden');
+							}
+
+						}else if (opcion == 'hClases'){
+
+							if($('table#horarioExamenes').is(':visible')==true){
+								$('table#horarioExamenes').attr('hidden',true);
+							}
+
+							for (x=0,n=response.length;x<n;x++){
+
+								fila='<tr class="filaTabla"><td>'+response[x].Course.name+'</td><td>'+response[x].CourseModule.day+'</td><td>'+response[x].CourseModule.start_time+'--'+response[x].CourseModule.end_time+'</td></tr>';
+								filas.push(fila);
+							}
+
+							$('table#horarioClases').append(filas);
+							if ($('table#horarioClases').is(':visible')==false){
+								$('table#horarioClases').removeAttr('hidden');
+							}
+
+						}
+					} //fin si no hay nada
+					else {
+
+							$('tr.filaTabla').remove();
+
+							if($('table#horarioExamenes').is(':visible')==true){
+								$('table#horarioExamenes').attr('hidden',true);
+							}else if ($('table#horarioClases').is(':visible')==true){
+								$('table#horarioClases').attr('hidden',true);
+							}
+
+
+
+
+					}
+				}
+			});
+		}
+
+
+
+	});
+
+
+
+}
+
+
+$(function(){
+	consultaHorarios();
 	consultaAsistencias();
 	buscarAlumnos();
 	buscaGrupos();
