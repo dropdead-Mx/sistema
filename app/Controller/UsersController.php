@@ -1346,138 +1346,182 @@ $this->layout='ajax';
 }
 
 //funcion ajax para hacer la busqueda de calificaciones vista coordinador vercalificaciones
-public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$parcial,$grupo) {
+// public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$parcial,$grupo) {
+// 	$this->RequestHandler->respondAs('json');
+// 	$this->layout='ajax';
+
+// 	if($this->request->is('ajax')){
+// 		$calificacionesObtenidas=[];
+// 	$promedioPorAlumno=[];
+// 	$suma=array();
+
+// 	$arrayFinal=array();
+// 	//para los criterios de evaluacion sacar el intervalo de inicio y fin de semestre
+// 	//para que muestre los criterios de evaluacion en el cuatrimestre actual
+
+// 	//variable para opbtener el semestre mas actual
+// 	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+
+// 	//convierte a datetime un date
+// 	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+// 	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+
+// 	// echo $inicio; Assist.date_assist BETWEEN ? AND ?
+
+// 	//busca los criterios de evaluacion del cuatrimestre actual
+// 	$goals=$this->Goal->find('all',array('conditions'=>array('Goal.created BETWEEN ? AND ? '=>array($inicio,$fin),
+// 	'Goal.course_id'=>$course_id,
+// 	'Goal.grupo_id'=>$grupo,
+// 	'Goal.parcial'=>$parcial)));
+
+// 	//aqui agregar la variable de grupo
+// 	$estudiantes=$this->StudentProfile->find('all',array('conditions'=>array('StudentProfile.career_id'=>$career_id,
+// 		'StudentProfile.semester'=>$cuatrimestre,
+// 		)
+// 		// 'fields'=>'StudentProfile.user_id'
+// 	));
+
+
+
+
+// 	//for para obtener la calificacion por criterios de evaluacion obtenidos por estudiante
+
+// 	for($e=0; $e <  sizeof($estudiantes); $e++ ){
+
+// 		$estudiant=$estudiantes[$e]['StudentProfile']['user_id'];
+		
+
+// 		for($g=0; $g <  sizeof($goals); $g++){
+
+// 			$criterio=$goals[$g]['Goal']['id'];
+			
+// 			// $this->Obtainedgoal->virtualField['total']='SUM(Obtainedgoal.percentage_obtained)';
+
+// 			array_push($calificacionesObtenidas,$this->Obtainedgoal->find('list',array(
+// 				'conditions'=>array(
+// 					'Obtainedgoal.user_id'=>$estudiant,
+// 					'Obtainedgoal.goal_id'=>$criterio),
+// 					'fields'=>array(
+// 						'Obtainedgoal.user_id','Obtainedgoal.percentage_obtained'))));
+
+		
+
+
+// }}
+// 	// pr($calificacionesObtenidas);
+
+// 	$contador=sizeof($calificacionesObtenidas);
+
+	
+
+// 	if($contador > 0 && sizeof($calificacionesObtenidas[0]) !== 0){
+
+// 		foreach ($calificacionesObtenidas as $k => $calif):
+		
+// 		foreach ($calif as $id => $value):
+// 			// echo $value;
+// 			// echo $id;
+// 			if(!isset($suma[$id])){
+		
+// 				$suma[$id]=0;
+// 			}
+// 			$suma[$id]+=$value/10;
+
+// 			endforeach;
+
+// 		endforeach;
+
+// 		// pr($suma);
+
+
+// 		for($E=0; $E<sizeof($estudiantes); $E++){
+
+// 			$id=$estudiantes[$E]['StudentProfile']['user_id'];
+// 			$nombre=$estudiantes[$E]['User']['name'];
+
+
+
+// 			foreach ($suma as $key => $sum):
+// 				if($id==$key && isset($key)):
+// 					$calif=$sum;
+// 				endif;
+// 				endforeach;
+
+// 				$arrayFinal[]=array(
+// 						"id"=>$id,
+// 						"nombre"=>$nombre,
+// 						"calificacion"=>$calif);
+
+// 		}
+
+	
+
+
+
+
+// 	$this->set(compact('arrayFinal',$arrayFinal));
+
+// 	} 
+// 	else {
+	
+// 	$this->set(compact('arrayFinal',$arrayFinal));
+
+
+// 	}
+	
+
+
+
+
+
+// }
+
+
+// 	}
+
+public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$parcial,$grupo){
+
 	$this->RequestHandler->respondAs('json');
 	$this->layout='ajax';
-
-	if($this->request->is('ajax')){
-		$calificacionesObtenidas=[];
-	$promedioPorAlumno=[];
-	$suma=array();
-
-	$arrayFinal=array();
-	//para los criterios de evaluacion sacar el intervalo de inicio y fin de semestre
-	//para que muestre los criterios de evaluacion en el cuatrimestre actual
-
-	//variable para opbtener el semestre mas actual
 	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
-
-	//convierte a datetime un date
 	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
 	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
 
-	// echo $inicio; Assist.date_assist BETWEEN ? AND ?
+	$arrayFinal=[];
+	if($this->request->is('ajax')){
+	$estudiantes=$this->StudentProfile->find('all',array('conditions'=>array(
+		'StudentProfile.grupo_id'=>$grupo,
+		'StudentProfile.career_id'=>$career_id,
+		'StudentProfile.semester'=>$cuatrimestre)));
 
-	//busca los criterios de evaluacion del cuatrimestre actual
-	$goals=$this->Goal->find('all',array('conditions'=>array('Goal.created BETWEEN ? AND ? '=>array($inicio,$fin),
-	'Goal.course_id'=>$course_id,
-	'Goal.grupo_id'=>$grupo,
-	'Goal.parcial'=>$parcial)));
+	for($x=0;$x<sizeof($estudiantes);$x++){
 
-	//aqui agregar la variable de grupo
-	$estudiantes=$this->StudentProfile->find('all',array('conditions'=>array('StudentProfile.career_id'=>$career_id,
-		'StudentProfile.semester'=>$cuatrimestre,
-		)
-		// 'fields'=>'StudentProfile.user_id'
-	));
+		$calificacion=$this->PartialScore->find('all',array('conditions'=>array(
+			'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),
+			'PartialScore.user_id'=>$estudiantes[$x]['User']['id'],
+			'PartialScore.partial'=>$parcial,
+			'PartialScore.grupo_id'=>$estudiantes[$x]['StudentProfile']['grupo_id'],
+			'PartialScore.course_id'=>$course_id)));
 
+		$arrayFinal[]=array(
+			'id'=>$estudiantes[$x]['User']['id'],
+			'nombre'=>$estudiantes[$x]['User']['name'],
+			'calificacion'=>$calificacion[0]['PartialScore']['final_score']
+			);
+	}
 
-
-
-	//for para obtener la calificacion por criterios de evaluacion obtenidos por estudiante
-
-	for($e=0; $e <  sizeof($estudiantes); $e++ ){
-
-		$estudiant=$estudiantes[$e]['StudentProfile']['user_id'];
-		
-
-		for($g=0; $g <  sizeof($goals); $g++){
-
-			$criterio=$goals[$g]['Goal']['id'];
-			
-			// $this->Obtainedgoal->virtualField['total']='SUM(Obtainedgoal.percentage_obtained)';
-
-			array_push($calificacionesObtenidas,$this->Obtainedgoal->find('list',array(
-				'conditions'=>array(
-					'Obtainedgoal.user_id'=>$estudiant,
-					'Obtainedgoal.goal_id'=>$criterio),
-					'fields'=>array(
-						'Obtainedgoal.user_id','Obtainedgoal.percentage_obtained'))));
-
-		
+	$this->set(compact('arrayFinal'));
 
 
-}}
-	// pr($calificacionesObtenidas);
-
-	$contador=sizeof($calificacionesObtenidas);
-
-	
-
-	if($contador > 0 && sizeof($calificacionesObtenidas[0]) !== 0){
-
-		foreach ($calificacionesObtenidas as $k => $calif):
-		
-		foreach ($calif as $id => $value):
-			// echo $value;
-			// echo $id;
-			if(!isset($suma[$id])){
-		
-				$suma[$id]=0;
-			}
-			$suma[$id]+=$value/10;
-
-			endforeach;
-
-		endforeach;
-
-		// pr($suma);
-
-
-		for($E=0; $E<sizeof($estudiantes); $E++){
-
-			$id=$estudiantes[$E]['StudentProfile']['user_id'];
-			$nombre=$estudiantes[$E]['User']['name'];
-
-
-
-			foreach ($suma as $key => $sum):
-				if($id==$key && isset($key)):
-					$calif=$sum;
-				endif;
-				endforeach;
-
-				$arrayFinal[]=array(
-						"id"=>$id,
-						"nombre"=>$nombre,
-						"calificacion"=>$calif);
-
-		}
-
-	
-
-
-
-
-	$this->set(compact('arrayFinal',$arrayFinal));
-
-	} 
-	else {
-	
-	$this->set(compact('arrayFinal',$arrayFinal));
-
+	}else {
+	// $this->set(compact($arrayFinal));
 
 	}
-	
-
 
 
 
 
 }
-
-
-	}
 
 
 public function consultarasistencias($materia=null,$grupo=null,$fecha1=null,$fecha2=null){

@@ -33238,3 +33238,33 @@ Stack Trace:
 #11 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
 #12 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #13 {main}
+2015-08-31 18:47:07 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/var/www/sistema/app/Controller/UsersController.php, line 1509]
+2015-08-31 18:47:07 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /sistema/users/vercalificaciones/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 1509)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 1509, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 1509, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-31 18:47:32 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/var/www/sistema/app/Controller/UsersController.php, line 1509]
+2015-08-31 18:47:32 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /sistema/users/vercalificaciones/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 1509)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 1509, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 1509, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-31 18:47:34 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/var/www/sistema/app/Controller/UsersController.php, line 1509]
+2015-08-31 18:47:34 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /sistema/users/vercalificaciones/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 1509)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 1509, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 1509, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
