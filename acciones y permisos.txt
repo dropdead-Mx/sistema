@@ -7,6 +7,7 @@ alejandrosh@gmail.com
 	/users/indexStudent
 	/verasistencias/
 	/vercalificaciones/
+	/users/consultarhorarios
 	
 
 
@@ -24,6 +25,7 @@ juaquinalcantar@gmail.com
 	/users/vercalificaciones/ ok
 	/courses/ *
 	/verasistencias/
+	/users/consultarhorarios
 
 #MAESTRO
 
