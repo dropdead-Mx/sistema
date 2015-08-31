@@ -33221,3 +33221,20 @@ Stack Trace:
 #0 /opt/lampp/htdocs/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 >>>>>>> 8a71b613b01e506c6c315f2f56cc1d726664cfb5
+2015-08-31 18:12:06 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'final_score' cannot be null
+Request URL: /sistema/users/calificar/9/1/19/1/38
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('INSERT INTO `si...', Array)
+#2 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(1012): DboSource->execute('INSERT INTO `si...')
+#3 /var/www/sistema/lib/Cake/Model/Model.php(1924): DboSource->create(Object(PartialScore), Array, Array)
+#4 /var/www/sistema/lib/Cake/Model/Model.php(1741): Model->_doSave(Array, Array)
+#5 /var/www/sistema/lib/Cake/Model/Model.php(2334): Model->save(Array, Array)
+#6 /var/www/sistema/lib/Cake/Model/Model.php(2262): Model->saveMany(Array, Array)
+#7 /var/www/sistema/app/Controller/UsersController.php(598): Model->saveAll(Array)
+#8 [internal function]: UsersController->calificar('9', '1', '19', '1', '38')
+#9 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#12 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}

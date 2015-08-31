@@ -358,7 +358,7 @@ function toUppercase() {
 // }
 function calificarParcial(){
 
-	$('#calificacionesPar input.calf[type="number"]').on('focus',function(){
+	$('#calificacionesPar input.calf[type="text"]').on('focus',function(){
 
 		if($(this).hasClass('ok')==true ){
 			$(this).removeClass('ok');
@@ -377,7 +377,7 @@ function calificarParcial(){
 
 	$('#calificacionesPar').on('submit',function(){
 		i=0
-		$('#calificacionesPar input.calf[type="number"]').each(function(){
+		$('#calificacionesPar input.calf[type="text"]').each(function(){
 
 			total=0;
 			actual=parseFloat($(this).val());
@@ -423,10 +423,29 @@ function calificarParcial(){
 				return false;
 
 			}else{
-				setTimeout(function(){
-					console.log('esperando..');
-					return false;
-			}, 4000);
+				// setTimeout(function(){
+				// 	console.log('esperando..');
+				
+					
+					$('tr.rowInfo').each(function(){
+						sum=0;
+						$(this).find('td input.calf[type="text"]').each(function(){
+
+							 valor=$(this).val();
+							
+
+							if(!isNaN(valor) && valor.length !==0){
+								sum+=parseFloat(valor);
+							}
+
+						});
+						$('.total',this).val((sum/10));
+						console.log(sum);
+					});
+
+
+					return true;
+			// }, 4000);
 
 				
 			}

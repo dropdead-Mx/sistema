@@ -4,7 +4,7 @@ class UsersController extends AppController {
 
 public $helpers=array('Html','Form','Js');
 public $components=array('Session','RequestHandler','Email');
-public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group','Course','Goal','Obtainedgoal','Usrcareer','CourseModule','Assist','Exam','Semester','Teachercourse');
+public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile','Group','Course','Goal','Obtainedgoal','Usrcareer','CourseModule','Assist','Exam','Semester','Teachercourse','PartialScore');
 
 	
 
@@ -575,13 +575,13 @@ public function calificar($course_id,$semester,$career_id,$parcial,$grupo){
 		));
 
 
-	$materia = $this->Course->find('list',array('conditions'=>array('Course.id'=>$course_id)));
+	$materia = $this->Course->find('all',array('conditions'=>array('Course.id'=>$course_id),'recursive'=>-1));
 	$critdevaluacion=$this->Goal->find('all',array('conditions'=>array(
 		'Goal.created BETWEEN ? AND ? '=>array($inicio,$fin),'Goal.course_id'=>$course_id,'Goal.parcial'=>$parcial,'Goal.grupo_id'=>$grupo,'Goal.user_id'=>$user_id)));
 	if(sizeof($critdevaluacion) >=1 ){
 
 	$existe=$this->Obtainedgoal->find('count',array('conditions'=>array('Obtainedgoal.created BETWEEN ? AND ?'=>array($inicio,$fin),'Obtainedgoal.user_id'=>$estudiantes[0]['User']['id'],'Obtainedgoal.goal_id'=>$critdevaluacion[0]['Goal']['id'])));
-	$this->set(compact('estudiantes','critdevaluacion','materia','partial','gpo'));
+	$this->set(compact('estudiantes','critdevaluacion','materia','parcial','gpo'));
 	}
 
 	$n=sizeof($critdevaluacion);
@@ -593,7 +593,9 @@ public function calificar($course_id,$semester,$career_id,$parcial,$grupo){
 
 	if( $this->request->is('post') && $existe == 0){
 		// debug($this->request->data['Obtainedgoal']);
-		if($this->Obtainedgoal->saveAll($this->request->data['Obtainedgoal'])):
+		// debug($this->request->data['PartialScore']);
+	
+		if($this->Obtainedgoal->saveAll($this->request->data['Obtainedgoal']) && $this->PartialScore->saveAll($this->request->data['PartialScore'])):
 			$this->Session->setFlash('Calificaciones Asignadas correctamente');
 			$this->redirect(array('action'=>'index'));
 			endif;
