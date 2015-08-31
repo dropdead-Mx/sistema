@@ -1,14 +1,18 @@
 @font-face {
   font-family: "Flaticon";
   src: url("../fonts/flaticon.eot");
+<<<<<<< HEAD
   src: url("../fonts/flaticon.eot#iefix") format("embedded-opentype"), url("f../fonts/flaticon.woff") format("woff"), url("../fonts/flaticon.ttf") format("truetype"), url("../fonts/flaticon.svg") format("svg");
+=======
+  src: url("../fonts/flaticon.eot#iefix") format("embedded-opentype"), url("../fonts/flaticon.woff") format("woff"), url("../fonts/flaticon.ttf") format("truetype"), url("../fonts/flaticon.svg") format("svg");
+>>>>>>> 8a71b613b01e506c6c315f2f56cc1d726664cfb5
   font-weight: normal;
   font-style: normal;
 }
 div.encabezadoMenu {
   background: url("images/Hexagon-3.jpg");
   background-size: 100% 100%;
-  height: 250px;
+  height: 200px;
   position: relative;
 }
 div.encabezadoMenu:after {
@@ -24,23 +28,23 @@ div.encabezadoMenu:after {
   bottom: 0;
 }
 div.encabezadoMenu figure.logoUni {
-  width: 50%;
+  width: 40%;
   display: block;
-  margin: 0 auto 5% auto;
+  margin: 0 auto 0% auto;
 }
 div.encabezadoMenu figure.logoUni img {
   width: 100%;
 }
 div.encabezadoMenu figure.fotoUser {
-  width: 80px;
-  height: 80px;
+  width: 75px;
+  height: 75px;
   margin: 0 0 0 3%;
   display: inline-block;
 }
 div.encabezadoMenu figure.fotoUser img {
   border: 3px solid #fff;
   width: 100%;
-  height: 80px;
+  height: 75px;
   border-radius: 50%;
 }
 div.encabezadoMenu div.usuario {
@@ -64,7 +68,7 @@ div.encabezadoMenu div.bolita {
   height: 38px;
   border-radius: 50%;
   position: absolute;
-  right: 10px;
+  right: 5px;
   bottom: -13px;
   z-index: 999;
   box-shadow: 3px 3px 1px #7f8c8d;
@@ -85,6 +89,7 @@ div.encabezadoMenu div.bolita p:after {
 nav {
   background: #fff;
   color: #7f8c8d;
+  vertical-align: top;
 }
 nav ul.menuPrincipal {
   margin: 0;
@@ -148,14 +153,48 @@ nav ul.menuPrincipal span.iconLogout:after {
 nav ul.menuPrincipal li {
   padding: 3%;
   list-style: none;
-  width: 77%;
+  width: 79%;
   display: inline-block;
   margin: 2% auto;
   border-bottom: 1px solid #7f8c8d;
 }
-nav ul.menuPrincipal li ul {
+nav ul.menuPrincipal ul.submenuCoordi,
+nav ul.menuPrincipal ul.submenuAlumnos {
   display: none;
 }
-nav ul.menuPrincipal li ul li {
+nav ul.menuPrincipal ul.submenuCoordi li,
+nav ul.menuPrincipal ul.submenuAlumnos li {
   border: none;
+  padding: 1%;
+}
+@media screen and (min-width: 470px) and (orientation: landscape) {
+  div.encabezadoMenu:after {
+    content: "";
+    display: none;
+  }
+  div.encabezadoMenu figure.fotoUser {
+    margin: 0 0 0 20%;
+  }
+  div.encabezadoMenu div.usuario {
+    width: 60%;
+  }
+  ul.menuPrincipal li {
+    width: 34% !important;
+  }
+  ul.submenuCoordi li {
+    width: 20% !important;
+    margin: 1% 0;
+    text-align: center;
+    background: #16a085;
+    color: #fff;
+    border-radius: 10px;
+  }
+  ul.submenuAlumnos li {
+    width: 25% !important;
+    margin: 1% 0;
+    text-align: center;
+    background: #d35400;
+    color: #fff;
+    border-radius: 10px;
+  }
 }

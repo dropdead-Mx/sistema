@@ -26,21 +26,19 @@
 <nav>
 		<ul class="menuPrincipal">
 			<span class="iconCordi"></span>
-			<li>Coordinadores 
+			<li class="desplegar">Coordinadores </li>
 				<ul class="submenuCoordi">
-					<li>Alta</li>
-					<li>Consulta</li>
+					<li data-opcion="alta">Alta</li>
+					<li data-opcion="consulta">Consulta</li>
 				</ul>
-			</li>
 			<span class="iconMaestro"></span>
 			<li>Maestros </li>
 			<span class="iconAlumno"></span>
-			<li>Alumnos 
+			<li class="desplegar">Alumnos </li>
 				<ul class="submenuAlumnos">
 					<li>Calificaciones</li>
 					<li>Asistencias</li>
 				</ul>
-			</li>
 			<span class="iconFiles"></span>
 			<li>Archivos </li>
 			<span class="iconNotifi"></span>
