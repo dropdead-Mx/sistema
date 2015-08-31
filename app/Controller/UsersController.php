@@ -11,7 +11,7 @@ public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile'
 public function beforeFilter(){
 	parent::beforeFilter();
 	// $this->Auth->allow('indexcoordinator','indexTeacher','vercalificaciones','materiasporgerarquia','index');
-	$this->Auth->allow('gruposxcarreraycuatri','consultarasistencias','fechashorarios');
+	$this->Auth->allow('gruposxcarreraycuatri','consultarasistencias','fechashorarios','materiasporgerarquia');
 	
 	// if ($this->Auth->loggedIn()) {
 	// $this->Auth->deny('login');
@@ -40,7 +40,7 @@ public function isAuthorized($user){
 
 		if ($user['group_id']== '6' ){
 
-		if(in_array($this->action,array('fechashorarios','consultarhorarios','consultarasistencias','verasistencias','buscaralumnos','gruposxcarreraycuatri','materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher'))){
+		if(in_array($this->action,array('fechashorarios','consultarhorarios','consultarasistencias','verasistencias','buscaralumnos','gruposxcarreraycuatri','materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher','editStudent'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -1332,7 +1332,8 @@ $materias=$this->Course->find('all',array('conditions'=>array(
 	'Course.career_id'=>$career_id,
 	'Course.semester'=>$cuatrimestre),
 'fields'=>array(
-	'Course.id','Course.name')
+	'Course.id','Course.name'),
+	'recursive'=>-1
 
 ));
 

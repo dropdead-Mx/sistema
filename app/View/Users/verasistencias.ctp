@@ -1,6 +1,6 @@
 <h3>Consultar asistencias</h3>
 
-<select id="asistenciaCarrera">
+<select id="asistenciaCarrera" data-tipo="<?php echo $current_user['group_id']; ?>">
 	<option value="txt">Seleccione una carrera</option>
 	<?php 
 	if($current_user['group_id']== 6 ){
@@ -19,7 +19,7 @@
 </select>
 
 
-<select  id="cuatriAsistencia">
+<select  id="cuatriAsistencia" >
 	<option value="txt">Seleccione un cuatrimestre</option>
 	<option value="1">1</option>
 	<option value="2">2</option>
@@ -64,7 +64,14 @@
 		<th>Fecha</th>
 		<th>Estatus</th>
 		<th>Nota</th>
-		<th>Editar</th>
+		<?php 
+
+		if($current_user['group_id']==6){
+
+		echo "<th>Editar</th>";
+		}
+
+		?>
 	</tr>
 </table>
 </div>
@@ -72,4 +79,9 @@
 
 
 
-<?php echo $this->Html->script('scripts');?>
+<?php 
+	if($current_user['group_id']==6){
+
+echo $this->Html->script('scripts');
+	}
+?>

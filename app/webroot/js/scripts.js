@@ -1714,7 +1714,7 @@ function consultaAsistencias(){
 		$('option.optMat,option.optG').remove();
 		carrera=$('select#asistenciaCarrera option:selected').val();
 		cuatri=$('select#cuatriAsistencia option:selected').val();
-		console.log(carrera+' '+cuatri);
+		
 		materias=[];
 		grupos=[];
 
@@ -1724,15 +1724,17 @@ function consultaAsistencias(){
 				type:'GET',
 				url:'/sistema/users/materiasporgerarquia/'+carrera+'/'+cuatri,
 				success:function(response){
+						$('option.optMat').remove();
 
-					if(response.length >=1){
+
+					if(response.length >=1 && typeof(response) !== 'undefined'){
 						for(x=0,n=response.length;x<n;x++){
 							opcionM='<option class="optMat" value="'+response[x].Course.id+'">'+response[x].Course.name+'</option>';
 							materias.push(opcionM);
 						}
 						$('select#materiaAsistencia option[value="txt"]').text('Materias disponibles');
 						$('select#materiaAsistencia').append(materias);
-					}else {
+					} else {
 						$('select#materiaAsistencia option[value="txt"]').text('Sin materias');
 						$('option.optMat').remove();
 
@@ -1823,8 +1825,12 @@ function consultaAsistencias(){
  						}else if(parseInt(response[w].Assist.status) ==3){
  							estado="Falta";
  						}
+ 						if($('select#asistenciaCarrera').attr('data-tipo')==6){
 
- 						fila='<tr class="resultAsist"><td>'+response[w].User.name+'</td><td>'+response[w].Assist.date_assist+'</td><td>'+estado+'</td><td>'+response[w].Assist.note+'</td><td>Link cambiar asistencia</td></tr>';
+ 						fila='<tr class="resultAsist"><td class="idAsistencia" data-asistid="'+response[w].Assist.id+'">'+response[w].User.name+'</td><td>'+response[w].Assist.date_assist+'</td><td>'+estado+'</td><td>'+response[w].Assist.note+'</td><td>Link cambiar asistencia</td></tr>';
+ 						}else {
+ 							fila='<tr class="resultAsist"><td>'+response[w].User.name+'</td><td>'+response[w].Assist.date_assist+'</td><td>'+estado+'</td><td>'+response[w].Assist.note+'</tr>';
+ 						}
  						resultados.push(fila);
  					}
  					$('table#resultadosAsistencias').append(resultados);
