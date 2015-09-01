@@ -1695,9 +1695,32 @@ public function cuatrimestral($course_id,$semester,$career_id,$parcial,$grupo){
 	// agregar condicion si no es = a 3 redirect porque no se han registrado los primeros 3 parciales
 	 $existen=$previo/sizeof($alumnos);
 
+	 $registrado=$this->PartialScore->find('count',array(
+	 	'conditions'=>array(
+	 		'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),
+	 		'PartialScore.partial'=>4,
+	 		'PartialScore.course_id'=>$course_id,
+	 		'PartialScore.grupo_id'=>$grupo)));
+
+	 // echo $registrado;
 	 // echo $existen;
 
+	 // echo $existen;
 
+	 if($existen !== 3 && $registrado == 0){
+
+	 	$this->Session->setFlash('Aun no has calificado los parciales anteriores','default',array('class'=>'mensajeError'));
+	 	$this->redirect(array('action'=>'index'));
+	 }
+	 else if($existen == 3 && $registrado >0 ){
+	 	$this->Session->setFlash('Ya has calificado el cuatrimestral','default',array('class'=>'mensajeError'));
+	 	$this->redirect(array('action'=>'index'));
+
+
+	 }
+
+
+	 else if( $existen == 3 && $registrado == 0){
 
 	 //luego de pasar la condicion y sea = 3 sacar la suma de sus 3 parciales si es > 18 se califica con cuatrimestral si no :v es = 0
 
@@ -1738,6 +1761,10 @@ public function cuatrimestral($course_id,$semester,$career_id,$parcial,$grupo){
 			$this->redirect(array('action'=>'index'));
 		endif;
 	endif;
+	 }
+
+
+
 
 
 }
