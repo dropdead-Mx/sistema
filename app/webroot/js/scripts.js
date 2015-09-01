@@ -72,6 +72,7 @@
 			var numR=$("#myTbody>tr").length;
 			if( numR > 2){
 			$(this).parent('td').parent('tr').remove();
+			console.log()
 			}else {
 				console.log('no se puede eliminar');
 			}
@@ -230,12 +231,12 @@ function incGoal() {
 
 		var inputsH=$('#GoalForm input[type="hidden"].escondido1:last,#GoalForm input[type="hidden"].escondido2:last,#GoalForm input[type="hidden"].escondido3:last,#GoalForm input[type="hidden"].escondido4:last').clone(true);
 		// alert(inputsH);
-		inputsH.each(function(){
-			$(this).attr("name",$(this).attr("name").replace(/(\d+)/,''+z));
-	    	$(this).attr("id",$(this).attr("id").replace(/(\d+)/,''+z));
-		});
+		// inputsH.each(function(){
+		// 	$(this).attr("name",$(this).attr("name").replace(/(\d+)/,''+z));
+	 //    	$(this).attr("id",$(this).attr("id").replace(/(\d+)/,''+z));
+		// });
 
-		$('#GoalForm div.inputsEscondidos').append(inputsH);
+		// $('#GoalForm div.inputsEscondidos').append(inputsH);
 
 		var fila=$("#criterios #tb tr.contenido:last").clone(true);
 		fila.find('input.required:text').val('');
@@ -243,6 +244,10 @@ function incGoal() {
 
 		$("#criterios #tb").append(fila);
 		
+		$("#criterios #tb tr.contenido:last").find('input[type="hidden"]').each(function(){
+			$(this).attr("name",$(this).attr("name").replace(/(\d+)/,''+z));
+	    	$(this).attr("id",$(this).attr("id").replace(/(\d+)/,''+z));
+		});
 		
 		$("#criterios #tb tr.contenido:last").find('select').each(function(){
 	    	$(this).attr("name",$(this).attr("name").replace(/(\d+)/,''+z));

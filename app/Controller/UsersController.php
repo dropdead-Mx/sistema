@@ -56,11 +56,11 @@ public function isAuthorized($user){
 
 	if ($user['group_id']== '7' ){
 
-		if(in_array($this->action,array('index','viewmycourses','calificar','asistencias'))){
+		if(in_array($this->action,array('index','viewmycourses','calificar','asistencias','cuatrimestral'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
-				$this->Session->setFlash('no se puede acceder');
+				$this->Session->setFlash('no se puede acceder','default',array('class'=>'mensajeError'));
 				// $this->redirect($this->Auth->redirect());
 				$this->redirect(array('controller'=>'users','action'=>'index'));
 
@@ -1667,6 +1667,79 @@ public function consultarhorarios(){
 		$this->set(compact('carreras')); 
 
 	}
+}
+
+
+public function cuatrimestral($course_id,$semester,$career_id,$parcial,$grupo){
+	
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+	$sumaParciales=[];
+	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+	$materia=$this->Course->find('all',array('conditions'=>array(
+		'Course.id'=>$course_id)));
+	$alumnos=$this->User->StudentProfile->find('all',array('conditions'=>array(
+		'StudentProfile.grupo_id'=>$grupo,
+		'StudentProfile.semester'=>$semester,
+		'StudentProfile.career_id'=>$career_id)));
+
+	$previo=$this->PartialScore->find('count',array('conditions'=>array(
+		'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),
+		'PartialScore.partial BETWEEN ? AND ?'=>array(1,3),
+		'PartialScore.grupo_id'=>$grupo,
+		'PartialScore.course_id'=>$course_id
+		)));
+
+
+	
+	// agregar condicion si no es = a 3 redirect porque no se han registrado los primeros 3 parciales
+	 $existen=$previo/sizeof($alumnos);
+
+	 // echo $existen;
+
+
+
+	 //luego de pasar la condicion y sea = 3 sacar la suma de sus 3 parciales si es > 18 se califica con cuatrimestral si no :v es = 0
+
+
+	 for($x=0; $x<sizeof($alumnos);$x++){
+
+	 	$idAlumno=$alumnos[$x]['User']['id'];
+
+	 	$suma=$this->PartialScore->find('all',array('conditions'=>array(
+		'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),
+		'PartialScore.partial BETWEEN ? AND ?'=>array(1,3),
+		'PartialScore.user_id'=>$idAlumno,
+		'PartialScore.grupo_id'=>$grupo,
+		'PartialScore.course_id'=>$course_id,
+
+		),
+		'fields'=>array('sum(PartialScore.final_score) as total_suma')
+	));
+
+	 	$sumaParciales[$idAlumno]=array(
+	 		'user_id'=>$idAlumno,
+	 		'user_name'=>$alumnos[$x]['User']['name'],
+	 		'suma_parciales'=>$suma[0][0]['total_suma']
+	 		);
+
+
+	 }
+
+	 // pr($sumaParciales);
+
+	 
+
+	$this->set(compact('alumnos','materia','parcial','grupo','career_id','sumaParciales'));
+
+	if($this->request->is('post')):
+		if($this->PartialScore->saveAll($this->request->data['PartialScore'])):
+			$this->Session->setFlash('cuatrimestral calificado ','default',array('class'=>'mensajeOk'));
+			$this->redirect(array('action'=>'index'));
+		endif;
+	endif;
+
+
 }
 
 

@@ -5,18 +5,7 @@
 <?php 
 	echo $this->Form->create('Goal',array('id'=>"GoalForm"));
 ?>
-<div class='inputsEscondidos'>
-		<?php echo $this->Form->hidden('Goal.0.user_id',array('label'=>false,'value'=>$user_id,'class'=>'escondido1')); ?>
-		<?php 	echo $this->Form->hidden('Goal.0.course_id',
-		array('value'=>$course_id,
-			'class'=>'escondido2',
-			'label'=>false,
-			'type'=>'text')); ?>
-			<?php echo $this->Form->hidden('Goal.0.parcial',array('label'=>false,'value'=>$partial,'class'=>'escondido3'));?>
-			<?php echo $this->Form->hidden('Goal.0.grupo_id',array('label'=>false,'value'=>$grupo,'class'=>'escondido4'));?>
 
-
-		</div>
 
 
 <table id="criterios">
@@ -34,7 +23,25 @@
 
 		<tr class="contenido">
 
-		<td><?php echo $this->Form->input('Goal.0.description',array('label'=>false,'class'=>'required capitalGoal')); ?></td>
+		<!-- <div class='inputsEscondidos'> -->
+		
+
+		<!-- </div> -->
+
+		<td>
+		<?php echo $this->Form->input('Goal.0.description',array('label'=>false,'class'=>'required capitalGoal')); ?>
+		<?php echo $this->Form->hidden('Goal.0.user_id',array('label'=>false,'value'=>$user_id,'class'=>'escondido1')); ?>
+		<?php 	echo $this->Form->hidden('Goal.0.course_id',
+		array('value'=>$course_id,
+			'class'=>'escondido2',
+			'label'=>false,
+			'type'=>'text')); ?>
+			<?php echo $this->Form->hidden('Goal.0.parcial',array('label'=>false,'value'=>$partial,'class'=>'escondido3'));?>
+			<?php echo $this->Form->hidden('Goal.0.grupo_id',array('label'=>false,'value'=>$grupo,'class'=>'escondido4'));?>
+
+
+
+		</td>
 		
 
 		<td> <?php echo $partial; ?></td>

@@ -125,6 +125,8 @@
 
 				<?php echo $this->Html->link('3er parcial',array('controller'=>'users','action'=>'calificar',$course['Course']['id'],$course['Course']['semester'],$course['Course']['career_id'],3,$course['Course']['grupo_id']));?>
 
+				<?php echo $this->Html->link('Cuatrimestral',array('controller'=>'users','action'=>'cuatrimestral',$course['Course']['id'],$course['Course']['semester'],$course['Course']['career_id'],4,$course['Course']['grupo_id']));?>
+
 
 			</td>
 
