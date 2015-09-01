@@ -828,6 +828,7 @@ public function alumno(){
 	if($this->Auth->User('group_id') == 8){
 
 	$goals=[];
+
 	$examenes=[];
 	$diasDeClase=[];
 	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
@@ -847,7 +848,11 @@ public function alumno(){
 	$calif=$this->Obtainedgoal->find('list',array('conditions'=>array('Obtainedgoal.created BETWEEN ? AND ? '=>array($inicio,$fin),'Obtainedgoal.user_id'=>$user_id),'fields'=>array(
 		'Obtainedgoal.goal_id','Obtainedgoal.percentage_obtained')));
 
-
+	$calificacionesParciales=$this->PartialScore->find('all',array('conditions'=>array(
+		'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),
+		'PartialScore.user_id'=>$user_id,
+		'PartialScore.grupo_id'=>$cuatrimestre[0]['StudentProfile']['grupo_id']
+		),'fields'=>array('PartialScore.course_id','PartialScore.final_score','PartialScore.partial')));
 	$contador= sizeof($materia);
 	
 
@@ -877,7 +882,7 @@ public function alumno(){
 	}
 
 	// $goals=$this->Goal->find('all',array('conditions'=>array('Goal.course_id'=>$materia)));
-	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','diasDeClase','user_id','examenes'));
+	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','diasDeClase','user_id','examenes','calificacionesParciales'));
 	}else {
 		$this->Session->setFlash('denegado','default',array('class'=>'mensajeError'));
 		$this->redirect(array('action'=>'index'));

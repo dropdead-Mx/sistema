@@ -33268,3 +33268,33 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-08-31 20:02:19 Error: Fatal Error (1): Call to undefined method AuthComponent::StudentProfile() in [/var/www/sistema/app/Controller/UsersController.php, line 831]
+2015-08-31 20:02:19 Error: [FatalErrorException] Call to undefined method AuthComponent::StudentProfile()
+Request URL: /sistema/users/alumno
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/sistem...', 831)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/sistem...', 831, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/sistem...', 831, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-31 20:23:17 Error: Fatal Error (4): syntax error, unexpected '}', expecting ',' or ';' in [/var/www/sistema/app/View/Users/alumno.ctp, line 63]
+2015-08-31 20:23:17 Error: [FatalErrorException] syntax error, unexpected '}', expecting ',' or ';'
+Request URL: /sistema/users/alumno
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 63)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 63, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 63, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-31 20:30:54 Error: Fatal Error (4): syntax error, unexpected '$calificacion' (T_VARIABLE), expecting ',' or ';' in [/var/www/sistema/app/View/Users/alumno.ctp, line 49]
+2015-08-31 20:30:54 Error: [FatalErrorException] syntax error, unexpected '$calificacion' (T_VARIABLE), expecting ',' or ';'
+Request URL: /sistema/users/alumno
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 49)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 49, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 49, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

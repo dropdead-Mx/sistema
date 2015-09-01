@@ -44,18 +44,36 @@ echo '<p>'.$this->Html->link('Ver Horario',array('action'=>'horario')) .'</p> ';
 
 		for($x=1;$x<=$tamaño;$x++){
 			echo '<br><h4>Parcial '.$x.'</h4><br> ';
+			
 			// pr( $goals[$k][$x]);
 			foreach ($goals[$k][$x] as $z =>$ct):
 			// $calificado = sizeof($calif[$z]);
 			if( isset($calif[$z])){
 
-			echo '<p> '.$ct.': <strong> '.$calif[$z].'</strong>'.'</p>';
+			
+			preg_match("/\d+/", $ct, $obtenido);
+
+			$porcent=(implode($obtenido));
+			$total=($calif[$z]*100)/$porcent;
+
+
+
+			echo '<p> '.$ct.' => <strong> '.$total.'%</strong>'.'</p>';
 			}else {
 
 			echo '<p>'.$ct.' <strong>N/A</strong>'.'</p>';
 
 			}
 			endforeach;
+
+			foreach($calificacionesParciales as $q =>$calificacion){
+				if($calificacion['PartialScore']['course_id']==$materias['Course']['id'] && $calificacion['PartialScore']['partial']==$x){
+					echo '<p class="calificacionFinalParcial">Calificacion final de este parcial: '.$calificacion['PartialScore']['final_score'].'</p>';
+				}
+			}
+
+
+
 		}
 
 	}else {
@@ -65,24 +83,7 @@ echo '<p>'.$this->Html->link('Ver Horario',array('action'=>'horario')) .'</p> ';
 
 
 
-	// echo sizeof($examenes[$k]);
-
-	// echo '<div class="fechasExamen">';
-	// echo '<h4>Fechas de examenes</h4>';
-	// foreach($examenes[$k] as $w => $fechas):
 	
-	// 	if($fechas['Exam']['partial']<=3){
-
-	// 	echo '<p> Fecha de examen Parcial  #'.$fechas['Exam']['partial'].' :'.$fechas['Exam']['fecha'].' <strong>Hora  de inicio: </strong>'.$fechas['Exam']['start_time'].'</p>';
-	// 	}else if ($fechas['Exam']['partial'] == 4){
-	// 		echo '<p> Fecha de examen Cuatrimestral :'.$fechas['Exam']['fecha'].' <strong>Hora  de inicio: </strong>'.$fechas['Exam']['start_time'].'</p>';
-	// 	}else if($fechas['Exam']['partial'] == 5){
-	// 		echo '<p> Fecha de examen Extraordinario :'.$fechas['Exam']['fecha'].'</p>';
-
-	// 	}
-
-	// 	endforeach;
-	// echo '</div>';
 
 	
 
