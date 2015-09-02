@@ -1541,18 +1541,23 @@ public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$par
 			'PartialScore.grupo_id'=>$estudiantes[$x]['StudentProfile']['grupo_id'],
 			'PartialScore.course_id'=>$course_id)));
 
+		if (sizeof($calificacion)>0){
+		
+		$obtenido=$calificacion[0]['PartialScore']['final_score'];
+
 		$arrayFinal[]=array(
 			'id'=>$estudiantes[$x]['User']['id'],
 			'nombre'=>$estudiantes[$x]['User']['name'],
 			'calificacion'=>$calificacion[0]['PartialScore']['final_score']
 			);
+		}
 	}
 
 	$this->set(compact('arrayFinal'));
 
 
 	}else {
-	// $this->set(compact($arrayFinal));
+	$this->set(compact($arrayFinal));
 
 	}
 

@@ -643,15 +643,16 @@ function matxCuatyCarr(){
 	});
 
 
- //aqui funcion ajax para dibujar la tabla con los alumnos y sus calificaciones
- $('button#buscarCalificaciones').on('click',function(){
-				// setTimeout(10000);
+ 
+ 
+}
 
 
-				$('p.mensajeError').remove();
+function consultaCalificaciones(){
+
+	$('button#buscarCalificaciones').on('click',function(){
+	$('p.mensajeError,p.alumno').remove();
  	
-
-
  	carrera = $('select#infocalif').val();
 	cuatri= $('select#cuatrimestre option:selected').val();
 	materia=$('select#materiasporcarrera').val();
@@ -661,79 +662,43 @@ function matxCuatyCarr(){
 	
 
 
-	if( carrera != 0 && cuatri != 0 && materia != 0 && parcial != 0 && grupo !== 'txt'){
-
-		// console.log(grupo);
-
+	if( carrera != 0 && cuatri != 0 && materia != 0 && parcial != 0 && grupo !== 'txt'){ 
 
 		$.ajax({
 			type:'GET',
 			url:'../consultarcalificaciones/'+carrera+'/'+cuatri+'/'+materia+'/'+parcial+'/'+grupo,
 			success:function(response){
-				// $('p.alumno').fadeOut(300);
 
 				console.log(response);
+
 				if(typeof response !== 'undefined' && response.length >0 ){
 
-					for (var i=0, num=response.length; i< num; i++){
-						console.log(parseInt(response[i].calificacion));
+						for (var i=0, num=response.length; i< num; i++){
 
-						// materias.push('<option value="'+response[i].Course.id+'"class="opcion">'+response[i].Course.name+'</option>');
-						if(response[i].calificacion !== 0 ){
 							calificaciones.push('<p class="alumno">'+response[i].nombre+': '+response[i].calificacion+'</p>');
-						}else if (response[i].calificacion == 'null' ) {
 
 						}
+					$('section.pintaCalificaciones').append(calificaciones);
 
-		// alert('No se encontraron materias para esta carrera y semestre');
-						// NOTA CHECAR BIEN CUANDO ES NULL LA CALIFICACION
-							
+				}else{
 
-
-				}
-
-				if($('p.alumno').length > 0 ){
-				$('p.alumno').remove();
-
-					// setTimeout(3000);
-				$('section.pintaCalificaciones').append(calificaciones).hide().slideToggle(1000);
-				}
-				else {
-
-				$('section.pintaCalificaciones').append(calificaciones).hide().slideToggle(1000);
-				
+					$('p.alumno').remove();
+					$('section.pintaCalificaciones').append('<p class="mensajeError">El profesor no ah registrado calificaciones aun</p>');
 
 				}
-
-				}else {
-
-				// $('p.alumno').remove();
-
-
-
-
-							$('section.pintaCalificaciones').append('<p class="mensajeError">El profesor no ah registrado calificaciones aun</p>');
-							$('p.alumno').slideToggle(900,function(){
-
-							$('p.alumno').remove();
-							});
-
-
-
-
-				}
-
-
 
 			}
+
 		});
 
-	}else {
-		alert('Verifica bien las opciones para realizar la busqueda');
+
 	}
 
 
- });
+
+
+
+});
 }
 
 
@@ -2121,6 +2086,7 @@ function calificacionFinal(){
 $(function(){
 
 	calificacionFinal();
+	consultaCalificaciones();
 	consultaHorarios();
 	consultaAsistencias();
 	buscarAlumnos();
