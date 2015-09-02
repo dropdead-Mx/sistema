@@ -2034,8 +2034,93 @@ $('select#carreraHorario,select#cuatriHorario').on('change',function(){
 
 }
 
+function promedioFinal(){
+
+	$('form#formularioCuatrimestral').find('tr.filaCuatrimestral').each(function(){
+
+		cuatrimestral=parseFloat($(this).find('input.total').val());
+		calificacionesPar=parseFloat($(this).find('input.total').attr('data-CalifParciales'));
+
+		if( isNaN(cuatrimestral)==true){
+			cuatrimestral=0;
+		}
+
+		promedio=Math.round(((cuatrimestral+calificacionesPar)/2));
+
+		$(this).find('input.calificacion').val(promedio)
+
+	});
+
+}
+
+
+function calificacionFinal(){
+
+	$('input.total').on('focus',function(){
+
+		if($(this).hasClass('overflow')==true){
+
+			$(this).css('background','#fff');
+			$(this).css('color','#000');
+			$(this).removeClass('overflow');
+			$(this).val(' ');
+			$('p.mensajeError').remove();
+		}
+
+	});
+
+	$('form#formularioCuatrimestral').on('submit',function(){
+	i=0;
+
+
+		// promedioFinal();
+		$('tr.filaCuatrimestral').each(function(){
+
+			valor=parseFloat($(this).find('input.total').val());
+
+			if(isNaN(valor)==true){
+				valor=0;
+			}
+
+			if(valor <=10 && isNaN(valor) ==false){
+
+			}else{
+				$(this).find('input.total').css('background','#e74c3c');
+				$(this).find('input.total').css('color','#fff');
+				$(this).find('input.total').attr('placeholder','clificacion de 0 a 10');
+				$(this).find('input.total').addClass('overflow');
+				if($('p.mensajeError').length == 0){
+
+				$('div.error').append('<p class="mensajeError">Calificacion invalida proporcione una correcta</p>');
+				}
+
+				return i+=1;
+			}
+
+
+
+		});
+	
+
+	if(i>0){
+		return false;
+	}else {
+
+		promedioFinal();
+		return true;
+	}
+	});
+
+
+
+
+
+}
+
 
 $(function(){
+
+	calificacionFinal();
 	consultaHorarios();
 	consultaAsistencias();
 	buscarAlumnos();
@@ -2085,6 +2170,10 @@ $(function(){
 	getCoordi();
 	addPlannings();
 	addUploadTest();
+
+	
+
+
 
 });
 
