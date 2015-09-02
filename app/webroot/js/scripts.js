@@ -1851,7 +1851,7 @@ function consultaAsistencias(){
  						}
  						if($('select#asistenciaCarrera').attr('data-tipo')==6){
 
- 						fila='<tr class="resultAsist"><td class="idAsistencia" data-asistid="'+response[w].Assist.id+'">'+response[w].User.name+'</td><td>'+response[w].Assist.date_assist+'</td><td>'+estado+'</td><td>'+response[w].Assist.note+'</td><td>Link cambiar asistencia</td></tr>';
+ 						fila='<tr class="resultAsist"><td class="idAsistencia" data-asistid="'+response[w].Assist.id+'">'+response[w].User.name+'</td><td>'+response[w].Assist.date_assist+'</td><td>'+estado+'</td><td>'+response[w].Assist.note+'</td><td><a href="/sistema/users/editarasistencia/'+response[w].Assist.id+'">Editar asistencia</a></td></tr>';
  						}else {
  							fila='<tr class="resultAsist"><td>'+response[w].User.name+'</td><td>'+response[w].Assist.date_assist+'</td><td>'+estado+'</td><td>'+response[w].Assist.note+'</tr>';
  						}

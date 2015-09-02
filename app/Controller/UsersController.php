@@ -40,7 +40,7 @@ public function isAuthorized($user){
 
 		if ($user['group_id']== '6' ){
 
-		if(in_array($this->action,array('fechashorarios','consultarhorarios','consultarasistencias','verasistencias','buscaralumnos','gruposxcarreraycuatri','materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher','editStudent'))){
+		if(in_array($this->action,array('fechashorarios','consultarhorarios','consultarasistencias','verasistencias','buscaralumnos','gruposxcarreraycuatri','materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher','editStudent','editarasistencia'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -1797,6 +1797,27 @@ public function cuatrimestral($course_id,$semester,$career_id,$parcial,$grupo){
 	 }
 
 
+
+
+
+}
+
+
+public function editarasistencia($assist_id){
+
+	$this->Assist->id=$assist_id;
+
+	if($this->request->is('get')){
+
+		$this->request->data=$this->Assist->read();
+}
+		else {
+			if($this->Assist->save($this->request->data)){
+				$this->Session->setFlash('Asistencia modificada','default',array('class'=>'mensajeOk'));
+				$this->redirect(array('action'=>'index'));
+			}
+		}
+	
 
 
 
