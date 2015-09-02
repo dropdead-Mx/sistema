@@ -245,7 +245,17 @@ public function addStudent(){
 }
 
 public function editStudent($id=null) {
+
+	if($this->Auth->User('group_id')==8){
+		$id=$this->Auth->User('id');
 		$this->User->id=$id;
+
+	}else {
+		
+	$this->User->id=$id;
+	}
+
+
 	$this->User->virtualFields['name']='User.name';
 
 	if($this->request->is('get')):
@@ -254,8 +264,31 @@ public function editStudent($id=null) {
 
 
 	else:
+
+		if($this->Auth->User('group_id')==6){
+
+		$nombre=$this->request->data['User']['name'];
+		$ap=$this->request->data['User']['apat'];
+		$am=$this->request->data['User']['amat'];
+
+		$simbolos=['@','#','$'];
+			$abrev=$this->Career->find('first',array('conditions'=>array(
+				'Career.id'=>$this->request->data['StudentProfile']['career_id']),
+				'fields'=>'Career.abrev','recursive'=>-1));
+		
+			$password=$simbolos[rand(0,2)].$abrev['Career']['abrev'].$nombre[0].$ap[0].$am[0].date("Y").rand(10,90);
+
+			$this->request->data['User']['password']=$password;
+			// echo $password;
+
+			//agregar funcion mail ya que este subido al server
+		}
+
+			//agregar funcion mail ya que este subido al server
+		
+
 		if($this->User->saveAssociated($this->request->data)):
-			$this->Session->setFlash('Estudiante agregado');
+			$this->Session->setFlash('Perfil modificado contraseña enviada a correo electronico indicado');
 			$this->redirect(array('action'=>'indexStudent'));
 			endif;
 	endif;
