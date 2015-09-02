@@ -40,7 +40,7 @@ public function isAuthorized($user){
 
 		if ($user['group_id']== '6' ){
 
-		if(in_array($this->action,array('fechashorarios','consultarhorarios','consultarasistencias','verasistencias','buscaralumnos','gruposxcarreraycuatri','materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher','editStudent','editarasistencia'))){
+		if(in_array($this->action,array('fechashorarios','consultarhorarios','consultarasistencias','verasistencias','buscaralumnos','gruposxcarreraycuatri','materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher','editStudent','editarasistencia','editarcalificacion'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -1548,7 +1548,11 @@ public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$par
 		$arrayFinal[]=array(
 			'id'=>$estudiantes[$x]['User']['id'],
 			'nombre'=>$estudiantes[$x]['User']['name'],
-			'calificacion'=>$calificacion[0]['PartialScore']['final_score']
+			'calificacion'=>$calificacion[0]['PartialScore']['final_score'],
+			'grupo_id'=>$estudiantes[$x]['StudentProfile']['grupo_id'],
+			'partial'=>$calificacion[0]['PartialScore']['partial'],
+			'id_calif'=>$calificacion[0]['PartialScore']['id'],
+			'course_id'=>$calificacion[0]['PartialScore']['course_id']
 			);
 		}
 	}
@@ -1557,7 +1561,7 @@ public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$par
 
 
 	}else {
-	$this->set(compact($arrayFinal));
+	$this->set(compact('arrayfinal'));
 
 	}
 
@@ -1826,6 +1830,37 @@ public function editarasistencia($assist_id){
 
 
 
+}
+
+
+public function editarcalificacion($score_id,$partial,$materia,$grupo){
+
+	$this->PartialScore->id=$score_id;
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+
+	$existe=$this->PartialScore->find('count',array('conditions'=>array(
+		'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),
+		'PartialScore.grupo_id'=>$grupo,
+		'PartialScore.partial'=>4,
+		'PartialScore.course_id'=>$materia)));
+
+	if(($partial <= 3 && $existe==0) || ($partial == 5 && $existe >1) ){
+
+	if($this->request->is('get')){
+		$this->request->data=$this->PartialScore->read();
+	}else {
+		if($this->PartialScore->save($this->request->data)){
+			$this->Session->setFlash('Calificacion modificada','default',array('class'=>'mensajeOk'));
+			$this->redirect(array('action'=>'index'));
+
+		}
+	}
+	}else {
+		$this->Session->setFlash('No se pudo modificar porque ya califico el cuatrimestral, edite la calificacion final','default',array('class'=>'mensajeError'));
+			$this->redirect(array('action'=>'index'));
+	}
 }
 
 

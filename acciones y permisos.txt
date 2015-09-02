@@ -27,6 +27,7 @@ juaquinalcantar@gmail.com
 	/verasistencias/
 	/users/consultarhorarios
 	/users/editarasistencia/ 
+	/users/editarcalificacion
 
 #MAESTRO
 

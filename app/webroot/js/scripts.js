@@ -651,7 +651,7 @@ function matxCuatyCarr(){
 function consultaCalificaciones(){
 
 	$('button#buscarCalificaciones').on('click',function(){
-	$('p.mensajeError,p.alumno').remove();
+	$('p.mensajeError,div.alumno').remove();
  	
  	carrera = $('select#infocalif').val();
 	cuatri= $('select#cuatrimestre option:selected').val();
@@ -659,6 +659,7 @@ function consultaCalificaciones(){
 	parcial=$('select#parciales').val();
 	grupo=$('select#gruposConsultarCalif option:selected').val();
 	calificaciones=[];
+	rango=parseInt($('span.rangoUser').attr('data-rango'));
 	
 
 
@@ -675,14 +676,23 @@ function consultaCalificaciones(){
 
 						for (var i=0, num=response.length; i< num; i++){
 
-							calificaciones.push('<p class="alumno">'+response[i].nombre+': '+response[i].calificacion+'</p>');
+							parcial=response[i].partial;
+							if ( (parcial <=3 || parcial ==5 ) && rango == 6 ){
+
+							calificaciones.push('<div class="alumno"><p>'+response[i].nombre+': '+response[i].calificacion+'</p><a href="/sistema/users/editarcalificacion/'+response[i].id_calif+'/'+response[i].partial+'/'+response[i].course_id+'/'+response[i].grupo_id+'">Editar calificacion</a></div>');
+
+
+							}else {
+								
+							calificaciones.push('<div class="alumno"><p class="alumno">'+response[i].nombre+': '+response[i].calificacion+'</p></div>');
+							}
 
 						}
 					$('section.pintaCalificaciones').append(calificaciones);
 
 				}else{
 
-					$('p.alumno').remove();
+					$('div.alumno').remove();
 					$('section.pintaCalificaciones').append('<p class="mensajeError">El profesor no ah registrado calificaciones aun</p>');
 
 				}
