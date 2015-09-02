@@ -17,7 +17,7 @@
 		echo $this->Form->hidden ('apat',array('label'=>'Apellido Paterno'));
 		echo $this->Form->hidden('amat',array('label'=>'Apellido Materno'));
 		echo $this->Form->input ('email',array('label'=>'Correo Electronico'));
-		echo $this->Form->input('password',array('label'=>$label,'hidden'=>$atributo));
+		echo $this->Form->input('password',array('label'=>$label,'hidden'=>$atributo,'id'=>'editaPassword'));
 		echo $this->Form->hidden('StudentProfile.career_id',array('label'=>'Carrera',
 			'id'=>'career_id',
 			'empty'=>'selecciona una carrera'));

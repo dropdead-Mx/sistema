@@ -33401,3 +33401,14 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-09-02 00:51:34 Error: [MissingActionException] Action UsersController::Cambiar contraseña() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'Cambiar contraseña',
+)
+Request URL: /sistema/users/Cambiar%20contrase%C3%B1a
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

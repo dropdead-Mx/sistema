@@ -2171,6 +2171,13 @@ $(function(){
 	addPlannings();
 	addUploadTest();
 
+	$('input#editaPassword').on('focus',function(){
+
+		$(this).val('');
+
+
+	});
+
 	
 
 
