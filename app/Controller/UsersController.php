@@ -56,7 +56,7 @@ public function isAuthorized($user){
 
 	if ($user['group_id']== '7' ){
 
-		if(in_array($this->action,array('index','viewmycourses','calificar','asistencias','cuatrimestral','misclases'))){
+		if(in_array($this->action,array('index','viewmycourses','calificar','asistencias','cuatrimestral','misclases','editTeacher'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -432,7 +432,15 @@ public function addTeacher(){
 
 public function editTeacher($id= null){
 
-			$this->User->id=$id;
+	if($this->Auth->User('group_id')==7){
+		$id=$this->Auth->User('id');
+		$this->User->id=$id;
+	}else {
+		$this->User->id=$id;
+
+	}
+
+
 
 
 	$this->User->virtualFields['name']='User.name';
@@ -441,6 +449,27 @@ public function editTeacher($id= null){
 		$this->request->data=$this->User->read();
 
 	else:
+		//if para cuando lo edita un coordinador
+		if($this->Auth->User('group_id')==6 || $this->Auth->User('group_id')==5 ){
+
+		$nombre=$this->request->data['User']['name'];
+		$ap=$this->request->data['User']['apat'];
+		$am=$this->request->data['User']['amat'];
+		$correo=$this->request->data['User']['email'];
+		$lv=$this->request->data['EmployeeProfile']['lv_education'];
+
+		$simbolos=['@','#','$'];
+		
+		$password=$simbolos[rand(0,2)].$lv.$nombre[0].$ap[0].$am[0].date("Y").rand(10,90);
+
+		$this->request->data['User']['password']=$password;
+		// echo $password;
+
+			//agregar funcion mail ya que este subido al server
+
+		}
+			//agregar funcion mail ya que este subido al server
+
 		if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Perfil actualizado');
 			$this->redirect(array('action'=>'index'));
