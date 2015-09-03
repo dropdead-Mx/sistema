@@ -5,7 +5,7 @@
 
 	<?php 
 
-		if($current_user['group_id']==6 ||$current_user['group_id']==5 ){
+		if($current_user['group_id']==6 ){
 			$atributo=true;
 			$label=false;
 			$labelFoto=false;

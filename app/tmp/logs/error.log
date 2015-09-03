@@ -33542,3 +33542,36 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-09-02 23:48:25 Error: [MissingActionException] Action UsersController::indexTeachers() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'indexTeachers',
+)
+Request URL: /sistema/users/indexTeachers
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-09-03 00:08:21 Error: [InvalidArgumentException] Invalid Parameter , should be dot separated path or array.
+Request URL: /sistema/users/editacoordinador/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Controller/Component/AuthComponent.php(668): Hash::get(Array, false)
+#1 /var/www/sistema/app/Controller/UsersController.php(484): AuthComponent::user(false)
+#2 [internal function]: UsersController->editacoordinador('62')
+#3 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#4 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#5 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#6 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2015-09-03 00:09:20 Error: [InvalidArgumentException] Invalid Parameter , should be dot separated path or array.
+Request URL: /sistema/users/editacoordinador/62
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Controller/Component/AuthComponent.php(668): Hash::get(Array, false)
+#1 /var/www/sistema/app/Controller/UsersController.php(484): AuthComponent::user(false)
+#2 [internal function]: UsersController->editacoordinador('62')
+#3 /var/www/sistema/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#4 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#5 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#6 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
