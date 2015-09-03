@@ -56,7 +56,7 @@ public function isAuthorized($user){
 
 	if ($user['group_id']== '7' ){
 
-		if(in_array($this->action,array('index','viewmycourses','calificar','asistencias','cuatrimestral','misclases','editTeacher'))){
+		if(in_array($this->action,array('index','viewmycourses','calificar','asistencias','cuatrimestral','misclases','editTeacher','extraordinario'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -1970,6 +1970,98 @@ public function misclases(){
 
 
 
+
+
+
+}
+
+
+public function extraordinario($materia,$carrera,$grupo,$cuatrimestre){
+
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+
+	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+
+$alumnos=$this->User->StudentProfile->find('all',array('conditions'=>array(
+		'StudentProfile.grupo_id'=>$grupo,
+		'StudentProfile.semester'=>$cuatrimestre,
+		'StudentProfile.career_id'=>$carrera)));
+
+$previo=$this->PartialScore->find('count',array('conditions'=>array(
+		'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),
+		'PartialScore.partial'=>5,
+		'PartialScore.grupo_id'=>$grupo,
+		'PartialScore.course_id'=>$materia,
+		'PartialScore.note'=>'default'
+
+		)));
+$nombreMateria=$this->Course->find('all',array('conditions'=>array(
+	'Course.id'=>$materia),
+	'recursive'=>-1,
+	'fields'=>'name'));
+$examenExtra=[];
+
+ $existen=$previo/sizeof($alumnos);
+
+// echo $existen;
+ if($existen == 1 ){
+
+ 	$extraOr=$this->PartialScore->find('all',array('conditions'=>array(
+		'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),
+		'PartialScore.partial'=>5,
+		'PartialScore.grupo_id'=>$grupo,
+		'PartialScore.course_id'=>$materia,
+		'PartialScore.note'=>'default',
+		'PartialScore.final_score BETWEEN ? AND ?'=>array(1,5))));
+
+ 	// pr($extraOr);
+
+ 	for($x=0;$x<sizeof($extraOr);$x++){
+ 		$estudiante=$extraOr[$x]['PartialScore']['user_id'];
+ 		$nombre=$this->User->find('all',array('conditions'=>array(
+ 			'User.id'=>$estudiante),
+ 			'fields'=>'name',
+ 			'recursive'=>-1));
+
+ 		
+
+ 		$examenExtra[]['PartialScore']=array(
+ 			'id'=>$extraOr[$x]['PartialScore']['id'],
+ 			'nombre'=>$nombre[0]['User']['name'],
+ 			'course_id'=>$extraOr[$x]['PartialScore']['course_id'],
+ 			'grupo_id'=>$extraOr[$x]['PartialScore']['grupo_id'],
+ 			'note'=>'ExamenExtraordinario',
+ 			'final_score'=>$extraOr[$x]['PartialScore']['final_score']
+ 			);
+
+
+ 	}
+
+ 	// pr($examenExtra);
+
+ 	$this->set(compact('examenExtra','nombreMateria'));
+
+
+ 	if($this->request->is('post')){
+ 		if($this->PartialScore->saveAll($this->request->data['PartialScore'])){
+ 			$this->Session->setFlash('Examen extraoirdinario calificado','default',array('class'=>'mensajeOk'));
+			$this->redirect(array('action'=>'index'));
+
+
+ 		}
+ 	}
+
+
+
+ }else {
+
+$this->Session->setFlash('Ya has evaluado/o no hay candidatos a extraordinario','default',array('class'=>'mensajeError'));
+			$this->redirect(array('action'=>'index'));
+
+
+
+ }
 
 
 

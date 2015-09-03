@@ -54,6 +54,8 @@
 	echo $this->Form->hidden('PartialScore.'.'1'.$k.'.grupo_id',array('value'=>$alumno['StudentProfile']['grupo_id'],'type'=>'text','label'=>false,'div'=>false,));
 	echo $this->Form->hidden('PartialScore.'.'1'.$k.'.career_id',array('value'=>$alumno['StudentProfile']['career_id'],'type'=>'text','label'=>false,'div'=>false,));
 	echo $this->Form->hidden('PartialScore.'.'1'.$k.'.final_score',array('type'=>'text','class'=>'calificacion','label'=>false,'div'=>false));
+	echo $this->Form->hidden('PartialScore.'.'1'.$k.'.note',array('type'=>'text','label'=>false,'div'=>false,'value'=>'default'));
+
 
 	
 
