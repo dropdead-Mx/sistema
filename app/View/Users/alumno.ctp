@@ -4,6 +4,8 @@
 
 echo '<p>'.$this->Html->link('Ver fechas de examen',array('action'=>'examenes')) .'</p> ';
 echo '<p>'.$this->Html->link('Ver Horario',array('action'=>'horario')) .'</p> ';
+echo '<p>'.$this->Html->link('Cambiar contraseña',array('action'=>'editStudent')) .'</p> ';
+
 
 ?>
 

@@ -643,97 +643,72 @@ function matxCuatyCarr(){
 	});
 
 
- //aqui funcion ajax para dibujar la tabla con los alumnos y sus calificaciones
- $('button#buscarCalificaciones').on('click',function(){
-				// setTimeout(10000);
+ 
+ 
+}
 
 
-				$('p.mensajeError').remove();
+function consultaCalificaciones(){
+
+	$('button#buscarCalificaciones').on('click',function(){
+	$('p.mensajeError,div.alumno').remove();
  	
-
-
  	carrera = $('select#infocalif').val();
 	cuatri= $('select#cuatrimestre option:selected').val();
 	materia=$('select#materiasporcarrera').val();
 	parcial=$('select#parciales').val();
 	grupo=$('select#gruposConsultarCalif option:selected').val();
 	calificaciones=[];
+	rango=parseInt($('span.rangoUser').attr('data-rango'));
 	
 
 
-	if( carrera != 0 && cuatri != 0 && materia != 0 && parcial != 0 && grupo !== 'txt'){
-
-		// console.log(grupo);
-
+	if( carrera != 0 && cuatri != 0 && materia != 0 && parcial != 0 && grupo !== 'txt'){ 
 
 		$.ajax({
 			type:'GET',
 			url:'../consultarcalificaciones/'+carrera+'/'+cuatri+'/'+materia+'/'+parcial+'/'+grupo,
 			success:function(response){
-				// $('p.alumno').fadeOut(300);
 
 				console.log(response);
+
 				if(typeof response !== 'undefined' && response.length >0 ){
 
-					for (var i=0, num=response.length; i< num; i++){
-						console.log(parseInt(response[i].calificacion));
+						for (var i=0, num=response.length; i< num; i++){
 
-						// materias.push('<option value="'+response[i].Course.id+'"class="opcion">'+response[i].Course.name+'</option>');
-						if(response[i].calificacion !== 0 ){
-							calificaciones.push('<p class="alumno">'+response[i].nombre+': '+response[i].calificacion+'</p>');
-						}else if (response[i].calificacion == 'null' ) {
+							parcial=response[i].partial;
+							if ( (parcial <=3 || parcial ==5 ) && rango == 6 ){
+
+							calificaciones.push('<div class="alumno"><p>'+response[i].nombre+': '+response[i].calificacion+'</p><a href="/sistema/users/editarcalificacion/'+response[i].id_calif+'/'+response[i].partial+'/'+response[i].course_id+'/'+response[i].grupo_id+'">Editar calificacion</a></div>');
+
+
+							}else {
+								
+							calificaciones.push('<div class="alumno"><p class="alumno">'+response[i].nombre+': '+response[i].calificacion+'</p></div>');
+							}
 
 						}
+					$('section.pintaCalificaciones').append(calificaciones);
 
-		// alert('No se encontraron materias para esta carrera y semestre');
-						// NOTA CHECAR BIEN CUANDO ES NULL LA CALIFICACION
-							
+				}else{
 
-
-				}
-
-				if($('p.alumno').length > 0 ){
-				$('p.alumno').remove();
-
-					// setTimeout(3000);
-				$('section.pintaCalificaciones').append(calificaciones).hide().slideToggle(1000);
-				}
-				else {
-
-				$('section.pintaCalificaciones').append(calificaciones).hide().slideToggle(1000);
-				
+					$('div.alumno').remove();
+					$('section.pintaCalificaciones').append('<p class="mensajeError">El profesor no ah registrado calificaciones aun</p>');
 
 				}
-
-				}else {
-
-				// $('p.alumno').remove();
-
-
-
-
-							$('section.pintaCalificaciones').append('<p class="mensajeError">El profesor no ah registrado calificaciones aun</p>');
-							$('p.alumno').slideToggle(900,function(){
-
-							$('p.alumno').remove();
-							});
-
-
-
-
-				}
-
-
 
 			}
+
 		});
 
-	}else {
-		alert('Verifica bien las opciones para realizar la busqueda');
+
 	}
 
 
- });
+
+
+
+});
 }
 
 
@@ -1851,7 +1826,7 @@ function consultaAsistencias(){
  						}
  						if($('select#asistenciaCarrera').attr('data-tipo')==6){
 
- 						fila='<tr class="resultAsist"><td class="idAsistencia" data-asistid="'+response[w].Assist.id+'">'+response[w].User.name+'</td><td>'+response[w].Assist.date_assist+'</td><td>'+estado+'</td><td>'+response[w].Assist.note+'</td><td>Link cambiar asistencia</td></tr>';
+ 						fila='<tr class="resultAsist"><td class="idAsistencia" data-asistid="'+response[w].Assist.id+'">'+response[w].User.name+'</td><td>'+response[w].Assist.date_assist+'</td><td>'+estado+'</td><td>'+response[w].Assist.note+'</td><td><a href="/sistema/users/editarasistencia/'+response[w].Assist.id+'">Editar asistencia</a></td></tr>';
  						}else {
  							fila='<tr class="resultAsist"><td>'+response[w].User.name+'</td><td>'+response[w].Assist.date_assist+'</td><td>'+estado+'</td><td>'+response[w].Assist.note+'</tr>';
  						}
@@ -2034,8 +2009,94 @@ $('select#carreraHorario,select#cuatriHorario').on('change',function(){
 
 }
 
+function promedioFinal(){
+
+	$('form#formularioCuatrimestral').find('tr.filaCuatrimestral').each(function(){
+
+		cuatrimestral=parseFloat($(this).find('input.total').val());
+		calificacionesPar=parseFloat($(this).find('input.total').attr('data-CalifParciales'));
+
+		if( isNaN(cuatrimestral)==true){
+			cuatrimestral=0;
+		}
+
+		promedio=Math.round(((cuatrimestral+calificacionesPar)/2));
+
+		$(this).find('input.calificacion').val(promedio)
+
+	});
+
+}
+
+
+function calificacionFinal(){
+
+	$('input.total').on('focus',function(){
+
+		if($(this).hasClass('overflow')==true){
+
+			$(this).css('background','#fff');
+			$(this).css('color','#000');
+			$(this).removeClass('overflow');
+			$(this).val(' ');
+			$('p.mensajeError').remove();
+		}
+
+	});
+
+	$('form#formularioCuatrimestral').on('submit',function(){
+	i=0;
+
+
+		// promedioFinal();
+		$('tr.filaCuatrimestral').each(function(){
+
+			valor=parseFloat($(this).find('input.total').val());
+
+			if(isNaN(valor)==true){
+				valor=0;
+			}
+
+			if(valor <=10 && isNaN(valor) ==false){
+
+			}else{
+				$(this).find('input.total').css('background','#e74c3c');
+				$(this).find('input.total').css('color','#fff');
+				$(this).find('input.total').attr('placeholder','clificacion de 0 a 10');
+				$(this).find('input.total').addClass('overflow');
+				if($('p.mensajeError').length == 0){
+
+				$('div.error').append('<p class="mensajeError">Calificacion invalida proporcione una correcta</p>');
+				}
+
+				return i+=1;
+			}
+
+
+
+		});
+	
+
+	if(i>0){
+		return false;
+	}else {
+
+		promedioFinal();
+		return true;
+	}
+	});
+
+
+
+
+
+}
+
 
 $(function(){
+
+	calificacionFinal();
+	consultaCalificaciones();
 	consultaHorarios();
 	consultaAsistencias();
 	buscarAlumnos();
@@ -2085,6 +2146,17 @@ $(function(){
 	getCoordi();
 	addPlannings();
 	addUploadTest();
+
+	$('input#editaPassword').on('focus',function(){
+
+		$(this).val('');
+
+
+	});
+
+	
+
+
 
 });
 

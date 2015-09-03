@@ -40,7 +40,7 @@ public function isAuthorized($user){
 
 		if ($user['group_id']== '6' ){
 
-		if(in_array($this->action,array('fechashorarios','consultarhorarios','consultarasistencias','verasistencias','buscaralumnos','gruposxcarreraycuatri','materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher','editStudent'))){
+		if(in_array($this->action,array('fechashorarios','consultarhorarios','consultarasistencias','verasistencias','buscaralumnos','gruposxcarreraycuatri','materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher','editStudent','editarasistencia','editarcalificacion'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -56,7 +56,7 @@ public function isAuthorized($user){
 
 	if ($user['group_id']== '7' ){
 
-		if(in_array($this->action,array('index','viewmycourses','calificar','asistencias','cuatrimestral'))){
+		if(in_array($this->action,array('index','viewmycourses','calificar','asistencias','cuatrimestral','misclases'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -245,7 +245,17 @@ public function addStudent(){
 }
 
 public function editStudent($id=null) {
+
+	if($this->Auth->User('group_id')==8){
+		$id=$this->Auth->User('id');
 		$this->User->id=$id;
+
+	}else {
+		
+	$this->User->id=$id;
+	}
+
+
 	$this->User->virtualFields['name']='User.name';
 
 	if($this->request->is('get')):
@@ -254,8 +264,31 @@ public function editStudent($id=null) {
 
 
 	else:
+
+		if($this->Auth->User('group_id')==6){
+
+		$nombre=$this->request->data['User']['name'];
+		$ap=$this->request->data['User']['apat'];
+		$am=$this->request->data['User']['amat'];
+
+		$simbolos=['@','#','$'];
+			$abrev=$this->Career->find('first',array('conditions'=>array(
+				'Career.id'=>$this->request->data['StudentProfile']['career_id']),
+				'fields'=>'Career.abrev','recursive'=>-1));
+		
+			$password=$simbolos[rand(0,2)].$abrev['Career']['abrev'].$nombre[0].$ap[0].$am[0].date("Y").rand(10,90);
+
+			$this->request->data['User']['password']=$password;
+			// echo $password;
+
+			//agregar funcion mail ya que este subido al server
+		}
+
+			//agregar funcion mail ya que este subido al server
+		
+
 		if($this->User->saveAssociated($this->request->data)):
-			$this->Session->setFlash('Estudiante agregado');
+			$this->Session->setFlash('Perfil modificado contraseña enviada a correo electronico indicado');
 			$this->redirect(array('action'=>'indexStudent'));
 			endif;
 	endif;
@@ -1508,18 +1541,27 @@ public function consultarcalificaciones($career_id,$cuatrimestre,$course_id,$par
 			'PartialScore.grupo_id'=>$estudiantes[$x]['StudentProfile']['grupo_id'],
 			'PartialScore.course_id'=>$course_id)));
 
+		if (sizeof($calificacion)>0){
+		
+		$obtenido=$calificacion[0]['PartialScore']['final_score'];
+
 		$arrayFinal[]=array(
 			'id'=>$estudiantes[$x]['User']['id'],
 			'nombre'=>$estudiantes[$x]['User']['name'],
-			'calificacion'=>$calificacion[0]['PartialScore']['final_score']
+			'calificacion'=>$calificacion[0]['PartialScore']['final_score'],
+			'grupo_id'=>$estudiantes[$x]['StudentProfile']['grupo_id'],
+			'partial'=>$calificacion[0]['PartialScore']['partial'],
+			'id_calif'=>$calificacion[0]['PartialScore']['id'],
+			'course_id'=>$calificacion[0]['PartialScore']['course_id']
 			);
+		}
 	}
 
 	$this->set(compact('arrayFinal'));
 
 
 	}else {
-	// $this->set(compact($arrayFinal));
+	$this->set(compact('arrayfinal'));
 
 	}
 
@@ -1770,11 +1812,111 @@ public function cuatrimestral($course_id,$semester,$career_id,$parcial,$grupo){
 }
 
 
+public function editarasistencia($assist_id){
+
+	$this->Assist->id=$assist_id;
+
+	if($this->request->is('get')){
+
+		$this->request->data=$this->Assist->read();
+}
+		else {
+			if($this->Assist->save($this->request->data)){
+				$this->Session->setFlash('Asistencia modificada','default',array('class'=>'mensajeOk'));
+				$this->redirect(array('action'=>'index'));
+			}
+		}
+	
+
+
+
+}
+
+
+public function editarcalificacion($score_id,$partial,$materia,$grupo){
+
+	$this->PartialScore->id=$score_id;
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+
+	$existe=$this->PartialScore->find('count',array('conditions'=>array(
+		'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),
+		'PartialScore.grupo_id'=>$grupo,
+		'PartialScore.partial'=>4,
+		'PartialScore.course_id'=>$materia)));
+
+	if(($partial <= 3 && $existe==0) || ($partial == 5 && $existe >1) ){
+
+	if($this->request->is('get')){
+		$this->request->data=$this->PartialScore->read();
+	}else {
+		if($this->PartialScore->save($this->request->data)){
+			$this->Session->setFlash('Calificacion modificada','default',array('class'=>'mensajeOk'));
+			$this->redirect(array('action'=>'index'));
+
+		}
+	}
+	}else {
+		$this->Session->setFlash('No se pudo modificar porque ya califico el cuatrimestral, edite la calificacion final','default',array('class'=>'mensajeError'));
+			$this->redirect(array('action'=>'index'));
+	}
+}
+
+
+public function misclases(){
+
+		$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+	$maestro=$this->Auth->User('id');
+	$dias=['lunes','martes','miercoles','jueves','viernes'];
+	$horarios=[];
+	$datos=$this->Teachercourse->find('all',array('conditions'=>array(
+		'Teachercourse.user_id'=>$maestro)));
+	// echo sizeof($datos);
+	$count=sizeof($datos);
+
+	for($w=0;$w<$count;$w++){
+
+
+
+		$grupo=$this->Grupo->find('all',array('conditions'=>array(
+			'Grupo.id'=>$datos[$w]['Teachercourse']['grupo_id']),'recursive'=>-1));
+
+		
+
+		$materia = $datos[$w]['Teachercourse']['course_id'];
+		$grup=$grupo[0]['Grupo']['id'];
+		$grupN=$grupo[0]['Grupo']['name'];
+		
+		$hrs=$this->CourseModule->find('all',array('conditions'=>array('CourseModule.created BETWEEN ? AND ?'=>array($inicio,$fin),
+			'CourseModule.course_id'=>$materia,
+			'CourseModule.grupo_id'=>$grup)));
+
+		$tamaño=sizeof($hrs);
+
+		for($x=0;$x<$tamaño;$x++){
+			$horarios[]=array(
+				'course_name'=>$hrs[$x]['Course']['name'],
+				'grupo'=>$grupN,
+				'hrs'=>$hrs[$x]['CourseModule']['start_time'].' a '.$hrs[$x]['CourseModule']['end_time'],
+				'dia'=>$hrs[$x]['CourseModule']['day']
+				);
+		}
+
+
+}
+
+	$this->set(compact('horarios','dias'));
 
 
 
 
 
+
+
+}
 
 }
 

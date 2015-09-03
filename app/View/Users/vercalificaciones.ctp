@@ -1,5 +1,5 @@
 <h3>Consultar calificaciones </h3>
-
+<span hidden class="rangoUser" data-rango="<?php echo $current_user['group_id'];?>"></span>
 <?php 
 
 // pr($carreras);
