@@ -56,7 +56,7 @@ public function isAuthorized($user){
 
 	if ($user['group_id']== '7' ){
 
-		if(in_array($this->action,array('index','viewmycourses','calificar','asistencias','cuatrimestral'))){
+		if(in_array($this->action,array('index','viewmycourses','calificar','asistencias','cuatrimestral','misclases'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -1864,11 +1864,59 @@ public function editarcalificacion($score_id,$partial,$materia,$grupo){
 }
 
 
+public function misclases(){
+
+		$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+	$maestro=$this->Auth->User('id');
+	$dias=['lunes','martes','miercoles','jueves','viernes'];
+	$horarios=[];
+	$datos=$this->Teachercourse->find('all',array('conditions'=>array(
+		'Teachercourse.user_id'=>$maestro)));
+	// echo sizeof($datos);
+	$count=sizeof($datos);
+
+	for($w=0;$w<$count;$w++){
+
+
+
+		$grupo=$this->Grupo->find('all',array('conditions'=>array(
+			'Grupo.id'=>$datos[$w]['Teachercourse']['grupo_id']),'recursive'=>-1));
+
+		
+
+		$materia = $datos[$w]['Teachercourse']['course_id'];
+		$grup=$grupo[0]['Grupo']['id'];
+		$grupN=$grupo[0]['Grupo']['name'];
+		
+		$hrs=$this->CourseModule->find('all',array('conditions'=>array('CourseModule.created BETWEEN ? AND ?'=>array($inicio,$fin),
+			'CourseModule.course_id'=>$materia,
+			'CourseModule.grupo_id'=>$grup)));
+
+		$tamaño=sizeof($hrs);
+
+		for($x=0;$x<$tamaño;$x++){
+			$horarios[]=array(
+				'course_name'=>$hrs[$x]['Course']['name'],
+				'grupo'=>$grupN,
+				'hrs'=>$hrs[$x]['CourseModule']['start_time'].' a '.$hrs[$x]['CourseModule']['end_time'],
+				'dia'=>$hrs[$x]['CourseModule']['day']
+				);
+		}
+
+
+}
+
+	$this->set(compact('horarios','dias'));
 
 
 
 
 
+
+
+}
 
 }
 

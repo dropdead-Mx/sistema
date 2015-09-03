@@ -35,6 +35,7 @@ urielcardozo99@gmail.com
 	/users/viewmycourses *
 	/uploadtests/subirexamen/ ok
 	/plannings/subirplaneaciones/ ok
+	/users/misclases/ <-----Horario de clases que imparte en la semana 
 
 #ALUMNO
 kingleegaona@hotmail.com
