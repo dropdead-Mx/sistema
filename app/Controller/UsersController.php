@@ -11,7 +11,7 @@ public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile'
 public function beforeFilter(){
 	parent::beforeFilter();
 	// $this->Auth->allow('indexcoordinator','indexTeacher','vercalificaciones','materiasporgerarquia','index');
-	$this->Auth->allow('gruposxcarreraycuatri','consultarasistencias','fechashorarios','materiasporgerarquia');
+	$this->Auth->allow('gruposxcarreraycuatri','consultarasistencias','fechashorarios','materiasporgerarquia','extraordinario');
 	
 	// if ($this->Auth->loggedIn()) {
 	// $this->Auth->deny('login');
@@ -941,13 +941,93 @@ public function alumno(){
 	$calificacionesParciales=$this->PartialScore->find('all',array('conditions'=>array(
 		'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),
 		'PartialScore.user_id'=>$user_id,
+		'PartialScore.partial BETWEEN ? AND ?'=>array(1,4),
 		'PartialScore.grupo_id'=>$cuatrimestre[0]['StudentProfile']['grupo_id']
-		),'fields'=>array('PartialScore.course_id','PartialScore.final_score','PartialScore.partial')));
+		),'fields'=>array('PartialScore.course_id','PartialScore.final_score','PartialScore.partial','PartialScore.note')));
+	// $calificacionFinal=$this->PartialScore->find('all',array('conditions'=>array(
+	// 	'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),
+	// 	'PartialScore.user_id'=>$user_id,
+	// 	'PartialScore'
+	// 	'PartialScore.grupo_id'=>$cuatrimestre[0]['StudentProfile']['grupo_id']
+	// 	),'fields'=>array('PartialScore.course_id','PartialScore.final_score','PartialScore.partial','PartialScore.note')));
+
+	// pr($calificacionesParciales);
 	$contador= sizeof($materia);
-	
+	$derechoCuatri=[];
+	$notaCalfFin=[];
 
 
 	for($x=0;$x<$contador; $x++){
+
+		$materiaid=$materia[$x]['Course']['id'];
+		$tresParciales=$this->PartialScore->find('count',array('conditions'=>array(
+			'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),'PartialScore.user_id'=>$user_id,
+			'PartialScore.course_id'=>$materiaid,
+			'PartialScore.partial BETWEEN ? AND ?'=>array(1,3),
+			'PartialScore.grupo_id'=>$cuatrimestre[0]['StudentProfile']['grupo_id'])));
+
+		$cFinal=$this->PartialScore->find('count',array('conditions'=>array(
+			'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),'PartialScore.user_id'=>$user_id,
+			'PartialScore.course_id'=>$materiaid,
+			'PartialScore.partial'=>5,
+			'PartialScore.grupo_id'=>$cuatrimestre[0]['StudentProfile']['grupo_id'])));
+		if($cFinal == 1){
+
+		$fnl=$this->PartialScore->find('all',array('conditions'=>array(
+			'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),'PartialScore.user_id'=>$user_id,
+			'PartialScore.course_id'=>$materiaid,
+			'PartialScore.partial'=>5,
+			'PartialScore.grupo_id'=>$cuatrimestre[0]['StudentProfile']['grupo_id']),
+			'fields'=>array('PartialScore.course_id','PartialScore.note','PartialScore.final_score')));
+		$descripcion=$fnl[0]['PartialScore']['note'];
+		$obt=$fnl[0]['PartialScore']['final_score'];
+
+		if( $obt >=6 && $descripcion =="default"){
+			$notaCalfFin[]=array(
+				'course_id'=>$materiaid,
+				'mensaje'=>'Tu calificaion final es de:',
+				'calif_final'=>$obt);
+		}else if ($obt < 6 && $descripcion =="default"){
+			$notaCalfFin[]=array(
+				'course_id'=>$materiaid,
+				'mensaje'=>'Presentas extraordinario ,tu calificacion fue de: ',
+				'calif_final'=>$obt);
+		}else if ($obt >=6 && $descripcion =="ExamenExtraordinario"){
+			$notaCalfFin[]=array(
+				'course_id'=>$materiaid,
+				'mensaje'=>'Tu calificacion final presentando examen extraordinario fue de: ',
+				'calif_final'=>$obt);
+		}else if ($obt < 6 && $descripcion =="ExamenExtraordinario"){
+
+			$notaCalfFin[]=array(
+				'course_id'=>$materiaid,
+				'mensaje'=>'Presentas examen a titulo, tu calificacion del extraordinario fue: ',
+				'calif_final'=>$obt);
+		}
+
+		}
+
+		if ($tresParciales == 3 ){
+
+			$suma=$this->PartialScore->find('all',array('conditions'=>array(
+			'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),'PartialScore.user_id'=>$user_id,
+			'PartialScore.course_id'=>$materiaid,
+			'PartialScore.partial BETWEEN ? AND ?'=>array(1,3),
+			'PartialScore.grupo_id'=>$cuatrimestre[0]['StudentProfile']['grupo_id']),
+			'fields'=>array('sum(PartialScore.final_score) as derecho_cuatri')));
+
+			$obtenidoTres=$suma[0][0]['derecho_cuatri'];
+
+			if ($obtenidoTres >=18 ){
+				$mensaje='Tienes derecho a examen cuatrimestral';
+			}else {
+				$mensaje='No tienes derecho a examen cuatrimestral';
+			}
+
+			$derechoCuatri[]=array(
+				'course_id'=>$materiaid,
+				'derecho_cuatri'=>$mensaje);
+		}
 		
 		array_push($goals,$this->Goal->find('list',array('conditions'=>array('Goal.created BETWEEN ? AND ? '=>array($inicio,$fin),
 			'Goal.course_id'=>$materia[$x]['Course']['id'],'Goal.grupo_id'=>$cuatrimestre[0]['StudentProfile']['grupo_id']),'fields'=>array('Goal.id','Goal.description','Goal.parcial'))));
@@ -972,7 +1052,7 @@ public function alumno(){
 	}
 
 	// $goals=$this->Goal->find('all',array('conditions'=>array('Goal.course_id'=>$materia)));
-	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','diasDeClase','user_id','examenes','calificacionesParciales'));
+	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','diasDeClase','user_id','examenes','calificacionesParciales','derechoCuatri','notaCalfFin'));
 	}else {
 		$this->Session->setFlash('denegado','default',array('class'=>'mensajeError'));
 		$this->redirect(array('action'=>'index'));

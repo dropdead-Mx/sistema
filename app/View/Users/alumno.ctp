@@ -83,9 +83,23 @@ echo '<p>'.$this->Html->link('Cambiar contraseña',array('action'=>'editStudent'
 		echo "<p>No hay criterios de evaluacion registrados para esta materia<p>";
 	}
 
+		foreach ($derechoCuatri as $w =>$mensajeCuatri){
+			if($mensajeCuatri['course_id']==$materias['Course']['id']){
+					echo '<p class="cuatrimestralMensaje">'.$mensajeCuatri['derecho_cuatri'].'</p>';
+				}
+		}
 
-
+		foreach($calificacionesParciales as $q =>$calificacion){
+				if($calificacion['PartialScore']['course_id']==$materias['Course']['id'] && $calificacion['PartialScore']['partial']==4){
+					echo '<p class="calificacionCuatrimestral">Calificacion final del cuatrimestral: '.$calificacion['PartialScore']['final_score'].'</p>';
+				}
+			}
 	
+		foreach($notaCalfFin as $z => $notaFinal){
+			if($notaFinal['course_id']==$materias['Course']['id']){
+					echo '<p class="calificacionFinal">'.$notaFinal['mensaje'].$notaFinal['calif_final'].'</p>';
+				}
+		}
 
 	
 
