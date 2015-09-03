@@ -9,6 +9,7 @@ function muestraMenu()
 {
 	$('ul.submenuCoordi').hide();
 	$('ul.submenuAlumnos').hide();
+	$('section.datosCoordi').hide();
 	$('nav').show('slow');
 	$('div.formulario').hide('slow');
 }
@@ -29,5 +30,12 @@ function submenuCoordi()
 	{
 		$('nav').hide('slow');
 		$('div.formulario').show('slow');
+	}
+	else if(opcion=='consulta')
+	{
+		$('nav').hide('slow');
+		$('section.datosCoordi').show('slow');
+		
+		
 	}
 }

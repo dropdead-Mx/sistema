@@ -122,10 +122,10 @@ public function logout(){
 
 public function index() {
 
-// $this->layout='coordinador';
-	// if($this->Auth->user('group_id')== 8){
-		// $this->layout='coordinador';
-	// }
+//$this->layout='coordinador';
+	if($this->Auth->user('group_id')== 5){
+		$this->layout='director';
+	 }
 
 	
 
