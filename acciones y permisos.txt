@@ -16,6 +16,7 @@ alejandrosh@gmail.com
 juaquinalcantar@gmail.com
 	
 	/messages/ ok
+	/messages/enviarmensaje
 	/exams/ ok
 	/plannings/ ok
 	/users/addStudentok
@@ -33,6 +34,8 @@ juaquinalcantar@gmail.com
 #MAESTRO
 
 urielcardozo99@gmail.com
+	/messages/
+	/messages/enviarmensaje
 	/users/viewmycourses *
 	/uploadtests/subirexamen/ ok
 	/plannings/subirplaneaciones/ ok

@@ -33615,3 +33615,134 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-09-03 18:57:28 Error: [MissingControllerException] Controller class MessajesController could not be found.
+Exception Attributes: array (
+  'class' => 'MessajesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/messajes
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-03 18:57:38 Error: [MissingControllerException] Controller class MessajeController could not be found.
+Exception Attributes: array (
+  'class' => 'MessajeController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/messaje
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-03 18:57:56 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/users
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-03 18:58:02 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/users
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-03 18:58:51 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/users
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-03 18:59:10 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/users
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-03 18:59:24 Error: [MissingControllerException] Controller class MessajesController could not be found.
+Exception Attributes: array (
+  'class' => 'MessajesController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/messajes/listamensaje
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-03 18:59:41 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/users
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-03 19:00:42 Error: [MissingControllerException] Controller class SistemaController could not be found.
+Exception Attributes: array (
+  'class' => 'SistemaController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/sistema/users
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-03 19:16:29 Error: Fatal Error (4): syntax error, unexpected '}' in [/var/www/sistema/app/View/Messages/enviarmensaje.ctp, line 10]
+2015-09-03 19:16:29 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /sistema/messages/enviarmensaje
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 10, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 10, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-09-03 19:19:38 Error: Fatal Error (4): syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in [/var/www/sistema/app/Controller/MessagesController.php, line 81]
+2015-09-03 19:19:38 Error: [FatalErrorException] syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'
+Request URL: /sistema/messages/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 81)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 81, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 81, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-09-03 19:32:58 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [/var/www/sistema/app/Controller/MessagesController.php, line 153]
+2015-09-03 19:32:58 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /sistema/messages/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 153)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 153, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 153, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-09-03 19:33:20 Error: Fatal Error (4): syntax error, unexpected ''status'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/var/www/sistema/app/Controller/MessagesController.php, line 157]
+2015-09-03 19:33:20 Error: [FatalErrorException] syntax error, unexpected ''status'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /sistema/messages/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 157)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 157, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 157, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-09-03 19:34:07 Error: Fatal Error (4): syntax error, unexpected ''status'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/var/www/sistema/app/Controller/MessagesController.php, line 157]
+2015-09-03 19:34:07 Error: [FatalErrorException] syntax error, unexpected ''status'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /sistema/messages/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 157)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 157, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 157, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
