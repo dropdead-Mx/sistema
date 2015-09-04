@@ -33746,3 +33746,53 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-09-03 19:54:17 Error: Fatal Error (4): syntax error, unexpected 'pr' (T_STRING) in [/var/www/sistema/app/Controller/UsersController.php, line 2156]
+2015-09-03 19:54:17 Error: [FatalErrorException] syntax error, unexpected 'pr' (T_STRING)
+Request URL: /sistema/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 2156)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 2156, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 2156, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-09-03 20:01:11 Error: Fatal Error (4): syntax error, unexpected ')' in [/var/www/sistema/app/Controller/UsersController.php, line 2157]
+2015-09-03 20:01:11 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /sistema/users/cerrarcuatri/16
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 2157)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 2157, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 2157, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-09-03 21:05:37 Error: Fatal Error (4): syntax error, unexpected '$grupo_letra' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 2161]
+2015-09-03 21:05:37 Error: [FatalErrorException] syntax error, unexpected '$grupo_letra' (T_VARIABLE)
+Request URL: /sistema/users/cerrarcuatri/91
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 2161)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 2161, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 2161, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-09-03 21:06:34 Error: Fatal Error (4): syntax error, unexpected '$grupo_letra' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 2161]
+2015-09-03 21:06:34 Error: [FatalErrorException] syntax error, unexpected '$grupo_letra' (T_VARIABLE)
+Request URL: /sistema/users/cerrarcuatri/91
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 2161)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 2161, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 2161, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-09-03 21:06:37 Error: Fatal Error (4): syntax error, unexpected '$grupo_letra' (T_VARIABLE) in [/var/www/sistema/app/Controller/UsersController.php, line 2161]
+2015-09-03 21:06:37 Error: [FatalErrorException] syntax error, unexpected '$grupo_letra' (T_VARIABLE)
+Request URL: /sistema/users/cerrarcuatri/91
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 2161)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 2161, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 2161, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

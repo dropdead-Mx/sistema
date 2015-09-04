@@ -11,7 +11,7 @@ public $uses = array('User', 'StudentProfile','Career','Grupo','EmployeeProfile'
 public function beforeFilter(){
 	parent::beforeFilter();
 	// $this->Auth->allow('indexcoordinator','indexTeacher','vercalificaciones','materiasporgerarquia','index');
-	$this->Auth->allow('gruposxcarreraycuatri','consultarasistencias','fechashorarios','materiasporgerarquia');
+	$this->Auth->allow('gruposxcarreraycuatri','consultarasistencias','fechashorarios','materiasporgerarquia','cerrarcuatri');
 	
 	// if ($this->Auth->loggedIn()) {
 	// $this->Auth->deny('login');
@@ -2145,6 +2145,46 @@ $this->Session->setFlash('Ya has evaluado/o no hay candidatos a extraordinario',
 
 
 
+}
+
+
+public function cerrarcuatri($user_id){
+
+
+	// NOTA : REQUISITO QUE ESTEN TODOS LOS GRUPOS PARA C/CARRERA REGISTRADOS ,YA QUE ESTEN EN PRODUCCION AGREGAR ACCION A PERMISOS DEL DIRECTOR Y HACER UN FOR PARA SACAR TODS LOS ALUMNOS :v 
+
+	$alumno=$this->User->StudentProfile->find('all',array('conditions'=>array(
+		'User.id'=>$user_id)));
+	preg_match_all("/[A-Z]/",$alumno[0]['Grupo']['name'], $letras);
+
+
+	$perfil=$alumno[0]['StudentProfile']['id'];
+	$id_usuario=$alumno[0]['User']['id'];
+
+	$grupo_letra=implode($letras[0]);
+	$grupoCuatri=$alumno[0]['Grupo']['period']+1;
+	$gCarrera=$alumno[0]['StudentProfile']['career_id'];
+
+	// echo $grupoCuatri;
+	// echo 'grupo proximo: '.$grupoCuatri.' '.$grupo_letra;
+	
+	$nextG=$this->Grupo->find('all',array('conditions'=>array(
+		'Grupo.career_id'=>$gCarrera,
+		'Grupo.period'=>$grupoCuatri,
+		'Grupo.name'=>$grupoCuatri.' '.$grupo_letra)));
+
+
+	// pr($nextG);
+
+	$data=array('id'=>$perfil,'semester'=>$grupoCuatri,'grupo_id'=>$nextG[0]['Grupo']['id']);
+
+	// if($this->StudentProfile->save($data,false)){
+	// 	echo "actualizado";
+	// }
+	
+	// pr($alumno);
+
+	
 }
 
 }
