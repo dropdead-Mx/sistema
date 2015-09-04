@@ -40,7 +40,7 @@ public function isAuthorized($user){
 
 		if ($user['group_id']== '6' ){
 
-		if(in_array($this->action,array('fechashorarios','consultarhorarios','consultarasistencias','verasistencias','buscaralumnos','gruposxcarreraycuatri','materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher','editStudent','editarasistencia','editarcalificacion'))){
+		if(in_array($this->action,array('fechashorarios','consultarhorarios','consultarasistencias','verasistencias','buscaralumnos','gruposxcarreraycuatri','materiasporgerarquia','consultarcalificaciones','index','vercalificaciones','addTeacher','editTeacher','indexStudent','indexTeacher','addStudent','deleteStudent','deleteTeacher','editStudent','editarasistencia','editarcalificacion','editacoordinador'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -56,7 +56,7 @@ public function isAuthorized($user){
 
 	if ($user['group_id']== '7' ){
 
-		if(in_array($this->action,array('index','viewmycourses','calificar','asistencias','cuatrimestral','misclases'))){
+		if(in_array($this->action,array('index','viewmycourses','calificar','asistencias','cuatrimestral','misclases','editTeacher','extraordinario'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -432,7 +432,15 @@ public function addTeacher(){
 
 public function editTeacher($id= null){
 
-			$this->User->id=$id;
+	if($this->Auth->User('group_id')==7){
+		$id=$this->Auth->User('id');
+		$this->User->id=$id;
+	}else {
+		$this->User->id=$id;
+
+	}
+
+
 
 
 	$this->User->virtualFields['name']='User.name';
@@ -441,6 +449,27 @@ public function editTeacher($id= null){
 		$this->request->data=$this->User->read();
 
 	else:
+		//if para cuando lo edita un coordinador
+		if($this->Auth->User('group_id')==6 ){
+
+		$nombre=$this->request->data['User']['name'];
+		$ap=$this->request->data['User']['apat'];
+		$am=$this->request->data['User']['amat'];
+		$correo=$this->request->data['User']['email'];
+		$lv=$this->request->data['EmployeeProfile']['lv_education'];
+
+		$simbolos=['@','#','$'];
+		
+		$password=$simbolos[rand(0,2)].$lv.$nombre[0].$ap[0].$am[0].date("Y").rand(10,90);
+
+		$this->request->data['User']['password']=$password;
+		// echo $password;
+
+			//agregar funcion mail ya que este subido al server
+
+		}
+			//agregar funcion mail ya que este subido al server
+
 		if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Perfil actualizado');
 			$this->redirect(array('action'=>'index'));
@@ -452,7 +481,13 @@ public function editTeacher($id= null){
 
 public function editacoordinador($id= null){
 
+		if($this->Auth->User('group_id')==6){
+			$id=$this->Auth->User('id');
 			$this->User->id=$id;
+		}else {
+			$this->User->id=$id;
+
+		}
 
 
 	$this->User->virtualFields['name']='User.name';
@@ -461,6 +496,28 @@ public function editacoordinador($id= null){
 		$this->request->data=$this->User->read();
 
 	else:
+		if($this->Auth->User('group_id')==5){
+
+		$nombre=$this->request->data['User']['name'];
+		$ap=$this->request->data['User']['apat'];
+		$am=$this->request->data['User']['amat'];
+		$correo=$this->request->data['User']['email'];
+		$lv=$this->request->data['EmployeeProfile']['lv_education'];
+
+		$simbolos=['@','#','$'];
+		
+		$password=$simbolos[rand(0,2)].$lv.$nombre[0].$ap[0].$am[0].date("Y").rand(10,90);
+
+		$this->request->data['User']['password']=$password;
+
+			//agregar funcion mail ya que este subido al server
+
+
+		}
+
+			//agregar funcion mail ya que este subido al server
+
+
 		if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Perfil actualizado');
 			$this->redirect(array('action'=>'index'));
@@ -1913,6 +1970,98 @@ public function misclases(){
 
 
 
+
+
+
+}
+
+
+public function extraordinario($materia,$carrera,$grupo,$cuatrimestre){
+
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+
+	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+
+$alumnos=$this->User->StudentProfile->find('all',array('conditions'=>array(
+		'StudentProfile.grupo_id'=>$grupo,
+		'StudentProfile.semester'=>$cuatrimestre,
+		'StudentProfile.career_id'=>$carrera)));
+
+$previo=$this->PartialScore->find('count',array('conditions'=>array(
+		'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),
+		'PartialScore.partial'=>5,
+		'PartialScore.grupo_id'=>$grupo,
+		'PartialScore.course_id'=>$materia,
+		'PartialScore.note'=>'default'
+
+		)));
+$nombreMateria=$this->Course->find('all',array('conditions'=>array(
+	'Course.id'=>$materia),
+	'recursive'=>-1,
+	'fields'=>'name'));
+$examenExtra=[];
+
+ $existen=$previo/sizeof($alumnos);
+
+// echo $existen;
+ if($existen == 1 ){
+
+ 	$extraOr=$this->PartialScore->find('all',array('conditions'=>array(
+		'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),
+		'PartialScore.partial'=>5,
+		'PartialScore.grupo_id'=>$grupo,
+		'PartialScore.course_id'=>$materia,
+		'PartialScore.note'=>'default',
+		'PartialScore.final_score BETWEEN ? AND ?'=>array(1,5))));
+
+ 	// pr($extraOr);
+
+ 	for($x=0;$x<sizeof($extraOr);$x++){
+ 		$estudiante=$extraOr[$x]['PartialScore']['user_id'];
+ 		$nombre=$this->User->find('all',array('conditions'=>array(
+ 			'User.id'=>$estudiante),
+ 			'fields'=>'name',
+ 			'recursive'=>-1));
+
+ 		
+
+ 		$examenExtra[]['PartialScore']=array(
+ 			'id'=>$extraOr[$x]['PartialScore']['id'],
+ 			'nombre'=>$nombre[0]['User']['name'],
+ 			'course_id'=>$extraOr[$x]['PartialScore']['course_id'],
+ 			'grupo_id'=>$extraOr[$x]['PartialScore']['grupo_id'],
+ 			'note'=>'ExamenExtraordinario',
+ 			'final_score'=>$extraOr[$x]['PartialScore']['final_score']
+ 			);
+
+
+ 	}
+
+ 	// pr($examenExtra);
+
+ 	$this->set(compact('examenExtra','nombreMateria'));
+
+
+ 	if($this->request->is('post')){
+ 		if($this->PartialScore->saveAll($this->request->data['PartialScore'])){
+ 			$this->Session->setFlash('Examen extraoirdinario calificado','default',array('class'=>'mensajeOk'));
+			$this->redirect(array('action'=>'index'));
+
+
+ 		}
+ 	}
+
+
+
+ }else {
+
+$this->Session->setFlash('Ya has evaluado/o no hay candidatos a extraordinario','default',array('class'=>'mensajeError'));
+			$this->redirect(array('action'=>'index'));
+
+
+
+ }
 
 
 

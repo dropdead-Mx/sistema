@@ -1,41 +1,41 @@
 $(function(){
-	$('div.bolita').on('click',muestraMenu);
-	$('ul.menuPrincipal li.desplegar').on('click',muestraSubmenu);
-	$('ul.submenuCoordi li').on('click',submenuCoordi);
-	
+
+
+	$('p.iconoMenu').on('click',muestraMenu);
+	$('div.cierreMenu').on('click',escondeMenu);
+	$('div.alumnos').on('click',menuAlumnos);
+	$('div.coordinador').on('click',coordinador);
 });
+
 
 function muestraMenu()
 {
-	$('ul.submenuCoordi').hide();
-	$('ul.submenuAlumnos').hide();
-	$('section.datosCoordi').hide();
-	$('nav').show('slow');
-	$('div.formulario').hide('slow');
+		$('nav').show('fast');
+		$('nav').animate({left: '0'}, 'slow');
+		$('p.iconoMenu').hide();
 }
 
-function muestraSubmenu()
+function escondeMenu()
 {
-
-	//console.log($(this).next());
-	$(this).next().toggle('slow');
-
+		$('nav').animate({left: '-30%'}, 'slow');
+		$('p.iconoMenu').show();
+		$('div.alumnos p.tituloAlumnos').show();
+		$('div.alumnos div.submenu').hide('slow');
+		$('div.alumnos h2').css('margin','18% auto');
 }
 
-function submenuCoordi()
+function menuAlumnos()
 {
-	var opcion=$(this).data('opcion');
-	console.log(opcion);
-	if(opcion=='alta')
-	{
-		$('nav').hide('slow');
-		$('div.formulario').show('slow');
-	}
-	else if(opcion=='consulta')
-	{
-		$('nav').hide('slow');
-		$('section.datosCoordi').show('slow');
-		
-		
-	}
+	
+	$('div.alumnos p.tituloAlumnos').slideUp('fast');
+	$('div.alumnos h2').css('margin','0% auto 5% auto');
+	$('div.alumnos div.submenu').show('slow');
+}
+
+
+function coordinador()
+{
+	
+	var url="users/indexcoordinator";
+	$(location).attr('href',url);
 }

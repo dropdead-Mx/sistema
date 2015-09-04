@@ -28,6 +28,7 @@ juaquinalcantar@gmail.com
 	/users/consultarhorarios
 	/users/editarasistencia/ 
 	/users/editarcalificacion
+	/users/editarcoordinador <----- solo podra editar su password correo y foto de perfil
 
 #MAESTRO
 
@@ -41,5 +42,6 @@ urielcardozo99@gmail.com
 kingleegaona@hotmail.com
 
 	/users/alumno/
+	/users/editStudent
 
 	

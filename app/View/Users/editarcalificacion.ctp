@@ -9,7 +9,7 @@
 	echo $this->Form->hidden('PartialScore.course_id',array('type'=>'text'));
 	echo $this->Form->hidden('PartialScore.grupo_id',array('type'=>'text'));
 	echo $this->Form->hidden('PartialScore.career_id',array('type'=>'text'));
-	echo $this->Form->input('PartialScore.note',array('type'=>'text','required'=>true,'placeholder'=>'motivo de modificacion'));
+	echo $this->Form->hidden('PartialScore.note',array('type'=>'text','value'=>'default'));
 	echo $this->Form->input('PartialScore.final_score',array('type'=>'text','required'=>true));
 
 	echo $this->Form->end('Actualizar calificacion');

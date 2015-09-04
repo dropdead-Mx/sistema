@@ -13,7 +13,14 @@
 	<th>Nivel de educacion</th>
 	<th>Foto</th>
 		<th>Materias que imparte:</th>
-		<th>Acciones</th>
+
+		<?php 
+		if($current_user['group_id']==6){
+			echo "<th>Acciones</th>";
+		}
+
+		?>
+		
 	</tr>
 
 <?php foreach($maestros as $k =>$maestro ): ?>
@@ -43,13 +50,23 @@
 			?>
 		</td>
 
-		<td>
-			<?php echo $this->Html->link('Editar', array('action'=>'editTeacher',$maestro['User']['id'])); ?>
-			&nbsp
-			<?php echo $this->Form->postlink('Eliminar',array('action'=>'deleteTeacher',$maestro['User']['id']),array('confirm'=>'deceas Eliminar al maestro')); ?>
-		</td>
+		<?php 
+
+		if($current_user['group_id']== 6 ){
 
 
+		echo "<td>";
+			 echo $this->Html->link('Editar', array('action'=>'editTeacher',$maestro['User']['id'])); 
+			
+			echo $this->Form->postlink('Eliminar',array('action'=>'deleteTeacher',$maestro['User']['id']),array('confirm'=>'deceas Eliminar al maestro')); 
+		echo "</td>";
+		}else {
+
+		}
+
+	
+
+	?>
 
 	</tr>
 

@@ -127,6 +127,8 @@
 
 				<?php echo $this->Html->link('Cuatrimestral',array('controller'=>'users','action'=>'cuatrimestral',$course['Course']['id'],$course['Course']['semester'],$course['Course']['career_id'],4,$course['Course']['grupo_id']));?>
 
+				<?php echo $this->Html->link('Extraordinario',array('controller'=>'users','action'=>'extraordinario',$course['Course']['id'],$course['Course']['career_id'],$course['Course']['grupo_id'],$course['Course']['semester']));?>
+
 
 			</td>
 

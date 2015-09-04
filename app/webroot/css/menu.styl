@@ -1,132 +1,68 @@
 @import iconos
 
-div.encabezadoMenu
-	background url(images/Hexagon-3.jpg)
-	background-size 100% 100%
-	height 200px
-	position relative
-	&:after
-		margin 0
-		padding 0
-		position absolute
-		content ''
-		border-left 320px solid blanco
-		border-right 0px solid transparent
-		border-top 70px solid transparent
-		border-bottom 0px solid transparent
-		left 0
-		bottom 0
-	figure.logoUni
-		width 40%
-		display block
-		margin 0 auto 0% auto
-		img
-			width 100%
-	figure.fotoUser
-		width 75px
-		height 75px
-		margin 0 0 0 3%
-		display inline-block
-		img
-			border 3px solid blanco
-			width 100%
-			height 75px
-			border-radius 50%
-	div.usuario
-		width 65%
-		display inline-block
-		vertical-align top
-		margin-top 2%
-		color azulObscuro
-		text-shadow 2px 2px 1px gris
-		h2
-			margin 1% 0 1% 2%
-		h3
-			margin 1% 0 1% 2%
-			font-size 18px
-	div.bolita
-		background azulObscuro
-		width 38px
-		height 38px
-		border-radius 50%
-		position absolute
-		right  5px
-		bottom -13px
-		z-index 999
-		box-shadow 3px 3px 1px gris
-		border 2px solid blanco
-		p
-			text-align center
-			font-family Flaticon
-			margin 7px 0 0 0 
-			&:after
-				content "\e003"
-				right 0
-				font-size 20px
-				color blanco
-				vertical-align top
 nav
-	background blanco
-	color gris
-	vertical-align top
-	ul.menuPrincipal
-		margin 0
-		padding 0px 10px 0 10px
-		span
-			background azulObscuro
-			border-radius 50%
-			display inline-block
-			font-family Flaticon
-			font-size 22px
-			height 29px
-			margin-top 2%
-			padding-top 6px
-			text-align center 
-			vertical-align top
-			width 35px
-		span.iconCordi
-			background verde
-			&:after
-				content '\e006'
-				color blanco
-		span.iconMaestro
-			background esmeralda
-			&:after
-				content "\e007"
-				color blanco
-		span.iconAlumno
-			background naranjaObscuro
-			&:after
-				content "\e000"
-				color blanco
-		span.iconFiles
-			background morado
-			&:after
-				content '\e002'
-				color blanco 
-		span.iconNotifi
-			background azulObscuro
-			&:after
-				content '\e008'
-				color blanco
-		span.iconLogout
-			background rojo
-			&:after
-				content '\e001'
-				color blanco 
-		li
-			padding 3%
-			list-style none
-			width 79%
-			display inline-block
-			margin 2% auto
-			border-bottom  1px solid gris
-		ul.submenuCoordi, ul.submenuAlumnos
-			display none
-			li
+	background azulObscuro
+	color #fff
+	width 30%
+	position fixed
+	left -30%
+	margin 0 0 0 0px
+	section.menu
+		
+		div
+			border-bottom 1px solid plata
+			h2
+				font-family Flaticon
+				font-size 24px
+				font-weight normal
 				border none
-				padding 1%
+				margin 18% auto
+				display block
+				text-align center
+			&.inicio
+				h2:after
+					content '\e003'
+					color plata
+			&.coordinador
+				h2:after
+					content '\e007'
+					color naranja
+			&.maestro
+				h2:after
+					content '\e008'
+					color esmeralda
+			&.alumnos
+				h2:after
+					content '\e000'
+					color morado
+			&.archivos
+				h2:after
+					content '\e002'
+					color verde
+			&.salir
+				h2:after
+					content '\e001'
+					color rojo
+			&.cierreMenu
+				h2:after
+					content '\e005'
+					color azulClaro
+			div.submenu
+				display none
+				a
+					text-decoration none
+					padding 4%
+					background-color verde
+					border 5px
+					margin 1% auto 12% auto
+					width 100%
+					display block
+					font-size 12px
+					color blanco
 					
-
-
-			
+			p
+				font-size 12px
+				margin 0 0 2% 0
+				text-align center
+				padding-top 2%
+				

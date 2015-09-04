@@ -5,161 +5,71 @@
   font-weight: normal;
   font-style: normal;
 }
-div.encabezadoMenu {
-  background: url("images/Hexagon-3.jpg");
-  background-size: 100% 100%;
-  height: 200px;
-  position: relative;
-}
-div.encabezadoMenu:after {
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  content: '';
-  border-left: 320px solid #fff;
-  border-right: 0px solid transparent;
-  border-top: 70px solid transparent;
-  border-bottom: 0px solid transparent;
-  left: 0;
-  bottom: 0;
-}
-div.encabezadoMenu figure.logoUni {
-  width: 40%;
-  display: block;
-  margin: 0 auto 0% auto;
-}
-div.encabezadoMenu figure.logoUni img {
-  width: 100%;
-}
-div.encabezadoMenu figure.fotoUser {
-  width: 75px;
-  height: 75px;
-  margin: 0 0 0 3%;
-  display: inline-block;
-}
-div.encabezadoMenu figure.fotoUser img {
-  border: 3px solid #fff;
-  width: 100%;
-  height: 75px;
-  border-radius: 50%;
-}
-div.encabezadoMenu div.usuario {
-  width: 65%;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 2%;
-  color: #2c3e50;
-  text-shadow: 2px 2px 1px #7f8c8d;
-}
-div.encabezadoMenu div.usuario h2 {
-  margin: 1% 0 1% 2%;
-}
-div.encabezadoMenu div.usuario h3 {
-  margin: 1% 0 1% 2%;
-  font-size: 18px;
-}
-div.encabezadoMenu div.bolita {
-  background: #2c3e50;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  position: absolute;
-  right: 5px;
-  bottom: -13px;
-  z-index: 999;
-  box-shadow: 3px 3px 1px #7f8c8d;
-  border: 2px solid #fff;
-}
-div.encabezadoMenu div.bolita p {
-  text-align: center;
-  font-family: Flaticon;
-  margin: 7px 0 0 0;
-}
-div.encabezadoMenu div.bolita p:after {
-  content: "\e003";
-  right: 0;
-  font-size: 20px;
-  color: #fff;
-  vertical-align: top;
-}
 nav {
-  background: #fff;
-  color: #7f8c8d;
-  vertical-align: top;
-}
-nav ul.menuPrincipal {
-  margin: 0;
-  padding: 0px 10px 0 10px;
-}
-nav ul.menuPrincipal span {
   background: #2c3e50;
-  border-radius: 50%;
-  display: inline-block;
+  color: #fff;
+  width: 30%;
+  position: fixed;
+  left: -30%;
+  margin: 0 0 0 0px;
+}
+nav section.menu div {
+  border-bottom: 1px solid #bdc3c7;
+}
+nav section.menu div h2 {
   font-family: Flaticon;
-  font-size: 22px;
-  height: 29px;
-  margin-top: 2%;
-  padding-top: 6px;
+  font-size: 24px;
+  font-weight: normal;
+  border: none;
+  margin: 18% auto;
+  display: block;
   text-align: center;
-  vertical-align: top;
-  width: 35px;
 }
-nav ul.menuPrincipal span.iconCordi {
-  background: #16a085;
+nav section.menu div.inicio h2:after {
+  content: '\e003';
+  color: #bdc3c7;
 }
-nav ul.menuPrincipal span.iconCordi:after {
-  content: '\e006';
-  color: #fff;
+nav section.menu div.coordinador h2:after {
+  content: '\e007';
+  color: #f39c12;
 }
-nav ul.menuPrincipal span.iconMaestro {
-  background: #2ecc71;
-}
-nav ul.menuPrincipal span.iconMaestro:after {
-  content: "\e007";
-  color: #fff;
-}
-nav ul.menuPrincipal span.iconAlumno {
-  background: #d35400;
-}
-nav ul.menuPrincipal span.iconAlumno:after {
-  content: "\e000";
-  color: #fff;
-}
-nav ul.menuPrincipal span.iconFiles {
-  background: #8e44ad;
-}
-nav ul.menuPrincipal span.iconFiles:after {
-  content: '\e002';
-  color: #fff;
-}
-nav ul.menuPrincipal span.iconNotifi {
-  background: #2c3e50;
-}
-nav ul.menuPrincipal span.iconNotifi:after {
+nav section.menu div.maestro h2:after {
   content: '\e008';
-  color: #fff;
+  color: #2ecc71;
 }
-nav ul.menuPrincipal span.iconLogout {
-  background: #e74c3c;
+nav section.menu div.alumnos h2:after {
+  content: '\e000';
+  color: #8e44ad;
 }
-nav ul.menuPrincipal span.iconLogout:after {
+nav section.menu div.archivos h2:after {
+  content: '\e002';
+  color: #16a085;
+}
+nav section.menu div.salir h2:after {
   content: '\e001';
-  color: #fff;
+  color: #e74c3c;
 }
-nav ul.menuPrincipal li {
-  padding: 3%;
-  list-style: none;
-  width: 79%;
-  display: inline-block;
-  margin: 2% auto;
-  border-bottom: 1px solid #7f8c8d;
+nav section.menu div.cierreMenu h2:after {
+  content: '\e005';
+  color: #2980b9;
 }
-nav ul.menuPrincipal ul.submenuCoordi,
-nav ul.menuPrincipal ul.submenuAlumnos {
+nav section.menu div div.submenu {
   display: none;
 }
-nav ul.menuPrincipal ul.submenuCoordi li,
-nav ul.menuPrincipal ul.submenuAlumnos li {
-  border: none;
-  padding: 1%;
+nav section.menu div div.submenu a {
+  text-decoration: none;
+  padding: 4%;
+  background-color: #16a085;
+  border: 5px;
+  margin: 1% auto 12% auto;
+  width: 100%;
+  display: block;
+  font-size: 12px;
+  color: #fff;
+}
+nav section.menu div p {
+  font-size: 12px;
+  margin: 0 0 2% 0;
+  text-align: center;
+  padding-top: 2%;
 }

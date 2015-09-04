@@ -7,7 +7,7 @@
 
 	<article>
 		<h2>
-<?php echo $coordi['EmployeeProfile']['lv_education'].' '.$coordi['User']['name'].' '.$coordi['User']['amat'].' '.$coordi['User']['apat'] ?>
+<?php echo $coordi['EmployeeProfile']['lv_education'].' '.$coordi['User']['name']?>
 		</h2>
 
 		<figure>
@@ -15,10 +15,7 @@
 			
 		</figure>
 		<div class="textoCoordi">
-			<p class="asignaCarrera">Asignar Carreras</p>
-			<p class="verCarreras">Ver Carreras</p>
-			<p class="editar">Editar Perfil</p>
-			<p class="eliminar">Eliminar</p>
+			
 	
 	
 			<?php echo $this->Html->link('Asignar carreras',array('action'=>'assigncareers',$coordi['User']['id'])); ?>
@@ -32,7 +29,7 @@
 	<?php echo $this->Form->postlink('Eliminar',array('action'=>'eliminarcoordi',$coordi['User']['id']),array('confirm'=>'Deceas eliminar a este coordinador ?')); ?>
 				
 		
-		</div>
+
 
 
 	
