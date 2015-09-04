@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/flaticon.eot");
+  src: url("../fonts/flaticon.eot#iefix") format("embedded-opentype"), url("../fonts/flaticon.woff") format("woff"), url("../fonts/flaticon.ttf") format("truetype"), url("../fonts/flaticon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+section.datosCoordi {
+  padding: 1.5%;
+}
+section.datosCoordi h3 {
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+  width: 70%;
+  display: block;
+  margin: 1% auto;
+  padding: 1%;
+  border-radius: 10px;
+}
+section.datosCoordi article {
+  border-bottom: 1px solid #7f8c8d;
+}
+section.datosCoordi article h2 {
+  font-size: 17px;
+  text-align: center;
+}
+section.datosCoordi article figure {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 10px 2%;
+  border: 3px solid #2c3e50;
+  box-shadow: 2px 2px 3px #7f8c8d;
+  display: inline-block;
+  vertical-align: top;
+}
+section.datosCoordi article figure img {
+  width: 100%;
+  border-radius: 50%;
+}
+section.datosCoordi article div.textoCoordi {
+  width: 60%;
+  display: inline-block;
+}
+section.datosCoordi article div.textoCoordi p {
+  margin: 1% 1% 4% 1%;
+  padding: 2%;
+  background: #2ecc71;
+  color: #fff;
+  border-radius: 5px;
+}

@@ -13,7 +13,7 @@
 	<?php
 		// echo $this->Html->meta('icon');
 
-		echo $this->Html->css(array('jquery-ui.min','normalize','login','menu','formularios'));
+		echo $this->Html->css(array('jquery-ui.min','normalize','login','menu','formularios','vistaCoordi'));
 		echo $this->Html->script(array('jquery','jquery-ui.min','index'));
 		
 
@@ -31,9 +31,10 @@
 			<?php echo $this->fetch('content'); 
 			$tipo= $current_user['group_id'];
 			if($tipo == 5){
-
-			echo $this->element('menu');
-			echo $this->element('addcoordi');
+			//echo $this->requestAction('/users/indexcoordinator',array('return'));
+			//echo $this->element('menu');
+			//echo $this->element('addcoordi');
+			//echo $this->element('verCoordi');
 			}else if($tipo == 7){
 			// echo $this->element('lista');
 

@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/flaticon.eot");
+  src: url("../fonts/flaticon.eot#iefix") format("embedded-opentype"), url("../fonts/flaticon.woff") format("woff"), url("../fonts/flaticon.ttf") format("truetype"), url("../fonts/flaticon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+section.contenido header {
+  background: url("images/Hexagon-3.jpg");
+  background-size: 100% 100%;
+  border-bottom: 3px solid #2ecc71;
+}
+section.contenido header figure.logo {
+  width: 60%;
+  margin: 0 0% 0 20%;
+  display: inline-block;
+}
+section.contenido header figure.logo img {
+  width: 100%;
+}
+section.contenido header p.iconoMenu {
+  font-family: Flaticon;
+  width: 30px;
+  padding: 5px;
+  margin: 4% 2% 0 2%;
+  color: #fff;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 26px;
+  display: inline-block;
+  float: right;
+}
+section.contenido header p.iconoMenu:after {
+  content: '\e004';
+}
+section.contenido header div.datos {
+  width: 100%;
+  padding-bottom: 10px;
+}
+section.contenido header div.datos figure.fotoUser {
+  width: 70px;
+  height: 70px;
+  margin: 1% 1% 0 3%;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+section.contenido header div.datos figure.fotoUser img {
+  width: 100%;
+  border-radius: 50%;
+}
+section.contenido header div.datos div {
+  vertical-align: top;
+  width: 65%;
+  display: inline-block;
+  margin-top: 15px;
+}
+section.contenido header div.datos div h2 {
+  font-size: 100%;
+  font-size: 16px;
+  margin: 1% 0;
+  color: #fff;
+  text-shadow: 2px 2px 2px #2c3e50;
+}
+section.contenido section.bienvenida h2 {
+  text-align: center;
+  font-family: arial;
+  color: #2c3e50;
+  margin: 1% auto 6% auto;
+  text-shadow: 2px 2px 2px #bdc3c7;
+}
+section.contenido section.bienvenida p {
+  padding: 2%;
+  color: #7f8c8d;
+  text-align: left;
+}
+section.contenido section.bienvenida article div.bolita {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+section.contenido section.bienvenida article div.uno {
+  background: #16a085;
+}
+section.contenido section.bienvenida article div.dos {
+  background-color: #2c3e50;
+}
+section.contenido section.bienvenida article div.tres {
+  background-color: #d35400;
+}
+section.contenido section.bienvenida article h3 {
+  margin: 0;
+  font-family: Flaticon;
+  text-align: center;
+  padding-top: 8px;
+  color: #fff;
+}
+section.contenido section.bienvenida article h3:after {
+  margin: 0;
+  font-weight: normal;
+  font-size: 22px;
+}
+section.contenido section.bienvenida article h3.coordinador:after {
+  content: '\e007';
+}
+section.contenido section.bienvenida article h3.maestro:after {
+  content: '\e008';
+}
+section.contenido section.bienvenida article h3.alumno:after {
+  content: '\e000';
+}
+section.contenido section.bienvenida article div.texto {
+  width: 82%;
+  display: inline-block;
+}
+section.contenido section.bienvenida article div.texto h2 {
+  font-size: 16px;
+  text-align: left;
+  margin: 1% auto;
+}
+section.contenido section.bienvenida article div.texto p {
+  font-size: 14px;
+  margin: 1% auto;
+}
