@@ -987,11 +987,11 @@ function mensajepush(){
 
 					if(parseInt(response[x].Message.status) == 1 ){
 
-					msn= '<div class="mensajito"  > <strong class="Nuevo" data-id="'+response[x].Message.id+'">'+response[x].Message.subject+'</strong><p>'+response[x].Message.mensaje+'</p></div>';
+					msn= '<div class="mensajito"  > <strong class="Nuevo" data-id="'+response[x].Message.id+'">'+response[x].Message.subject+', '+response[x].Message.nombre_remitente+'</strong><p>'+response[x].Message.mensaje+'</p></div>';
 					mensajesNuevos.push(msn);
 					} else if(parseInt(response[x].Message.status)  == 0 ) {
 
-						msn= '<div class="mensajito"  > <strong>'+response[x].Message.subject+'</strong><p>'+response[x].Message.mensaje+'</p></div>';
+						msn= '<div class="mensajito"  > <strong>'+response[x].Message.subject+', '+response[x].Message.nombre_remitente+'</strong><p>'+response[x].Message.mensaje+'</p></div>';
 						mensajesLeidos.push(msn);
 					}
 					// console.log(msn);
