@@ -33979,3 +33979,14 @@ Stack Trace:
 #2 /opt/lampp/htdocs/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
 >>>>>>> 769d05bb39c8b1eeff8dca2f229ec657b637da44
+2015-09-04 00:18:22 Error: [MissingActionException] Action UsersController::users() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'users',
+)
+Request URL: /sistema/users/users/indexcoordinator
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

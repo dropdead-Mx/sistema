@@ -10,6 +10,7 @@ public function beforeFilter(){
 	parent::beforeFilter();
 	// $this->Auth->allow('index','getcoursesbycoordinator','tienemod','vermodulos','agregarHorario','asignarProfesor');
 	$this->Auth->allow('tieneprof','getgroupsbycourse');
+	// 'add','edit','delete', agregar al llenar materias
 }
 
 public function isAuthorized($user){
