@@ -25,7 +25,7 @@ public function isAuthorized($user){
 
 		if ($user['group_id']== '5' ){
 
-		if(in_array($this->action,array('fechashorarios','consultarhorarios','vercalificaciones','consultarcalificaciones','materiasporgerarquia','consultarasistencias','verasistencias','indexStudent','buscaralumnos','gruposxcarreraycuatri','index','indexcoordinator','indexTeacher','editacoordinador','eliminarcoordi','addcoordi','vercarreras','assigncareers'))){
+		if(in_array($this->action,array('fechashorarios','consultarhorarios','vercalificaciones','consultarcalificaciones','materiasporgerarquia','consultarasistencias','verasistencias','indexStudent','buscaralumnos','gruposxcarreraycuatri','index','indexcoordinator','indexTeacher','editacoordinador','eliminarcoordi','addcoordi','vercarreras','assigncareers','eliminacc'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -817,14 +817,14 @@ public function vercarreras($id){
 
 }
 
-public function eliminacc($id,$user_id){
+public function eliminacc($id){
 	$this->Usrcareer->id=$id;
 	if($this->request->is('get')):
 		throw new MethodNotAllowedException();
 	else:
 		if($this->Usrcareer->delete($id)):
 			$this->Session->setFlash('Carrera liberada');
-			$this->redirect(array('action'=>'vercarreras',$user_id));
+			$this->redirect(array('action'=>'index'));
 			endif;
 		endif;
 
