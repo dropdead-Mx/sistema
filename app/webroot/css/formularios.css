@@ -17,7 +17,7 @@ h2.tituloCoordi {
   margin: 1% auto;
 }
 div.formulario {
-  display: none;
+  display: block;
   margin: 4% 0;
   padding: 2%;
 }
