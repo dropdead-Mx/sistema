@@ -23,8 +23,10 @@
 	?>
 </head>
 <body>
-	
+	   
 <main class="principal">
+
+<?php echo $this->Session->flash(); ?>   
 	
 	<nav>
 		

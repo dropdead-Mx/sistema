@@ -784,7 +784,7 @@ if(count($selected) ===10){
 		//guarda los elementos que fueron seleccionados y guardados en el nuevo arreglo 
 		if($this->Usrcareer->saveAll($guardar)):
 			$this->Session->setFlash('Carreras a coordinar asignadas');
-			$this->redirect(array('action'=>'indexcoordinator'));
+			$this->redirect(array('action'=>'index'));
 
 		endif;
 	endif;
