@@ -766,7 +766,7 @@ public function assigncareers($id=null){
 if(count($selected) ===10){
 
 	$this->Session->setFlash('Por el momento no hay carreras para asignar disponibles elimina carreras a los cordinadores e intenta de nuevo');
-	$this->redirect(array('action'=>'indexcoordinator'));
+	$this->redirect(array('action'=>'index'));
 
 	} else { 
 
