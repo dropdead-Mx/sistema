@@ -9,6 +9,7 @@
 		<th>Criterios de evaluacion Por parcial</th>
 		<th>Evaluar</th>
 		<th>Asistencias</th>
+		<th>Calificaciones</th>
 	
 	</tr>
 
@@ -133,6 +134,11 @@
 			</td>
 
 			<td><?php echo $this->Html->link('Asistencia',array('controller'=>'users','action'=>'asistencias',$course['Course']['career_id'],$course['Course']['semester'],$course['Course']['id'],$course['Course']['grupo_id'])); ?></td>
+			<td>
+				<?php 
+				echo $this->Html->link('ver calificaciones',array('controller'=>'users','action'=>'consultacalif',$course['Course']['id'],$course['Course']['grupo_id'],$course['Course']['semester']));
+				?>
+			</td>
 		</tr>
 	<?php endforeach;?>
 </table>

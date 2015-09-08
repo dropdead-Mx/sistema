@@ -34039,3 +34039,13 @@ Stack Trace:
 #2 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
 >>>>>>> upstream/master
+2015-09-07 21:48:25 Error: Fatal Error (4): syntax error, unexpected '}' in [/var/www/sistema/app/Controller/UsersController.php, line 2230]
+2015-09-07 21:48:25 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /sistema/users/consultacalif
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 2230)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 2230, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 2230, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

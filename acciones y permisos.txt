@@ -41,6 +41,7 @@ urielcardozo99@gmail.com
 	/plannings/subirplaneaciones/ ok
 	/users/misclases/ <-----Horario de clases que imparte en la semana 
 	/users/extraordinario <----- Para calificar extraordinario :V solo jala a los alumnos k en el la final saquen menor a 6
+	/users/consultacalif <--- Para ver las calificaciones de las materias que imparte
 
 #ALUMNO
 kingleegaona@hotmail.com

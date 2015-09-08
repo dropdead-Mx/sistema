@@ -56,7 +56,7 @@ public function isAuthorized($user){
 
 	if ($user['group_id']== '7' ){
 
-		if(in_array($this->action,array('index','viewmycourses','calificar','asistencias','cuatrimestral','misclases','editTeacher','extraordinario'))){
+		if(in_array($this->action,array('index','viewmycourses','calificar','asistencias','cuatrimestral','misclases','editTeacher','extraordinario','consultacalif'))){
 			return true;
 		}else {
 			if($this->Auth->user('id')){
@@ -2186,7 +2186,50 @@ public function cerrarcuatri($user_id){
 
 	
 }
+public function consultacalif($course_id,$grupo,$cuatri){
 
+
+	$cuatriInicio=$this->Semester->find('first',array('order'=>'id DESC'));
+	$inicio=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['inicio']));
+	$fin=date('Y-m-d H:i:s',strtotime($cuatriInicio['Semester']['fin']));
+
+	$calificaciones=[];
+
+	$estudiantes=$this->User->StudentProfile->find('all',array('conditions'=>array(
+		'StudentProfile.grupo_id'=>$grupo,
+		'StudentProfile.semester'=>$cuatri)));
+	$materia=$this->Course->find('all',array('conditions'=>array(
+		'Course.id'=>$course_id)));
+	$gpo=$this->Grupo->find('all',array('conditions'=>array(
+		'Grupo.id'=>$grupo)));
+
+	for($x=0;$x<sizeof($estudiantes);$x++){
+
+		$idAlumno=$estudiantes[$x]['User']['id'];
+
+		$calif=$this->PartialScore->find('all',array('conditions'=>array(
+			'PartialScore.created BETWEEN ? AND ?'=>array($inicio,$fin),
+			'PartialScore.user_id'=>$idAlumno,
+			'PartialScore.course_id'=>$course_id)));
+		// $partial=$calif[$x]['PartialScore']['partial'];
+
+		array_push($calificaciones, $calif);
+		// for($w=0;$w<sizeof($calif);$w++){
+
+		// 	if(array_key_exists($id,))
+
+
+
+
+		// }
+
+
+	}
+
+	$this->set(compact('calificaciones','estudiantes','materia','gpo'));
+
+
+}
 }
 
 
