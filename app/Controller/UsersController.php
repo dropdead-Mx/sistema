@@ -955,7 +955,7 @@ public function alumno(){
 	$contador= sizeof($materia);
 	$derechoCuatri=[];
 	$notaCalfFin=[];
-
+	$imparteMaterias=[];
 
 	for($x=0;$x<$contador; $x++){
 
@@ -1028,6 +1028,19 @@ public function alumno(){
 				'course_id'=>$materiaid,
 				'derecho_cuatri'=>$mensaje);
 		}
+
+		$imp=$this->Teachercourse->find('all',array('conditions'=>array(
+			'Teachercourse.course_id'=>$materiaid,
+			'Teachercourse.grupo_id'=>$cuatrimestre[0]['StudentProfile']['grupo_id'])));
+		if(sizeof($imp)>0){
+		$teach=$this->User->find('all',array('conditions'=>array(
+			'User.id'=>$imp[0]['Teachercourse']['user_id'])));
+
+		$imparteMaterias[$materiaid]=array(
+			'course_id'=>$materiaid,
+			'teacher_name'=>$teach[0]['User']['name'],
+			'teacher_imgProfile'=>'../files/employee_profile/foto/'.$teach[0]['EmployeeProfile']['foto_dir'].'/thumb_'.$teach[0]['EmployeeProfile']['foto']);
+		}
 		
 		array_push($goals,$this->Goal->find('list',array('conditions'=>array('Goal.created BETWEEN ? AND ? '=>array($inicio,$fin),
 			'Goal.course_id'=>$materia[$x]['Course']['id'],'Goal.grupo_id'=>$cuatrimestre[0]['StudentProfile']['grupo_id']),'fields'=>array('Goal.id','Goal.description','Goal.parcial'))));
@@ -1052,7 +1065,7 @@ public function alumno(){
 	}
 
 	// $goals=$this->Goal->find('all',array('conditions'=>array('Goal.course_id'=>$materia)));
-	$this->set(compact('cuatrimestre','materia','nombre','goals','calif','diasDeClase','user_id','examenes','calificacionesParciales','derechoCuatri','notaCalfFin'));
+	$this->set(compact('imparteMaterias','cuatrimestre','materia','nombre','goals','calif','diasDeClase','user_id','examenes','calificacionesParciales','derechoCuatri','notaCalfFin'));
 	}else {
 		$this->Session->setFlash('denegado','default',array('class'=>'mensajeError'));
 		$this->redirect(array('action'=>'index'));

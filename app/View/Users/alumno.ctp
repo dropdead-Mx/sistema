@@ -1,7 +1,7 @@
 <h2>Bienvenido <?php echo implode($nombre); ?></h2>
 <?php 
 
-
+// pr($imparteMaterias);
 echo '<p>'.$this->Html->link('Ver fechas de examen',array('action'=>'examenes')) .'</p> ';
 echo '<p>'.$this->Html->link('Ver Horario',array('action'=>'horario')) .'</p> ';
 echo '<p>'.$this->Html->link('Cambiar contraseña',array('action'=>'editStudent')) .'</p> ';
@@ -38,6 +38,20 @@ echo '<p>'.$this->Html->link('Cambiar contraseña',array('action'=>'editStudent'
 
 <div>
 	<h3><?php echo $materias['Course']['name']; ?></h3>
+
+	<?php 
+
+		foreach($imparteMaterias as $q => $docente){
+			$idM=$docente['course_id'];
+			// echo $q;
+
+			if($materias['Course']['id']==$q){
+				echo "<h4>Impartida por :".$docente['teacher_name'].'</h4>';
+				echo $this->Html->image($docente['teacher_imgProfile']);
+			}
+		}
+
+	?>
 	
 	
 	<?php 
