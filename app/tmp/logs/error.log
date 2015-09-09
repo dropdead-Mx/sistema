@@ -34113,3 +34113,13 @@ Request URL: /sistema/img/%22../files/employee_profile/foto/1/thumb_profesor.jpg
 Stack Trace:
 #0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-09-09 15:55:53 Error: Fatal Error (4): syntax error, unexpected 'else' (T_ELSE) in [/var/www/sistema/app/Controller/UsersController.php, line 879]
+2015-09-09 15:55:53 Error: [FatalErrorException] syntax error, unexpected 'else' (T_ELSE)
+Request URL: /sistema/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 879)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 879, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 879, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

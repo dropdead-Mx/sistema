@@ -865,18 +865,20 @@ $existe=$this->Assist->find('count',array('conditions'=>array(
 		'Assist.date_assist'=>$fecha,
 		'Assist.grupo_id'=>$grupo,
 		'Assist.course_id'=>$id_materia)));
+// 
+// if ($imparte === 0){
+// 	$this->Session->setFlash('Hoy no impartes esta materia','default',array('class'=>'mensajeError'));
+// 	$this->redirect(array('action'=>'index'));
+// } else if($existe >= 1 ){
+// 	$this->Session->setFlash('Ya pasaste asistencia de esta materia ','default',array('class'=>'mensajeError'));
+// 		$this->redirect(array('controller'=>'users','action'=>'index'));
+// }
 
-if ($imparte === 0){
-	$this->Session->setFlash('Hoy no impartes esta materia','default',array('class'=>'mensajeError'));
-	$this->redirect(array('action'=>'index'));
-} else if($existe >= 1 ){
-	$this->Session->setFlash('Ya pasaste asistencia de esta materia ','default',array('class'=>'mensajeError'));
-		$this->redirect(array('controller'=>'users','action'=>'index'));
-}
 
 
+ if ($imparte > 0 && $existe==0){
+// else if ($imparte > 0 && $existe==0){
 
-else if ($imparte > 0 && $existe==0){
 
 
 if($this->request->is('post')):

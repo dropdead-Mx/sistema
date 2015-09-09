@@ -14,6 +14,7 @@ $fecha=date("Y-m-d");
 <table>
 	<tr>
 		<th>Nombre</th>
+		<th>Fecha</th>
 		<th>Nota</th>
 		<th>Asistencia</th>
 		
@@ -22,6 +23,10 @@ $fecha=date("Y-m-d");
 <?php foreach($estudiantes as $k => $estudiante):?>
 	<tr>
 		<td><?php echo $estudiante['User']['name'] ?></td>
+		<td>
+			 <?php echo $this->Form->input('Assist.'.$k.'.date_assist',array('type'=>'text','class'=>'datepicker','label'=>false));?>
+			
+		</td>
 		<td>
 
 	<?php 
@@ -39,7 +44,8 @@ $fecha=date("Y-m-d");
 
 		<?php 
 
-			echo $this->Form->hidden('Assist.'.$k.'.date_assist',array('value'=>$fecha));
+			// echo $this->Form->hidden('Assist.'.$k.'.date_assist',array('value'=>$fecha));
+
 			echo $this->Form->input('Assist.'.$k.'.status',array('type'=>'radio',
 				'options'=>array('1'=>'Asistencia','2'=>'Retardo','3'=>'Falta'),
 				'legend'=>false,
@@ -57,4 +63,8 @@ $fecha=date("Y-m-d");
 
 </table>
 
-<?php echo $this->Form->end('Pasar Lista') ;?>
+<?php 
+echo $this->Form->end('Pasar Lista') ;
+echo $this->Html->script('scripts');
+
+?>
