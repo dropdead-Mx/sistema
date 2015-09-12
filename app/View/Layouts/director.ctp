@@ -28,7 +28,7 @@
 
 <?php echo $this->Session->flash(); ?>   
 	
-	<nav>
+	<nav class="indexDirector">
 		
 	<?php 
 

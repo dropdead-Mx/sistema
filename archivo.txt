@@ -1,0 +1,1328 @@
+commit 40aa3d590592e8bb0683b3aaf834c3d27bbdee0f
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Sep 5 21:42:45 2015 -0500
+
+    up
+
+commit 2b43595e5ebaab855f891a9fbec7d7c3a91a1b23
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Sep 5 21:41:12 2015 -0500
+
+    ¬¬ agregue la linea que pinta los mensajes no la borres hay acomodala si no no sabes xk redirige o si guardo etc etc etc
+
+commit 49dd230488f1ecbf31069d82dbf985c598816539
+Merge: 5d61caf 3495857
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Sep 5 21:40:48 2015 -0500
+
+    Merge branch 'master' of https://github.com/dropdead-Mx/sistema
+    
+    Conflicts:
+    	app/tmp/cache/models/myapp_cake_model_default_sistema_list
+    	app/tmp/cache/models/myapp_cake_model_default_sistema_users
+    	app/tmp/cache/persistent/myapp_cake_core_cake_es
+    	app/tmp/cache/persistent/myapp_cake_core_file_map
+    	app/tmp/cache/persistent/myapp_cake_core_method_cache
+
+commit 5d61caf3faaabcc1e9d48f9bce7f84e5573868df
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Sep 5 21:39:25 2015 -0500
+
+    ¬¬ agregue la linea que pinta los mensajes no la borres hay acomodala si no no sabes xk redirige o si guardo etc etc etc
+
+commit 7cef0365ec136f89a547ecda523f0b7aa86e713e
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Sep 5 21:33:02 2015 -0500
+
+    XD
+
+commit 34958573a4af82a2cc652ad1cd2d2f80695854bb
+Merge: f152f11 3ba19b4
+Author: German Martinez Solis <gms.linux@gmail.com>
+Date:   Sat Sep 5 21:31:58 2015 -0500
+
+    Merge pull request #9 from soujiro27/master
+    
+    no entra ---> hechale saliba :v:
+
+commit 3ba19b4ed99d5bbe58a18f0705beb4e5a5c201e0
+Merge: db06cfb f152f11
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Sat Sep 5 21:30:46 2015 -0500
+
+    no entra a assigncarrers
+
+commit db06cfbf1d747761599730e562ca75aa8a4263e1
+Merge: 769d05b a7a4a83
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Sat Sep 5 17:04:01 2015 -0500
+
+    correccion de algunos erores
+
+commit f152f116c528ddec01833dfde16ac7c0e721bb70
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Sep 5 16:47:23 2015 -0500
+
+    fix asignar carreras jc ama a ricardo
+
+commit 57b44874cd28316588a933a4c55fe48117a95c39
+Merge: c276d2b 769d05b
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Sep 4 00:16:12 2015 -0500
+
+    Merge branch 'master' of https://github.com/soujiro27/sistema
+    
+    Conflicts:
+    	app/tmp/cache/models/myapp_cake_model_default_sistema_list
+    	app/tmp/cache/models/myapp_cake_model_default_sistema_users
+    	app/tmp/cache/persistent/myapp_cake_core_cake_es
+    	app/tmp/cache/persistent/myapp_cake_core_file_map
+    	app/tmp/cache/persistent/myapp_cake_core_method_cache
+    	app/tmp/logs/error.log
+
+commit c276d2b98fb5595d5d3c9851ee51d8e949b0520b
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Sep 4 00:15:01 2015 -0500
+
+    pull
+
+commit 769d05bb39c8b1eeff8dca2f229ec657b637da44
+Merge: ce708f9 02fca73
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Fri Sep 4 00:04:19 2015 -0500
+
+    menu terminado de index de director
+
+commit a7a4a83f0846fd9c3de9c3ac1fabc4de7c3f94e5
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Sep 3 21:14:29 2015 -0500
+
+    funcion test para pasar de grado y grupo a los alumnos
+
+commit 2969b68d9e742424de9d5f292bd0d0e1a1294fe4
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Sep 3 19:37:03 2015 -0500
+
+    listado mensajes para maestro y cordinador ok
+
+commit c4a0f61183812fab17ff5c64a3e9610e706ea544
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Sep 3 18:48:36 2015 -0500
+
+    mensajes calificaciones en funcion alumno ok
+
+commit 02fca7328e00939eff4422d214aba17581f9fd99
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Sep 3 17:04:03 2015 -0500
+
+    examen extraordinario
+
+commit 2360510a4cb2ad3f72fcbe02e459537c4df776d3
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Sep 3 00:14:13 2015 -0500
+
+    editar password de coordinador para director y coordi ok
+
+commit 76f5c64edef2a5f626531164b009a7bd36a7d998
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Sep 2 23:41:16 2015 -0500
+
+    opcion editar contraseña para maestros, ok
+
+commit ce708f984e7da1ab671e34d4f60d19c1940ee6a7
+Merge: bdd14a9 67cf64e
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Wed Sep 2 21:51:19 2015 -0500
+
+    cambios de german
+
+commit bdd14a910fae1872510a8741b9e6e55b2249da6a
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Wed Sep 2 21:45:57 2015 -0500
+
+    antes del cambio radical
+
+commit 67cf64ed3f29a6ef975f3d9b26c582ff2a831e3c
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Sep 2 21:20:10 2015 -0500
+
+    horario de clases que imparte para el maestro ok
+
+commit f089088b6db42891376fb0ec8299350db75c3ea1
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Sep 2 18:45:17 2015 -0500
+
+    editar calificaciones ok
+
+commit d2e98c6090cc8f8032c8a86b09a3c36aaf1a390b
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Sep 2 14:25:14 2015 -0500
+
+    funcion consultar asistencias fix en ajax
+
+commit 89f2dce1debb9cb7e3f05ccfe4c5cc010db71141
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Sep 2 13:31:35 2015 -0500
+
+    editar asistencia ok
+
+commit d24417dc11fe67ff0f9e4c82b6ef63f5258bc97e
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Sep 2 00:55:21 2015 -0500
+
+    accion cambiar contraseña agregada a vista alumno
+
+commit 83cd7f49bb9b3045c9e5e648a94cd679f9b10410
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Sep 2 00:45:02 2015 -0500
+
+    funcion de cambiar contraseña para alumnos actualizada
+
+commit 7ea6fc127692416a0f1dc6a4cf797fee47f17796
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Sep 1 23:55:05 2015 -0500
+
+    calificacion cuatrimestral y final ok
+
+commit dcb77114e7a2092b2a4d9f980dad138aee4dd2f9
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Sep 1 14:18:46 2015 -0500
+
+    cuatrimestral ok
+
+commit 28df3ed7593ecdf3e2dd21d6854c962c8a73ca1f
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Sep 1 00:05:31 2015 -0500
+
+    avance calificar cuatrimestral ok
+
+commit 3c7fc313d69a836d5be794956a25771b5cf29edf
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 31 20:59:16 2015 -0500
+
+    porcentaje total obtenido por criterio de evaluacion en vista alumno ok y calificacion final por parcial ok
+
+commit 5fd2d1d26507e4fc3c105bca41fbd7b8a6d49977
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 31 18:49:42 2015 -0500
+
+    funcion para consultar calificaciones mejorada
+
+commit b78909a9ed41c2b6b72662b9062118dd4b0500cf
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 31 18:24:00 2015 -0500
+
+    dump db actualizado
+
+commit 07c545982c58bfeb1b2321ec016db120f191acac
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 31 18:21:37 2015 -0500
+
+    funcion calificar modificado ok
+
+commit 70b0cf7aaac29309955504c8c6b5fb48484068cc
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 31 15:27:49 2015 -0500
+
+    pequeños cambios en consultar asistencia
+
+commit 2d25099fa153821865a5bdc2ccb4ab06bd303404
+Merge: 6a50eef 8a71b61
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun Aug 30 22:25:04 2015 -0500
+
+    pull test3
+
+commit 6a50eefe451d968e17c90ca2cf0ed2cfcb3512d9
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun Aug 30 22:23:05 2015 -0500
+
+    acciones agregadas en txt
+
+commit 8a71b613b01e506c6c315f2f56cc1d726664cfb5
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Sun Aug 30 18:42:32 2015 -0500
+
+    empezando consultas de coordinadres
+
+commit 42b3dd6eb2b82b9adefe3084a5254bba09f69e46
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun Aug 30 17:21:16 2015 -0500
+
+    consultar horarios de clase y aplicacion de examenes ok para coordinador y director
+
+commit 2bcaddcf9264adc171aec2d88fef0d590ea23a5f
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Sun Aug 30 17:11:39 2015 -0500
+
+    menu terminado y alta terminada
+
+commit 298c2f8a3727d73f6385710a302bc154d94c0225
+Merge: 5ca62d8 3b357d9
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Aug 29 00:54:36 2015 -0500
+
+    Merge branch 'master' of https://github.com/soujiro27/sistema
+    
+    Conflicts:
+    	app/tmp/cache/models/myapp_cake_model_default_sistema_list
+    	app/tmp/cache/models/myapp_cake_model_default_sistema_users
+    	app/tmp/cache/persistent/myapp_cake_core_cake_es
+    	app/tmp/cache/persistent/myapp_cake_core_file_map
+    	app/tmp/cache/persistent/myapp_cake_core_method_cache
+
+commit 5ca62d8daccbe3a51e2fd0181f6070de757c9738
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Aug 29 00:52:22 2015 -0500
+
+    funciones
+
+commit 3b357d97b3ec7f098fbead81614dba7de492dd11
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Sat Aug 29 00:28:03 2015 -0500
+
+    menu terminado en 320
+
+commit 15ae203287a500be4c95fc8e1e6e1c46842a5f5c
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Fri Aug 28 17:17:49 2015 -0500
+
+    login movil terminado
+
+commit 50a00cb933cad2b3da110ec5f6a6d9e4cff7d64a
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Fri Aug 28 15:44:27 2015 -0500
+
+    login terminado
+
+commit 490cd0dbae127d3701ce97f9c8179381ff92a227
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Aug 28 14:27:27 2015 -0500
+
+    bug arreglado asignar fechas d examen
+
+commit 26da45ccd58cc380c84e82ee20a16773c48c02db
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Aug 28 14:17:24 2015 -0500
+
+    funcion ver calificaciones para el director disponible ok
+
+commit 348f0904d6bdcf276611c3b331412ac8a6620360
+Merge: 93ed15d 03ecf6f
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Fri Aug 28 14:09:28 2015 -0500
+
+    actualizaciones de german
+
+commit 93ed15dc2db60682ce026a9919913381822cef90
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Fri Aug 28 14:06:29 2015 -0500
+
+    empezando jueves
+
+commit 03ecf6f2754e352f25d05a1cbf69fcfa3f4d82dc
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Aug 28 13:59:49 2015 -0500
+
+    consultar asistencias para coordinador y director ok
+
+commit 120e8cce6f5fbf4ecc32813eb8b085075c60c75e
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Aug 28 01:59:40 2015 -0500
+
+    avance de consulta de asistencias para coordi y director
+
+commit ad74ce4fe88f51ca5c7c676d973f7dbe0bfe7405
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Aug 27 21:51:53 2015 -0500
+
+    accion calificar modificada eahora acepta valores de 0 a 100%
+
+commit a19e7986a3d4b2560f97f0c9b26c11a7f7a6e205
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Aug 27 03:13:58 2015 -0500
+
+    bug listado d materias ok
+
+commit a1bc0537317e8ef48850c2707f084853cb08f90c
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Aug 27 02:06:44 2015 -0500
+
+    listado de alumnos modificado , funcion de listado de alumnos para director agregada
+
+commit 1faf96fe8bcd7987d8dda01b7ed034296f31175f
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Aug 26 23:54:56 2015 -0500
+
+    bug corregido en consulta de calificaciones
+
+commit dfb685eda19f17b7aaa9f07515a446f996d3becb
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Aug 26 22:48:38 2015 -0500
+
+    listado de materias que imparte el profesor en indexTeachers
+
+commit b24ae106b1379bdd744d3f08b3c8a91ebd991940
+Merge: ffe954e 9f9701b
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Aug 26 21:39:50 2015 -0500
+
+    Merge branch 'master' of https://github.com/soujiro27/sistema
+
+commit 9f9701bd936a9e04bb5f35669b65df0546415b5e
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Wed Aug 26 16:18:59 2015 -0500
+
+    menu lateral terminado
+
+commit d8e11d4d3b8827485de6ee21461d2e2be83dd974
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Wed Aug 26 14:25:32 2015 -0500
+
+    login casi terminado
+
+commit ffe954e2b97d399cea04727af8b6a17435ec8ef8
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Aug 26 14:23:36 2015 -0500
+
+    dump db
+
+commit 65183e753ce7c75a0497f142d8f5e70e3919eeca
+Merge: 91ff2e9 a437b2f
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Wed Aug 26 13:30:44 2015 -0500
+
+    ultima actualizacion
+
+commit 91ff2e9ab5dd5b31e85d9e5302c8f67e8b1f66d8
+Merge: 89c2418 fed2e51
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Wed Aug 26 13:28:06 2015 -0500
+
+    iniciando login
+
+commit a437b2ff9b5c8dcb0739e1fc2c0a1fd4fc1741bc
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Aug 26 13:18:20 2015 -0500
+
+    txt con rutas de acciones
+
+commit 89c2418640fa1618ade5fe5ca1254ea41f446d78
+Merge: c7a9cde 267bb03
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Wed Aug 26 12:05:56 2015 -0500
+
+    antes de la junta
+
+commit fed2e51471f8d517b8cb8eee564d475924082f70
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Aug 25 02:10:42 2015 -0500
+
+    permisos en controller courses ok
+
+commit 561d7fded9b92b0bd85cba4d310ade74b9e8e427
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Aug 25 01:43:17 2015 -0500
+
+    permisos y debug en archivo core a 0
+
+commit 1acb67b43b369ace401021e7c925fe1176fe08ca
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Aug 25 01:40:09 2015 -0500
+
+    asignar fechas de examen ok
+
+commit 2a1b6c35941c60c35cd6ffbab0fadad2af3375df
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Aug 25 01:27:24 2015 -0500
+
+    upload de planeaciones ok , ver planeaciones ok
+
+commit 543d0083b9786f9f9d43e528cd2fb9f11afe6c9e
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Aug 25 01:19:12 2015 -0500
+
+    contador de mensajes ok
+
+commit 479c9ad1ad91c97c511e12200d77533c5dabc91e
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Aug 25 00:03:25 2015 -0500
+
+    funcion subir examenes modificada
+
+commit 1eea4ee0b81c51255856b857ffc3f09f0c47b91c
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 24 23:45:55 2015 -0500
+
+    funcion de asistencias modificada , permisos habilitados para director maestro cordinador y alumnos, aun faltan permisos
+
+commit c6b98eda83874ad202721ea78ec074c3822a4030
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 24 21:25:32 2015 -0500
+
+    consultar calificaciones por grupo ok funcion vercalificaciones
+
+commit ecb04c50bbab25093aaba62177009ad2ac8a9426
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 24 20:50:19 2015 -0500
+
+    modificados contraseñas,fotos correos de cordinadores alumnos maestros y agregada funcion para registrar un director lineas para nombre y foto de perfil en app/views/users/index.ctp
+
+commit a8d8e60bb37afee0d626976777aa127a0348a790
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 24 18:49:25 2015 -0500
+
+    layout default div para mostrar errores clase del mensaje es mensajeError, clase div es errores
+
+commit c7a9cde6f0cf86c8c78ebb77f56048a7d0b92653
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Mon Aug 24 18:03:01 2015 -0500
+
+    problemas resueltos
+
+commit 267bb03570813b764f137b83c53bf9bf0aef7f54
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 24 17:55:28 2015 -0500
+
+    elements en layout default para cada usuario
+
+commit 29df11315a26a33d912350e56d04aaf51f8f7a2c
+Merge: 5628c7d ce0104a
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Mon Aug 24 17:18:13 2015 -0500
+
+    actulizado polo ama a german
+
+commit 5628c7d0d6f6720291e4cfcd7b9f81d5a161cd3e
+Merge: 0a63f8b c3d1829
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Mon Aug 24 17:16:33 2015 -0500
+
+    actualizado en la tarde
+
+commit ce0104a0890a518d2c4c45798c0246a380c4956f
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 24 17:14:37 2015 -0500
+
+    pagina home cambiado por login
+
+commit 0a63f8b3a227b4bbe4b8a1d8b4da1a6d4e76973a
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Mon Aug 24 16:10:13 2015 -0500
+
+    ultima actualizacion con correcion de errores
+
+commit c3d182913a327730a41bea5b9bdeac5730638bdb
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 24 16:03:04 2015 -0500
+
+    calificar y criterios de evaluacion ok
+
+commit 2ec1453c411e3869cb2d95dd73b3b650f127a43b
+Author: soujiro27 <jc.raus27@gmail.com>
+Date:   Mon Aug 24 14:20:05 2015 -0500
+
+    bajado de archivos
+
+commit 122fd4e1ce290b57ef482218e4bb2f60ed798838
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 24 00:45:34 2015 -0500
+
+    dump db actualizada
+
+commit e6a4b5b92fad86b2fca015e73da1c6e2ff5a191b
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 24 00:44:03 2015 -0500
+
+    vista de estudiantes actualizada (funcion para obtener asistencias x grupo actualizada)
+
+commit cec975619fc2fdb75a8c877dd722c3adbc6681d8
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 24 00:10:20 2015 -0500
+
+    vista del alumno actualizada correspondiente a su grupo
+
+commit ebb2148fc2136b9677800b667a3316cfcf229c51
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun Aug 23 16:45:01 2015 -0500
+
+    descarga de planeaciones por grupo para c/materia ok
+
+commit 6d3f31c017ee3b0591bb07b66272f5036a8cbef9
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun Aug 23 16:07:57 2015 -0500
+
+    descarga de examenes por grupo para cada materia ok
+
+commit 73b5c52e3725cd7a0d135b9f39ff0dc021709efb
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun Aug 23 15:12:05 2015 -0500
+
+    subida de examenes y planeaciones por grupo ok
+
+commit 19050dc308d9d9af44389d3142a9b31d1449c8aa
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun Aug 23 14:41:05 2015 -0500
+
+    subida de examenes por grupo para c/materia ok
+
+commit 799c590e25d933715ab54bdf2ad25d891c3eb6a6
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Aug 22 21:29:23 2015 -0500
+
+    up
+
+commit 8ac725ef7eaded68e7c4b9186a08866d62d54d59
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Aug 22 21:26:12 2015 -0500
+
+    upload borrado
+
+commit 3a26280010a0a2e0c45202e06883374e713bb6a7
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Aug 22 21:23:46 2015 -0500
+
+    int3
+
+commit 6d782264b522ff838b0c6501a24e58c8cff32933
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Aug 22 21:19:26 2015 -0500
+
+    z
+
+commit f41c266ff6210362f1274905ea3d77cd1f1a4d7c
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Aug 22 21:15:42 2015 -0500
+
+    test6
+
+commit 33da2595711fe4eaf9eddd08c02272395df1f641
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Aug 22 20:55:26 2015 -0500
+
+    test agregar archivos
+
+commit 1ac14bbe06c168b7cad0ce4c7d99122f6c614873
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Aug 22 19:16:47 2015 -0500
+
+    dump db actualizado
+
+commit 6e3cb06d6cfc6f4ab2bd791b16a2c9d0df9c0d7a
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Aug 22 19:13:39 2015 -0500
+
+    asignar fechas de examen por grupo y misma materia ok
+
+commit 13af2143bb97f01b020f0b50ff8032dde2a35a4c
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Aug 22 14:18:18 2015 -0500
+
+    funcion de calificar actualizada bugs arreglados
+
+commit d368ef19281542a956ee03eacc2109b59594b99d
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Aug 22 13:55:26 2015 -0500
+
+    funcion de calificar actualizada
+
+commit 0682025fe7f3cf8ab8055729f88abba60cb151a4
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Aug 22 13:08:03 2015 -0500
+
+    funcion de asistencia actualizada- filtro por grupo
+
+commit 69a55e90989aab8ab5652b99b6bc01a3d6debd7f
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Aug 22 00:23:45 2015 -0500
+
+    viewmycourses actualizada dependiendo del grupo
+
+commit 74a950c0443f07a7caab5c190e1d421fd7d75e5e
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Aug 21 23:36:05 2015 -0500
+
+    funcion agregar criterios de evaluacion y listado de materias que imparte un profesor listas posible cambio de paso de parametros en la funcion add del controlador goalsController
+
+commit a3a661f09ca16b7543c209fff827293c491981cd
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Aug 21 21:34:54 2015 -0500
+
+    funcion js de listado de materias actualizada :v
+
+commit 2bd0cbd93895237b19ac590e81327c6bd7aa08b0
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Aug 21 21:30:14 2015 -0500
+
+    listado de materias actualizado funcion de reasignar profesor a materia agregada
+
+commit c86a2be535d32545a93ec7f1f2f0587369069bc1
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Aug 21 20:19:48 2015 -0500
+
+    index materias opcion de asignar profesor por grupo y misma materia agregado ...
+
+commit f0d06338e5c26d846ca0433cfeb933f0850b16d5
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Aug 20 23:01:20 2015 -0500
+
+    index de materias actualizado , agregados links en funcion al grupo seleccionado
+
+commit b3720c8c74c3e5a51521465810fea564481a8e6c
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Aug 20 15:59:45 2015 -0500
+
+    soporte para mas de un grupo por cuatrimestre en el index de las materias
+
+commit 6992cb772690943f12f46b3d865b7e5856a75e9d
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Aug 19 13:57:08 2015 -0500
+
+    db actualizada ,algunos cambios para asignacion de materias por grupo ,posibles errores
+
+commit fcfbc94729e964ddf5e4d366262bcec0e6d50442
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Aug 19 12:00:08 2015 -0500
+
+    backup
+
+commit e8e8827ccfbce1581d3bfbf212f4ec43a6d6bb68
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 17 14:14:42 2015 -0500
+
+    ricardito
+
+commit 546d23afc15c7c252fbec3f4a794787d5b084b39
+Merge: df10683 42f628e
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 17 14:13:52 2015 -0500
+
+    Xd
+
+commit df106833da597d0cbdae444919854c248e6cb791
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 17 14:12:12 2015 -0500
+
+    Xd
+
+commit 42f628e1c83dbc97d3f1941e10608e2184a89fc5
+Merge: 288590c 34f033e
+Author: German Martinez Solis <gms.linux@gmail.com>
+Date:   Mon Aug 17 14:09:52 2015 -0500
+
+    Merge pull request #4 from soujiro27/master
+    
+    hijo de polo
+
+commit 34f033e8661259e758cfb99ad22f230c601e5f02
+Author: JC <jc.raus27@gmail.com>
+Date:   Mon Aug 17 14:08:39 2015 -0500
+
+    hijo de polo
+
+commit 288590c0886d14be638aa2524b597a613c82d0df
+Merge: 8be5337 b99d0de
+Author: German Martinez Solis <gms.linux@gmail.com>
+Date:   Mon Aug 17 13:25:44 2015 -0500
+
+    Merge pull request #3 from soujiro27/pruebas
+    
+    prueba de lunes
+
+commit b99d0de1c2b6778577e1c4f4e6e3d4d71baed486
+Author: JC <jc.raus27@gmail.com>
+Date:   Mon Aug 17 13:22:32 2015 -0500
+
+    prueba de lunes
+    
+    etiqueta p
+
+commit 8be5337d6a74a0790335bc5eb27048e13dc58bb8
+Merge: 01733a2 535deaa
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 17 13:15:08 2015 -0500
+
+    Merge branch 'master' of https://github.com/soujiro27/sistema
+    
+    Conflicts:
+    	app/tmp/cache/models/myapp_cake_model_default_sistema_list
+    	app/tmp/cache/persistent/myapp_cake_core_file_map
+    	app/tmp/cache/persistent/myapp_cake_core_method_cache
+    	app/tmp/cache/persistent/myapp_cake_core_universidad_dorados_es
+    	app/tmp/logs/error.log
+
+commit 01733a24c06dd6945973457e2fc7a807633c52d1
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 17 13:09:41 2015 -0500
+
+    actualizado
+
+commit 535deaa8ce9a0681403fccfa56a52cccf51ca428
+Author: JC <jc.raus27@gmail.com>
+Date:   Mon Aug 17 12:53:13 2015 -0500
+
+    lunes
+    
+    vista de celular del director
+
+commit 61bc054fa12a0f44082a5ea5b7cfa12c367e0f26
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Aug 15 23:46:50 2015 -0500
+
+    tiempo de expiracion de session en sistema 30 minutos
+
+commit fb958159ff59e1d7c52a3564a36e915841a015f6
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Aug 15 23:10:26 2015 -0500
+
+    algunos permisos para maestro y coordinador agregados
+
+commit 74b04d1805f6fea08b8ba37e52dbf4a979ed0d8d
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Aug 14 23:20:18 2015 -0500
+
+    permisos establecidos para alumno, y algunos para el maestro ; faltan las vistas
+
+commit 458fc25d020f3f19190cffcac09c2f4672e05b17
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Aug 14 19:24:41 2015 -0500
+
+    funcion login agregada falta establecer permisos de usuarios con isauhtorized y definir el tipo de plantilla
+
+commit 65a837d67b1d990d3d94432dec0ca19dfd402eb1
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Aug 14 15:00:03 2015 -0500
+
+    comprobacion si esta dentro del parcial la fecha actual en la busqueda del porcentaje de asistencias, actual mente no se muestra nada porque se alargo el periodo del cuatrimestre para hacer pruebas
+
+commit 1d02c07a0f2383e3c1c06ef5e70ec6727a8f1027
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Aug 12 23:43:08 2015 -0500
+
+    vista de alumnos actualizada ,ya se muestran los porcentajes de asistencia por parcial para la materia a seleccionar posible cambio estetico :v
+
+commit fbc9ee1bda4c70935ccffe68f18a1f12a07255a0
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Aug 12 01:50:29 2015 -0500
+
+    funcion para consultar asistencias con parametros de materia y alumno funcional y modificada , arroja los porcentajes obtenidos por parcial y el porcentaje obtenido para derecho a examen , falta agregar si es mayor o igual al 80 porciento en vez de usar el porcentaje
+
+commit 429264ffcda97347291b5fe57f6be07996c8d938
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun Aug 9 13:23:34 2015 -0500
+
+    algoritmo para sacar las asistencias por parcial de cada materia en el cuatrimestre actual - futura modificacion en consulta de asistencias en el view del alumno
+
+commit 1b150b21e87cacc6b17753c4dfee93d991d7f94d
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Aug 6 17:53:36 2015 -0500
+
+    array de duracion de los 3 parciales  por materia agregado , falta hacer comparacion de dias que se imparten las materias para sacar el 100 de asistencias en cparcial
+
+commit f57ba354737439e1fbfb3f64942c0755f67f01ce
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Aug 4 20:45:27 2015 -0500
+
+    funcion index de examens js actualizado
+
+commit 5c1b16899584416c5f803b6f4cf6de2b411d51fc
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Aug 4 20:17:05 2015 -0500
+
+    scripts.js actualizado
+
+commit 6d34fbb08736d565988bd0b0ac44c901d6ab86a3
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Aug 4 20:12:20 2015 -0500
+
+    archivos actualizados
+
+commit 70232138b2541b67cc8d034918212eaf76ae9e47
+Merge: c76fde2 a7154c2
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Aug 4 20:05:50 2015 -0500
+
+    Merge branch 'master' of https://github.com/dropdead-Mx/sistema
+
+commit c76fde2c7ba89d5bc9514aca8e004de7b0d4b1b0
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Aug 4 20:03:43 2015 -0500
+
+    funcion de asignar fechas de examen modificada ahora se eligen por materia y no todas de una sola vez
+
+commit a7154c2a783aa6e638120e6b72a9d4a53538849b
+Merge: bfe3a81 46916e5
+Author: German Martinez Solis <gms.linux@gmail.com>
+Date:   Mon Aug 3 23:51:30 2015 -0500
+
+    Merge pull request #1 from soujiro27/pruebas
+    
+    Se ha agregado un comentario a la documentación.
+
+commit 46916e57ca361faaedbbd274e6026ea72f37add5
+Author: JC <jc.raus27@gmail.com>
+Date:   Mon Aug 3 23:46:34 2015 -0500
+
+    Se ha agregado una carita feliz a la documentación.
+
+commit bfe3a819838caa51b8cda5296d700469bdcbb93f
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 3 21:37:52 2015 -0500
+
+    update en busqueda de fechas de examenes para vista del alumno obtiene los del cuatri actual
+
+commit 8e51aab02c63ff94c0545989f6612b1d4a2a9c89
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 3 20:53:14 2015 -0500
+
+    fix horario de examenes (evitar salida de errores cuando no hay registros)
+
+commit bb347901f6dc9d6c258a92ddb7e0541c814d6371
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 3 18:58:54 2015 -0500
+
+    envio de correo y contraseña para ingreso  a la plataforma agregada (comentada)
+
+commit d9dff1c7e7bc4450d07722403e205691fec75be8
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 3 16:56:17 2015 -0500
+
+    generacion de password automatica para estudiantes maestros y coordinadores
+
+commit e52c1f3ecc10126013f893bce426bd8887e6c5fe
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 3 16:23:36 2015 -0500
+
+    generacion password alumno agregado
+
+commit b0c9413548f4613244dd4495d71ada230fb34f80
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Aug 3 15:27:19 2015 -0500
+
+    preview de pasword generado automaticamente para alumnos
+
+commit 220ace8c1d524f339b5bee67682b6fc60c7a094a
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun Aug 2 17:56:53 2015 -0500
+
+    listado de examenes para descarga por coordinador listo
+
+commit b9b7fde743aae6ec46784b61b8d25a31c2a21472
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun Aug 2 14:15:09 2015 -0500
+
+    subida de examenes con soporte de mensaje ok , falta su listado con soporte de descarga
+
+commit 0ba16ad3d410bf64e2bac40b6973fe051c075fc1
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun Aug 2 12:22:57 2015 -0500
+
+    bug reparado en subirplaneaciones
+
+commit 968c6f7e033da9718f46dcc93dca15da458f65f2
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun Aug 2 11:47:10 2015 -0500
+
+    listado de planeaciones con descarga por coordinador terminado
+
+commit 0eec882a9144d534f39ed66880dccf208060e64e
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Jul 28 20:18:20 2015 -0500
+
+    envio de planeaciones con soporte de mensaje listo y dump actualizado de la db
+
+commit d0ba9428cbb3f19fc61527672f64cffcbce18755
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Jul 28 02:34:42 2015 -0500
+
+    modulo subir planeaciones terminado con validaciones y campos ocultos indispensables al usuario falta agregar mensaje oculto para el coordinador
+
+commit 7470aff2627bac688a191cd9cddd1bf9841b406a
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Jul 28 02:11:06 2015 -0500
+
+    modulo para subir planeaciones terminado solo falta poner en hidden algunos inputs del formulario
+
+commit f7d8abb543dbc24dce1dad9a4e22a36d247edd6d
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Jul 24 12:11:09 2015 -0500
+
+    dump db actualizado
+
+commit 4b1fb80e26cf75dfa2dbb960ed5b263beb117eae
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Jul 23 01:06:38 2015 -0500
+
+    modulo para subir planeaciones agregado falta llenar select de materias con ajax y pasar el id del remitente
+
+commit 3fe72b2132d016b9a0e56e75f4e7e30ef445a066
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Jul 22 14:09:00 2015 -0500
+
+    subir foto de perfil agregada en maestros y coordinadores
+
+commit 5ccd86d5d3baf4601bf5376cb0ccfd79d486af81
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Jul 21 15:37:10 2015 -0500
+
+    funcion mensajes push actualizado
+
+commit 90e3ea6a8e4515fe6e2c0b169728a4dc6e0caf3a
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Jul 17 16:11:01 2015 -0500
+
+    update validaciones en envio de mensajes
+
+commit 5a3a84c5a521952a43930c9af54d1ed12d14e2ac
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Jul 17 15:02:33 2015 -0500
+
+    test de mensajes en tiempo real exitosa :v faltan modificaciones para emplearla como modulo por completo
+
+commit d25558d22c875d4553eda8017efcfa6e31473564
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Jul 15 22:42:48 2015 -0500
+
+    tabla de materias actualizada
+
+commit e2084044f7c559072c33d8471a6ae7bd9c63a544
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Jul 15 22:18:52 2015 -0500
+
+    index de cursos actualizado
+
+commit 8231f3f0d426a2d7cb29ecf0ceee6855c9d351b9
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Jul 15 20:09:57 2015 -0500
+
+    index de materias actualizado (solo muestra carreras por coordinador usando ajax)
+
+commit 931c8e96749d590df245605b41740476d15f01e7
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Jul 8 18:34:30 2015 -0500
+
+    update view horario bug en rowspan agrega un td de mas cuando es > a 1 lo fixea jc cn css
+
+commit 2dd0f40d79b4f2645e12398639e1bbb3be57ad8d
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Jun 3 12:57:44 2015 -0500
+
+    dump db actualizado
+
+commit 07d521574a106abb8778f205f5af91080a96ff95
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun May 31 21:58:21 2015 -0500
+
+    bootstrap agregado
+
+commit 2a41459d16727e993317bbc111e652cc46c9df99
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon May 25 18:33:54 2015 -0500
+
+    consulta de calificaciones coordinador 1 2 3 parcial falta cuatrimestral y final
+
+commit bccf35dff887defc5ce6d1d0439181db2cd5b5f9
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu May 21 21:48:15 2015 -0500
+
+    funcion para registrar cuatrimestre agregada
+
+commit 992454a4a2b9dae8ab3984acefba807731ee93e5
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue May 19 18:13:02 2015 -0500
+
+    avance de busqueda de calificaciones (coordinador por parcial)
+
+commit e9f76a60919156664008c9716ae29c4aa8accad5
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue May 19 14:09:30 2015 -0500
+
+    Horario vespertino agregado,tiene pequeños bugs
+
+commit ee30279ff01edad27e16e4aacfb1d763ce7d1e61
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue May 19 12:04:33 2015 -0500
+
+    delimitacion en inputs de hrs y minutos 10 en 10 para min y 7am a 6pm hrs
+
+commit 2e3b3fa0e0c1fed1451742b80ae90af853ca2c3f
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun May 17 14:28:05 2015 -0500
+
+    delimitador de hrs 7am-6pm en agregar modulos de materia
+
+commit dc9ad3ac1491a05beb33af80017b6229da7ab77b
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun May 17 12:44:30 2015 -0500
+
+    Horario matutino terminado
+
+commit 9932f6d11522cfc005bce23d12cb8155c98bed91
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon May 11 16:38:31 2015 -0500
+
+    Accion ver modulos por materia agregado con funcionalidad de actualizar o agregar si no existe
+
+commit a41c699756f01596dc01ba8dc2a9bda742ac65e7
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu May 7 17:30:46 2015 -0500
+
+    bug fechas arreglado
+
+commit 99f5c64c156c21b55906233068898d722023c3cb
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu May 7 17:24:27 2015 -0500
+
+    validado fechas en busqueda de asistencias vista alumno
+
+commit 21e3c46bf76bee6d1ca243879f5878721baafe91
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu May 7 16:59:40 2015 -0500
+
+    asistencias por fecha y materia
+
+commit a238dda62ebc6a621a12b25069f02b5576738896
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue May 5 15:24:18 2015 -0500
+
+    buscador ajax de asistencia vista de alumnos semi terminada
+
+commit 9f39d62716c1c2a4631fb004bd023defb8fe8e97
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Apr 30 00:37:55 2015 -0500
+
+    horario alumnos semi-terminado
+
+commit 64c866bf145da21f07bd57252a2dd8655ae3f13a
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Apr 29 13:32:03 2015 -0500
+
+    Fechas de examen
+
+commit 9756a06cd7a5138936db32ae35d70c1d99611edf
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Apr 29 13:30:29 2015 -0500
+
+    horario de alumnos agregado
+
+commit 96ccfc89e8a00a335e727b34d010a0818c3aefe0
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Apr 27 14:29:07 2015 -0500
+
+    Fechas de examenes disponibles en vista del alumno, falta agregar isset en caso de que no se hayan registrado aun las fechas
+
+commit fb55f6cc90d4823e596da61080f82141f1977ca6
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Apr 27 13:33:06 2015 -0500
+
+    funcion alumno semi completa, falta generar horario, fechas de examen y calif final
+
+commit cd081d9ea4bd4e60ccc100c2f4eeb6bd37197705
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sat Apr 25 12:09:51 2015 -0500
+
+    Bug eliminar carreras asignadas corregido
+
+commit 7114f1ff2c43fd5cce4f1b02aba91b156abe8891
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Apr 21 15:08:40 2015 -0500
+
+    validacion por cada inputd de calificacion por criterio agregada, valida que no sea mayor al porcentaje asignado
+
+commit 32625b13377b4884932edf81b07fb5297a776cc0
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Apr 21 12:08:16 2015 -0500
+
+    verificacion de si se imparte la materia en el dia actual en asistencias
+
+commit a3ef0813c2e4cd6fa9bbea4120cfc17bb76d4feb
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Apr 21 00:59:42 2015 -0500
+
+    modulo de asistencias actualizado con verificacion de existencia de registros
+
+commit 9b54bb93b8bfd7e7bc2508fc4616c912d31f6f9a
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Apr 20 17:47:17 2015 -0500
+
+    Asistencias modulo agregado , dump de la db actualizado, asistencias falta detectar modulo por hr
+
+commit 049da3ccd8db0ffbbd20546066c5586ad51389d5
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Apr 16 20:36:06 2015 -0500
+
+    formato 24hrs para examenes
+
+commit 5eaef5be7641a8e2247ced1089e6c9a8bee0fe1f
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Apr 16 19:55:53 2015 -0500
+
+    datepicker agregado a fechas de examen
+
+commit 1625c1bbb0cdc8558856100729987dc4ffd60cd2
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Apr 15 21:03:33 2015 -0500
+
+    modulo de asignar carreras completo
+
+commit 6ebb404c1e02aa99eaca3492a2dca22e0b862e10
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Apr 15 19:05:52 2015 -0500
+
+    bug de guardado de asignacion de materias arreglado , delimitacion agregada para cuando todas las carreras fueron asignadas
+
+commit 0fe2726af4f0b0ac4d0f81b66570857563c1a064
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Apr 15 17:57:19 2015 -0500
+
+    Bug guardar carreras asignadas arreglado
+
+commit 2b9319e2f09a363a016fe62caa867a4f6a3a3ad4
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Apr 15 17:51:59 2015 -0500
+
+    bug para asignar carreras a cordinadores corregido ... al asignar solo muestra aquellas que no hayan sido seleccionadas
+
+commit 98336f7e46d626748efa0fe65701f0a3633ab7e3
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Apr 8 15:57:30 2015 -0500
+
+    Verificacion de usuario existente para todo tipo de usuarios
+
+commit d19adab26b61c26f4f09b9289a5c368e2514cb3d
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Apr 8 15:48:31 2015 -0500
+
+    Verificacion de usuarios registrados agregada
+
+commit ae832ff2174f68dbbe9c6b5dba3614d1026d8a79
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Apr 8 12:59:50 2015 -0500
+
+    Upercase en edit agregado y bug edit de virtualfield arreglado
+
+commit 609b8aecba9041ade7f3a83c295ae4d0de8edca9
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Apr 8 12:45:19 2015 -0500
+
+    test agregar archivs
+
+commit 55aa21f2ef7a95a4053574c3adee131d90698880
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Apr 8 12:32:51 2015 -0500
+
+    letras a mayuscula en registro de usuarios para evitar malos registros
+
+commit d584929e3174a585fd3a6bbf213a64aa52ef0013
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Apr 7 17:14:55 2015 -0500
+
+    bug arreglado en apartado examenes
+
+commit e495d5fcbb0aec101eb86cbda3e0b5f238407eec
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Apr 7 16:06:05 2015 -0500
+
+    redirect a usuario actual
+
+commit 907da79805dd4700744ec71e25b6bdef59661353
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Tue Apr 7 15:54:15 2015 -0500
+
+    agregar Fechas de examen listas por cordinador con sus respectivas careeras
+
+commit 34574b0079e3f9cdd062c0dcad088902f634bb32
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Apr 6 21:35:18 2015 -0500
+
+    Agregado funcion para crear coordinadores  y funcion para asignarles la carrera
+
+commit daae5754b600218346b1ca30badadf20745ae25f
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Mar 30 16:31:42 2015 -0600
+
+    forma de agregar criterios modificada, evalual alumnos funcionando falta verificar que no sean superiores a 100
+
+commit d92593388b4e6569873d32c893f309f1fa55b2ca
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Mar 30 14:11:32 2015 -0600
+
+    funcion para calificar por materia funcionando :3 falta verificar la suma de los imput y calificar por parcial
+
+commit c5c67bd5a3e708ac003b84262925fdc9a00ff836
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Mar 30 00:55:56 2015 -0600
+
+    funcion de calificar agregada con verificar foreach
+
+commit bef659e2842956db4b75a775c4a9ea9a0ebd45c5
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun Mar 29 00:38:14 2015 -0600
+
+    redireccion a usuario despues de registrar criterios de ev. y otros pequeños detalles
+
+commit ed89ad53a5609991276d95b3ea9997623827655f
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Sun Mar 29 00:19:47 2015 -0600
+
+    agregada funcion viewmycourses para facilitar la creacion de criterios, funcion de agregar criterios modificada, se le pasaron la variable de usuario y materia para quitar la seleccion de estos campos como la version anterior
+
+commit e634f91ba70816e63384c203751bcccb38e0af3d
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Mar 25 18:59:07 2015 -0600
+
+    verificacion de porcentajes agregada a criterios de evaluacion ,checar funcion ajax de maestros y profesores al clonar campos
+
+commit 6eeceae4a039fb749d31d0d39f62ca94796c078d
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Wed Mar 25 17:09:06 2015 -0600
+
+    agregar criterios con validacion via jquery agregado , falta sumar valor inputs
+
+commit c3d7a6b3a290bb5f1852cbad73aa38afd2940e34
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Mar 23 14:39:47 2015 -0600
+
+    vista de criterios y funcion ajax actualizada
+
+commit 300de66410fab2b3be2fed54223ace180d97c417
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Mar 23 14:25:00 2015 -0600
+
+    funcion para agregar y eliminar criterios agregada (con verificacion maxima de criterios)
+
+commit e5f84733a6388251b3a7cc611eb46024f546d83e
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Mar 19 19:43:21 2015 -0600
+
+    se actualizo dump de la db del sistema
+
+commit 1f4bbeee171fe31c2cf83a5f5652cf866af0370a
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Thu Mar 19 19:40:05 2015 -0600
+
+    Se agrego metodo ajax para obtener las materias por el id del profesor
+
+commit 829652d8f4c35dc6850cb703fc9c437bdbc0c307
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Mar 16 15:15:23 2015 -0600
+
+    funciones de ajax y jquery movidas de la vista a el archivo scripts.js en webroot
+
+commit a1f21e742dc0e196c0d4929c9ebebc56647855b6
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Mon Mar 16 14:42:50 2015 -0600
+
+    validacion para tabla usuarios y obtencion de semestre del alumno via jquery
+
+commit 95ca56ae36d58757fe56611f790a6a632ac88a33
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Mar 13 22:30:39 2015 -0600
+
+    Agregado funcion para verificar si existen modulos
+
+commit ee83a82b8db8341675a305db939c4471fbd46da4
+Author: dropdead-Mx <gms.linux@gmail.com>
+Date:   Fri Mar 13 15:30:13 2015 -0600
+
+    Archivos iniciales

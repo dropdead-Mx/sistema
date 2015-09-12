@@ -27,21 +27,13 @@
 		
 		<div id="content">
 
-
 			<?php echo $this->fetch('content'); 
 			$tipo= $current_user['group_id'];
-			if($tipo == 5){
-			//echo $this->requestAction('/users/indexcoordinator',array('return'));
-			//echo $this->element('menu');
-			//echo $this->element('addcoordi');
-			//echo $this->element('verCoordi');
-			}else if($tipo == 7){
-			// echo $this->element('lista');
-
-			}
 			?>
 
-		<!-- linea para pintar errores en cake  -->
+			
+
+		
 		
 		</div>
 	

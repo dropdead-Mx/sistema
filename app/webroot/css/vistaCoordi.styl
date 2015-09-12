@@ -1,37 +1,65 @@
 @import iconos
 
-section.datosCoordi
-	padding 1.5%
+section.datosCoordi,section.carrerasCoordi
 
-	h3
+	div.encabezadoCoordi
 		background azulObscuro
 		color blanco
-		text-align center
-		width 70%
+		text-align left
+		width 100%
 		display block
-		margin 1% auto
-		padding 1%
-		border-radius 10px
+		margin 0% 
+		padding 4%
+		h3
+			margin 0
+		p.iconoMenu
+			font-family Flaticon
+			width 24px
+			padding 5px
+			margin -30px 30px 
+			color blanco
+			border 1px solid plata
+			border-radius 5px
+			text-align center
+			font-size 22px
+			display inline-block
+			float right 
+			&:after
+				content '\e004'	
+		
 	article
 		border-bottom 1px solid gris
 		h2
-			font-size 17px
+			font-size 16px
 			text-align center
 		figure
 			width 90px
 			height 90px
 			border-radius 50%
-			margin 10px 2%
+			margin 20px auto
 			border 3px solid azulObscuro
 			box-shadow 2px 2px 3px  gris
-			display inline-block
+			display block
 			vertical-align top
 			
 			img
 				width 100%
 				border-radius 50%
-		div.textoCoordi
+		a
 			width 60%
+			text-decoration none
+			background-color esmeralda
+			color blanco
+			padding 2%
+			display block 
+			font-family Flaticon
+			margin 3% auto
+			border-radius 5px
+			text-align center
+			&:nth-last-child(1)
+				background-color rojo
+		div.textoCoordi
+			width 100%
 			display inline-block
 			p
 				margin 1% 1% 4% 1%
@@ -39,3 +67,38 @@ section.datosCoordi
 				background esmeralda
 				color blanco
 				border-radius 5px
+				
+	div.administradas
+		h2
+			font-size 17px
+			font-weight normal
+			margin 5px 
+			text-align center
+		h3
+			text-align center
+			margin 5px
+	table
+		color blanco
+		tr
+			width 100%
+			height 55px
+			background verde
+			margin 3% 1%
+			display block
+		td
+			height 47px
+			font-size 15px
+			padding 1%
+		td.nombre
+			width 70%
+			display inline-block
+			border-right 3px solid plata
+		td.accion
+			width 22%
+			display inline-block
+			a
+				text-align center
+				padding-top 15px
+				text-decoration none
+				display block
+				color azulObscuro
