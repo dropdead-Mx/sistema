@@ -34123,3 +34123,64 @@ Stack Trace:
 #3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-09-10 16:23:31 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[28000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /sistema/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /var/www/sistema/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /var/www/sistema/lib/Cake/Model/Model.php(3613): ConnectionManager::getDataSource('default')
+#3 /var/www/sistema/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /var/www/sistema/lib/Cake/Model/Model.php(3640): Model->setSource('users')
+#5 /var/www/sistema/lib/Cake/Model/Model.php(1387): Model->getDataSource()
+#6 /var/www/sistema/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#7 /var/www/sistema/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#8 /var/www/sistema/app/View/Users/login.ctp(10): FormHelper->create('User', Array)
+#9 /var/www/sistema/lib/Cake/View/View.php(961): include('/var/www/sistem...')
+#10 /var/www/sistema/lib/Cake/View/View.php(923): View->_evaluate('/var/www/sistem...', Array)
+#11 /var/www/sistema/lib/Cake/View/View.php(473): View->_render('/var/www/sistem...')
+#12 /var/www/sistema/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#13 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#14 /var/www/sistema/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#15 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2015-09-12 00:13:11 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/home
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-12 15:10:04 Error: [MissingControllerException] Controller class IndexTeachersController could not be found.
+Exception Attributes: array (
+  'class' => 'IndexTeachersController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/indexTeachers
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-12 15:10:09 Error: [MissingControllerException] Controller class IndexTeacherController could not be found.
+Exception Attributes: array (
+  'class' => 'IndexTeacherController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/indexTeacher
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-12 15:11:13 Error: [MissingControllerException] Controller class IndexTeacherController could not be found.
+Exception Attributes: array (
+  'class' => 'IndexTeacherController',
+  'plugin' => NULL,
+)
+Request URL: /sistema/indexTeacher
+Stack Trace:
+#0 /var/www/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

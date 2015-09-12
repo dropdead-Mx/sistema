@@ -8,6 +8,7 @@ alejandrosh@gmail.com
 	/verasistencias/
 	/vercalificaciones/
 	/users/consultarhorarios
+	/users/indexTeacher
 	
 
 

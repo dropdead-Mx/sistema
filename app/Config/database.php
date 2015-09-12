@@ -74,9 +74,9 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'root',
 		// 'password' => '',
-		'password' => 'netapi065@_',
+		'password' => 'uno',
 		'database' => 'sistema',
-		'prefix' => '',
+		'prefix' => '', 
 		//'encoding' => 'utf8',
 	);
 
