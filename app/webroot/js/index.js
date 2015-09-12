@@ -35,7 +35,24 @@ function menuAlumnos()
 
 function coordinador()
 {
-	
-	var url="users/indexcoordinator";
+	var clase=$(this).parent().parent().attr('class');	
+	//var este=$(this).parent().parent().hasClass(clase);
+	console.log(clase);
+	if(clase=='vercarreras')
+	{
+			console.log("bien");
+	var url="/sistema/users/indexcoordinator";
 	$(location).attr('href',url);
+	}
+	else if (clase=='indexDirector') 
+		{
+			var url='users/indexcoordinator';
+			$(location).attr('href',url);
+		}
+	else
+	{
+	var url='indexcoordinator';
+	console.log("mal"); 
+	$(location).attr('href',url);
+	}
 }

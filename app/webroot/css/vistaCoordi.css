@@ -5,48 +5,139 @@
   font-weight: normal;
   font-style: normal;
 }
-section.datosCoordi {
-  padding: 1.5%;
-}
-section.datosCoordi h3 {
+section.datosCoordi div.encabezadoCoordi,
+section.carrerasCoordi div.encabezadoCoordi {
   background: #2c3e50;
   color: #fff;
-  text-align: center;
-  width: 70%;
+  text-align: left;
+  width: 100%;
   display: block;
-  margin: 1% auto;
-  padding: 1%;
-  border-radius: 10px;
+  margin: 0%;
+  padding: 4%;
 }
-section.datosCoordi article {
+section.datosCoordi div.encabezadoCoordi h3,
+section.carrerasCoordi div.encabezadoCoordi h3 {
+  margin: 0;
+}
+section.datosCoordi div.encabezadoCoordi p.iconoMenu,
+section.carrerasCoordi div.encabezadoCoordi p.iconoMenu {
+  font-family: Flaticon;
+  width: 24px;
+  padding: 5px;
+  margin: -30px 30px;
+  color: #fff;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 22px;
+  display: inline-block;
+  float: right;
+}
+section.datosCoordi div.encabezadoCoordi p.iconoMenu:after,
+section.carrerasCoordi div.encabezadoCoordi p.iconoMenu:after {
+  content: '\e004';
+}
+section.datosCoordi article,
+section.carrerasCoordi article {
   border-bottom: 1px solid #7f8c8d;
 }
-section.datosCoordi article h2 {
-  font-size: 17px;
+section.datosCoordi article h2,
+section.carrerasCoordi article h2 {
+  font-size: 16px;
   text-align: center;
 }
-section.datosCoordi article figure {
+section.datosCoordi article figure,
+section.carrerasCoordi article figure {
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  margin: 10px 2%;
+  margin: 20px auto;
   border: 3px solid #2c3e50;
   box-shadow: 2px 2px 3px #7f8c8d;
-  display: inline-block;
+  display: block;
   vertical-align: top;
 }
-section.datosCoordi article figure img {
+section.datosCoordi article figure img,
+section.carrerasCoordi article figure img {
   width: 100%;
   border-radius: 50%;
 }
-section.datosCoordi article div.textoCoordi {
+section.datosCoordi article a,
+section.carrerasCoordi article a {
   width: 60%;
+  text-decoration: none;
+  background-color: #2ecc71;
+  color: #fff;
+  padding: 2%;
+  display: block;
+  font-family: Flaticon;
+  margin: 3% auto;
+  border-radius: 5px;
+  text-align: center;
+}
+section.datosCoordi article a:nth-last-child(1),
+section.carrerasCoordi article a:nth-last-child(1) {
+  background-color: #e74c3c;
+}
+section.datosCoordi article div.textoCoordi,
+section.carrerasCoordi article div.textoCoordi {
+  width: 100%;
   display: inline-block;
 }
-section.datosCoordi article div.textoCoordi p {
+section.datosCoordi article div.textoCoordi p,
+section.carrerasCoordi article div.textoCoordi p {
   margin: 1% 1% 4% 1%;
   padding: 2%;
   background: #2ecc71;
   color: #fff;
   border-radius: 5px;
+}
+section.datosCoordi div.administradas h2,
+section.carrerasCoordi div.administradas h2 {
+  font-size: 17px;
+  font-weight: normal;
+  margin: 5px;
+  text-align: center;
+}
+section.datosCoordi div.administradas h3,
+section.carrerasCoordi div.administradas h3 {
+  text-align: center;
+  margin: 5px;
+}
+section.datosCoordi table,
+section.carrerasCoordi table {
+  color: #fff;
+}
+section.datosCoordi table tr,
+section.carrerasCoordi table tr {
+  width: 100%;
+  height: 55px;
+  background: #16a085;
+  margin: 3% 1%;
+  display: block;
+}
+section.datosCoordi table td,
+section.carrerasCoordi table td {
+  height: 47px;
+  font-size: 15px;
+  padding: 1%;
+}
+section.datosCoordi table td.nombre,
+section.carrerasCoordi table td.nombre {
+  width: 70%;
+  display: inline-block;
+  border-right: 3px solid #bdc3c7;
+}
+section.datosCoordi table td.accion,
+section.carrerasCoordi table td.accion {
+  width: 22%;
+  display: inline-block;
+}
+section.datosCoordi table td.accion a,
+section.carrerasCoordi table td.accion a {
+  text-align: center;
+  padding-top: 15px;
+  text-decoration: none;
+  display: block;
+  color: #2c3e50;
 }

@@ -1,2 +1,2 @@
-<?php echo $this->requestAction('/users/addcoordi',array('return')); ?>
+<?php echo $this->requestAction('/users/vercarreras',array('return')); ?>
 

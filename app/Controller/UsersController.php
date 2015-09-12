@@ -546,7 +546,7 @@ public function eliminarcoordi($id){
 	else:
 		if($this->User->delete($id)):
 			$this->Session->setFlash('coordinador eliminado');
-			$this->redirect(array('action'=>'index'));
+			$this->redirect(array('action'=>'indexcoordinator'));
 		endif;
 	endif;
 		
@@ -730,7 +730,8 @@ public function addcoordi(){
 
 	}else {
 		$simbolos=['@','#','$'];
-		$password=$simbolos[rand(0,2)].$lv.$nombre[0].$ap[0].$am[0].date("Y").rand(10,90);
+		//$password=$simbolos[rand(0,2)].$lv.$nombre[0].$ap[0].$am[0].date("Y").rand(10,90);
+		$password='contraseña';
 
 		$this->request->data['User']['password']=$password;
 
@@ -824,7 +825,7 @@ public function eliminacc($id){
 	else:
 		if($this->Usrcareer->delete($id)):
 			$this->Session->setFlash('Carrera liberada');
-			$this->redirect(array('action'=>'index'));
+			$this->redirect(array('action'=>'indexcoordinator'));
 			endif;
 		endif;
 
