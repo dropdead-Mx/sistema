@@ -59,6 +59,8 @@
 
 		<section class="bienvenida">
 			<h2>Plataforma Dorados</h2>
+			<?php echo $this->Session->flash(); ?>
+			
 			<article>
 				<div class="bolita uno">
 					

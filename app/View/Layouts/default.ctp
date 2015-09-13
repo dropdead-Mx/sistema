@@ -26,6 +26,8 @@
 	<div id="container">
 		
 		<div id="content">
+			<?php echo $this->Session->flash(); ?>
+		
 
 			<?php echo $this->fetch('content'); 
 			$tipo= $current_user['group_id'];
