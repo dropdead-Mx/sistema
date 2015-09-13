@@ -50,4 +50,7 @@ kingleegaona@hotmail.com
 	/users/alumno/
 	/users/editStudent
 
-	
+########
+para agregar materias y grupos (sin loguearte)
+/grupos/add
+/courses/add
