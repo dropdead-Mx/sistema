@@ -9,7 +9,7 @@ class CoursesController extends AppController {
 public function beforeFilter(){
 	parent::beforeFilter();
 	// $this->Auth->allow('index','getcoursesbycoordinator','tienemod','vermodulos','agregarHorario','asignarProfesor');
-	$this->Auth->allow('tieneprof','getgroupsbycourse');
+	$this->Auth->allow('tieneprof','getgroupsbycourse','add');
 	// 'add','edit','delete', agregar al llenar materias
 }
 

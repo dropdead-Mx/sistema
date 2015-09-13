@@ -34417,3 +34417,13 @@ Stack Trace:
 #2 /opt/lampp/htdocs/sistema/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
 >>>>>>> 1c4eb93057794b58993174e374b3939ff2da6d3d
+2015-09-12 21:24:12 Error: Fatal Error (4): syntax error, unexpected '<<' (T_SL), expecting ')' in [/var/www/sistema/app/Config/database.php, line 76]
+2015-09-12 21:24:12 Error: [FatalErrorException] syntax error, unexpected '<<' (T_SL), expecting ')'
+Request URL: /sistema/users/vercalificaciones/
+Stack Trace:
+#0 /var/www/sistema/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/sistem...', 76)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/sistem...', 76, Array)
+#2 /var/www/sistema/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/sistem...', 76, Array)
+#3 /var/www/sistema/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
