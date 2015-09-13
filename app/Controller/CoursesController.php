@@ -120,7 +120,7 @@ public function isAuthorized($user){
 
 			//agregar funcion pa el select
 			$careers = $this->Course->Career->find('list');
-			$users=$this->Course->User->find('list',array('conditions'=>array('group_id'=>'7')));
+			$users=$this->User->find('list',array('conditions'=>array('group_id'=>'7')));
 
 			$this->set(compact('careers','users'));
 	}
