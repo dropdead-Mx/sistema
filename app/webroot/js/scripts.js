@@ -153,18 +153,11 @@ function gruposXcarrera() {
 
 function getSemester() {
 	$('#grupo_id').on('change',function(){
-		var semestre = $('#grupo_id option:selected').text().substr(0,1);
-		console.log('elsemestre es'+semestre);
-		var existe =$('input#StudentProfileSemester').length;
-		var inputS='<input type="hidden" name="data[StudentProfile][semester]" label="cuatrimestre" id="StudentProfileSemester" value="'+semestre+'"  >';
-		if (existe > 0 ){
-			$('input#StudentProfileSemester').remove();
-			$('form#formulario').append(inputS);
+		var semestre = $('#grupo_id option:selected').text().split(' ');
+		// alert('elsemestre es'+semestre[0]);
+		$('#cuatriPerfil').val(semestre[0]);
+		
 
-
-		}else {
-			$('form#formulario').append(inputS);
-		}
 
 		
 	});

@@ -1,4 +1,17 @@
-xd #DIRECTOR
+##NOTASSSSSS
+*Para que puedas editar agregar eliminar etc grupos sin loguearte es /grupos/(add|index)
+	ya que agregues todos en el controlador de grupos comenta esta linea
+
+	#####$this->Auth->allow('add','index','edit','delete');####
+
+*Agrega en tus layouts el scripts.js para quitarlo de las vistas y lo cargue de un solo jalon
+*Lavate la boca cn agua clorox y jabon despues de darle sus guapos a ricardo
+*fin
+
+
+
+
+#DIRECTOR
 	
 alejandrosh@gmail.com
 	
@@ -9,6 +22,7 @@ alejandrosh@gmail.com
 	/vercalificaciones/
 	/users/consultarhorarios
 	/users/indexTeacher
+	/semesters/registrarcuatrimestre	
 	
 
 
@@ -54,3 +68,4 @@ kingleegaona@hotmail.com
 para agregar materias y grupos (sin loguearte)
 /grupos/add
 /courses/add
+

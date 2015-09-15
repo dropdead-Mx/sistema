@@ -37,6 +37,8 @@ echo '</select>';
 	<option value="7">7mo Cuatrimestre</option>
 	<option value="8">8vo Cuatrimestre</option>
 	<option value="9">9no Cuatrimestre</option>
+	<option value="10">10mo Cuatrimestre</option>
+
 </select>
 
 

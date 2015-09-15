@@ -232,7 +232,7 @@ public function addStudent(){
 			$this->Session->setFlash('Estudiante agregado');
 			// debug($existe);
 			// debug($this->request->data);
-			$this->redirect(array('action'=>'indexStudent'));
+			$this->redirect(array('action'=>'index'));
 			endif;
 		}
 
@@ -421,7 +421,7 @@ public function addTeacher(){
 
 		if($this->User->saveAssociated($this->request->data)):
 			$this->Session->setFlash('Maestro agregado');
-			$this->redirect(array('action'=>'indexTeacher'));
+			$this->redirect(array('action'=>'index'));
 			endif;
 		}
 	endif;
